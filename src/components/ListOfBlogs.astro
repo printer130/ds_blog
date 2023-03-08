@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content'
+import CardOfBlogs from './CardOfBlogs.astro'
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+)
+---
+<div>
+	<style>
+			ul {
+				list-style-type: none;
+				padding: unset;
+			}
+			ul li {
+				display: flex;
+			}
+			ul li :global(time) {
+				flex: 0 0 130px;
+				font-style: italic;
+				color: #595959;
+			}
+			ul li a:visited {
+				color: #8e32dc;
+			}
+	</style>
+	<section>
+		<main>
+			<h2 class='text-4xl text-neutral-300'>Data Science</h2>
+			<section class='my-10'>
+				<ul>
+					{
+						posts.map((post) => {
+							const { slug, data } = post
+							return <CardOfBlogs
+								slug={slug}
+								title={data.title}
+								pubDate={data.pubDate}
+							/>
+						})
+					}
+				</ul>
+			</section>
+		</main>
+	</section>
+</div>

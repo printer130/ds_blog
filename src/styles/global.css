@@ -1,14 +1,10 @@
 body {
-	font-family: Verdana, sans-serif;
 	margin: auto;
 	padding: 20px;
 	max-width: 65ch;
-	text-align: left;
-	background-color: #fff;
+	background-color: hsl(251, 29%, 11%);
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	line-height: 1.5;
-	color: #444;
 }
 h1,
 h2,
@@ -17,9 +13,6 @@ h4,
 h5,
 h6,
 strong,
-b {
-	color: #222;
-}
 a {
 	color: #3273dc;
 }
@@ -28,9 +21,6 @@ nav a {
 }
 textarea {
 	width: 100%;
-	font-size: 16px;
-}
-input {
 	font-size: 16px;
 }
 content {

@@ -1,0 +1,25 @@
+---
+import { CollectionEntry, getCollection, getEntryBySlug } from 'astro:content'
+import BlogPost from '@layouts/BlogPost.astro'
+
+/* export async function getStaticPaths () {
+	const posts = await getCollection('blog')
+	return posts.map((post) => ({
+		params: {
+			slug: post.slug
+		},
+		props: post
+	}))
+} */
+
+const { slug } = Astro.params
+if (!slug) return Astro.redirect('/404')
+const post = await getEntryBySlug('blog', slug)
+if (!post) return Astro.redirect('/404')
+const { Content } = await post.render()
+---
+
+<BlogPost {...post.data}>
+	<h1 class='text-4xl text-neutral-200 py-10'>{post.data.title}</h1>
+	<Content />
+</BlogPost>

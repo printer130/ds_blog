@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content'
+
+const { resource } = Astro.params
+if (!resource) return Astro.redirect('/404')
+const pages = await getCollection(resource)
+---
+<h1>EScojer lab </h1>
+<ul>
+	{
+		pages.map(link => {
+			return <li>
+				<a
+					class='text-blue-500 text-lg px-4 py-2 border-slate-500 border'
+					href={resource + '/' + link.slug} >
+					{link.slug}
+				</a>
+			</li>
+		})
+	}
+</ul>
