@@ -1,18 +1,18 @@
 ---
+import LabPost from '@layouts/LabPost.astro'
 import { getEntryBySlug } from 'astro:content'
 
 const { slug } = Astro.params
 if (!slug) return Astro.redirect('/404')
 
-const [par1, par2] = slug?.split('/')
+const [_, par2] = slug?.split('/')
 
 type Props = CollectionEntry<'blog'>
+
 const page = await getEntryBySlug('ensamblers', par2)
-console.log([par1, par2])
-console.log({ page })
+const data = page.data
 const { Content } = await page?.render()
-
 ---
-
-<h1>description</h1>
-<Content />
+<LabPost title={data.title}>
+	<Content />
+</LabPost>

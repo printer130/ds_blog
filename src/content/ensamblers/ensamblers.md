@@ -109,6 +109,7 @@ plt.axhline(n_real, ls = '--')
 plt.legend()
 plt.show()
 ```
+
 Este último gráfico es muy interesante. A medida que agregamos información, no solamente tienden al valor real, ¡sino que disminuyen las incertezas!
 # Media Geométrica
 
