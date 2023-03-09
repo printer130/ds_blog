@@ -14,6 +14,9 @@ yarn-error.log*
 pnpm-debug.log*
 .astro
 
+assets
+assets/**
+assets/*
 # environment variables
 .env
 .env.production
@@ -21,3 +24,9 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 .vercel
+practica_04/**
+practica_04
+ba_ging/*/*
+ba_ging/**/**
+ba_ging/**
+ba_ging
