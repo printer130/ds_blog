@@ -1,50 +1,20 @@
 ---
 import LabPost from '@layouts/LabPost.astro'
 import { getEntryBySlug } from 'astro:content'
+import { SLUGS } from 'src/consts'
 
 // type Props = CollectionEntry<'blog'>
 export async function getStaticPaths () {
-	return [
-		{
-			params: {
-				slug: 'ensamblers/bagging'
-			}
-		},
-		{
-			params: {
-				slug: 'ensamblers/boosting'
-			}
-		},
-		{
-			params: {
-				slug: 'ensamblers/ensamblers'
-			}
-		},
-		{
-			params: {
-				slug: 'ensamblers/pipeline'
-			}
-		},
-		{
-			params: {
-				slug: 'ensamblers/stacking'
-			}
-		},
-		{
-			params: {
-				slug: 'ensamblers/voting'
-			}
-		}
-	]
+	return SLUGS
 }
+
 const { slug } = Astro.params
 if (!slug) return Astro.redirect('/404')
-
 const [, par2] = slug?.split('/')
-const page = await getEntryBySlug('ensamblers', par2)
-const data = page?.data
-if (!page) return Astro.redirect('/404')
-const { Content } = await page?.render()
+const entry = await getEntryBySlug('ensamblers', par2)
+if (!entry) return Astro.redirect('/404')
+const data = entry?.data
+const { Content } = await entry?.render()
 
 ---
 <LabPost>

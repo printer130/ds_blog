@@ -1,13 +1,13 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import BaseHead from '../components/BaseHead.astro'
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
-import FormattedDate from '../components/FormattedDate.astro'
+import BaseHead from '@components/BaseHead.astro'
+import Header from '@components/Header.astro'
+import Footer from '@components/Footer.astro'
+import FormattedDate from '@components/FormattedDate.astro'
 
 type Props = CollectionEntry<'blog'>['data']
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props
+const { title, description, pubDate, updatedDate } = Astro.props
 ---
 
 <html lang='es'>
@@ -25,10 +25,10 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 	<body>
 		<Header />
 		<main>
-			<article class='text-xl tracking-wide leading-relaxed font-light text-neutral-400'>
+			<article class='text-xl tracking-wide leading-relaxed font-light text-neutral-300'>
 				<!-- {heroImage && <img width={720} height={360} src= {heroImage} alt='' />} -->
 				<h1
-					class='title text-4xl py-8 text-neutral-400 font-semibold'
+					class='title text-4xl py-8 text-neutral-300 font-semibold'
 				>
 					{title}
 				</h1>

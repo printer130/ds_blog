@@ -1,33 +1,32 @@
 ---
+import LabPractices from '@components/LabPractices.astro'
 import LabPost from '@layouts/LabPost.astro'
 import { getCollection } from 'astro:content'
+import { RESOURCE } from 'src/consts'
 
 // export const prerender = false
 export async function getStaticPaths () {
-	return [{
-		params: { resource: 'ensamblers' }
-	}]
+	return RESOURCE
 }
+
 const { resource } = Astro.params
 if (!resource) return Astro.redirect('/404')
 
-const pages = await getCollection(resource as any)
+const entry = await getCollection(resource as any)
 ---
 
 <LabPost>
-	<h1 class='text-4xl font-bold text-neutral-400'>Practicas:</h1>
+	<h1
+		class='text-4xl font-bold text-neutral-400'>
+	Practicas:
+	</h1>
 	<ul>
 		{
-			pages.map(link => {
-				return <li class='my-4 w-full'>
-					<div class='justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4'>
-						<a href={resource + '/' + link.slug} class='w-full min-w-[228px] sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center px-4 py-2.5'>
-							<svg xml:space='preserve' viewBox='0 0 100 100' y='0' x='0' xmlns='http://www.w3.org/2000/svg' class='bg-transparent h-full w-7 pr-2' width='200px' height='200px'><g class='ldl-scale' style='transform-origin: 50% 50%; transform: rotate(0deg) scale(0.8, 0.8);'><g class='ldl-ani'><g class='ldl-layer'><g class='ldl-ani'><g><g class='ldl-layer'><g class='ldl-ani' style='transform: scale(0.91); transform-origin: 50px 50px; animation: 1.11111s linear -0.648148s infinite normal forwards running breath-7e16eb8f-d034-41d6-a8f5-a03374b165fa;'><path d='M45 47h10v31H45z' stroke='#333' fill='#e0e0e0' stroke-miterlimit='10' stroke-width='3.5' style='fill: rgb(224, 224, 224); stroke: rgb(51, 51, 51);'></path></g></g><g class='ldl-layer'><g class='ldl-ani' style='transform: scale(0.91); transform-origin: 50px 50px; animation: 1.11111s linear -0.740741s infinite normal forwards running breath-7e16eb8f-d034-41d6-a8f5-a03374b165fa;'><path stroke-miterlimit='10' stroke-linejoin='round' stroke-width='3.5' stroke='#333' fill='#e0e0e0' d='M70 84H30l.457-1.702A8.508 8.508 0 0 1 38.672 76h22.655a8.507 8.507 0 0 1 8.215 6.298L70 84z' style='fill: rgb(224, 224, 224); stroke: rgb(51, 51, 51);'></path></g></g></g></g></g><g class='ldl-layer'><g class='ldl-ani' style='transform: scale(0.91); transform-origin: 50px 50px; animation: 1.11111s linear -0.833333s infinite normal forwards running breath-7e16eb8f-d034-41d6-a8f5-a03374b165fa;'><path stroke='#333' fill='#fff' stroke-miterlimit='10' stroke-width='3.5' d='M79.333 62H20.667A4.666 4.666 0 0 1 16 57.333V22.667A4.666 4.666 0 0 1 20.667 18h58.667A4.666 4.666 0 0 1 84 22.667v34.667A4.666 4.666 0 0 1 79.333 62z' style='fill: rgb(255, 255, 255); stroke: rgb(51, 51, 51);'></path></g></g><g class='ldl-layer'><g class='ldl-ani'><g><g class='ldl-layer'><g class='ldl-ani' style='transform: scale(0.91); transform-origin: 50px 50px; animation: 1.11111s linear -0.925926s infinite normal forwards running breath-7e16eb8f-d034-41d6-a8f5-a03374b165fa;'><path d='M60.075 27.625L67.6 40l-7.525 12.375' stroke-miterlimit='10' stroke-width='3.5' stroke='#333' fill='none' style='stroke: rgb(51, 51, 51);'></path></g></g><g class='ldl-layer'><g class='ldl-ani' style='transform: scale(0.91); transform-origin: 50px 50px; animation: 1.11111s linear -1.01852s infinite normal forwards running breath-7e16eb8f-d034-41d6-a8f5-a03374b165fa;'><path d='M39.925 52.375L32.4 40l7.525-12.375' stroke-miterlimit='10' stroke-width='3.5' stroke='#333' fill='none' style='stroke: rgb(51, 51, 51);'></path></g></g><g class='ldl-layer'><g class='ldl-ani' style='transform: scale(0.91); transform-origin: 50px 50px; animation: 1.11111s linear -1.11111s infinite normal forwards running breath-7e16eb8f-d034-41d6-a8f5-a03374b165fa;'><path d='M54.808 23.5l-9.616 33' stroke-miterlimit='10' stroke-width='3.5' stroke='#333' fill='none' style='stroke: rgb(51, 51, 51);'></path></g></g></g></g></g>
-							</g></g></svg>
-							<div class='font-sans text-lg uppercase tracking-wider'>{link.slug}</div>
-						</a>
-					</div>
-				</li>
+			entry.map(link => {
+				return <LabPractices
+					resource={resource}
+					slug={link.slug}
+				/>
 			})
 		}
 	</ul>

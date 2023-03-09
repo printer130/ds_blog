@@ -14,9 +14,6 @@ yarn-error.log*
 pnpm-debug.log*
 .astro
 
-assets
-assets/**
-assets/*
 # environment variables
 .env
 .env.production

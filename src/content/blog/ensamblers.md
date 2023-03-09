@@ -19,12 +19,12 @@ Estudios demuestran que si planteamos la situación de estimar la cantidad de mo
 Se puede usar el valor promedio, la mediana
 o el valor modal, pero si observamos cierta asimetría en la distribución de los datos, es decir, un sesgo o desbalance en la distribución del valor elegido, existe un valor que es más representativo y que logra llevar los datos a una distribución Normal o Gaussiana.
 
-<img src="../../../assets/grandes_numeros.jpg" height="150"><br>
+<img src="/_astro/grandes_numeros.hash.jpg" height="150"><br>
 
 Si en lugar de usar el dato tal y como está, usamos la potencia de diez que se acerca al valor de ese dato, es decir, lo llevamos a escala logarítmica, nos encontramos con el concepto de media geométrica y en esa escala podemos tener un valor más adecuado.
 Para el ejemplo, usamos una distribución Gamma simulando las posibles respuestas de 2000 personas. Mostramos su histograma y el histograma de los logaritmos, y, por último, comparamos los valores medios obtenidos.
 
-<img src="../../../assets/media_geometrica.jpg" height="250"><br>
+<img src="../../../media_geometrica.jpg" height="250"><br>
 
 * En física se denomina problema de Fermi, a problemas que involucran el cálculo de cantidades que parecen imposibles de estimar dada la <b>limitada información disponible</b>. Fermi era conocido por su habilidad para hacer buenos cálculos a partir de datos escasos o nulos, y existen problemas diseñados para enseñar análisis dimensional y cálculo de estimaciones, mostrando la importancia de <b>identificar claramente las hipótesis</b> utilizadas. Estas estimaciones usan números que sean <b>potencia de 10</b>.
 * Se conoce como <b>sabiduría de las masas</b> al hecho de que juntando las estimaciones
@@ -47,7 +47,7 @@ Los modelos pueden ser diferentes entre sí por una variedad de razones:
 * Puede haber una técnica de modelado utilizada diferente
 * Puede haber una hipótesis diferente
 
-<img src="../../../assets/ensambles.jpg" height="200"><br>
+<img src="../../assets/ensambles.jpg" height="200"><br>
 
 ## Ensambles - Bagging
 
