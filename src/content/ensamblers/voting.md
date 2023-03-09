@@ -33,7 +33,7 @@ combinamos sus resultados con votación por mayoría, vamos a obtener los
 mismos resultados que si usáramos un solo árbol. En ese caso, para poder
 combinar muchos árboles de decisión deberíamos usar **bagging**.
 
-<img src = "https://www.iartificial.net/wp-content/uploads/2019/05/ensemble-votacion.jpg" height = 250>
+<img src="https://www.iartificial.net/wp-content/uploads/2019/05/ensemble-votacion.jpg" height=250 alt="Ensemble votation">
 
 ## `Práctica`
 

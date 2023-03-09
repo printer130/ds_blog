@@ -33,7 +33,7 @@ Este enfoque puede ser utilizado tanto en escenarios supervisados como
 no supervisados y su rendimiento aumentará cuanto más diversos sean los
 modelos del nivel 0.
 
-<img src="../../../assets/Stacking.png" alt="text aslt" title="a title">
+<img src="/_astro/Stacking.hash.png" alt="text aslt" title="a title">
 
 ------------------------------------------------------------------------
 
@@ -211,4 +211,4 @@ En resumen, lo que hicimos fue stackear o apilar 3 modelos distintos
 generando predicciones, para luego utilizar como predicción final el
 metamodelo que, en este caso, fue de regresión logística.
 
-<img src="../../../assets/Stacking2.png" alt="text aslt" title="a title">
+<img src="/_astro/Stacking2.hash.png" alt="text aslt" title="a title">

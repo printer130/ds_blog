@@ -40,7 +40,7 @@ En esta primera práctica hablaremos de **bagging**.
 
 También denominada *bootstrap aggregation*.
 
-<img src = "https://www.iartificial.net/wp-content/uploads/2019/05/bagging.webp" height = 250>
+<img src = "https://www.iartificial.net/wp-content/uploads/2019/05/bagging.webp" height = 250 alt="bagging">
 
 Consiste en tomar grupos de muestras al azar de nuestro set de
 entrenamiento, **con reemplazo**. Dicho en otros términos, es un

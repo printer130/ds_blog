@@ -1,15 +1,18 @@
 import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
-import sitemap from '@astrojs/sitemap'
+/* import sitemap from '@astrojs/sitemap' */
 import preact from '@astrojs/preact'
 import tailwind from '@astrojs/tailwind'
+import vercel from '@astrojs/vercel/static'
 
-import vercel from '@astrojs/vercel/serverless'
+// const url = 'production' === import.meta.
 
-// https://astro.build/config
 export default defineConfig({
-	site: 'https://ds-blog-sigma.vercel.app',
-	integrations: [mdx(), preact(), tailwind(), sitemap()],
-	output: 'server',
-	adapter: vercel()
+	integrations: [mdx(), preact(), tailwind()],
+	output: 'static',
+	adapter: vercel(),
+	site: 'http://localhost:3001',
+	experimental: {
+		assets: true
+	}
 })

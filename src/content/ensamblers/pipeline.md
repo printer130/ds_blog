@@ -20,7 +20,7 @@ implementación de modelos.
 En definitiva, nos ayuda a automatizar un flujo de trabajo de Machine
 Learning.
 
-<img src = "../../../assets/pipeline_2.jpg" height = 350>
+<img src = "/_astro/pipeline_2.hash.jpg" height = 350 alt="Pipeline (production)">
 
 Uno de sus grandes beneficios y aplicabilidad reside en la
 escalabilidad. A su vez, destaca entre sus ventajas que simplifica la

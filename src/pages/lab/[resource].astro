@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content'
 
 const { resource } = Astro.params
 if (!resource) return Astro.redirect('/404')
-const pages = await getCollection(resource)
+const pages = await getCollection(resource as any)
 
 ---
 <LabPost>
