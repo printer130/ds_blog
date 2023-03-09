@@ -56,7 +56,7 @@ Aquí, el problema de optimización se resuelve utilizando descenso por
 gradiente. Es uno de los modelos más empleados en la materia. Tiene una
 buena performance computacional. No viene incorporado con Scikit-learn.
 
-`<img src = "https://miro.medium.com/max/910/1*nZIFUJv5zwuVTh1tHaYFkg.png" height = 350>`{=html}
+<img src = "https://miro.medium.com/max/910/1*nZIFUJv5zwuVTh1tHaYFkg.png" height = 350>
 
 *Diferencia entre los métodos bagging y boosting*.
 

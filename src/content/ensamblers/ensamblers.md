@@ -4,6 +4,7 @@ description: "Lorem ipsum dolor sit amet"
 pubDate: "Jul 22 2022"
 heroImage: "/placeholder-hero.jpg"
 ---
+
 # Estimando 
 
 El objetivo de esta actividad es reflexionar sobre los procesos de medición y de estimación. También, amigarse con las incertezas y los errores.
