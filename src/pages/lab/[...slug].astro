@@ -13,6 +13,7 @@ const page = await getEntryBySlug('ensamblers', par2)
 const data = page.data
 const { Content } = await page?.render()
 ---
-<LabPost title={data.title}>
+<LabPost>
+	<h1>{data.title}</h1>
 	<Content />
 </LabPost>
