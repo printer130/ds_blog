@@ -12,7 +12,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 
 <html lang='es'>
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead
+			title={title}
+			description={description} />
 		<style>
 			hr {
 				border-top: 1px solid #ddd;
@@ -24,9 +26,13 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 	<body>
 		<Header />
 		<main>
-			<article class='text-neutral-200 text-xl tracking-wide'>
-				{heroImage && <img width={720} height={360} src= {heroImage} alt='' />}
-				<h1 class='title text-7xl py-8 text-neutral-200 font-semibold'>{title}</h1>
+			<article class='text-xl tracking-wide leading-relaxed font-light text-neutral-500'>
+				<!-- {heroImage && <img width={720} height={360} src= {heroImage} alt='' />} -->
+				<h1
+					class='title text-4xl py-8 text-neutral-400 font-semibold'
+				>
+					{title}
+				</h1>
 				<FormattedDate date={pubDate} />
 				{
 					updatedDate && (

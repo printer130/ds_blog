@@ -5,6 +5,10 @@ body {
 	background-color: hsl(251, 29%, 11%);
 	word-wrap: break-word;
 	overflow-wrap: break-word;
+	text-rendering: optimizelegibility;
+	-moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-font-smoothing: antialiased !important;
 }
 h1,
 h2,
