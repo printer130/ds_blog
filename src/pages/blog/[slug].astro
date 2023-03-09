@@ -4,7 +4,6 @@ import BlogPost from '@layouts/BlogPost.astro'
 
 export async function getStaticPaths () {
 	const posts = await getCollection('blog')
-
 	return posts.map((post) => ({
 		params: {
 			slug: post.slug
@@ -12,16 +11,14 @@ export async function getStaticPaths () {
 		props: post
 	}))
 }
-
 /*
 const { slug } = Astro.params
-
 if (!slug) return Astro.redirect('/404')
 const entry = await getEntryBySlug('blog', slug)
 if (!entry) return Astro.redirect('/404')
 const { Content } = await entry.render() */
-const posts = Astro.params
-console.log(posts)
+const posts = Astro.props
+const { Content } = await posts.render()
 ---
 
 <BlogPost {...posts.data}>

@@ -13,6 +13,7 @@ export default defineConfig({
 	adapter: vercel(),
 	site: 'http://localhost:3001',
 	experimental: {
-		assets: true
+		assets: true,
+		prerender: true
 	}
 })

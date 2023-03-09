@@ -2,11 +2,18 @@
 import LabPost from '@layouts/LabPost.astro'
 import { getCollection } from 'astro:content'
 
+// export const prerender = false
+export async function getStaticPaths () {
+	return [{
+		params: { resource: 'ensamblers' }
+	}]
+}
 const { resource } = Astro.params
 if (!resource) return Astro.redirect('/404')
-const pages = await getCollection(resource as any)
 
+const pages = await getCollection(resource as any)
 ---
+
 <LabPost>
 	<h1 class='text-4xl font-bold text-neutral-400'>Practicas:</h1>
 	<ul>
