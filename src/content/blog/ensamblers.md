@@ -19,12 +19,12 @@ Estudios demuestran que si planteamos la situación de estimar la cantidad de mo
 Se puede usar el valor promedio, la mediana
 o el valor modal, pero si observamos cierta asimetría en la distribución de los datos, es decir, un sesgo o desbalance en la distribución del valor elegido, existe un valor que es más representativo y que logra llevar los datos a una distribución Normal o Gaussiana.
 
-<img src="/_astro/grandes_numeros.hash.jpg" height="150"><br>
+<img src="/assets/grandes_numeros.hash.jpg" height="150"><br>
 
 Si en lugar de usar el dato tal y como está, usamos la potencia de diez que se acerca al valor de ese dato, es decir, lo llevamos a escala logarítmica, nos encontramos con el concepto de media geométrica y en esa escala podemos tener un valor más adecuado.
 Para el ejemplo, usamos una distribución Gamma simulando las posibles respuestas de 2000 personas. Mostramos su histograma y el histograma de los logaritmos, y, por último, comparamos los valores medios obtenidos.
 
-<img src="../../../media_geometrica.jpg" height="250"><br>
+<img src="/media_geometrica.jpg" height="250"><br>
 
 * En física se denomina problema de Fermi, a problemas que involucran el cálculo de cantidades que parecen imposibles de estimar dada la <b>limitada información disponible</b>. Fermi era conocido por su habilidad para hacer buenos cálculos a partir de datos escasos o nulos, y existen problemas diseñados para enseñar análisis dimensional y cálculo de estimaciones, mostrando la importancia de <b>identificar claramente las hipótesis</b> utilizadas. Estas estimaciones usan números que sean <b>potencia de 10</b>.
 * Se conoce como <b>sabiduría de las masas</b> al hecho de que juntando las estimaciones
@@ -57,9 +57,9 @@ El Bagging es una de las técnicas de construcción de conjuntos que también se
 3) Una vez que forman las muestras bootstrapped, se entrenan los modelos de manera separada. En general, estos modelos serán <b>modelos con mucha varianza</b>.
 4) La predicción de salida final se combina en las proyecciones de todos los submodelos.
 
-<img src="../../../assets/ensambles_bagging.jpg" height="250"><br>
+<img src="/assets/ensambles_bagging.jpg" height="250"><br>
 
-<img src="../../../assets/ensambles_bagging2.jpg" height="250"><br>
+<img src="/assets/ensambles_bagging2.jpg" height="250"><br>
 
 ## Ensambles – Random Forest
 
@@ -67,7 +67,7 @@ Uno de los problemas que hay con el árbol de decisión es que si se le da la pr
 Para evitar esto, se crean muchos árboles para que trabajen en conjunto, la salida de cada uno se contará como “un voto” y la opción más votada será la respuesta del “Bosque Aleatorio”.
 La aleatoriedad está en la selección del valor k de características para cada árbol y en la cantidad de muestras que usaremos para entrenar cada uno.
 
-<img src="../../../assets/random_forest.jpg" height="300"><br>
+<img src="/assets/random_forest.jpg" height="300"><br>
 
 Si pocos atributos ó features son predictores fuertes, todos los árboles se van a parecer entre sí. Esos atributos terminarán cerca de la raíz para todos los conjuntos generados con bootstrap.
 Random Forest es igual a bagging, pero en cada nodo, hay que considerar sólo un subconjunto de m atributos elegidos al azar (random feature selection).
@@ -94,27 +94,27 @@ Enlaces recomendados:
 Se entrena una secuencia de modelos donde se da más peso a los ejemplos que fueron clasificados erróneamente por iteraciones anteriores. 
 Al igual que con bagging, las tareas de clasificación se resuelven con una mayoría ponderada de votos, y las tareas de regresión se resuelven con una suma ponderada para producir la predicción final.
 
-<img src="../../../assets/ensambles_boosting.jpg" height="600"><br>
+<img src="/assets/ensambles_boosting.jpg" height="600"><br>
 
 Ejemplo: Se plantea un problema de clasificación binaria con 10 elementos de entrenamiento, 5 positivos y 5 negativos:
 El algoritmo va a iterar hasta lograr una separación aceptable de las clases…<br>
-<img src="../../../assets/ensambles_boosting1.jpg" height="300"><br>
+<img src="/assets/ensambles_boosting1.jpg" height="300"><br>
 El primer clasificador débil, genera una recta vertical. A la derecha de la recta, se considera que todos los ejemplos son negativos, mientras que a la izquierda son positivos. 
 La recta clasifica mal a tres positivos.<br>
-<img src="../../../assets/ensambles_boosting2.jpg" height="300"><br>
+<img src="/assets/ensambles_boosting2.jpg" height="300"><br>
 Ahora los tres ejemplos mal clasificados aparecen de un mayor tamaño que el resto de los ejemplos. 
 Esto simboliza que dichos ejemplos tendrán una mayor importancia al momento de seleccionar el clasificador débil de la segunda iteración.<br>
-<img src="../../../assets/ensambles_boosting3.jpg" height="300"><br>
+<img src="/assets/ensambles_boosting3.jpg" height="300"><br>
 El segundo clasificador débil, es otra recta vertical colocada más hacia la derecha, se equivoca también en tres ejemplos, ya que clasifica mal ejemplos negativos. <br>
-<img src="../../../assets/ensambles_boosting4.jpg" height="300"><br>
+<img src="/assets/ensambles_boosting4.jpg" height="300"><br>
 Para la tercera iteración los ejemplos negativos mal clasificados tienen ahora el mayor tamaño, es decir, tendrán mayor importancia en la siguiente iteración.<br>
-<img src="../../../assets/ensambles_boosting5.jpg" height="300"><br>
+<img src="/assets/ensambles_boosting5.jpg" height="300"><br>
 En la tercera iteración el clasificador débil resultante es una recta horizontal, como se puede observar en el cuadro de la derecha. 
 Este clasificador se equivoca en la clasificación de un ejemplo negativo y dos positivos, que de igual forma aparecen encerrados en un círculo.<br>
-<img src="../../../assets/ensambles_boosting6.jpg" height="300"><br>
+<img src="/assets/ensambles_boosting6.jpg" height="300"><br>
 Finalmente, se ilustra el clasificador fuerte que resulta de crear un ensamble con tres clasificadores débiles. La forma en que se utilizan estos tres clasificadores débiles es mediante una decisión por mayoría. 
 Al clasificar un nuevo ejemplo, le preguntamos a cada uno de los tres clasificadores débiles su opinión. Si la mayoría opina que el nuevo ejemplo es positivo, pues entonces la decisión del clasificador fuerte será que es un ejemplo positivo. <br>
-<img src="../../../assets/ensambles_boosting7.jpg" height="300"><br>
+<img src="/assets/ensambles_boosting7.jpg" height="300"><br>
 
 ### Ensambles – XG Boost, Extreme Gradient Boosting
 
@@ -133,7 +133,7 @@ Instalación: sudo pip install xgboost
 
 Ejemplos: https://github.com/tqchen/xgboost/tree/master/demo/guide-python<br>
 
-<img src="../../../assets/ensambles_boosting8.jpg" height="200"><br>
+<img src="/assets/ensambles_boosting8.jpg" height="200"><br>
 
 ## Ensambles – Bagging vs. Boosting
 
@@ -156,7 +156,7 @@ Se crea una función de ensamble que combina los resultados de varios modelos ba
 Los modelos de nivel de base se entrenan con un conjunto de datos completo, y luego sus salidas se utilizan como características de entrada para entrenar una función de ensamble. 
 Normalmente, la función de ensamble es una simple combinación lineal de las puntuaciones del modelo base.
 
-<img src="../../../assets/ensambles_stacking.jpg" height="500"><br>
+<img src="/assets/ensambles_stacking.jpg" height="500"><br>
 
 ## Ensambles - Voiting Classifier
 
@@ -166,7 +166,7 @@ El hiperparámetro “votación” se establece en estricto (duro) o no estricto
 Si se establece en estricto, el clasificador de votaciones emitirá juicios basados ​​en las predicciones que aparezcan con mayor frecuencia. De lo contrario, si se establece en no estricto, utilizará un enfoque ponderado para tomar su decisión.
 Por ejemplo, se puede configurar en suave cuando se usa un número par de clasificadores debido a su enfoque ponderado y configurarlo en difícil cuando se usa un número impar de clasificadores debido a su enfoque de “mayoría lleva el voto”.
 
-<img src="../../../assets/ensambles_voiting.jpg" height="300"><br>
+<img src="/assets/ensambles_voiting.jpg" height="300"><br>
 
 
 - - -

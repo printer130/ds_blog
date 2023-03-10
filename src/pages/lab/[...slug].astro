@@ -3,6 +3,12 @@ import LabPost from '@layouts/LabPost.astro'
 import { getEntryBySlug } from 'astro:content'
 import { SLUGS } from 'src/consts'
 
+interface Entry {
+	blog: 'blog'
+	clustering: 'clustering'
+	ensamblers: 'ensamblers'
+}
+
 // type Props = CollectionEntry<'blog'>
 export async function getStaticPaths () {
 	return SLUGS
@@ -10,8 +16,8 @@ export async function getStaticPaths () {
 
 const { slug } = Astro.params
 if (!slug) return Astro.redirect('/404')
-const [, par2] = slug?.split('/')
-const entry = await getEntryBySlug('ensamblers', par2)
+const [par1, par2] = slug?.split('/')
+const entry = await getEntryBySlug(par1, par2)
 if (!entry) return Astro.redirect('/404')
 const data = entry?.data
 const { Content } = await entry?.render()

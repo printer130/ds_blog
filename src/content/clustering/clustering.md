@@ -1,5 +1,9 @@
 ---
-
+title: "Clustering"
+description: "asd"
+pubDate: "Jul 08 2022"
+heroImage: "/placeholder-hero.jpg"
+url: "/ensamblers"
 ---
 
 ## **APRENDIZAJE NO SUPERVISADO**

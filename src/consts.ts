@@ -3,6 +3,9 @@ export const SITE_DESCRIPTION = 'Web Development | Data Science'
 export const RESOURCE = [
 	{
 		params: { resource: 'ensamblers' }
+	},
+	{
+		params: { resource: 'clustering' }
 	}
 ]
 
@@ -35,6 +38,11 @@ export const SLUGS = [
 	{
 		params: {
 			slug: 'ensamblers/voting'
+		}
+	},
+	{
+		params: {
+			slug: 'clustering/clustering'
 		}
 	}
 ]
