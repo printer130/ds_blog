@@ -44,5 +44,15 @@ export const SLUGS = [
 		params: {
 			slug: 'clustering/clustering'
 		}
+	},
+	{
+		params: {
+			slug: 'clustering/elbow_silhouette'
+		}
+	},
+	{
+		params: {
+			slug: 'clustering/reduccion_dimensionalidad'
+		}
 	}
 ]

@@ -5,7 +5,7 @@ el final, veremos un ejemplo de aplicabilidad de K-means en compresión
 de imágenes."
 pubDate: "Jul 08 2022"
 heroImage: "/placeholder-hero.jpg"
-url: "/ensamblers"
+url: "/clustering/elbow_silhouette"
 ---
 
 
@@ -106,7 +106,7 @@ plt.title('Método del codo para el dataset 1')
 plt.show()
 ```
 
-![](/assets/m6_practice_2/5132a3d6610788ac93c3f9a329679a9f58ed2c7d.png)
+![](/m6_practice_2/5132a3d6610788ac93c3f9a329679a9f58ed2c7d.png)
 
 Repetimos el proceso para el dataset 2 y 3.
 
@@ -133,7 +133,7 @@ plt.show()
 ```
 
 ::: {.output .display_data}
-![](/assets/m6_practice_2/75e8c7ebf09f96a0b6b43d5e82e2949e95b3245f.png)
+![](/m6_practice_2/75e8c7ebf09f96a0b6b43d5e82e2949e95b3245f.png)
 :::
 :::
 
@@ -162,7 +162,7 @@ plt.show()
 ```
 
 ::: {.output .display_data}
-![](/assets/m6_practice_2/80f133e8de5d857009376809bfb5fdc18ce50be0.png)
+![](/m6_practice_2/80f133e8de5d857009376809bfb5fdc18ce50be0.png)
 :::
 :::
 
@@ -206,7 +206,7 @@ plt.show()
 ```
 
 ::: {.output .display_data}
-![](/assets/m6_practice_2/fa2805a4460a19f4916be95060267d03c5eda00e.png)
+![](/m6_practice_2/fa2805a4460a19f4916be95060267d03c5eda00e.png)
 :::
 :::
 
@@ -240,7 +240,7 @@ plt.show()
 ```
 
 ::: {.output .display_data}
-![](/assets/m6_practice_2/34024d80fa32362a5524e1abc7a2a5f7af0b839d.png)
+![](/m6_practice_2/34024d80fa32362a5524e1abc7a2a5f7af0b839d.png)
 :::
 :::
 
@@ -269,7 +269,7 @@ plt.show()
 ```
 
 ::: {.output .display_data}
-![](/assets/m6_practice_2/758c236191c0b87b213b82bb02dc31eef0b46608.png)
+![](/m6_practice_2/758c236191c0b87b213b82bb02dc31eef0b46608.png)
 :::
 :::
 
@@ -331,19 +331,19 @@ for i, k in enumerate(lista_k):
 ```
 
 ::: {.output .display_data}
-![](/assets/m6_practice_2/82bab2aab20924206f20c03de093d41fa8f88bc8.png)
+![](/m6_practice_2/82bab2aab20924206f20c03de093d41fa8f88bc8.png)
 :::
 
 ::: {.output .display_data}
-![](/assets/m6_practice_2/4a8aba40e970343d6527786914859f2fbfae2114.png)
+![](/m6_practice_2/4a8aba40e970343d6527786914859f2fbfae2114.png)
 :::
 
 ::: {.output .display_data}
-![](/assets/m6_practice_2/7b6940ece7ce91472e41fc88e1f0bf31b7cef7eb.png)
+![](/m6_practice_2/7b6940ece7ce91472e41fc88e1f0bf31b7cef7eb.png)
 :::
 
 ::: {.output .display_data}
-![](/assets/m6_practice_2/59bba3c2f6fde5db87ae9edf45a9574258fde7da.png)
+![](/m6_practice_2/59bba3c2f6fde5db87ae9edf45a9574258fde7da.png)
 :::
 :::
 
@@ -430,7 +430,7 @@ plot_DBSCAN(X1,labels_db,db,n_clusters_db)
 ```
 
 ::: {.output .display_data}
-![](/assets/m6_practice_2/3f07feba1bf3fe37805072466fefbd49aaca9d7e.png)
+![](/m6_practice_2/3f07feba1bf3fe37805072466fefbd49aaca9d7e.png)
 :::
 :::
 
@@ -480,7 +480,7 @@ plt.suptitle(f'Silhouette analysis using k = {n_clusters_db}',
 ```
 
 ::: {.output .display_data}
-![](/assets/m6_practice_2/0e2b69da3d2a1e99e7b618021e29247dc9b2ed59.png)
+![](/m6_practice_2/0e2b69da3d2a1e99e7b618021e29247dc9b2ed59.png)
 :::
 :::
 
@@ -537,8 +537,4 @@ for ax in fig.axes:
     ax.axis('off')
 plt.tight_layout();
 ```
-
-::: {.output .display_data}
-![](/assets/m6_practice_2/b9fdb593f7c83dbb1cb5b5331c6a5ef9b2b67562.png)
-:::
-:::
+<img src="/m6_practice_2/b9fdb593f7c83dbb1cb5b5331c6a5ef9b2b67562.png" alt="elbow image" />
