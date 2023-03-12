@@ -1,5 +1,7 @@
-export const SITE_TITLE = 'printer.'
+export const SITE_TITLE = 'printer130'
+
 export const SITE_DESCRIPTION = 'Web Development | Data Science'
+
 export const RESOURCE = [
 	{
 		params: { resource: 'ensamblers' }
@@ -53,6 +55,16 @@ export const SLUGS = [
 	{
 		params: {
 			slug: 'clustering/reduccion_dimensionalidad'
+		}
+	},
+	{
+		params: {
+			slug: 'clustering/sistemas_de_recomendacion'
+		}
+	},
+	{
+		params: {
+			slug: 'clustering/visualization'
 		}
 	}
 ]

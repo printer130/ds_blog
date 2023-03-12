@@ -1,6 +1,7 @@
 ---
 title: "Clustering"
-description: "asd"
+description: "En este notebook veremos, dentro de la técnica de `clustering`, los dos
+algoritmos estudiados en la parte teórica: K-means y DBSCAN."
 pubDate: "Jul 08 2022"
 heroImage: "/placeholder-hero.jpg"
 url: "/ensamblers"
@@ -9,9 +10,6 @@ url: "/ensamblers"
 ## **APRENDIZAJE NO SUPERVISADO**
 
 ### **Clustering**
-
-En este notebook veremos, dentro de la técnica de `clustering`, los dos
-algoritmos estudiados en la parte teórica: K-means y DBSCAN.
 
 ### *`K-means`*
 

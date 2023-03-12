@@ -8,15 +8,9 @@ heroImage: "/placeholder-hero.jpg"
 url: "/clustering/elbow_silhouette"
 ---
 
-
-::: {.cell .markdown}
 ## **APRENDIZAJE NO SUPERVISADO**
 
 ### **Métricas de evaluación de clustering**
-
-En esta práctica veremos las métricas `elbow` y `silhouette`. Ya sobre
-el final, veremos un ejemplo de aplicabilidad de K-means en compresión
-de imágenes.
 
 Para empezar, nuevamente generamos tres datasets sintéticos.
 
@@ -65,11 +59,11 @@ plt.title('Dataset 3')
 plt.show()
 ```
 
-!ts/m6_practice_2/4d9a6d4cbc3b1ff0492e882b3928098a269aaa76.png)
+<img src="/m6_practice_2/4d9a6d4cbc3b1ff0492e882b3928098a269aaa76.png" alt="el boy and silhouette" />
 
-!ts/m6_practice_2/bf305b522eb79de8f56cc696a62e857a285a5944.png)
+<img src="/m6_practice_2/bf305b522eb79de8f56cc696a62e857a285a5944.png" alt="el boy and silhouette" />
 
-!ts/m6_practice_2/9e752e8477f853b59a18c54e00226dd2ea285a8b.png)
+<img src="/m6_practice_2/9e752e8477f853b59a18c54e00226dd2ea285a8b.png" alt="el boy and silhouette" />
 
 ## **K-means**
 
@@ -106,11 +100,11 @@ plt.title('Método del codo para el dataset 1')
 plt.show()
 ```
 
-![](/m6_practice_2/5132a3d6610788ac93c3f9a329679a9f58ed2c7d.png)
+<img src="m6_practice_2/5132a3d6610788ac93c3f9a329679a9f58ed2c7d.png" alt="el bow and silhouette" />
 
 Repetimos el proceso para el dataset 2 y 3.
 
-``` pythone
+``` python
 Sum_of_squared_disteeances = []
 
 for k in K:
@@ -132,12 +126,8 @@ plt.title('Método del codo para el dataset 2')
 plt.show()
 ```
 
-::: {.output .display_data}
-![](/m6_practice_2/75e8c7ebf09f96a0b6b43d5e82e2949e95b3245f.png)
-:::
-:::
+<img src="m6_practice_2/75e8c7ebf09f96a0b6b43d5e82e2949e95b3245f.png" alt="el bow and silhouette" />
 
-::: {.cell .code execution_count="7"}
 ``` python
 
 Sum_of_squared_distances = []
@@ -161,12 +151,8 @@ plt.title('Método del codo para el dataset 3')
 plt.show()
 ```
 
-::: {.output .display_data}
-![](/m6_practice_2/80f133e8de5d857009376809bfb5fdc18ce50be0.png)
-:::
-:::
+<img src="m6_practice_2/80f133e8de5d857009376809bfb5fdc18ce50be0.png" alt="el bow and silhouette" />
 
-::: {.cell .markdown}
 ### **`Silhouette`**
 
 Primero vamos a calcular únicamente el valor de silhouette promedio para
@@ -175,9 +161,7 @@ para calcular los valores de distancia media.
 
 Debemos recorrer con un bucle los distintos modelos e ir agregando a una
 lista los valores de silhouette.
-:::
 
-::: {.cell .code execution_count="8"}
 ``` python
 # Creamos una lista donde iremos guardando los valores medios de silhouette
 lista_sil = []
@@ -205,16 +189,10 @@ plt.title('Silhouette media para el dataset 1', fontsize = 15)
 plt.show()
 ```
 
-::: {.output .display_data}
-![](/m6_practice_2/fa2805a4460a19f4916be95060267d03c5eda00e.png)
-:::
-:::
+<img src="m6_practice_2/fa2805a4460a19f4916be95060267d03c5eda00e.png" alt="el bow and silhouette" />
 
-::: {.cell .markdown}
 **Repetimos para el dataset 2 y 3**.
-:::
 
-::: {.cell .code execution_count="9"}
 ``` python
 lista_sil = []
 
@@ -239,12 +217,8 @@ plt.title('Silhouette media para el dataset 2', fontsize= 15)
 plt.show()
 ```
 
-::: {.output .display_data}
-![](/m6_practice_2/34024d80fa32362a5524e1abc7a2a5f7af0b839d.png)
-:::
-:::
+<img src="m6_practice_2/34024d80fa32362a5524e1abc7a2a5f7af0b839d.png" alt="el bow and silhouette" />
 
-::: {.cell .code execution_count="10"}
 ``` python
 lista_sil = []
 
@@ -268,17 +242,11 @@ plt.title('Silhouette media para el dataset 3', fontsize = 15)
 plt.show()
 ```
 
-::: {.output .display_data}
-![](/m6_practice_2/758c236191c0b87b213b82bb02dc31eef0b46608.png)
-:::
-:::
+<img src="m6_practice_2/758c236191c0b87b213b82bb02dc31eef0b46608.png" alt="el bow and silhouette" />
 
-::: {.cell .markdown}
 **Con el siguiente código, generamos los gráficos silhouette para todas
 las instancias**. La linea punteada verde indica el valor medio.
-:::
 
-::: {.cell .code execution_count="11"}
 ``` python
 # Ingresamos el Dataset con el que queremos trabajar
 X_std = X1
@@ -330,33 +298,18 @@ for i, k in enumerate(lista_k):
                  fontsize=16, fontweight='semibold', y=1.05);
 ```
 
-::: {.output .display_data}
-![](/m6_practice_2/82bab2aab20924206f20c03de093d41fa8f88bc8.png)
-:::
+<img src="m6_practice_2/82bab2aab20924206f20c03de093d41fa8f88bc8.png" alt="el bow and silhouette" />
 
-::: {.output .display_data}
-![](/m6_practice_2/4a8aba40e970343d6527786914859f2fbfae2114.png)
-:::
+<img src="m6_practice_2/4a8aba40e970343d6527786914859f2fbfae2114.png" alt="el bow and silhouette" />
 
-::: {.output .display_data}
-![](/m6_practice_2/7b6940ece7ce91472e41fc88e1f0bf31b7cef7eb.png)
-:::
+<img src="m6_practice_2/7b6940ece7ce91472e41fc88e1f0bf31b7cef7eb.png" alt="el bow and silhouette" />
 
-::: {.output .display_data}
-![](/m6_practice_2/59bba3c2f6fde5db87ae9edf45a9574258fde7da.png)
-:::
-:::
-
-::: {.cell .markdown}
+<img src="m6_practice_2/59bba3c2f6fde5db87ae9edf45a9574258fde7da.png" alt="el bow and silhouette" />
 
 ------------------------------------------------------------------------
-:::
 
-::: {.cell .markdown}
 ## **DBSCAN**
-:::
 
-::: {.cell .code execution_count="12"}
 ``` python
 from sklearn.cluster import DBSCAN
 
@@ -364,35 +317,21 @@ db = DBSCAN(eps=0.5, min_samples=10)
 db.fit(X1)
 ```
 
-::: {.output .execute_result execution_count="12"}
-```{=html}
-<style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>DBSCAN(min_samples=10)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">DBSCAN</label><div class="sk-toggleable__content"><pre>DBSCAN(min_samples=10)</pre></div></div></div></div></div>
-```
-:::
-:::
-
-::: {.cell .code execution_count="13"}
 ``` python
 labels_db = db.labels_
 
 n_clusters_db = len(set(labels_db)) - (1 if -1 in labels_db else 0)
 n_noise_db = list(labels_db).count(-1)
 ```
-:::
 
-::: {.cell .code execution_count="14"}
 ``` python
 print('Número estimado de clusters: %d' % n_clusters_db)
 print('Número estimado de puntos de ruido: %d' % n_noise_db)
 ```
 
-::: {.output .stream .stdout}
     Número estimado de clusters: 8
     Número estimado de puntos de ruido: 2
-:::
-:::
 
-::: {.cell .code execution_count="15"}
 ``` python
 # Creamos la función para graficar
 
@@ -422,19 +361,13 @@ def plot_DBSCAN(X1,labels_1,db_1,n_clusters_1):
     plt.title('Número estimado de clusters: %d' % n_clusters_1)
     plt.show()
 ```
-:::
 
-::: {.cell .code execution_count="16"}
 ``` python
 plot_DBSCAN(X1,labels_db,db,n_clusters_db)
 ```
 
-::: {.output .display_data}
-![](/m6_practice_2/3f07feba1bf3fe37805072466fefbd49aaca9d7e.png)
-:::
-:::
+<img src="m6_practice_2/3f07feba1bf3fe37805072466fefbd49aaca9d7e.png" alt="el bow and silhouette" />
 
-::: {.cell .code execution_count="17"}
 ``` python
 X_std = X1
 
@@ -479,12 +412,7 @@ plt.suptitle(f'Silhouette analysis using k = {n_clusters_db}',
              fontsize=16, fontweight='semibold', y=1.05);
 ```
 
-::: {.output .display_data}
-![](/m6_practice_2/0e2b69da3d2a1e99e7b618021e29247dc9b2ed59.png)
-:::
-:::
-
-::: {.cell .markdown}
+<img src="m6_practice_2/0e2b69da3d2a1e99e7b618021e29247dc9b2ed59.png" alt="el bow and silhouette" />
 
 ------------------------------------------------------------------------
 
@@ -537,4 +465,5 @@ for ax in fig.axes:
     ax.axis('off')
 plt.tight_layout();
 ```
+
 <img src="/m6_practice_2/b9fdb593f7c83dbb1cb5b5331c6a5ef9b2b67562.png" alt="elbow image" />

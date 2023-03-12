@@ -13,6 +13,7 @@ const { resource } = Astro.params
 if (!resource) return Astro.redirect('/404')
 
 const entry = await getCollection(resource as any)
+
 ---
 
 <LabPost>
@@ -22,10 +23,11 @@ const entry = await getCollection(resource as any)
 	</h1>
 	<ul>
 		{
-			entry.map(link => {
+			entry.map(({ slug, data }) => {
 				return <LabPractices
 					resource={resource}
-					slug={link.slug}
+					slug={slug}
+					title={data.title}
 				/>
 			})
 		}
