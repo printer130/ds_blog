@@ -1,5 +1,5 @@
 ---
-title: "Ensamblers"
+title: "Procesos de medición y de estimación"
 description: "El objetivo de esta actividad es reflexionar sobre los procesos de medición y de estimación. También, amigarse con las incertezas y los errores."
 pubDate: "Jul 22 2022"
 heroImage: "/placeholder-hero.jpg"

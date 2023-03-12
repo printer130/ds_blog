@@ -1,12 +1,10 @@
 ---
 title: "Bagging | Random Forest | boosting | stacking | voting | pipeline"
-description: "asd"
+description: "Para esta ocasión, es momento de volver al aprendizaje supervisado."
 pubDate: "Jul 08 2022"
 heroImage: "/placeholder-hero.jpg"
 url: "/ensamblers"
 ---
-
-Para esta ocasión, es momento de volver al **aprendizaje supervisado**. 
 
 ## Estimación de grandes números
 

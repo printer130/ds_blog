@@ -36,6 +36,7 @@ const posts = (await getCollection('blog')).sort(
 							return <CardOfBlogs
 								slug={slug}
 								title={data.title}
+								description={data.description}
 								pubDate={data.pubDate}
 							/>
 						})

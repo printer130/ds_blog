@@ -1,14 +1,12 @@
 ---
 title: "Clustering"
-description: "asd"
+description: "Llegó el momento de dejar atrás, al menos por un rato, al aprendizaje supervisado. Ahora nos abocaremos al estudio del aprendizaje no supervisado."
 pubDate: "Jul 08 2022"
 heroImage: "/placeholder-hero.jpg"
 url: "/ensamblers"
 ---
 
 # **Aprendizaje no supervisado**
-
-Llegó el momento de dejar atrás, al menos por un rato, al **aprendizaje supervisado**. Ahora nos abocaremos al estudio del **aprendizaje no supervisado**.
 
 En esta etapa cambiaremos el enfoque con el que veníamos trabajando hasta el momento. `No supervisado` significa que ya no contamos con las etiquetas asociadas a nuestros datos. Es decir que las instancias no tienen asignadas una clase o un valor de salida. 
 
