@@ -1,5 +1,5 @@
 ---
-title: "boosting | stacking | voting | pipeline"
+title: "boosting"
 description: "asd"
 pubDate: "Jul 08 2022"
 heroImage: "/placeholder-hero.jpg"

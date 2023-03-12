@@ -1,13 +1,11 @@
 ---
 title: "Ensamblers"
-description: "Lorem ipsum dolor sit amet"
+description: "El objetivo de esta actividad es reflexionar sobre los procesos de medición y de estimación. También, amigarse con las incertezas y los errores."
 pubDate: "Jul 22 2022"
 heroImage: "/placeholder-hero.jpg"
 ---
 
 # Estimando 
-
-El objetivo de esta actividad es reflexionar sobre los procesos de medición y de estimación. También, amigarse con las incertezas y los errores.
 
 En un frasco, llamémoslo Frasco 1, ponemos una cantidad $n$ de algún elemento que sea relativamente fácil de contar; por ejemplo, porotos, monedas de cinco centavos, etc. En otro frasco, Frasco 2, ponemos una cantidad definida de esos mismos elementos, por ejemplo, 50 monedas.
 

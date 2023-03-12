@@ -1,16 +1,14 @@
 ---
 title: "Bagging"
-description: "Lorem ipsum dolor sit amet"
+description: "En esta clase abordaremos modelos con un grado de complejidad mayor a
+los que veníamos trabajando. Hasta ahora, entrenamos y evaluamos cada
+modelo individualmente. Pero podríamos combinarlos, para así obtener un
+modelo aún mejor. Eso hace el método de ensamble."
 pubDate: "Jul 22 2022"
 heroImage: "/placeholder-hero.jpg"
 ---
 
 ## **MÉTODOS DE ENSAMBLE**
-
-En esta clase abordaremos modelos con un grado de complejidad mayor a
-los que veníamos trabajando. Hasta ahora, entrenamos y evaluamos cada
-modelo individualmente. Pero podríamos combinarlos, para así obtener un
-modelo aún mejor. Eso hace el método de ensamble.
 
 La idea es entrenar muchos modelos y hacerlos votar. La clasificación
 resultante es la que reciba más votos. Y si los modelos devuelven

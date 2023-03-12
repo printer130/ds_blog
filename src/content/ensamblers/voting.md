@@ -50,7 +50,6 @@ import matplotlib.pyplot as plt
 #import sys
 #!{sys.executable} -m pip install openpyxl
 ```
-:::
 
 ``` python
 # Cargamos los datos
@@ -151,7 +150,6 @@ sns.heatmap(bank_data_corr, annot=True)
     <Axes: >
 
 ### **Machine learning**
-:::
 
 ``` python
 # Definimos atributos y variable a predecir
@@ -268,7 +266,7 @@ print(confusion_matrix(y_test, y_pred))
 ```
 
     [[701  17]
-     [237  45]]
+    [237  45]]
 
 ``` python
 # Visualizamos cuál de los tres modelos obtuvo el mejor 'voto'
@@ -292,9 +290,7 @@ for clf_hard in (log_clf, svc_clf, naive_clf, voting_clf_hard):
 # Debemos fijar probability en True para poder hacer posteriormente la predicción
 svc_clf = SVC(C=1, kernel='linear', gamma='auto', probability=True)
 ```
-:::
 
-::: {.cell .code execution_count="37"}
 ``` python
 voting_clf_soft = VotingClassifier(estimators=[('lr', log_clf), 
                                                ('svc', svc_clf), 

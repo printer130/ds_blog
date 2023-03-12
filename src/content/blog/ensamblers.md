@@ -47,7 +47,7 @@ Los modelos pueden ser diferentes entre sí por una variedad de razones:
 * Puede haber una técnica de modelado utilizada diferente
 * Puede haber una hipótesis diferente
 
-<img src="../../assets/ensambles.jpg" height="200"><br>
+<img src="/assets/ensambles.jpg" height="200"><br>
 
 ## Ensambles - Bagging
 
@@ -168,20 +168,7 @@ Por ejemplo, se puede configurar en suave cuando se usa un número par de clasif
 
 <img src="/assets/ensambles_voiting.jpg" height="300"><br>
 
-
-- - -
-
 En la práctica, veremos modelos de ensamble y las técnicas para generarlos. Finalmente, cerraremos con la puesta en producción/pipeline de Machine Learning.
 
 # **Los notebooks se dividirán de la siguiente manera**:
-
-+ Práctica_01: bagging
-
-+ Práctica_02: boosting
-
-+ Práctica_03: stacking
-
-+ Práctica_04: voting
-
-+ Práctica_05: pipeline
 

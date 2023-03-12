@@ -28,11 +28,11 @@ Veremos dos técnicas de aprendizaje no supervisado. A saber:
 
 Técnica para agrupar datos de acuerdo a cuánto se parecen entre sí. Dado un set de datos, nuestra meta será encontrar grupos -clusters- en los cuales las instancias pertenecientes sean parecidas -estén cerca-.
 
-<img src = "../_src/assets/clust.png" height = 350>
+<img src = "/assets/clust.png" height = 350>
 
 **Pero ¿cómo hacemos para agrupar los datos?**
 
-<img src = "../_src/assets/hom.png" height = 200>
+<img src = "/assets/hom.png" height = 200>
 
 🚨 Spoiler Alert: como no podía ser de otra forma, existen diversos algoritmos que nos facilitan esta tarea. Ellos son:
 
@@ -52,7 +52,7 @@ El alcance de este curso cubrirá los dos primeros.
 
 El fundamento de este algoritmo radica en separar los datos en K clusters, ubicando a las instancias que estén dentro de una región cercana de un mismo cluster.
 
-<img src = "../_src/assets/kmeans.png" height = 150>
+<img src = "/assets/kmeans.png" height = 150>
 
 El centro de cada cluster -centroide- es el promedio de todos los puntos pertenecientes a ese cluster.
 
@@ -138,7 +138,7 @@ Si utilizamos como K los valores que están a la derecha del K óptimo, nuestro 
 
 Con esta métrica medimos qué tan parecidos son los datos con su propio cluster -cohesión- en comparación con qué tan parecidos son a otros clusters -separación-.
 
-<img src = "../_src/assets/silo.png" height = 80>
+<img src = "/assets/silo.png" height = 80>
 
 Se utiliza para cualquier técnica de clustering.
 
@@ -186,13 +186,13 @@ Nuevamente, veremos los dos primeros algoritmos que son los más utilizados en l
 
 Es un método de álgebra lineal que nos permite representar cualquier matriz en términos de la multiplicación de otras tres matrices.
 
-<img src = "../_src/assets/svd.jpg" height = 300>
+<img src = "/assets/svd.jpg" height = 300>
 
 Entre sus tantas utilidades, podemos mencionar la de **reducir** una matriz M -pasar de tener muchos features a tener menos, pero que sean buenos-.
 
 El objetivo consiste en reducir la cantidad de features. Para lograrlo, buscamos crear una nueva matriz B que reemplace a la M, para que tenga menos columnas -es decir, menos atributos-. Esto se conoce como **SVD truncado**.
 
-<img src = "../_src/assets/svd_2.jpg" height = 300>
+<img src = "/assets/svd_2.jpg" height = 300>
 
 El hiperparámetro que debemos establecer en este modelo es **r**, que representa cuántos features terminaremos teniendo.
 
@@ -212,21 +212,21 @@ Estas componentes pueden representar dimensiones no medibles/no medidas en nuest
 
 El hiperparámetro principal a establecer es la cantidad de variables con las que nos queremos quedar.
 
-<img src = "../_src/assets/PCA.png" height = 250>
+<img src = "/assets/PCA.png" height = 250>
 
-<img src = "../_src/assets/PCA2.png" height = 300>
+<img src = "/assets/PCA2.png" height = 300>
 
 Dejamos un breve [video](https://www.youtube.com/watch?v=HMOI_lkzW08&ab_channel=StatQuestwithJoshStarmer) explicativo de el algoritmo PCA.
 
 ## Sistemas de Recomendación
 
 Es muy común encontrar en diversas plataformas, recomendaciones de productos para consumo, en base al producto seleccionado:<br>
-<img src="../_src/assets/sistemas_recomendacion1.jpg" height="300"><br>
+<img src="/assets/sistemas_recomendacion1.jpg" height="300"><br>
 
 * Existen usuarios e ítems. Los usuarios prefieren algunos ítems por sobre otros.
 * Ejemplo: Usuarios de Netflix y Películas. De 1 a 5 estrellas.
 * El objetivo del sistema de recomendación es poblar la matriz de utilidad de una manera inteligente y bajo los requisitos que imponga cada entorno.<br>
-<img src="../_src/assets/sistemas_recomendacion2.jpg" height="200"><br>
+<img src="/assets/sistemas_recomendacion2.jpg" height="200"><br>
 * Por ejemplo, Netflix tiene 150 millones suscriptores y 5 mil películas. La matriz tiene 750 mil millones de espacios, de los cuales la mayoría están vacíos.
 * Cuando buscamos recomendar, interesa más recomendar ítems que van a gustar que aquellos que no van a gustar.
 * En algunos casos, interesa mostrar a los usuarios novedades. 
@@ -235,15 +235,15 @@ Es muy común encontrar en diversas plataformas, recomendaciones de productos pa
 
 ### Es posible diferenciar dos formas de hacer las recomendaciones:
 
-1) Pedir a los usuarios que puntúen los ítems.
+- Pedir a los usuarios que puntúen los ítems.
   * Los usuarios no suelen hacerlo
   * Si lo hacen, puede estar sesgado (gente que prefiere puntuar cosas que no le gustan a puntuar cosas que sí, etc.).
-2) Inferir a partir de acciones
+- Inferir a partir de acciones
   * Ejemplo: compra muchas cosas de camping → le gusta el camping, aire libre, etc.
   * ¿Qué pasa con las cosas que no le gustan?
 
-<img src="../_src/assets/sistemas_recomendacion3.jpg" height="300"><br>
-<img src="../_src/assets/sistemas_recomendacion4.jpg" height="300"><br>
+<img src="/assets/sistemas_recomendacion3.jpg" height="300"><br>
+<img src="/assets/sistemas_recomendacion4.jpg" height="300"><br>
 
 ### Filtro basado en contenido:
 
@@ -260,8 +260,8 @@ Es muy común encontrar en diversas plataformas, recomendaciones de productos pa
 
 1) Se debe llenar la matriz de utilidad, por ejemplo con técnicas de clusterización para encontrar grupos de usuarios similares. De esos usuarios similares, los que tengan algún faltante en un ítem, se lo completa con, por ejemplo, el promedio del cluster.
 2) Descomposición UV:<br>
-<img src="../_src/assets/sistemas_recomendacion5.jpg" height="150"><br>
-<img src="../_src/assets/sistemas_recomendacion6.jpg" height="300"><br>
+<img src="/assets/sistemas_recomendacion5.jpg" height="150"><br>
+<img src="/assets/sistemas_recomendacion6.jpg" height="300"><br>
 
 #### ¿Cómo encontrar los valores para U y V?
 
@@ -270,7 +270,7 @@ Es muy común encontrar en diversas plataformas, recomendaciones de productos pa
 * Se busca el mínimo de la función de costo. Es el problema que resuelve el descenso por gradiente.
 
 Un modelo híbrido, que utilice en paralelo ambos métodos, en ocasiones puede ser lo más adecuado<br>
-<img src="../_src/assets/sistemas_recomendacion7.jpg" height="400"><br>
+<img src="/assets/sistemas_recomendacion7.jpg" height="400"><br>
 
 - - -
 

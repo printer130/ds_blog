@@ -1,15 +1,13 @@
 ---
 title: "pipeline"
-description: "asd"
+description: "En esta última práctica, veremos cómo realizar la puesta en producción
+de un modelo de Machine Learning."
 pubDate: "Jul 08 2022"
 heroImage: "/placeholder-hero.jpg"
 url: "/ensamblers"
 ---
 
 ## **PIPELINE**
-
-En esta última práctica, veremos cómo realizar la puesta en producción
-de un modelo de Machine Learning.
 
 El pipeline es una forma de codificar y automatizar el workflow
 necesario para producir un modelo de Machine Learning. Los pipelines en
@@ -20,7 +18,7 @@ implementación de modelos.
 En definitiva, nos ayuda a automatizar un flujo de trabajo de Machine
 Learning.
 
-<img src = "/_astro/pipeline_2.hash.jpg" height = 350 alt="Pipeline (production)">
+<img src = "/assets/pipeline_2.jpg" height = 350 alt="Pipeline (production)">
 
 Uno de sus grandes beneficios y aplicabilidad reside en la
 escalabilidad. A su vez, destaca entre sus ventajas que simplifica la
@@ -105,7 +103,6 @@ from sklearn.linear_model import LogisticRegression
 from sklearn import svm
 from sklearn import tree
 ```
-:::
 
 ``` python
 # Creamos el primer pipeline
