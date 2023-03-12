@@ -86,7 +86,7 @@ Emplea una descomposición UV.
 Veamos, esquemáticamente, cuál es el fundamento de cada una de las
 estrategias:
 
-<img src="https://miro.medium.com/max/1064/1*mz9tzP1LjPBhmiWXeHyQkQ.png" height = 400>
+<img src="https://miro.medium.com/max/1064/1*mz9tzP1LjPBhmiWXeHyQkQ.png" height = 400 alt="Image">
 
 ------------------------------------------------------------------------
 
@@ -105,9 +105,9 @@ usuarios, es con la `similitud coseno`. Esta estrategia determina la
 similaridad según el ángulo del vector.
 
   --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  <img src="https://www.tyrrell4innovation.ca/wp-content/uploads/2021/06/rsz_jenny_du_miword.png" height = 450>
+  <img src="https://www.tyrrell4innovation.ca/wp-content/uploads/2021/06/rsz_jenny_du_miword.png" height=450 alt="image">
 
-  <img src = "/assets/RS.jpg" height = 300>
+  <img src="/assets/RS.jpg" height=300 alt="image">
   -------------------------------------------------------------------------------------------------------------------------- -----------------------------------------------------------
 
   --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -118,9 +118,9 @@ Esta medida deriva de la teoría de los conjuntos. Lo que hace es
 determinar similaridad a partir de la cantidad de elementos en común que
 tienen los cojuntos -por ejemplo, los usuarios-.
 
-<img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOlmfUP56ZbgwudKcjlXEc9os0Vwe7NO7wRA&usqp=CAU" height = 200>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOlmfUP56ZbgwudKcjlXEc9os0Vwe7NO7wRA&usqp=CAU" alt="image" height=200>
 
-<img src = "https://storage.googleapis.com/lds-media/images/jaccard_similarity.width-1200.jpg" height = 400>
+<img src="https://storage.googleapis.com/lds-media/images/jaccard_similarity.width-1200.jpg" alt="image" height=400>
 
 ------------------------------------------------------------------------
 
@@ -172,7 +172,7 @@ print(df1.shape)
 **Sí. Tenemos 24 millones de filas. Y es solo el primer archivo del
 dataset total, que está subdividido en 4 txt.**
 
-<img src = "https://c.tenor.com/Je27rnxSMbMAAAAM/suspicious-the-simpsons.gif">
+<img src = "https://c.tenor.com/Je27rnxSMbMAAAAM/suspicious-the-simpsons.gif" alt="image">
 
 ``` python
 df1.info()

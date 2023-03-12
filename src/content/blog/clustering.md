@@ -221,12 +221,12 @@ Dejamos un breve [video](https://www.youtube.com/watch?v=HMOI_lkzW08&ab_channel=
 ## Sistemas de Recomendación
 
 Es muy común encontrar en diversas plataformas, recomendaciones de productos para consumo, en base al producto seleccionado:<br>
-<img src="/assets/sistemas_recomendacion1.jpg" height="300"><br>
+<img src="/assets/sistemas_recomendacion1.jpg" height="300" alt="recomendacion"><br>
 
 * Existen usuarios e ítems. Los usuarios prefieren algunos ítems por sobre otros.
 * Ejemplo: Usuarios de Netflix y Películas. De 1 a 5 estrellas.
 * El objetivo del sistema de recomendación es poblar la matriz de utilidad de una manera inteligente y bajo los requisitos que imponga cada entorno.<br>
-<img src="/assets/sistemas_recomendacion2.jpg" height="200"><br>
+<img src="/assets/sistemas_recomendacion2.jpg" height="200" alt="recomendacion"><br>
 * Por ejemplo, Netflix tiene 150 millones suscriptores y 5 mil películas. La matriz tiene 750 mil millones de espacios, de los cuales la mayoría están vacíos.
 * Cuando buscamos recomendar, interesa más recomendar ítems que van a gustar que aquellos que no van a gustar.
 * En algunos casos, interesa mostrar a los usuarios novedades. 
@@ -242,8 +242,8 @@ Es muy común encontrar en diversas plataformas, recomendaciones de productos pa
   * Ejemplo: compra muchas cosas de camping → le gusta el camping, aire libre, etc.
   * ¿Qué pasa con las cosas que no le gustan?
 
-<img src="/assets/sistemas_recomendacion3.jpg" height="300"><br>
-<img src="/assets/sistemas_recomendacion4.jpg" height="300"><br>
+<img src="/assets/sistemas_recomendacion3.jpg" height="300" alt="recomendacion"><br>
+<img src="/assets/sistemas_recomendacion4.jpg" height="300" alt="recomendacion"><br>
 
 ### Filtro basado en contenido:
 
@@ -260,8 +260,8 @@ Es muy común encontrar en diversas plataformas, recomendaciones de productos pa
 
 1) Se debe llenar la matriz de utilidad, por ejemplo con técnicas de clusterización para encontrar grupos de usuarios similares. De esos usuarios similares, los que tengan algún faltante en un ítem, se lo completa con, por ejemplo, el promedio del cluster.
 2) Descomposición UV:<br>
-<img src="/assets/sistemas_recomendacion5.jpg" height="150"><br>
-<img src="/assets/sistemas_recomendacion6.jpg" height="300"><br>
+<img src="/assets/sistemas_recomendacion5.jpg" alt="recomendacion" height="150"><br>
+<img src="/assets/sistemas_recomendacion6.jpg" height="300" alt="recomendacion"><br>
 
 #### ¿Cómo encontrar los valores para U y V?
 
@@ -270,7 +270,7 @@ Es muy común encontrar en diversas plataformas, recomendaciones de productos pa
 * Se busca el mínimo de la función de costo. Es el problema que resuelve el descenso por gradiente.
 
 Un modelo híbrido, que utilice en paralelo ambos métodos, en ocasiones puede ser lo más adecuado<br>
-<img src="/assets/sistemas_recomendacion7.jpg" height="400"><br>
+<img src="/assets/sistemas_recomendacion7.jpg" height="400" alt="recomendacion"><br>
 
 - - -
 
