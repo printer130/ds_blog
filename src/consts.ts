@@ -8,6 +8,9 @@ export const RESOURCE = [
 	},
 	{
 		params: { resource: 'clustering' }
+	},
+	{
+		params: { resource: 'cross_validation' }
 	}
 ]
 
@@ -65,6 +68,21 @@ export const SLUGS = [
 	{
 		params: {
 			slug: 'clustering/visualization'
+		}
+	},
+	{
+		params: {
+			slug: 'cross_validation/cross_validation'
+		}
+	},
+	{
+		params: {
+			slug: 'cross_validation/gradient_descent'
+		}
+	},
+	{
+		params: {
+			slug: 'cross_validation/ridge_and_lasso'
 		}
 	}
 ]
