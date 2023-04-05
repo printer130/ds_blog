@@ -15,11 +15,11 @@ const { title } = Astro.props
 		/>
 	</head>
 	<body>
-		<Header title={SITE_TITLE} />
-		<main class='text-xl tracking-wide leading-relaxed font-light text-neutral-200'>
+		<main class='text-xl tracking-wide leading-relaxed text-slate-800 max-w-4xl w-full mt-24 mx-auto'>
+			<Header title={SITE_TITLE} />
 			{
 				title && <h1
-					class='pb-10 text-6xl text-neutral-200 font-semibold'
+					class='pb-10 text-6xl text-slate-800 font-semibold'
 				> {title}</h1>
 			}
 			<slot />

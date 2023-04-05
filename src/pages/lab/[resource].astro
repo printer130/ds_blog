@@ -2,22 +2,28 @@
 import LabPractices from '@components/LabPractices.astro'
 import LabPost from '@layouts/LabPost.astro'
 import { getCollection } from 'astro:content'
-import { RESOURCE } from 'src/consts'
 
 export async function getStaticPaths () {
-	return RESOURCE
+	const collection = await getCollection('lab')
+	return collection.map(item => {
+		const [res] = item.slug.split('/')
+		return {
+			params: {
+				resource: res
+			}
+		}
+	})
 }
 
 const { resource } = Astro.params
-if (!resource) return Astro.redirect('/404')
-
-const entry = await getCollection(resource as any)
-
+const entry = await getCollection('lab', (item) => {
+	return item.slug.includes(resource!)
+})
 ---
 
-<LabPost>
+<LabPost title='Titulo'>
 	<h1
-		class='text-4xl font-bold text-neutral-400'>
+		class='text-4xl font-bold text-slate-800 mb-12'>
 	Practicas:
 	</h1>
 	<ul>

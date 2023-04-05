@@ -51,5 +51,6 @@ const ensamblersCollection = defineCollection({
 export const collections = {
 	blog: blogCollection,
 	lab: labCollection,
-	ensamblers: ensamblersCollection
+	ensamblers: ensamblersCollection,
+	'lab/basics': {}
 }

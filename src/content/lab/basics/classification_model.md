@@ -4,7 +4,7 @@ description: "En esta práctica, veremos cómo evaluar un modelo de clasificaci�
 las diversas métricas vistas en la parte teórica."
 pubDate: "Jul 08 2022"
 heroImage: "/placeholder-hero.jpg"
-url: "/basics/classification_model"
+slug: 'basics/classification_model'
 ---
 
 # **Evaluación de modelos de clasificación**
