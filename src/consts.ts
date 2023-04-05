@@ -11,6 +11,15 @@ export const RESOURCE = [
 	},
 	{
 		params: { resource: 'cross_validation' }
+	},
+	{
+		params: { resource: 'time_series' }
+	},
+	{
+		params: { resource: 'basics' }
+	},
+	{
+		params: { resource: 'classification_models' }
 	}
 ]
 
@@ -83,6 +92,36 @@ export const SLUGS = [
 	{
 		params: {
 			slug: 'cross_validation/ridge_and_lasso'
+		}
+	},
+	{
+		params: {
+			slug: 'time_series/time_series_1'
+		}
+	},
+	{
+		params: {
+			slug: 'time_series/time_series_2'
+		}
+	},
+	{
+		params: {
+			slug: 'time_series/time_series_3'
+		}
+	},
+	{
+		params: {
+			slug: 'basics/classification_model'
+		}
+	},
+	{
+		params: {
+			slug: 'basics/classification_model'
+		}
+	},
+	{
+		params: {
+			slug: 'basics/underfitting_overfitting'
 		}
 	}
 ]
