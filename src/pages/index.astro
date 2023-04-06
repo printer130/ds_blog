@@ -3,7 +3,9 @@ import BaseHead from '@components/BaseHead.astro'
 import Header from '@components/Header.astro'
 import Footer from '@components/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
-import ListOfBlogs from '@components/ListOfBlogs.astro';
+import ListOfBlogs from '@components/ListOfBlogs.astro'
+import SearchYo from '@components/SearchYo.astro'
+import SearchC from '@components/SearchC'
 ---
 
 <!DOCTYPE html>
@@ -17,6 +19,8 @@ import ListOfBlogs from '@components/ListOfBlogs.astro';
 	<body>
 		<main class='pt-28 max-w-4xl w-full mx-auto'>
 			<Header title={SITE_TITLE} />
+			<!-- <SearchYo /> -->
+			<!-- <SearchC client:only /> -->
 			<!-- <h1
 				class='pb-10 text-6xl text-neutral-200 font-semibold'
 			> Blog</h1> -->

@@ -1,10 +1,38 @@
 ---
-title: "MODELOS DE CLASIFICACIÓN"
+title: "Modelos de clasificación"
 description: "Árboles de decisión | Impureza Gini | Entropía | Prune tree | Vecinos más cercanos | Support Vector Machine"
 pubDate: "Jul 08 2022"
 heroImage: "/placeholder-hero.jpg"
 url: "/classification_models"
 ---
+
+### Contenido
+
+- - -
+
+<ul>
+	<li>
+		<a href='#árboles-de-decisión' target='_self'>Árboles de decisión</a>
+	</li>
+	<li>
+		<a href='#impureza-gini' target='_self'>Impureza Gini</a>
+	</li>
+	<li>
+		<a href='#entropía' target='_self'>Entropía</a>
+	</li>
+	<li>
+		<a href='#prune-tree' target='_self'>Prune tree</a>
+	</li>
+	<li>
+		<a href='#vecinos-más-cercanos' target='_self'>Vecinos más cercanos</a>
+	</li>
+	<li>
+		<a href='#support-vector-machine' target='_self'>Support Vector Machine</a>
+	</li>
+</ul>
+
+- - -
+
 
 En los problemas de clasificación utilizamos algoritmos de ML que nos permiten diferenciar si un conjunto de datos pertenece a una determinada clase o a otra/s. El resultado de nuestra función $f(X)=y$ es una etiqueta de categoría, por lo que el algoritmo debe discernir si ciertos valores/atributos pertenecen a cierta categoría o no. 
 
@@ -22,7 +50,7 @@ El fundamento de los dos modelos que veremos en esta clase está bien diferencia
 
 ---
 
-## **`Árboles de decisión`**
+## **Árboles de decisión**
 
 Un árbol de decisión es una estructura compuesta de nodos, ramas y hojas. Dada una nueva instancia, esta es clasificada recorriendo el árbol de decisión: en cada nodo, el árbol hace una pregunta a la instancia sobre alguno de sus atributos. Según la respuesta a esta pregunta, deriva a la instancia por alguna de sus ramas, donde puede ocurrir que aparezca otro nodo -otra pregunta- o que termine en una hoja. La hoja contiene la etiqueta que le corresponde a esa instancia, finalizando su recorrido en el árbol.
 
@@ -111,7 +139,7 @@ Desventajas:
 
 ---
 
-## **`Vecinos más cercanos`**
+## **Vecinos más cercanos**
 
 Ahora veremos otro de los algoritmos predictivos de clasificación: *K-Nearest-Neighbor*.
 

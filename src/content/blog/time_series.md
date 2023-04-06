@@ -6,7 +6,31 @@ heroImage: "/placeholder-hero.jpg"
 url: "/ensamblers"
 ---
 
-# **Series de tiempo**
+### Contenido
+
+- - -
+
+<ul>
+	<li>
+		<a href='#series-de-tiempo' target='_self'>Series de tiempo</a>
+	</li>
+	<li>
+		<a href='#frecuencia-de-muestreo-y-ventanta-temporal' target='_self'>Frecuencia de muestreo y ventanta temporal</a>
+  </li>
+  <li>
+    <a href='#tipos-de-series-de-tiempo' target='_self'>Tipos de series de tiempo</a>
+  </li>
+  <li>
+    <a href='#componentes-de-las-series-de-tiempo' target='_self'>Componentes de las series de tiempo</a>
+  </li>
+  <li>
+    <a href='#forecasting' target='_self'>Forecasting</a>
+  </li>
+</ul>
+
+- - -
+
+## **Series de tiempo**
 
 Una serie de tiempo es una secuencia de valores ordenados en el tiempo, siguiendo a una unidad de observación. En otras palabras, un conjunto de valores tomados en un intervalo temporal determinado, considerando el mismo objeto de estudio. 
 
@@ -64,7 +88,7 @@ Veamos dos series bien diferentes entre sí respecto a su comportamiento.
 
 |Temperatura de Bs As|Cotización histórica del Bitcoin
 |-|-|
-|<img src = "../_src/assets/serie_tiemp.jpg" height = 300>|<img src = "../_src/assets/serie_tempo_2.jpg" height = 300>|
+|<img src = "/assets/serie_tiemp.jpg" height = 300>|<img src = "/assets/serie_tempo_2.jpg" height = 300>|
 
 Como primer acercamiento, podemos apreciar que la serie que mide la temperatura en Buenos Aires tiene más **estructura**. Por su parte, la serie de la derecha, que mide la cotización del Bitcoin, presenta un mayor grado de aleatoriedad.
 
@@ -119,14 +143,11 @@ Modelos de Machine Mearning :
 
 Cerramos la parte teórica diciendo que: *la calidad de la predicción de un modelo dependerá, en gran parte, de las características del sistema y la predictibilidad de su comportamiento*.
 
-- - -
-
+<!-- 
 Ya es momento de pasar a la práctica y empezar a aplicar nuestras primeras técnicas de forecasting. La práctica del día de hoy se dividirá en tres partes:
 
 1. Análisis de series de tiempo
 
 2. Forecasting con ARIMA
 
-3. One-step, Multi-step y Prophet
-
-<img src = "/assets/feo.jpg" height = 250>
+3. One-step, Multi-step y Prophet -->

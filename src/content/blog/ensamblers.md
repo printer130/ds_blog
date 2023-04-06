@@ -6,6 +6,45 @@ heroImage: "/placeholder-hero.jpg"
 url: "/ensamblers"
 ---
 
+### Contenido
+
+- - -
+
+<ul>
+	<li>
+		<a href='#estimación-de-grandes-números' target='_self'>Estimación de grandes números</a>
+	</li>
+	<li>
+		<a href='#ensambles' target='_self'>Ensambles</a>
+  <ul>
+    </li>
+    <li>
+      <a href='#bagging' target='_self'>Bagging</a>
+    </li>
+    <li>
+      <a href='#random-forest' target='_self'>Random Forest</a>
+    </li>
+    <li>
+      <a href='#boosting' target='_self'>Boosting</a>
+    </li>
+    <li>
+      <a href='#xg-boost-extreme-gradient-boosting' target='_self'>XG Boost, Extreme Gradient Boosting</a>
+    </li>
+    <li>
+      <a href='#bagging-vs-boosting' target='_self'>Bagging vs. Boosting
+  </a>
+    </li>
+    <li>
+      <a href='#stacking' target='_self'>Stacking</a>
+    </li>
+    <li>
+      <a href='#voiting-classifier' target='_self'>Voiting Classifier</a>
+    </li>
+  </ul>
+</ul>
+
+- - -
+
 ## Estimación de grandes números
 
 Con frecuencia nos encontramos con la necesidad de hacer una estimación, aún contando con poca información concreta del problema. 
@@ -47,7 +86,7 @@ Los modelos pueden ser diferentes entre sí por una variedad de razones:
 
 <img src="/assets/ensambles.jpg" height="200" alt="ensambles"><br>
 
-## Ensambles - Bagging
+## Bagging
 
 El Bagging es una de las técnicas de construcción de conjuntos que también se conoce como Agregación Bootstrap (Muestreo con reemplazo de las instancias).
 1) Dada una muestra de datos, se extraen varias muestras, <b>bootstrapped</b>
@@ -59,7 +98,7 @@ El Bagging es una de las técnicas de construcción de conjuntos que también se
 
 <img src="/assets/ensambles_bagging2.jpg" height="250" alt="ensambles_bagging"><br>
 
-## Ensambles – Random Forest
+## Random Forest
 
 Uno de los problemas que hay con el árbol de decisión es que si se le da la profundidad suficiente, el árbol tiende a “memorizar” las soluciones en vez de generalizar el aprendizaje, es decir, hace overfitting.
 Para evitar esto, se crean muchos árboles para que trabajen en conjunto, la salida de cada uno se contará como “un voto” y la opción más votada será la respuesta del “Bosque Aleatorio”.
@@ -87,7 +126,7 @@ Enlaces recomendados:
 * https://becominghuman.ai/ensemble-learning-bagging-and-boosting-d20f38be9b1e
 * https://www.aprendemachinelearning.com/random-forest-el-poder-del-ensamble/
 
-## Ensambles – Boosting
+## Boosting
 
 Se entrena una secuencia de modelos donde se da más peso a los ejemplos que fueron clasificados erróneamente por iteraciones anteriores. 
 Al igual que con bagging, las tareas de clasificación se resuelven con una mayoría ponderada de votos, y las tareas de regresión se resuelven con una suma ponderada para producir la predicción final.
@@ -114,7 +153,7 @@ Finalmente, se ilustra el clasificador fuerte que resulta de crear un ensamble c
 Al clasificar un nuevo ejemplo, le preguntamos a cada uno de los tres clasificadores débiles su opinión. Si la mayoría opina que el nuevo ejemplo es positivo, pues entonces la decisión del clasificador fuerte será que es un ejemplo positivo. <br>
 <img src="/assets/ensambles_boosting7.jpg" height="300" alt="ensambles_boosting7"><br>
 
-### Ensambles – XG Boost, Extreme Gradient Boosting
+### XG Boost, Extreme Gradient Boosting
 
 * XGBoost es un algoritmo que recientemente ha dominado el aprendizaje automático y sobre todo las competiciones de Kaggle (para datos estructurados). 
 * XGBoost es una implementación de árboles de decisión potenciados por el algoritmo de descenso por gradiente, diseñado para aumentar la velocidad y mejorar el rendimiento.
@@ -133,7 +172,7 @@ Ejemplos: https://github.com/tqchen/xgboost/tree/master/demo/guide-python<br>
 
 <img src="/assets/ensambles_boosting8.jpg" height="200" alt="ensambles_boosting8"><br>
 
-## Ensambles – Bagging vs. Boosting
+## Bagging vs. Boosting
 
 | Bagging | Boosting  |
 | :------ | -------:  |
@@ -148,7 +187,7 @@ Enlaces recomendados:
 * https://towardsdatascience.com/understanding-random-forest-58381e0602d2
 * https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205
 
-## Ensambles – Stacking
+## Stacking
 
 Se crea una función de ensamble que combina los resultados de varios modelos base, en uno sólo. 
 Los modelos de nivel de base se entrenan con un conjunto de datos completo, y luego sus salidas se utilizan como características de entrada para entrenar una función de ensamble. 
@@ -156,7 +195,7 @@ Normalmente, la función de ensamble es una simple combinación lineal de las pu
 
 <img src="/assets/ensambles_stacking.jpg" height="500" alt="ensambles_stacking"><br>
 
-## Ensambles - Voiting Classifier
+## Voiting Classifier
 
 Utilizando las predicciones de múltiples clasificadores, se hace predicciones basadas en el más frecuente. 
 El hiperparámetro “estimadores” crea una lista para los objetos clasificadores asignándoles nombres. 
@@ -165,8 +204,6 @@ Si se establece en estricto, el clasificador de votaciones emitirá juicios basa
 Por ejemplo, se puede configurar en suave cuando se usa un número par de clasificadores debido a su enfoque ponderado y configurarlo en difícil cuando se usa un número impar de clasificadores debido a su enfoque de “mayoría lleva el voto”.
 
 <img src="/assets/ensambles_voiting.jpg" height="300" alt="ensambles_stacking"><br>
-
+<!-- 
 En la práctica, veremos modelos de ensamble y las técnicas para generarlos. Finalmente, cerraremos con la puesta en producción/pipeline de Machine Learning.
-
-# **Los notebooks se dividirán de la siguiente manera**:
-
+-->

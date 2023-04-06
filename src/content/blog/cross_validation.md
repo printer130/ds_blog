@@ -6,6 +6,33 @@ heroImage: "/placeholder-hero.jpg"
 url: "/ensamblers"
 ---
 
+### Contenido
+
+- - -
+
+<ul>
+	<li>
+		<a href='#validación-cruzada' target='_self'>Validación Cruzada</a>
+	</li>
+	<li>
+		<a href='#k-fold-cross-validation' target='_self'>K-fold Cross Validation</a>
+	</li>
+	<li>
+		<a href='#validación-cruzada-aleatoria' target='_self'>Validación Cruzada Aleatoria</a>
+	</li>
+	<li>
+		<a href='#curvas-de-validación' target='_self'>Curvas de Validación</a>
+	</li>
+	<li>
+		<a href='#optimización-de-hiperparámetros' target='_self'>Optimización de Hiperparámetros</a>
+	</li>
+	<li>
+		<a href='#random-search' target='_self'>Random Search</a>
+	</li>
+</ul>
+
+- - -
+
 ## Validación Cruzada
 
 Una forma práctica de evaluar si nuestro modelo aprendió o no de nuestro datos es observar su desempeño frente a nuevas instancias.
@@ -144,12 +171,13 @@ Grid Search: Plantea opciones y explora todas las combinaciones
 Random Search: explora opciones y combinaciones al azar.
 5) Crear un modelo lo antes posible, en cualquier caso, un modelo fallido muchas veces da tanta información sobre el proceso real como uno válido
 
-Los contenidos de la clase se agruparán en los siguientes tres notebooks:
-
-## `Práctica`
+<!-- Los contenidos de la clase se agruparán en los siguientes tres notebooks:
+ -->
+<!-- ## `Práctica`
 
 + Práctica_01: validación cruzada. Dev/hold-out. Optimización de hiperparámetros
 
 + Práctica_02: regularización Ridge y Lasso
 
 + Práctica_03: descenso de gradiente
+ -->

@@ -6,6 +6,51 @@ heroImage: "/placeholder-hero.jpg"
 url: "/ensamblers"
 ---
 
+### Contenido
+
+- - -
+
+<ul>
+	<li>
+		<a href='#clustering' target='_self'>Clustering</a>
+	</li>
+  <ol>
+    <li>
+      <a href='#k-means' target='_self'>K-means</a>
+    </li>
+    <li>
+      <a href='#dbscan' target='_self'>DBSCAN</a>
+    </li>
+  </ol>
+  <li>
+		<a href='#métricas-de-evaluación' target='_self'>Métricas de evaluación</a>
+	</li>
+  <ul>
+    <li>
+      <a href='#elbow' target='_self'>Elbow</a>
+    </li>
+    <li>
+      <a href='#silhouette' target='_self'>Silhouette</a>
+    </li>
+  </ul>
+	<li>
+		<a href='#reducción-de-dimensionalidad' target='_self'>Reducción de dimensionalidad</a>
+	</li>
+  <ul>
+    <li>
+      <a href='#svd' target='_self'>Singular Value Decomposition</a>
+    </li>
+    <li>
+      <a href='#pca' target='_self'>Principal Component Analysis</a>
+    </li>
+  </ul>
+	<li>
+		<a href='#sistemas-de-recomendación' target='_self'>Sistemas de Recomendación</a>
+	</li>
+</ul>
+
+- - -
+
 # **Aprendizaje no supervisado**
 
 En esta etapa cambiaremos el enfoque con el que veníamos trabajando hasta el momento. `No supervisado` significa que ya no contamos con las etiquetas asociadas a nuestros datos. Es decir que las instancias no tienen asignadas una clase o un valor de salida. 
@@ -22,7 +67,7 @@ Veremos dos técnicas de aprendizaje no supervisado. A saber:
 
 - - -
 
-## ***Clustering***
+## **Clustering**
 
 Técnica para agrupar datos de acuerdo a cuánto se parecen entre sí. Dado un set de datos, nuestra meta será encontrar grupos -clusters- en los cuales las instancias pertenecientes sean parecidas -estén cerca-.
 
@@ -272,7 +317,7 @@ Un modelo híbrido, que utilice en paralelo ambos métodos, en ocasiones puede s
 
 - - -
 
-## Práctica guiada
+<!-- ## Práctica guiada
 
 La práctica de la clase de hoy se conforma de la siguiente manera:
 
@@ -284,10 +329,8 @@ La práctica de la clase de hoy se conforma de la siguiente manera:
 
 + Práctica_04: Sistemas de Recomendación
 
-Para realizar estas prácticas, en la carpeta Datasets poseen un .zip que contiene los archivos a utilizar.
+Para realizar estas prácticas, en la carpeta Datasets poseen un .zip que contiene los archivos a utilizar. -->
 
 - - -
 
-**La clase que viene volveremos al aprendizaje supervisado.**
-
-<img src = "https://www.pintzap.com/storage/img/memegenerator/templates/homer-simpson-yuju.jpg" height = 200>
+<!-- **La clase que viene volveremos al aprendizaje supervisado.** -->

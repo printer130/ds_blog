@@ -1,11 +1,13 @@
 ---
 import HeaderLink from './HeaderLink.astro'
-import Search from './Search.astro';
+import Search from './Search.astro'
+import SearchYo from './SearchYo';
+
 ---
 
 <header class='fixed top-0 max-w-4xl w-full bg-[#f6f4f4] '>
 	<nav class='flex w-full justify-between '>
 		<HeaderLink href='/'>Home</HeaderLink>
-		<Search />
+		<SearchYo client:only />
 	</nav>
 </header>

@@ -1,24 +1,38 @@
 ---
-title: "Basicos"
-description: "Balanceo | Evaluación de modelos | Teorema de Bayes | Overfitting y underfitting | Sesgo y varianza | Parametros/hiperparámetros"
+title: "Basicos Machine Learning"
+description: "Balanceo | Evaluación de modelos | Teorema de Bayes | Overfitting y underfitting | Sesgo y varianza | Parámetros/hiperparámetros"
 pubDate: "Jul 08 2022"
 heroImage: "/placeholder-hero.jpg"
 url: "/basics"
 ---
 
-La siguiente clase versará sobre los siguientes ejes: 
+### Contenido
 
-+ `Balanceo de dataset`
+- - -
 
-+ `Evaluación de modelos`
-
-+ `Teorema de Bayes`
-
-+ `Overfitting y underfitting`
-
-+ `Sesgo y varianza`
-
-+ `Parametros/hiperparámetros`
+<ul>
+	<li>
+		<a href='#balanceo-de-dataset' target='_self'>Balanceo de dataset</a>
+	</li>
+	<li>
+		<a href='#evaluación-de-modelos' target='_self'>Evaluación de modelos</a>
+	</li>
+	<li>
+		<a href='#teorema-de-bayes' target='_self'>Teorema de Bayes</a>
+	</li>
+	<li>
+		<a href='#naive-bayes' target='_self'>Naive Bayes</a>
+	</li>
+	<li>
+		<a href='#overfitting-y-underfitting' target='_self'>Overfitting y underfitting</a>
+	</li>
+	<li>
+		<a href='#sesgo-y-varianza' target='_self'>Sesgo y varianza</a>
+	</li>
+	<li>
+		<a href='#parámetros-e-hiperparámetros' target='_self'>Parámetros e hiperparámetros</a>
+	</li>
+</ul>
 
 - - -
 
@@ -37,7 +51,7 @@ Pero bajo ciertas problemáticas, suelen haber datasets muy desbalanceados:
 * Diagnóstico médico
 * Falla en cadena de producción
 
-<img src="/assets/falla_cadena_produccion.jpg" height="250"><br>
+<img src="/assets/falla_cadena_produccion.jpg" height="250" alt="falla_cadena_produccion"><br>
 
 Ante un dataset desbalanceado, hay que tener cuidado especialmente con:
 * Cómo se entrenan los modelos
@@ -88,7 +102,7 @@ Acá realizaremos un sobremuestreo, es decir, incorporaremos más datos de la cl
 
 Acá realizamos un submestreo de la clase mayoritaria. Es decir, eliminamos registros de nuestro dataset que contengan como etiqueta o variable de salida aquella clase hegemónica o predominante.
 
-# **Evaluación de modelos**
+## **Evaluación de modelos**
 
 Comencemos por el primero de ellos. En todo nuestro flujo de trabajo, donde estaremos creando modelos, entrenándolos y utlizándolos para predecir, pasaremos posteriormente a la etapa de evaluación. Es decir, poder determinar su calidad o performance.
 
@@ -100,7 +114,7 @@ Una correcta evaluación debe suplir las siguientes aristas:
 
 3. Corroborar su poder de generalización. Es decir, que logre un nivel de abstracción suficiente como para generalizar por fuera de los datos que el modelo ya ha visto
 
-## ***Evaluación de modelos de clasificación***
+## **Evaluación de modelos de clasificación**
 
 Para evaluar la performance de un modelo de clasificación -como, por ejemplo, un árbol de decisión o un K-NN- podemos emplear diversas métricas.
 
@@ -207,7 +221,7 @@ Entonces, ¿Cuál es la probabilidad de que una persona tenga la enfermedad si e
 
 <img src="/assets/matriz_confusion3.jpg" height="200"><br>
 
-## Teorema de Bayes
+## **Teorema de Bayes**
 
 ¿Cuál es la probabilidad de que una persona tenga la enfermedad si el examen dio positivo? 
 Usamos el Teorema de Bayes:
@@ -235,7 +249,7 @@ Para obtener uno dado el otro, necesitamos el Teorema de Bayes:
 * Con la probabilidad total a partir de las probabilidades del suceso A (probabilidad de que llueva o de que haga buen tiempo) deducimos la probabilidad del suceso B  (que ocurra un accidente).
 * Con el teorema de Bayes, a partir de que ha ocurrido el suceso B, deducimos las probabilidades del suceso A.
 
-## Naive Bayes
+## **Naive Bayes**
 
 Este modelo está basado en el Teorema de Bayes con un supuesto de independencia entre los predictores. Naive Bayes supone que la presencia de una característica particular en una clase no está relacionada con la presencia de ninguna otra característica.
 Por ejemplo, una fruta puede considerarse una manzana si es roja, redonda y de aprox. 3” de diámetro. Incluso si estas características dependen unas de otras o de la existencia de otras características, todas estas propiedades contribuyen independientemente a la probabilidad de que esta fruta sea una manzana y por eso se conoce como "ingenua".
@@ -345,8 +359,7 @@ Tenemos cuatro combinaciones posibles con estos estimadores:
 + Bajo sesgo y baja varianza: escenario ideal
 
 - - -
-
-## **Parámetros/hiperparámetros**
+## **Parámetros e hiperparámetros**
 
 Finalmente, ¡llegamos al último tema del día!
 
