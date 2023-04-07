@@ -6,9 +6,9 @@ heroImage: "/placeholder-hero.jpg"
 url: "/ensamblers"
 ---
 
-### Contenido
-
 - - -
+
+#### Contenido
 
 <ul>
 	<li>

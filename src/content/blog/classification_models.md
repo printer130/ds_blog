@@ -6,9 +6,9 @@ heroImage: "/placeholder-hero.jpg"
 url: "/classification_models"
 ---
 
-### Contenido
-
 - - -
+
+#### Contenido
 
 <ul>
 	<li>

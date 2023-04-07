@@ -10,9 +10,11 @@ const posts = (await getCollection('blog')).sort(
 
 <section>
 	<main>
-		<h2 class='title text-4xl py-4 text-slate-800 font-bold'>Data Science</h2>
-		<section class='my-10'>
-			<ul>
+		<h2 class='text-4xl pt-8 my-0 text-slate-800 font-bold px-4'>
+			Data Science
+		</h2>
+		<section>
+			<ul class='px-4'>
 				{
 					posts.map((post) => {
 						const { slug, data } = post

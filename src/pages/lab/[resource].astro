@@ -22,11 +22,7 @@ const entry = await getCollection('lab', (item) => {
 ---
 
 <LabPost title={resource}>
-	<h2
-		class='text-2xl font-bold text-slate-800 mb-12'>
-	Practicas:
-	</h2>
-	<ul>
+	<ul class='px-0 mx-0'>
 		{
 			entry.map(({ slug, data }) => {
 				return <LabPractices

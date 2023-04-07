@@ -6,9 +6,9 @@ heroImage: "/placeholder-hero.jpg"
 url: "/ensamblers"
 ---
 
-### Contenido
-
 - - -
+
+#### Contenido
 
 <ul>
 	<li>
@@ -51,7 +51,7 @@ url: "/ensamblers"
 
 - - -
 
-# **Aprendizaje no supervisado**
+## **Aprendizaje no supervisado**
 
 `No supervisado` significa que ya no contamos con las etiquetas asociadas a nuestros datos. Es decir que las instancias no tienen asignadas una clase o un valor de salida. 
 
