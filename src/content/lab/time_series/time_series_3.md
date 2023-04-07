@@ -1,5 +1,5 @@
 ---
-title: "Series de tiempo 3"
+title: "Serie de tiempo 3"
 description: "En esta última práctica guiada de series de tiempo trabajaremos con el
 dataset de temperaturas de la Ciudad Autónoma de Buenos Aires -ya
 transformado a partir del análisis de la Práctica_01-."
@@ -8,15 +8,30 @@ heroImage: "/placeholder-hero.jpg"
 url: "/time_series_3"
 ---
 
-Dividiremos el noteebok en 3 apartados:
+---
 
-1.  One-step
+#### Contenido:
 
-2.  Multi-step
+<ul>
+  <li>
+    <a href='#one-step' target='_self'>
+      One-step
+    </a>
+  </li>
+  <li>
+    <a href='#multi-step' target='_self'>
+      Multi-step
+    </a>
+  </li>
+  <li>
+    <a href='#prophet' target='_self'>
+      Prophet
+    </a>
+  </li>
+</ul>
 
-3.  Prophet
 
-## **1. One-step**
+## One-step
 
 La principal adaptación que se necesita hacer para aplicar modelos de
 Machine Learning a problemas de forecasting -proceso que consiste en
@@ -214,7 +229,7 @@ print('Error en Test:',np.sqrt(MSE))
     Error en Train: 2.0092702724200717
     Error en Test: 3.0748113205772483
 
-## **2. Multi-step**
+## Multi-step
 
 Cuando se trabaja con series temporales, raramente se quiere predecir
 solo el siguiente elemento -step- de la serie (t+1), sino todo un
@@ -454,7 +469,7 @@ print(f"Error de test (RMSE) : {(error_mse)}")
 
     Error de test (RMSE) : 3.890319465636852
 
-## **3. Prophet** {#3-prophet}
+## Prophet
 
 Prophet utiliza un modelo de regresión aditiva para descomponer la serie
 temporal en varios componentes: la tendencia, la estacionalidad, los

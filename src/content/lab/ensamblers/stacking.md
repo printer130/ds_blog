@@ -1,19 +1,12 @@
 ---
-title: "stacking"
+title: "Stacking"
 description: "asd"
 pubDate: "Jul 08 2022"
 heroImage: "/placeholder-hero.jpg"
 url: "/ensamblers"
 ---
 
-## **MÉTODOS DE ENSAMBLE**
-
-Continuaremos con las técnicas de ensamble. En esta práctica veremos
-**stacking**.
-
-------------------------------------------------------------------------
-
-## **STACKING**
+---
 
 El método Stacking (Stacked Generalization o Meta Ensamblado) implica
 combinar las predicciones de distintos modelos de Machine Learning con

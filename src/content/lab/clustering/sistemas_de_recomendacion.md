@@ -1,5 +1,5 @@
 ---
-title: "SISTEMAS DE RECOMENDACIÓN"
+title: "Sistemas de Recomendación"
 description: "En esta práctica abordaremos los aspectos centrales inherentes a los
 sistemas de recomendación."
 pubDate: "Jul 08 2022"
@@ -7,7 +7,7 @@ heroImage: "/placeholder-hero.jpg"
 url: "/ensamblers/sistemas_de_recomendacion"
 ---
 
-## **SISTEMAS DE RECOMENDACIÓN**
+---
 
 En esencia, un sistema de recomendación (en adelante, \"RS\") es un
 algoritmo que predice la preferencia de los usuarios ante un cierto

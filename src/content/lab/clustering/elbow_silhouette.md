@@ -1,5 +1,5 @@
 ---
-title: "El bow y silhouette"
+title: "El bow y silhouette (Aprendisaje no supervisado)"
 description: "En esta práctica veremos las métricas `elbow` y `silhouette`. Ya sobre
 el final, veremos un ejemplo de aplicabilidad de K-means en compresión
 de imágenes."
@@ -8,9 +8,9 @@ heroImage: "/placeholder-hero.jpg"
 url: "/clustering/elbow_silhouette"
 ---
 
-## **APRENDIZAJE NO SUPERVISADO**
+---
 
-### **Métricas de evaluación de clustering**
+### Métricas de evaluación de clustering
 
 Para empezar, nuevamente generamos tres datasets sintéticos.
 

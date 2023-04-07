@@ -1,19 +1,12 @@
 ---
-title: "boosting"
+title: "Boosting"
 description: "asd"
 pubDate: "Jul 08 2022"
 heroImage: "/placeholder-hero.jpg"
 url: "/ensamblers"
 ---
 
-## **MÉTODOS DE ENSAMBLE**
-
-Continuaremos con las técnicas de ensamble. En esta práctica veremos
-**boosting**.
-
-------------------------------------------------------------------------
-
-## **BOOSTING**
+----
 
 Al igual que en la técnica *bagging*, aquí la predicción final se hace
 votando. La diferencia radica en cómo llegamos a cada modelo que compone

@@ -1,12 +1,12 @@
 ---
-title: "Visualización"
+title: "Reducción de dimensionalidad para Visualización"
 description: "Reducción de dimensionalidad"
 pubDate: "Jul 08 2022"
 heroImage: "/placeholder-hero.jpg"
 url: "/ensamblers"
 ---
 
-## Reducción de dimensionalidad para Visualización
+---
 
 ``` python
 # libraries

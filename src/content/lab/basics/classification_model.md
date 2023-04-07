@@ -7,6 +7,7 @@ heroImage: "/placeholder-hero.jpg"
 slug: 'basics/classification_model'
 ---
 
+---
 
 Trabajaremos con uno de los datasets provisto por Scikit-learn referente
 a Iris.

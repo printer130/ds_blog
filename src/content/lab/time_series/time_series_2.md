@@ -1,5 +1,5 @@
 ---
-title: "Series de tiempo 2"
+title: "Serie de tiempo 2"
 description: "En esta segunda parte ya instanciaremos nuestro primer modelo predictivo
 de series de tiempo. Este notebook aplicará un modelo ARIMA."
 pubDate: "Jul 22 2022"
@@ -7,9 +7,7 @@ heroImage: "/placeholder-hero.jpg"
 url: "/time_series_2"
 ---
 
-## **Series de tiempo**
-
-*Parte 2*
+---
 
 Utilizaremos un dataset de ventas mensuales de champagne entre 1964 y
 1972.

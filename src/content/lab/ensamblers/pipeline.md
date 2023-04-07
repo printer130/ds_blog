@@ -1,13 +1,11 @@
 ---
-title: "pipeline"
+title: "Pipeline"
 description: "En esta última práctica, veremos cómo realizar la puesta en producción
 de un modelo de Machine Learning."
 pubDate: "Jul 08 2022"
 heroImage: "/placeholder-hero.jpg"
 url: "/ensamblers"
 ---
-
-## **PIPELINE**
 
 El pipeline es una forma de codificar y automatizar el workflow
 necesario para producir un modelo de Machine Learning. Los pipelines en

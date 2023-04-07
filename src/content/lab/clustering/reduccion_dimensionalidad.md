@@ -1,5 +1,5 @@
 ---
-title: "Reducción de dimensionalidad"
+title: "Reducción de dimensionalidad (Aprendisaje no supervisado)"
 description: "En este notebook veremos, dentro de la técnica de
 `reducción de dimensionalidad`, los dos algoritmos estudiados en la
 parte teórica: SVD y PCA."
@@ -8,9 +8,9 @@ heroImage: "/placeholder-hero.jpg"
 url: "/clustering/reduccion_dimensionalidad"
 ---
 
-## **APRENDIZAJE NO SUPERVISADO**
+---
 
-### **SVD**
+### SVD
 
 **Compresión de imagen**
 

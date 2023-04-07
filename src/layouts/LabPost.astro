@@ -20,7 +20,7 @@ const { title } = Astro.props
 			<Header title={SITE_TITLE} />
 			{
 				title && <h1
-					class='uppercase pb-4 text-4xl text-slate-800 font-black'
+					class='pb-4 text-2xl font-semibold uppercase sm:text-4xl text-slate-800 sm:font-black'
 				> {title}</h1>
 			}
 			<slot />

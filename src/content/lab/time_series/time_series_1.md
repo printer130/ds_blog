@@ -1,5 +1,5 @@
 ---
-title: "Series de tiempo 1"
+title: "Serie de tiempo 1"
 description: "En esta clase abordaremos modelos con un grado de complejidad mayor a
 los que veníamos trabajando. Hasta ahora, entrenamos y evaluamos cada
 modelo individualmente. Pero podríamos combinarlos, para así obtener un
@@ -9,7 +9,7 @@ heroImage: "/placeholder-hero.jpg"
 url: "/time_series"
 ---
 
-## **Series de tiempo**
+---
 
 Para esta práctica trabajaremos con un dataset de temperaturas de la
 Ciudad Autónoma de Buenos Aires.

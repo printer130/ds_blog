@@ -8,7 +8,7 @@ heroImage: "/placeholder-hero.jpg"
 url: "/ensamblers"
 ---
 
-## **Regularización Ridge y Lasso**
+---
 
 Para encontrar la mejor función lineal que se ajuste a nuestros datos,
 se debe buscar la combinación de $m$ (pendiente) y $b$ (ordenada al

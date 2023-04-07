@@ -5,14 +5,7 @@ pubDate: "Jul 22 2022"
 heroImage: "/placeholder-hero.jpg"
 ---
 
-## **MÉTODOS DE ENSAMBLE**
-
-Continuaremos con la última de las técnicas de ensamble. En esta
-práctica veremos **voting**.
-
-------------------------------------------------------------------------
-
-## **VOTING**
+---
 
 Con esta técnica, podemos entrenar varios modelos con los mismos datos.
 Cuando tengamos datos nuevos, obtendremos una predicción de cada modelo.

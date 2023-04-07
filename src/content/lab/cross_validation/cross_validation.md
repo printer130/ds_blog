@@ -7,7 +7,9 @@ heroImage: "/placeholder-hero.jpg"
 url: "/ensamblers"
 ---
 
-# `1. Validación cruzada`
+---
+
+## `1. Validación cruzada`
 
 A la hora de evaluar nuestro modelo, ¿cómo podemos garantizar que su
 desempeño es independiente de la separación de los datos que hayamos

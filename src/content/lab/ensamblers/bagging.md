@@ -8,7 +8,8 @@ pubDate: "Jul 22 2022"
 heroImage: "/placeholder-hero.jpg"
 ---
 
-## **MÉTODOS DE ENSAMBLE**
+---
+
 
 La idea es entrenar muchos modelos y hacerlos votar. La clasificación
 resultante es la que reciba más votos. Y si los modelos devuelven

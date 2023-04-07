@@ -5,8 +5,6 @@ pubDate: "Jul 22 2022"
 heroImage: "/placeholder-hero.jpg"
 ---
 
-# Estimando 
-
 En un frasco, llamémoslo Frasco 1, ponemos una cantidad $n$ de algún elemento que sea relativamente fácil de contar; por ejemplo, porotos, monedas de cinco centavos, etc. En otro frasco, Frasco 2, ponemos una cantidad definida de esos mismos elementos, por ejemplo, 50 monedas.
 
 La idea es estimar cota inferior, valor más probable y cota superior de la cantidad de elementos en el Frasco 1 en las siguientes situaciones:

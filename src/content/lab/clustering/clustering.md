@@ -1,17 +1,15 @@
 ---
 title: "K-means y DBSCAN"
-description: "En este notebook veremos, dentro de la técnica de `clustering`, los dos
+description: "Veremos, dentro de la técnica de `clustering`, los dos
 algoritmos estudiados en la parte teórica: K-means y DBSCAN."
 pubDate: "Jul 08 2022"
 heroImage: "/placeholder-hero.jpg"
 url: "/ensamblers"
 ---
 
-## **APRENDIZAJE NO SUPERVISADO**
+---
 
-### **Clustering**
-
-### *`K-means`*
+### `K-means`
 
 [Documentación](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html)
 

@@ -5,7 +5,8 @@ pubDate: "Jul 08 2022"
 heroImage: "/placeholder-hero.jpg"
 url: "/ensamblers"
 ---
-## **Descenso de gradiente**
+
+---
 
 Para ello, debemos hablar de la `función de costo`. Esta función mide el
 costo -variable dependiente- en relación a parámetros -variable
