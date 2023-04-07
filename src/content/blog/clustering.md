@@ -1,9 +1,9 @@
 ---
-title: "Aprendizaje no supervisado"
+title: "Aprendizaje no supervisado (Clustering)"
 description: "El objetivo aquí ya no consiste en predecir la etiqueta, sino -precisamente- en encontrar patrones en el set de datos."
-pubDate: "Jul 08 2022"
+pubDate: "Nov 08 2022"
 heroImage: "/placeholder-hero.jpg"
-url: "/ensamblers"
+url: "/clustering"
 ---
 
 - - -

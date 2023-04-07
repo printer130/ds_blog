@@ -1,7 +1,7 @@
 ---
-title: "Ensambles Bagging | Random Forest | boosting | stacking | voting | pipeline"
-description: "Con frecuencia nos encontramos con la necesidad de hacer una estimación, aún contando con poca información concreta del problema."
-pubDate: "Jul 08 2022"
+title: "Hacer una estimación, aún contando con poca información concreta del problema (Ensambles)"
+description: "Bagging | Random Forest | Boosting | Stacking | Voting | Pipeline."
+pubDate: "Dec 08 2022"
 heroImage: "/placeholder-hero.jpg"
 url: "/ensamblers"
 ---

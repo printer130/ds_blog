@@ -1,9 +1,9 @@
 ---
 title: "Series de tiempo"
-description: "Queremos cotizar un activo financiero pues aquí esta el conjunto de valores tomados en un intervalo temporal determinado, considerando el mismo objeto de estudio. "
-pubDate: "Jul 08 2022"
+description: "Queremos cotizar un activo financiero pues aquí esta el conjunto de valores tomados en un intervalo temporal determinado."
+pubDate: "Dec 08 2022"
 heroImage: "/placeholder-hero.jpg"
-url: "/ensamblers"
+url: "/time_series"
 ---
 
 - - -

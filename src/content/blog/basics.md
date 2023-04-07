@@ -1,7 +1,7 @@
 ---
-title: "Enfocado en Datasets desbalanceados."
-description: "Balanceo | Evaluación de modelos | Teorema de Bayes | Overfitting y underfitting | Sesgo y varianza | Parámetros/hiperparámetros"
-pubDate: "Jul 08 2022"
+title: "Datasets desbalanceados"
+description: "Balanceo | Evaluación de modelos | Teorema de Bayes | Overfitting y underfitting | Sesgo y varianza | Parámetros/hiperparámetros."
+pubDate: "Nov 08 2022"
 heroImage: "/placeholder-hero.jpg"
 url: "/basics"
 ---

@@ -1,9 +1,9 @@
 ---
-title: "Validación Cruzada, Optimización de hiperparámetros | Ridge y Lasso | Descenso de Gradiente"
-description: "¿Cómo podemos evaluar si el modelo está aprendiendo o no de nuestros datos?"
-pubDate: "Jul 08 2022"
+title: "¿Cómo podemos evaluar si el modelo está aprendiendo o no de nuestros datos?"
+description: "Validación Cruzada, Optimización de hiperparámetros | Ridge y Lasso | Descenso de Gradiente."
+pubDate: "Feb 022 2023"
 heroImage: "/placeholder-hero.jpg"
-url: "/ensamblers"
+url: "/cross_validation"
 ---
 
 - - -

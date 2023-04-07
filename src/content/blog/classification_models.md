@@ -1,7 +1,7 @@
 ---
 title: "Modelos de clasificación"
-description: "Árboles de decisión | Impureza Gini | Entropía | Prune tree | Vecinos más cercanos | Support Vector Machine"
-pubDate: "Jul 08 2022"
+description: "Árboles de decisión | Impureza Gini | Entropía | Prune tree | Vecinos más cercanos | Support Vector Machine."
+pubDate: "Jun 08 2022"
 heroImage: "/placeholder-hero.jpg"
 url: "/classification_models"
 ---

@@ -4,13 +4,11 @@ import FormattedDate from './FormattedDate.astro'
 const { title, slug, pubDate, description } = Astro.props
 
 ---
-<div class='w-full my-16 p-4 bg-[#120000] border border-neutral-800/80 rounded-lg sm:p-8'>
-	<h5 class='mb-2 text-3xl font-bold text-slate-200'>
+<li class='w-full my-16 p-4 bg-[#120000] border border-neutral-800/80 rounded-lg list-none sm:p-8'>
+	<h2 class='mb-2 text-3xl font-bold text-slate-200 pt-0'>
 		{title}
-	</h5>
-	<div class='my-4'>
-		<FormattedDate date={pubDate} />
-	</div>
+	</h2>
+	<FormattedDate date={pubDate} />
 	<p class='mb-5 px-0 text-base text-slate-200 sm:text-lg'>
 		{description}
 	</p>
@@ -29,4 +27,4 @@ const { title, slug, pubDate, description } = Astro.props
 			</div>
 		</a>
 	</div>
-</div>
+</li>

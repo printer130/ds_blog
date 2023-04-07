@@ -50,10 +50,14 @@ nav a {
 	margin-right: 10px;
 }
 
+#tables {
+	max-width: 90vw;
+	overflow-x: scroll;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
-	margin-left: 1rem;
 }
 
 th, td {
