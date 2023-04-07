@@ -53,11 +53,11 @@ plt.title('Dataset sintético 3')
 plt.show()
 ```
 
-<img src='/m6_practice_1/866d2446be8e95b424e5cb032266fa7be654be79.png' width="620px" alt='labs' >
+<img src='/m6/1/866d2446be8e95b424e5cb032266fa7be654be79.png' width="620px" alt='labs' >
 
-<img src='/m6_practice_1/329855246e0bc0dbc5b64c623116ed1b6d59fd1f.png' width="620px" alt='labs' >
+<img src='/m6/1/329855246e0bc0dbc5b64c623116ed1b6d59fd1f.png' width="620px" alt='labs' >
 
-<img src='/m6_practice_1/7714d06f02a65af3f6afb9c9c3ab9f1ac190ad1d.png' width="620px" alt='labs' >
+<img src='/m6/1/7714d06f02a65af3f6afb9c9c3ab9f1ac190ad1d.png' width="620px" alt='labs' >
 
 Procedemos a instanciar los modelos para cada dataset, indicando en cada
 uno la cantidad de clusters.
@@ -116,11 +116,11 @@ plt.title('Datos y cluster para el dataset 3')
 plt.show()
 ```
 
-<img src='/m6_practice_1/e4679914796a7ce7f7fa40f558b325e023a414a3.png' width="620px" alt='labs' >
+<img src='/m6/1/e4679914796a7ce7f7fa40f558b325e023a414a3.png' width="620px" alt='labs' >
 
-<img src='/m6_practice_1/3f54c19060a54601a631990a4a179033e122d042.png' width="620px" alt='labs' >
+<img src='/m6/1/3f54c19060a54601a631990a4a179033e122d042.png' width="620px" alt='labs' >
 
-<img src='/m6_practice_1/f5042a5ed691a6057c13665eb049d0c6df3302c7.png' width="620px" alt='labs' >
+<img src='/m6/1/f5042a5ed691a6057c13665eb049d0c6df3302c7.png' width="620px" alt='labs' >
 
 Ya que el dataset sintético nos brinda la etiqueta de cada instancdia,
 veamos una matriz de confusión para cada uno de los datasets.
@@ -156,11 +156,11 @@ plt.title('Dataset 3', fontsize = 15)
 plt.show()
 ```
 
-<img src='/m6_practice_1/534644169ace313e3279b4f553dec896950e1f8e.png' width="620px" alt='labs' >
+<img src='/m6/1/534644169ace313e3279b4f553dec896950e1f8e.png' width="620px" alt='labs' >
 
-<img src='/m6_practice_1/b7580453d160b1a16c32f10804644f2049266ab2.png' width="620px" alt='labs' >
+<img src='/m6/1/b7580453d160b1a16c32f10804644f2049266ab2.png' width="620px" alt='labs' >
 
-<img src='/m6_practice_1/4d574ab035e84a9b58912a31f1c5eb58f3d4a98f.png' width="620px" alt='labs' >
+<img src='/m6/1/4d574ab035e84a9b58912a31f1c5eb58f3d4a98f.png' width="620px" alt='labs' >
 
 **En este
 [link](https://www.aprendemachinelearning.com/k-means-en-python-paso-a-paso/)
@@ -258,7 +258,7 @@ def plot_DBSCAN(X1,labels_1,db_1,n_clusters_1):
 plot_DBSCAN(X1,labels_1,db_1,n_clusters_1)
 ```
 
-<img src='/m6_practice_1/4bd83b6b927edc9cc1c8b7ed2d2d3690b9b5d77a.png' width="620px" alt='labs' >
+<img src='/m6/1/4bd83b6b927edc9cc1c8b7ed2d2d3690b9b5d77a.png' width="620px" alt='labs' >
 **Vamos a pasar ahora al dataset 2 y 3**.
 
 ``` python
@@ -282,7 +282,7 @@ plot_DBSCAN(X2,labels_2,db_2,n_clusters_2)
     Estimated number of clusters: 5
     Estimated number of noise points: 537
 
-<img src='/m6_practice_1/6f31397032fc252ec48dc0d6e0620353b1512e53.png' width="620px" alt='labs' >
+<img src='/m6/1/6f31397032fc252ec48dc0d6e0620353b1512e53.png' width="620px" alt='labs' >
 
 ``` python
 # Consultamos las etiquetas
@@ -304,4 +304,4 @@ plot_DBSCAN(X3,labels_3,db_3,n_clusters_3)
     Estimated number of clusters: 2
     Estimated number of noise points: 0
 
-<img src='/m6_practice_1/17a180f94d9f6152c9e43e03f68258bd2bacb923.png' width="620px" alt='labs' >
+<img src='/m6/1/17a180f94d9f6152c9e43e03f68258bd2bacb923.png' width="620px" alt='labs' >

@@ -12,7 +12,7 @@ práctica veremos **voting**.
 
 ------------------------------------------------------------------------
 
-## **`VOTING`**
+## **VOTING**
 
 Con esta técnica, podemos entrenar varios modelos con los mismos datos.
 Cuando tengamos datos nuevos, obtendremos una predicción de cada modelo.

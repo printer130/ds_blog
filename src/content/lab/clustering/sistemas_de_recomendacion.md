@@ -54,7 +54,7 @@ manera sistemática, no manual.
 
 ------------------------------------------------------------------------
 
-### **`TIPOLOGÍA`**
+### **TIPOLOGÍA**
 
 Una vez completada la matriz de utilidad, existen diversas formas de
 realizar recomendaciones a los usuarios. Por un lado, un modelo
@@ -90,7 +90,7 @@ estrategias:
 
 ------------------------------------------------------------------------
 
-### **`SIMILITUD`**
+### **SIMILITUD**
 
 La pregunta que debemos responder ahora es, ¿cómo determinamos
 similitud?¿Con qué criterio establecemos que dos artículos, por ejemplo,
@@ -704,7 +704,7 @@ plt.title('Calificaciones por usuario')
 plt.show()
 ```
 
-<img src="/m6_practice_m4/0ba60c496850a82094926f813b7a2d6f03ffc364.png" alt="sistema de recomendacion image" />
+<img src="/m6/4/0ba60c496850a82094926f813b7a2d6f03ffc364.png" alt="sistema de recomendacion image" />
 
 ``` python
 # Observamos la distribución de las calificaciones
@@ -714,7 +714,7 @@ plt.title('Distribución de calificaciones')
 plt.show()
 ```
 
-<img src="/m6_practice_m4/bc27c26f449f663947ccfc6b6b0d2ba57eed965a.png" alt="sistema de recomendacion image" />
+<img src="/m6/4/bc27c26f449f663947ccfc6b6b0d2ba57eed965a.png" alt="sistema de recomendacion image" />
 
 **Veamos cuál es la película que más calificaciones tiene y cuál la que
 menos**.
@@ -936,7 +936,7 @@ plt.title('Distribución de la cantidad de vistas')
 plt.show()
 ```
 
-<img src="/m6_practice_m4/58f7bb853c285c3172fad2bfd370739abcba8552.png" alt="sistema de recomendacion image" />
+<img src="/m6/4/58f7bb853c285c3172fad2bfd370739abcba8552.png" alt="sistema de recomendacion image" />
 
 En esta etapa, lo que haremos será filtrar de nuestro dataset a aquellas
 películas con pocas calificaciones. Para ello, establecemos un umbral.
@@ -968,7 +968,7 @@ print(df1.shape)
     (24053764, 3)
     (23163063, 3)
 
-## **`Machine Learning`**
+## **Machine Learning**
 
 Para trabajar con sistemas de recomendación, emplearemos la librería
 `Surprise` de la que dejamos
@@ -1714,7 +1714,7 @@ plt.ylabel('Error RMSE')
 plt.show()
 ```
 
-<img src="/m6_practice_m4/1cc195f4d8ecc30ab05d9e411d10407ff3c6b6b5.png" alt="sistema de recomendacion image" />
+<img src="/m6/4/1cc195f4d8ecc30ab05d9e411d10407ff3c6b6b5.png" alt="sistema de recomendacion image" />
 
 ``` python
 # Nuevamente, no apto para ansiosos

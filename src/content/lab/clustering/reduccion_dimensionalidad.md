@@ -10,7 +10,7 @@ url: "/clustering/reduccion_dimensionalidad"
 
 ## **APRENDIZAJE NO SUPERVISADO**
 
-### **`SVD`**
+### **SVD**
 
 **Compresión de imagen**
 
@@ -46,7 +46,7 @@ plt.imshow(imgmat, cmap='gray')
 plt.show()
 ```
 
-<img src="/m6_practice_3/197457187111bcb71c1f395d0a459a8bfda6534a.png" alt="dimensionalidad" />
+<img src="/m6/3/197457187111bcb71c1f395d0a459a8bfda6534a.png" alt="dimensionalidad" />
 
 ``` python
 imgmat.shape
@@ -70,7 +70,7 @@ plt.imshow(reconstimg, cmap='gray')
 plt.show()
 ```
 
-<img src="/m6_practice_3/7f52c81c001dc33ab607b17c86332b3897d1900a.png" alt="dimensionalidad" />
+<img src="/m6/3/7f52c81c001dc33ab607b17c86332b3897d1900a.png" alt="dimensionalidad" />
 
 ``` python
 #Ejemplo SVD con una matriz de 7 filas por 4 columnas.
@@ -156,7 +156,7 @@ plt.imshow(reconstimg, cmap='gray')
 plt.show()
 ```
 
-<img src="/m6_practice_3/8226b5eff63f9b5a3ccae261ad0b6603c1a3bfac.png" alt="dimensionalidad" />
+<img src="/m6/3/8226b5eff63f9b5a3ccae261ad0b6603c1a3bfac.png" alt="dimensionalidad" />
 
 No es muy óptimo el resultado obtenido, pero ya se logra vislumbrar al
 menos la idea de la imagen. Tengamos en cuenta que contamos con poca
@@ -181,23 +181,23 @@ for i in [5, 10, 15, 20, 30, 50,100]:
     plt.show()
 ```
 
-<img src="/m6_practice_3/09bf76a3f0a41bc420e8adfa8db3cef80d581651.png" alt="dimensionalidad" />
+<img src="/m6/3/09bf76a3f0a41bc420e8adfa8db3cef80d581651.png" alt="dimensionalidad" />
 
-<img src="/m6_practice_3/7a85719e5959d45f95b167e126cde97bf0db2f83.png" alt="dimensionalidad" />
+<img src="/m6/3/7a85719e5959d45f95b167e126cde97bf0db2f83.png" alt="dimensionalidad" />
 
-<img src="/m6_practice_3/670245c6f5e1481208c954019173f9be815317c4.png" alt="dimensionalidad" />
+<img src="/m6/3/670245c6f5e1481208c954019173f9be815317c4.png" alt="dimensionalidad" />
 
-<img src="/m6_practice_3/b99d0638b017f946f8f2e33dd338de3e078e9704.png" alt="dimensionalidad" />
+<img src="/m6/3/b99d0638b017f946f8f2e33dd338de3e078e9704.png" alt="dimensionalidad" />
 
-<img src="/m6_practice_3/8d6bc9d5a3e78dcb6c7469b2c82ff8fbf00f0934.png" alt="dimensionalidad" />
+<img src="/m6/3/8d6bc9d5a3e78dcb6c7469b2c82ff8fbf00f0934.png" alt="dimensionalidad" />
 
-<img src="/m6_practice_3/415f277bcf45c0dd6a9a15aebf638fb94ce5512d.png" alt="dimensionalidad" />
+<img src="/m6/3/415f277bcf45c0dd6a9a15aebf638fb94ce5512d.png" alt="dimensionalidad" />
 
-<img src="/m6_practice_3/585145bd626199fb267434a4d8fc61841e0327d6.png" alt="dimensionalidad" />
+<img src="/m6/3/585145bd626199fb267434a4d8fc61841e0327d6.png" alt="dimensionalidad" />
 
 ------------------------------------------------------------------------
 
-### **`PCA`**
+### **PCA**
 
 La reducción de dimensionalidad puede pensarse como una parte del
 preprocesamiento de datos, es decir, de mejora de los features que
@@ -222,7 +222,7 @@ plt.scatter(data['x1'], data['x2'], c = data['y'])
 plt.show()
 ```
 
-<img src="/m6_practice_3/f8393a58c9da1c47920d889bc1565688d3cded59.png" alt="dimensionalidad" />
+<img src="/m6/3/f8393a58c9da1c47920d889bc1565688d3cded59.png" alt="dimensionalidad" />
 
 ``` python
 # Hacemos un mapa de calor
@@ -237,7 +237,7 @@ sns.heatmap(corr, cbar = True,  square = True, annot=True, fmt= '.2f',annot_kws=
 plt.show()
 ```
 
-<img src="/m6_practice_3/fc2985099abab6a060ce896b75dce4b9d9cfcd76.png" alt="dimensionalidad" />
+<img src="/m6/3/fc2985099abab6a060ce896b75dce4b9d9cfcd76.png" alt="dimensionalidad" />
 
 Podemos ver que los atributos están muy correlacionados entre sí pero
 poco correlacionados con la etiqueta *y* que queremos predecir.
@@ -319,7 +319,7 @@ plt.scatter(data['x_nuevo'], data['y'])
 plt.show()
 ```
 
-<img src="/m6_practice_3/cea34c09506be47a01e8ffeb004b50b9e03ebe30.png" alt="dimensionalidad" />
+<img src="/m6/3/cea34c09506be47a01e8ffeb004b50b9e03ebe30.png" alt="dimensionalidad" />
 
 ``` python
 # Volvemos a hacer el mapa de calor. Recordá que ahora tenemos 3 atributos
@@ -334,7 +334,7 @@ sns.heatmap(corr, cbar = True,  square = True, annot=True, fmt= '.2f',annot_kws=
 plt.show()
 ```
 
-<img src="/m6_practice_3/9b72c6bd510e754998aec10b97b33ddba952a0af.png" alt="dimensionalidad" />
+<img src="/m6/3/9b72c6bd510e754998aec10b97b33ddba952a0af.png" alt="dimensionalidad" />
 
 **`Por supuesto que la idea no es hacer esto a mano, sino de manera automática. Aquí es donde entra en juego el algoritmo PCA`**
 
@@ -350,7 +350,7 @@ plt.scatter(X_nuevo[:,0], X[:,1], c = y)
 plt.show()
 ```
 
-<img src="/m6_practice_3/1799383c08164bfb3650f11c66264599784e7e46.png" alt="dimensionalidad" />
+<img src="/m6/3/1799383c08164bfb3650f11c66264599784e7e46.png" alt="dimensionalidad" />
 
 ``` python
 # Separamos los datos
@@ -734,7 +734,7 @@ plt.plot(pca.explained_variance_ratio_)
 
     [<matplotlib.lines.Line2D at 0x24081729360>]
 
-<img src="/m6_practice_3/369c3fe3407bcf15f1297f11280ddabb4c64bb09.png" alt="dimensionalidad" />
+<img src="/m6/3/369c3fe3407bcf15f1297f11280ddabb4c64bb09.png" alt="dimensionalidad" />
 
 En el análisis empírico de la curva de bonos, se reconocen 3 componentes
 principales como importantes. El primero de nivel, el segundo de
@@ -752,7 +752,7 @@ plt.plot(rates.index,pca1)
 
     [<matplotlib.lines.Line2D at 0x24081510460>]
 
-<img src="/m6_practice_3/aa6537716f35a9636682f8d27efb394cb053ee04.png" alt="dimensionalidad" />
+<img src="/m6/3/aa6537716f35a9636682f8d27efb394cb053ee04.png" alt="dimensionalidad" />
 
 ``` python
 pca2 = dfpca["Componente 2"]
@@ -766,7 +766,7 @@ plt.plot(rates.index,pca2)
 
     [<matplotlib.lines.Line2D at 0x24090cf47c0>]
 
-<img src="/m6_practice_3/cbdfd5fa6b71fdccf306affd54f618c7f3c0dbaf.png" alt="dimensionalidad" />
+<img src="/m6/3/cbdfd5fa6b71fdccf306affd54f618c7f3c0dbaf.png" alt="dimensionalidad" />
 
 ``` python
 fig = plt.figure(figsize = (8,8))
@@ -779,7 +779,7 @@ plt.scatter(pca1,pca2)
 
     <matplotlib.collections.PathCollection at 0x24093316ad0>
 
-<img src="/m6_practice_3/57cc371b91eda74b41e17709297c318ce0327903.png" alt="dimensionalidad" />
+<img src="/m6/3/57cc371b91eda74b41e17709297c318ce0327903.png" alt="dimensionalidad" />
 
 ``` python
 pca3 = dfpca["Componente 3"]
@@ -793,4 +793,4 @@ plt.plot(rates.index,pca3)
 
     [<matplotlib.lines.Line2D at 0x240815f7fd0>]
 
-<img src="/m6_practice_3/5dbb11c017414b97094c922b29e594d5267bf83c.png" alt="dimensionalidad" />
+<img src="/m6/3/5dbb11c017414b97094c922b29e594d5267bf83c.png" alt="dimensionalidad" />

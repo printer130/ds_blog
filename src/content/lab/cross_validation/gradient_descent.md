@@ -109,7 +109,7 @@ if False:
 plt.show()
 ```
 
-<img src="/m5_3/fe65b9c0d5baca5cb465903f0d8077cf5141dbbe.png" alt="Descenso del gradiente" >
+<img src="/m5/3/fe65b9c0d5baca5cb465903f0d8077cf5141dbbe.png" alt="Descenso del gradiente" >
 
 En general, uno tiene ciertos datos y de esos datos quiere estimar los
 valores del modelo. En este caso, la pendiente y ordenada al origen de
@@ -128,7 +128,7 @@ def MSE(y,y_pred):
     return ((y - y_pred)**2).sum()/n
 ```
 
-#### **`Un parametro libre`**
+#### **Un parametro libre**
 
 Supongamos que conocemos la ordenada al origen $b$, y solamente tenemos
 que obtener la pendiente $m$. Lo que podemos hacer entonces es *barrer*
@@ -162,9 +162,9 @@ plt.ylabel('MSE (Costo)')
 plt.show()
 ```
 
-<img src="/m5_3/f77d54a59b299f894e296f91ea05ef687ed8bb58.png" alt="Descenso del gradiente" >
+<img src="/m5/3/f77d54a59b299f894e296f91ea05ef687ed8bb58.png" alt="Descenso del gradiente" >
 
-#### **`Dos parámetros libres`**
+#### **Dos parámetros libres**
 
 Antes de continuar, piensa qué modificarían en el caso de tener que
 encontrar no uno sino dos parámetros libres. Es decir, $m$ y $b$. En
@@ -210,7 +210,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-<img src="/m5_3/dfdde047613875a881a9f8c74871f4b3bf70d15a.png" alt="Descenso del gradiente" >
+<img src="/m5/3/dfdde047613875a881a9f8c74871f4b3bf70d15a.png" alt="Descenso del gradiente" >
 
 ``` python
 from mpl_toolkits.mplot3d import Axes3D
@@ -229,7 +229,7 @@ plt.colorbar(surf)
 plt.show()
 ```
 
-<img src="/m5_3/5c8066cbd4c4c7f5108d1ea81b0e430d4e7f9941.png" alt="Descenso del gradiente" >
+<img src="/m5/3/5c8066cbd4c4c7f5108d1ea81b0e430d4e7f9941.png" alt="Descenso del gradiente" >
 
 ``` python
 m_encontrado = Ms[idxs_minimo]
@@ -243,7 +243,7 @@ plt.legend()
 plt.show()
 ```
 
-<img src="/m5_3/64d2d87d8ee6c14fc6dec550d3390a18aa90eece.png" alt="Descenso del gradiente" >
+<img src="/m5/3/64d2d87d8ee6c14fc6dec550d3390a18aa90eece.png" alt="Descenso del gradiente" >
 
 ### Descenso por gradiente
 
@@ -320,7 +320,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-<img src="/m5_3/5d63ba8e2a95234fbabd694709ad460646c2b519.png" alt="Descenso del gradiente" >
+<img src="/m5/3/5d63ba8e2a95234fbabd694709ad460646c2b519.png" alt="Descenso del gradiente" >
 
 Descenso por gradiente consiste entonces en ir haciendo sucesivos pasos,
 siguiendo la dirección que marca el negativo del gradiente, hasta llegar
@@ -399,7 +399,7 @@ plt.ylabel('b')
 plt.show()
 ```
 
-<img src="/m5_3/6d8b828858aab45077ac6474ee5612e9cea038bd.png" alt="Descenso del gradiente" >
+<img src="/m5/3/6d8b828858aab45077ac6474ee5612e9cea038bd.png" alt="Descenso del gradiente" >
 
 ``` python
 fig = plt.figure(figsize = (16,8))
@@ -415,7 +415,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-<img src="/m5_3/0ee9f267dcfaf344e2eee3f99f144e59df2b3654.png" alt="Descenso del gradiente" >
+<img src="/m5/3/0ee9f267dcfaf344e2eee3f99f144e59df2b3654.png" alt="Descenso del gradiente" >
 
 ``` python
 x = np.linspace(-1,1,500)
@@ -428,7 +428,7 @@ plt.legend()
 plt.show()
 ```
 
-<img src="/m5_3/a2611c4fa18005261069b92cce8b622b4bedcfa3.png" alt="Descenso del gradiente" >
+<img src="/m5/3/a2611c4fa18005261069b92cce8b622b4bedcfa3.png" alt="Descenso del gradiente" >
 
 ``` python
 w_s = np.linspace(0,50,1000)
@@ -446,7 +446,7 @@ plt.ylabel('Costo')
 plt.show()
 ```
 
-<img src="/m5_3/b369fe8fb5696820ec382f6b93ebe2dc9be0efe7.png" alt="Descenso del gradiente" >
+<img src="/m5/3/b369fe8fb5696820ec382f6b93ebe2dc9be0efe7.png" alt="Descenso del gradiente" >
 
 *Notar que hay muchos *mínimos locales\* y un *mínimo absoluto*. En más
 dimensiones es fácil confundir un mínimo local con el mínimo que estamos

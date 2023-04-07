@@ -7,7 +7,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from 'src/consts'
 const { title } = Astro.props
 ---
 <!DOCTYPE html>
-<html lang='en'>
+<html lang='es'>
 	<head>
 		<BaseHead
 			title={SITE_TITLE}
@@ -16,11 +16,11 @@ const { title } = Astro.props
 		<base target='_blank'>
 	</head>
 	<body>
-		<main class='text-xl tracking-wide leading-relaxed text-slate-800 max-w-4xl w-full mt-24 mx-auto'>
+		<main class='text-xl tracking-wide leading-relaxed text-slate-800 max-w-4xl w-full mt-24 mx-auto px-4'>
 			<Header title={SITE_TITLE} />
 			{
 				title && <h1
-					class='pb-10 text-6xl text-slate-800 font-semibold'
+					class='uppercase text-4xl text-slate-800 font-semibold'
 				> {title}</h1>
 			}
 			<slot />

@@ -343,7 +343,7 @@ plt.show()
 
 <img src="/m4/1/450bdfd93467b05d2f005c00f123f34a95d66085.png" alt="Series de tiempo ML" />
 
-### **`Componentes de la serie de tiempo`**
+### **Componentes de la serie de tiempo**
 
 Veremos dos formas de obtenerlas: *media móvil* y *regresión lineal*.
 

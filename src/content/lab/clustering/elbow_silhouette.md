@@ -59,15 +59,15 @@ plt.title('Dataset 3')
 plt.show()
 ```
 
-<img src="/m6_practice_2/4d9a6d4cbc3b1ff0492e882b3928098a269aaa76.png" alt="el boy and silhouette" />
+<img src="/m6/2/4d9a6d4cbc3b1ff0492e882b3928098a269aaa76.png" alt="el boy and silhouette" />
 
-<img src="/m6_practice_2/bf305b522eb79de8f56cc696a62e857a285a5944.png" alt="el boy and silhouette" />
+<img src="/m6/2/bf305b522eb79de8f56cc696a62e857a285a5944.png" alt="el boy and silhouette" />
 
-<img src="/m6_practice_2/9e752e8477f853b59a18c54e00226dd2ea285a8b.png" alt="el boy and silhouette" />
+<img src="/m6/2/9e752e8477f853b59a18c54e00226dd2ea285a8b.png" alt="el boy and silhouette" />
 
 ## **K-means**
 
-### **`Elbow`**
+### **Elbow**
 
 Utilizamos la distancia al centroide. Luego, graficamos la curva que nos
 permite determinar el K óptimo.
@@ -100,7 +100,7 @@ plt.title('Método del codo para el dataset 1')
 plt.show()
 ```
 
-<img src="/m6_practice_2/5132a3d6610788ac93c3f9a329679a9f58ed2c7d.png" alt="el bow and silhouette" />
+<img src="/m6/2/5132a3d6610788ac93c3f9a329679a9f58ed2c7d.png" alt="el bow and silhouette" />
 
 Repetimos el proceso para el dataset 2 y 3.
 
@@ -126,7 +126,7 @@ plt.title('Método del codo para el dataset 2')
 plt.show()
 ```
 
-<img src="/m6_practice_2/75e8c7ebf09f96a0b6b43d5e82e2949e95b3245f.png" alt="el bow and silhouette" />
+<img src="/m6/2/75e8c7ebf09f96a0b6b43d5e82e2949e95b3245f.png" alt="el bow and silhouette" />
 
 ``` python
 
@@ -151,9 +151,9 @@ plt.title('Método del codo para el dataset 3')
 plt.show()
 ```
 
-<img src="/m6_practice_2/80f133e8de5d857009376809bfb5fdc18ce50be0.png" alt="el bow and silhouette" />
+<img src="/m6/2/80f133e8de5d857009376809bfb5fdc18ce50be0.png" alt="el bow and silhouette" />
 
-### **`Silhouette`**
+### **Silhouette**
 
 Primero vamos a calcular únicamente el valor de silhouette promedio para
 distintos valores de K. La manera de hacerlo es igual a la que usamos
@@ -189,7 +189,7 @@ plt.title('Silhouette media para el dataset 1', fontsize = 15)
 plt.show()
 ```
 
-<img src="/m6_practice_2/fa2805a4460a19f4916be95060267d03c5eda00e.png" alt="el bow and silhouette" />
+<img src="/m6/2/fa2805a4460a19f4916be95060267d03c5eda00e.png" alt="el bow and silhouette" />
 
 **Repetimos para el dataset 2 y 3**.
 
@@ -217,7 +217,7 @@ plt.title('Silhouette media para el dataset 2', fontsize= 15)
 plt.show()
 ```
 
-<img src="/m6_practice_2/34024d80fa32362a5524e1abc7a2a5f7af0b839d.png" alt="el bow and silhouette" />
+<img src="/m6/2/34024d80fa32362a5524e1abc7a2a5f7af0b839d.png" alt="el bow and silhouette" />
 
 ``` python
 lista_sil = []
@@ -242,7 +242,7 @@ plt.title('Silhouette media para el dataset 3', fontsize = 15)
 plt.show()
 ```
 
-<img src="/m6_practice_2/758c236191c0b87b213b82bb02dc31eef0b46608.png" alt="el bow and silhouette" />
+<img src="/m6/2/758c236191c0b87b213b82bb02dc31eef0b46608.png" alt="el bow and silhouette" />
 
 **Con el siguiente código, generamos los gráficos silhouette para todas
 las instancias**. La linea punteada verde indica el valor medio.
@@ -298,13 +298,13 @@ for i, k in enumerate(lista_k):
                  fontsize=16, fontweight='semibold', y=1.05);
 ```
 
-<img src="/m6_practice_2/82bab2aab20924206f20c03de093d41fa8f88bc8.png" alt="el bow and silhouette" />
+<img src="/m6/2/82bab2aab20924206f20c03de093d41fa8f88bc8.png" alt="el bow and silhouette" />
 
-<img src="/m6_practice_2/4a8aba40e970343d6527786914859f2fbfae2114.png" alt="el bow and silhouette" />
+<img src="/m6/2/4a8aba40e970343d6527786914859f2fbfae2114.png" alt="el bow and silhouette" />
 
-<img src="/m6_practice_2/7b6940ece7ce91472e41fc88e1f0bf31b7cef7eb.png" alt="el bow and silhouette" />
+<img src="/m6/2/7b6940ece7ce91472e41fc88e1f0bf31b7cef7eb.png" alt="el bow and silhouette" />
 
-<img src="/m6_practice_2/59bba3c2f6fde5db87ae9edf45a9574258fde7da.png" alt="el bow and silhouette" />
+<img src="/m6/2/59bba3c2f6fde5db87ae9edf45a9574258fde7da.png" alt="el bow and silhouette" />
 
 ------------------------------------------------------------------------
 
@@ -366,7 +366,7 @@ def plot_DBSCAN(X1,labels_1,db_1,n_clusters_1):
 plot_DBSCAN(X1,labels_db,db,n_clusters_db)
 ```
 
-<img src="/m6_practice_2/3f07feba1bf3fe37805072466fefbd49aaca9d7e.png" alt="el bow and silhouette" />
+<img src="/m6/2/3f07feba1bf3fe37805072466fefbd49aaca9d7e.png" alt="el bow and silhouette" />
 
 ``` python
 X_std = X1
@@ -412,7 +412,7 @@ plt.suptitle(f'Silhouette analysis using k = {n_clusters_db}',
              fontsize=16, fontweight='semibold', y=1.05);
 ```
 
-<img src="/m6_practice_2/0e2b69da3d2a1e99e7b618021e29247dc9b2ed59.png" alt="el bow and silhouette" />
+<img src="/m6/2/0e2b69da3d2a1e99e7b618021e29247dc9b2ed59.png" alt="el bow and silhouette" />
 
 ------------------------------------------------------------------------
 
@@ -464,4 +464,4 @@ for ax in fig.axes:
 plt.tight_layout();
 ```
 
-<img src="/m6_practice_2/b9fdb593f7c83dbb1cb5b5331c6a5ef9b2b67562.png" alt="elbow image" />
+<img src="/m6/2/b9fdb593f7c83dbb1cb5b5331c6a5ef9b2b67562.png" alt="elbow image" />

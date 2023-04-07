@@ -233,7 +233,7 @@ plt.title('Diagrama de barras de la variable de salida', fontsize = 15)
 plt.show()
 ```
 
-<img src="/m5_1/abd56082736efc02324e69d15d74503241770d13.png" alt="validacion cruzada" >
+<img src="/m5/1/abd56082736efc02324e69d15d74503241770d13.png" alt="validacion cruzada" >
 
 
 ``` python
@@ -360,7 +360,7 @@ sns.pairplot(df, hue = 'target')
 plt.show()
 ```
 
-<img src="/m5_1/32bd13b03af0c5205fdaedee2573000507bb26d8.png" alt="validacion cruzada" >
+<img src="/m5/1/32bd13b03af0c5205fdaedee2573000507bb26d8.png" alt="validacion cruzada" >
 
 ``` python
 # Realizamos el mapa de calor para ver la correlación entre las variables
@@ -374,7 +374,7 @@ sns.heatmap(corr, cbar = True,  square = True, annot=True, fmt= '.2f',annot_kws=
 plt.show()
 ```
 
-<img src="/m5_1/b7f177235154ab5043fe8ab4bdb7053cea330066.png" alt="validacion cruzada" >
+<img src="/m5/1/b7f177235154ab5043fe8ab4bdb7053cea330066.png" alt="validacion cruzada" >
 
 ### Entrenamiento de los modelos
 
@@ -428,12 +428,12 @@ for i in range(X_train.shape[1]):
     plt.show()
 ```
 
-<img src="/m5_1/9536939db42f37ad56a1aa261e9c8dda4b01bb17.png" alt="validacion cruzada" >
+<img src="/m5/1/9536939db42f37ad56a1aa261e9c8dda4b01bb17.png" alt="validacion cruzada" >
 
-<img src="/m5_1/67fad8ac009151ce3aaaa7a39607dfa84e43405d.png" alt="validacion cruzada" >
+<img src="/m5/1/67fad8ac009151ce3aaaa7a39607dfa84e43405d.png" alt="validacion cruzada" >
 
 
-<img src="/m5_1/29c9aedd39fe50f68706c9e005ede04c2b19be15.png" alt="validacion cruzada" >
+<img src="/m5/1/29c9aedd39fe50f68706c9e005ede04c2b19be15.png" alt="validacion cruzada" >
 
 *Probar qué sucede si no especificamos el argumento **stratify** en
 train_test_split*.

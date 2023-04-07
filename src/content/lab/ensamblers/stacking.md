@@ -13,7 +13,7 @@ Continuaremos con las técnicas de ensamble. En esta práctica veremos
 
 ------------------------------------------------------------------------
 
-## **`STACKING`**
+## **STACKING**
 
 El método Stacking (Stacked Generalization o Meta Ensamblado) implica
 combinar las predicciones de distintos modelos de Machine Learning con

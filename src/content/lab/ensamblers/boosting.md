@@ -13,7 +13,7 @@ Continuaremos con las técnicas de ensamble. En esta práctica veremos
 
 ------------------------------------------------------------------------
 
-## **`BOOSTING`**
+## **BOOSTING**
 
 Al igual que en la técnica *bagging*, aquí la predicción final se hace
 votando. La diferencia radica en cómo llegamos a cada modelo que compone

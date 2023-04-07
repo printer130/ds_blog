@@ -1,5 +1,5 @@
 ---
-title: "Modelo de clasificación"
+title: "Evaluación de modelos de clasificación"
 description: "En esta práctica, veremos cómo evaluar un modelo de clasificación con
 las diversas métricas vistas en la parte teórica."
 pubDate: "Jul 08 2022"
@@ -7,7 +7,6 @@ heroImage: "/placeholder-hero.jpg"
 slug: 'basics/classification_model'
 ---
 
-# **Evaluación de modelos de clasificación**
 
 Trabajaremos con uno de los datasets provisto por Scikit-learn referente
 a Iris.
@@ -66,7 +65,7 @@ y_train_pred = classifier.predict(X_train)
 y_test_pred = classifier.predict(X_test)
 ```
 
-## **`Matriz de confusión`**
+## **Matriz de confusión**
 
 Veamos la matriz de nuestro modelo
 
@@ -121,7 +120,7 @@ plt.show()
 
 <img src="/m3/1/ee9081168c100a514c54a7283c4f601abb1c686c.png" alt="Modelo de clasificacion" />
 
-### **`Exactitud`**
+### **Exactitud**
 
 ``` python
 from sklearn.metrics import accuracy_score
@@ -132,7 +131,7 @@ print(exactitud)
 
     0.3
 
-### **`Precisión`**
+### **Precisión**
 
 ``` python
 from sklearn.metrics import precision_score
@@ -143,7 +142,7 @@ print(precision)
 
     [1.   0.45 0.  ]
 
-### **`Exhaustividad/Recall/Sensibilidad`**
+### **Exhaustividad/Recall/Sensibilidad**
 
 ``` python
 from sklearn.metrics import recall_score
@@ -154,7 +153,7 @@ print(precision)
 
     [1. 1. 0.]
 
-### **`F1-Score`**
+### **F1-Score**
 
 ``` python
 from sklearn.metrics import f1_score
@@ -165,7 +164,7 @@ print(precision, type(precision))
 
     [1.         0.62068966 0.        ] <class 'numpy.ndarray'>
 
-### **`Curvas ROC`**
+### **Curvas ROC**
 
 Dejamos
 [aquí](https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html)

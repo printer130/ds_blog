@@ -102,7 +102,7 @@ plt.ylabel('y')
 plt.legend()
 plt.show()
 ```
-<img src="/m5_2/f86548911dd221b6000bb4135af8f088de233352.png" alt="lasso and ridge" >
+<img src="/m5/2/f86548911dd221b6000bb4135af8f088de233352.png" alt="lasso and ridge" >
 
 ``` python
 from sklearn.model_selection import train_test_split
@@ -145,7 +145,7 @@ plt.legend()
 plt.show()
 ```
 
-<img src="/m5_2/9e0a9c28238d3d26cd6b07975a9f962153387a5d.png" alt="lasso and ridge" >
+<img src="/m5/2/9e0a9c28238d3d26cd6b07975a9f962153387a5d.png" alt="lasso and ridge" >
 
 *Claramente no es un buen modelo, porque los datos no siguen una
 relación lineal.*
@@ -187,7 +187,7 @@ plt.show()
     Raíz del error cuadrático medio en Test: 0.5177595281278552
 
 
-<img src="/m5_2/00babd3ed48c5b943b05bd403e2098d711e140a7.png" alt="lasso and ridge" >
+<img src="/m5/2/00babd3ed48c5b943b05bd403e2098d711e140a7.png" alt="lasso and ridge" >
 
 **Usaremos atributos polinómicos para mejorar el modelado**
 
@@ -286,7 +286,7 @@ for idx,potencia_maxima in enumerate(range(1,6)):
     Raíz del error cuadrático medio en Train: 0.5404531775884659
     Raíz del error cuadrático medio en Test: 0.5177595281278552
 
-<img src="/m5_2/4e97c92e429efae4a427f0cd9ae16fb149fc3e27.png" alt="lasso and ridge" >
+<img src="/m5/2/4e97c92e429efae4a427f0cd9ae16fb149fc3e27.png" alt="lasso and ridge" >
 
     Regresión con atributos polinómicos de grado 2
     Agregamos atributos hasta la potencia x**2
@@ -298,7 +298,7 @@ for idx,potencia_maxima in enumerate(range(1,6)):
 
 
 
-<img src="/m5_2/aff79859085bba076349f8c2f1c9ec4b83552a1b.png" alt="lasso and ridge" >
+<img src="/m5/2/aff79859085bba076349f8c2f1c9ec4b83552a1b.png" alt="lasso and ridge" >
 
     Regresión con atributos polinómicos de grado 3
     Agregamos atributos hasta la potencia x**3
@@ -309,7 +309,7 @@ for idx,potencia_maxima in enumerate(range(1,6)):
     Raíz del error cuadrático medio en Test: 0.17294066298395136
 
 
-<img src="/m5_2/d2a10afae038670a2c5e0afe4d74087ddbbf3dce.png" alt="lasso and ridge" >
+<img src="/m5/2/d2a10afae038670a2c5e0afe4d74087ddbbf3dce.png" alt="lasso and ridge" >
 
     Regresión con atributos polinómicos de grado 4
     Agregamos atributos hasta la potencia x**4
@@ -321,7 +321,7 @@ for idx,potencia_maxima in enumerate(range(1,6)):
 
 
 
-<img src="/m5_2/ad461aba05005790331a97601b54d10247a3e9b5.png" alt="lasso and ridge" >
+<img src="/m5/2/ad461aba05005790331a97601b54d10247a3e9b5.png" alt="lasso and ridge" >
 
     Regresión con atributos polinómicos de grado 5
     Agregamos atributos hasta la potencia x**5
@@ -332,7 +332,7 @@ for idx,potencia_maxima in enumerate(range(1,6)):
     Raíz del error cuadrático medio en Test: 0.09890268561605829
 
 
-<img src="/m5_2/15b38f718e1aa41d2618ec4df36ff95fa23cff49.png" alt="lasso and ridge" >
+<img src="/m5/2/15b38f718e1aa41d2618ec4df36ff95fa23cff49.png" alt="lasso and ridge" >
 
 ``` python
 # Utilizamos polynomial features
@@ -385,7 +385,7 @@ evaluar_regresion(reg_2, x,y, X_train_new, X_test_new, y_train, y_test)
     Raíz del error cuadrático medio en Test: 0.0995797030978299
 
 
-<img src="/m5_2/716d48238eaecdf2113f2a7774dd13297b715589.png" alt="lasso and ridge" >
+<img src="/m5/2/716d48238eaecdf2113f2a7774dd13297b715589.png" alt="lasso and ridge" >
 
 ``` python
 # Regularización Ridge
@@ -411,7 +411,7 @@ evaluar_regresion(reg_ridge, x,y, X_train_new, X_test_new, y_train, y_test)
     Raíz del error cuadrático medio en Test: 0.1422879671361221
 
 
-<img src="/m5_2/099daa6363139008e6b6fd97deaf455dbe25fa8d.png" alt="lasso and ridge" >
+<img src="/m5/2/099daa6363139008e6b6fd97deaf455dbe25fa8d.png" alt="lasso and ridge" >
 
 ``` python
 # Regularización Lasso
@@ -436,7 +436,7 @@ evaluar_regresion(reg_lasso, x,y, X_train_new, X_test_new, y_train, y_test)
     Raíz del error cuadrático medio en Test: 0.09939211244903602
 
 
-<img src="/m5_2/d0b741e429169bbf5f322eac7a7d11bfe2e03d83.png" alt="lasso and ridge" >
+<img src="/m5/2/d0b741e429169bbf5f322eac7a7d11bfe2e03d83.png" alt="lasso and ridge" >
 
 ``` python
 x_nuevo_rango = np.linspace(-2,2,1000)
@@ -448,7 +448,7 @@ plt.ylabel('y')
 plt.show()
 ```
 
-<img src="/m5_2/1040ab8b31c120415bc431de866fc656a98d453b.png" alt="lasso and ridge" >
+<img src="/m5/2/1040ab8b31c120415bc431de866fc656a98d453b.png" alt="lasso and ridge" >
 
 ``` python
 X_nuevo_rango = poly.fit_transform(x_nuevo_rango.reshape(-1,1))
@@ -469,4 +469,4 @@ plt.ylabel('y')
 plt.show()
 ```
 
-<img src="/m5_2/9f719de637f361492104352f92e20d484de45a74.png" alt="lasso and ridge" >
+<img src="/m5/2/9f719de637f361492104352f92e20d484de45a74.png" alt="lasso and ridge" >

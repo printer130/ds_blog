@@ -30,7 +30,7 @@ ax.view_init(30, 40)
 plt.show()
 ```
 
-<img src="/m6_practice_5/0903faa87de0327873b73443541a0a675e41ae10.png" alt="visualization" />
+<img src="/m6/5/0903faa87de0327873b73443541a0a675e41ae10.png" alt="visualization" />
 
 ``` python
 df=pd.DataFrame({'X':(0,0,1,3,5,1,3), 'Y':(6,5,5,4,0,5,4), 'Z':(0,0,5,12,0,0,0), 'color':('red','red','blue','blue','red','blue','blue')})
@@ -46,7 +46,7 @@ ax.view_init(30, 40)
 plt.show()
 ```
 
-<img src="/m6_practice_5/46ea85ef2cb54ba3aa3ca5e72cd148f774fed780.png" alt="visualization" />
+<img src="/m6/5/46ea85ef2cb54ba3aa3ca5e72cd148f774fed780.png" alt="visualization" />
 
 ``` python
 data = pd.read_csv('../DataSets/iris_dataset.csv', index_col = 0)
@@ -280,4 +280,4 @@ ax.legend()
 plt.show()
 ```
 
-<img src="/m6_practice_5/d529024a36b060c57c42adf7d086c36c77d21a58.png" alt="visualization" />
+<img src="/m6/5/d529024a36b060c57c42adf7d086c36c77d21a58.png" alt="visualization" />

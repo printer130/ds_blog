@@ -1,6 +1,6 @@
 ---
-title: "Bagging | Random Forest | boosting | stacking | voting | pipeline"
-description: "Para esta ocasión, es momento de volver al aprendizaje supervisado."
+title: "Ensambles Bagging | Random Forest | boosting | stacking | voting | pipeline"
+description: "Con frecuencia nos encontramos con la necesidad de hacer una estimación, aún contando con poca información concreta del problema."
 pubDate: "Jul 08 2022"
 heroImage: "/placeholder-hero.jpg"
 url: "/ensamblers"
@@ -47,7 +47,7 @@ url: "/ensamblers"
 
 ## Estimación de grandes números
 
-Con frecuencia nos encontramos con la necesidad de hacer una estimación, aún contando con poca información concreta del problema. 
+Con frecuencia nos encontramos con la necesidad de hacer una estimación, aún contando con poca información concreta del problema.
 Si bien se puede tener un cierto conocimiento del dominio, cuando hay pocos datos disponibles, una estimación aceptable es una tarea difícil. Sin embargo, hay conceptos matemáticos que pueden servir de herramienta para abordar este tipo de problemas y, a la vez, amigarse con las incertezas y los errores.
 Imaginemos un frasco que se encuentra lleno de monedas de un peso, que a priori
 no podemos contar, pero queremos saber

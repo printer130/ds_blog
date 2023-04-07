@@ -7,7 +7,7 @@ heroImage: "/placeholder-hero.jpg"
 url: "/basics/classification_model"
 ---
 
-## **`Underfitting`**
+## **Underfitting**
 
 Generaremos un dataset sintético
 
@@ -76,7 +76,7 @@ mayor grado de `complejidad`. Por ejemplo, a la regresión lineal le
 podríamos agregar atributos polinómicos -¡sí, tal como vimos en el punto
 3 de la Práctica_01 de la primera clase!-.
 
-### **`Overfitting`**
+### **Overfitting**
 
 Observaremos el sobreajuste en un algoritmo que suele correr ese
 peligro: el árbol de decisión.

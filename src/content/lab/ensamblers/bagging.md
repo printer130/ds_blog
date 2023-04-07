@@ -34,7 +34,7 @@ En esta primera práctica hablaremos de **bagging**.
 
 ------------------------------------------------------------------------
 
-### **`BAGGING`**
+### **BAGGING**
 
 También denominada *bootstrap aggregation*.
 

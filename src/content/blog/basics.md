@@ -1,5 +1,5 @@
 ---
-title: "Basicos Machine Learning"
+title: "Enfocado en Datasets desbalanceados."
 description: "Balanceo | Evaluación de modelos | Teorema de Bayes | Overfitting y underfitting | Sesgo y varianza | Parámetros/hiperparámetros"
 pubDate: "Jul 08 2022"
 heroImage: "/placeholder-hero.jpg"
@@ -167,7 +167,7 @@ Si la precisión o el recall son bajos, también lo será F-Score. Mientras que,
 
 [Aplicación breve de métricas de clasificación con un ejemplo](https://www.iartificial.net/precision-recall-f1-accuracy-en-clasificacion/)
 
-### **`Curva ROC`**
+### **Curva ROC**
 
 Este tema en particular puede resultar un poco tedioso, ya que incorpora algunas de las métricas que estuvimos viendo recientemente y las entrelaza. Por este motivo, recomendamos ver el siguiente [video explicativo](https://www.youtube.com/watch?v=AcbbkCL0dlo&ab_channel=AprendeIAconLigdiGonzalez) para comenzar el abordaje con un poco más de claridad.
 

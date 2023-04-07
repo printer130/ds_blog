@@ -1,6 +1,6 @@
 ---
-title: "Clustering"
-description: "Llegó el momento de dejar atrás, al menos por un rato, al aprendizaje supervisado. Ahora nos abocaremos al estudio del aprendizaje no supervisado."
+title: "Aprendizaje no supervisado"
+description: "El objetivo aquí ya no consiste en predecir la etiqueta, sino -precisamente- en encontrar patrones en el set de datos."
 pubDate: "Jul 08 2022"
 heroImage: "/placeholder-hero.jpg"
 url: "/ensamblers"
@@ -53,7 +53,7 @@ url: "/ensamblers"
 
 # **Aprendizaje no supervisado**
 
-En esta etapa cambiaremos el enfoque con el que veníamos trabajando hasta el momento. `No supervisado` significa que ya no contamos con las etiquetas asociadas a nuestros datos. Es decir que las instancias no tienen asignadas una clase o un valor de salida. 
+`No supervisado` significa que ya no contamos con las etiquetas asociadas a nuestros datos. Es decir que las instancias no tienen asignadas una clase o un valor de salida. 
 
 Muchas veces se indica que esta subrama de Machine Learning se aplica para encontrar patrones.
 
