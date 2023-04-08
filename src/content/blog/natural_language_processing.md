@@ -10,7 +10,7 @@ url: "/natural_language_processing"
 
 #### Contenido
 
-<ul>
+<ul id='content'>
 	<li>
 		<a href='#flujo-de-trabajo-en-pln' target='_self'>Flujo de Trabajo en PLN</a>
 	</li>
@@ -107,8 +107,6 @@ Llevar palabras distintas con significados similares a una forma común.
 * Lemmatizer: Utiliza un vocabulario y realiza un análisis morfológico de las palabras. Precisa que se le informe cual es la función de la palabra en el texto:
 
 
-| | | | | | | | |
-|:-|-|-|-|-|-|-|-|
 |Buenos Aires |es |la |capital |y |la |más |poblada|
 |Sustantivo Propio	|Verbo	|Artículo	|Sustantivo	|Conjunción	|Artículo	|Adverbio	|Verbo|
 

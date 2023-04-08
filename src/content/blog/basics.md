@@ -10,7 +10,7 @@ url: "/basics"
 
 #### Contenido
 
-<ul>
+<ul id='content'>
 	<li>
 		<a href='#balanceo-de-dataset' target='_self'>Balanceo de dataset</a>
 	</li>

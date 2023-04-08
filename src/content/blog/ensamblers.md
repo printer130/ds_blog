@@ -10,7 +10,7 @@ url: "/ensamblers"
 
 #### Contenido
 
-<ul>
+<ul id='content'>
 	<li>
 		<a href='#estimación-de-grandes-números' target='_self'>Estimación de grandes números</a>
 	</li>

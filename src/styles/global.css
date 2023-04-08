@@ -18,6 +18,14 @@ li {
 	list-style: decimal;
 }
 
+hr {
+	margin: 1rem 0;
+}
+
+#content {
+	padding-bottom: 1rem;
+}
+
 h2 {
 	font-weight: bold;
 	font-size: 2rem;

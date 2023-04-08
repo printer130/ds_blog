@@ -10,7 +10,7 @@ url: "/cross_validation"
 
 #### Contenido
 
-<ul>
+<ul id='content'>
 	<li>
 		<a href='#validación-cruzada' target='_self'>Validación Cruzada</a>
 	</li>

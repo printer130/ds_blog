@@ -2,8 +2,6 @@
 import BaseHead from '@components/BaseHead.astro'
 import Header from '@components/Header.astro'
 import Footer from '@components/Footer.astro'
-import { SearchC } from '@components/SearchC.jsx'
-
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 import ListOfBlogs from '@components/ListOfBlogs.astro'
 ---
@@ -15,15 +13,11 @@ import ListOfBlogs from '@components/ListOfBlogs.astro'
 			title={SITE_TITLE}
 			description={SITE_DESCRIPTION}
 		/>
+		<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/instantsearch.css@8.0.0/themes/satellite-min.css' integrity='sha256-p/rGN4RGy6EDumyxF9t7LKxWGg6/MZfGhJM/asKkqvA=' crossorigin='anonymous'>
 	</head>
 	<body>
 		<Header title={SITE_TITLE} />
 		<main class='pt-12 max-w-4xl w-full mx-auto'>
-			<SearchC client:only />
-			<!-- <SearchC client:only /> -->
-			<!-- <h1
-				class='pb-10 text-6xl text-neutral-200 font-semibold'
-			> Blog</h1> -->
 			<ListOfBlogs />
 		</main>
 		<Footer />

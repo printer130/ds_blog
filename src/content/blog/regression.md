@@ -10,7 +10,7 @@ url: "/regression"
 
 #### Contenido
 
-<ul>
+<ul id='content'>
 	<li>
 		<a href='#ejemplo-clásico' target='_self'>Ejemplo clásico</a>
 	</li>

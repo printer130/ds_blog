@@ -10,7 +10,7 @@ url: "/classification_models"
 
 #### Contenido
 
-<ul>
+<ul id='content'>
 	<li>
 		<a href='#árboles-de-decisión' target='_self'>Árboles de decisión</a>
 	</li>

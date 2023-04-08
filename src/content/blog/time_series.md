@@ -10,7 +10,7 @@ url: "/time_series"
 
 #### Contenido
 
-<ul>
+<ul id='content'>
 	<li>
 		<a href='#series-de-tiempo' target='_self'>Series de tiempo</a>
 	</li>
