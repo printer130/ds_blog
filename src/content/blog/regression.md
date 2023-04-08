@@ -12,62 +12,62 @@ url: "/regression"
 
 <ul>
 	<li>
-		<a href='#balanceo-de-dataset' target='_self'>Ejemplo clásico</a>
+		<a href='#ejemplo-clásico' target='_self'>Ejemplo clásico</a>
 	</li>
 	<li>
-		<a href='#evaluación-de-modelos' target='_self'>Esquema de ML</a>
+		<a href='#esquema-de-ml' target='_self'>Esquema de ML</a>
 	</li>
 	<li>
-		<a href='#teorema-de-bayes' target='_self'>Aprendizaje supervisado</a>
+		<a href='#aprendizaje-supervisado' target='_self'>Aprendizaje supervisado</a>
 	</li>
 	<li>
-		<a href='#naive-bayes' target='_self'>Aprendizaje no supervisado</a>
+		<a href='#aprendizaje-no-supervisado' target='_self'>Aprendizaje no supervisado</a>
 	</li>
 	<li>
-		<a href='#overfitting-y-underfitting' target='_self'>Correlación</a>
+		<a href='#correlación' target='_self'>Correlación</a>
 	</li>
 	<li>
-		<a href='#overfitting-y-underfitting' target='_self'>Historia y evolución de la Inteligencia Artificial</a>
+		<a href='#historia-y-evolución-de-la-inteligencia-artificial' target='_self'>Historia y evolución de la Inteligencia Artificial</a>
 	</li>
 	<li>
-		<a href='#overfitting-y-underfitting' target='_self'>Presente y Futuro de la IA</a>
+		<a href='#presente-y-futuro-de-la-ia' target='_self'>Presente y Futuro de la IA</a>
 	</li>
 	<li>
-		<a href='#overfitting-y-underfitting' target='_self'>Primeros algoritmos de Machine Learning</a>
+		<a href='#primeros-algoritmos-de-machine-learning' target='_self'>Primeros algoritmos de Machine Learning</a>
 	</li>
 	<li>
-		<a href='#sesgo-y-varianza' target='_self'>Flujo de Trabajo</a>
-	</li>
-  <ul>
-    <li>
-      <a href='#parámetros-e-hiperparámetros' target='_self'>Exploración de los datos</a>
-    </li>
-    <li>
-      <a href='#parámetros-e-hiperparámetros' target='_self'>Falencias en los datos</a>
-    </li>
-  </ul>
-	<li>
-		<a href='#parámetros-e-hiperparámetros' target='_self'>Transformacion de Datos</a>
+		<a href='#flujo-de-trabajo' target='_self'>Flujo de Trabajo</a>
 	</li>
   <ul>
     <li>
-      <a href='#parámetros-e-hiperparámetros' target='_self'>Tratamiento sobre Variables Cualitativas Ordinales</a>
+      <a href='#exploración-de-los-datos' target='_self'>Exploración de los datos</a>
     </li>
     <li>
-      <a href='#parámetros-e-hiperparámetros' target='_self'>Tratamiento sobre Variables Cualitativas Nominales</a>
-    </li>
-    <li>
-      <a href='#parámetros-e-hiperparámetros' target='_self'>Tratamiento sobre Variables Cuantitativas</a>
-    </li>
-    <li>
-      <a href='#parámetros-e-hiperparámetros' target='_self'>Variables Numéricas</a>
+      <a href='#falencias-en-los-datos' target='_self'>Falencias en los datos</a>
     </li>
   </ul>
 	<li>
-		<a href='#parámetros-e-hiperparámetros' target='_self'>Scikit-Learn</a>
+		<a href='#transformacion-de-datos' target='_self'>Transformacion de Datos</a>
+	</li>
+  <ul>
+    <li>
+      <a href='#tratamiento-sobre-variables-cualitativas-ordinales' target='_self'>Tratamiento sobre Variables Cualitativas Ordinales</a>
+    </li>
+    <li>
+      <a href='#tratamiento-sobre-variables-cualitativas-nominales' target='_self'>Tratamiento sobre Variables Cualitativas Nominales</a>
+    </li>
+    <li>
+      <a href='#tratamiento-sobre-variables-cuantitativas' target='_self'>Tratamiento sobre Variables Cuantitativas</a>
+    </li>
+    <li>
+      <a href='#variables-numéricas' target='_self'>Variables Numéricas</a>
+    </li>
+  </ul>
+	<li>
+		<a href='#scikit-learn' target='_self'>Scikit-Learn</a>
 	</li>
 	<li>
-		<a href='#parámetros-e-hiperparámetros' target='_self'>Reescalar los datos</a>
+		<a href='#reescalar-los-datos' target='_self'>Reescalar los datos</a>
 	</li>
 </ul>
 
@@ -104,14 +104,13 @@ Para este claso, empleamos un ejemplo de Correo Spam.
 Habitualmente, recibimos correos en nuestra casilla. Algunos tendrán un contenido que es de nuestro interés, pero otros serán correos no deseados. Ahora bien, ¿cómo hace el sistema para distinguir un correo spam de otro que no lo es? En definitiva, ¿cómo lo detecta?
 En efecto, con un modelo de Machine Learning. El algoritmo clasificador, en este caso, separa los correos deseados de aquellos que detecta como spam.
 
-<img src="..\_src\assets\spam.jpg" height="300">
+<img src="\assets\spam.jpg" height="300">
 
 Para nosotros sería bastante fácil poder detectar un correo spam. Pero para la máquina esto requiere de un nivel de abstracción bastante amplio. Debe entender el texto, relacionar las palabras, buscar patrones, etc. Además, debe buscar palabras clave. A priori, ya sabemos que si en un correo tenemos las palabras "príncipe", "cuenta bancaria" o "herencia" probablemente estemos frente a un correo spam.
 
 - - - 
 
 ## Esquema de ML
-
 
 En el siguiente esquema podremos observar las tres grandes ramas en las que se subdivide Machine Learning:
 
@@ -147,7 +146,7 @@ La función de este tipo de algoritmos es encontrar patrones de similaridad. Por
 
 Ejemplo de clustering:
 
-<img src="..\_src\assets\clustering.jpg">
+<img src="\assets\clustering.jpg">
   
 
 - - -
@@ -192,7 +191,7 @@ Resolver problemas diversos de forma automática y simulando el comportamiento h
 
 * En la Grecia antigua, Aristóteles (384-322 a.C.) fue el
 primero en describir una parte del funcionamiento de la mente humana en un conjunto de reglas para obtener conclusiones racionales. Ctesibio de Alejandría (250 a.C.) construyó la primera máquina autocontrolada, un regulador del flujo de agua, racional pero sin razonamiento.
-<img src="../_src/assets/primera_maquina_autocontrolada.jpg"  height="200">
+<img alt="Regresion" src="/assets/primera_maquina_autocontrolada.jpg"  height="200">
 
 * En su obra Ars Magna (1274), Raimundo Lulio inventó un lenguaje formal basado en la lógica combinatoria para poder hablar de todo aquello relevante a la filosofía y la religión sin la barrera de las lenguas. Es el primer intento de crear una lengua universal e influenció a Leibniz, quien expandió el sistema lo denominó combinatoria.
 
@@ -202,7 +201,7 @@ primero en describir una parte del funcionamiento de la mente humana en un conju
 
 * En 1936, Alan Mathison Turing ideó un modelo formal de computador extremadamente sencillo, la Máquina de Turing, con el que es posible realizar cualquier cómputo que un computador digital sea capaz de realizar. Es el primer modelo teórico de un procesador.
 
-<img src="../_src/assets/automata_finito.jpg"  height="200">
+<img alt="Regresion" src="/assets/automata_finito.jpg"  height="200">
 
 * En 1943, Warren McCulloch y Walter Pitts presentaron su modelo de neuronas artificiales,
 el cual se considera el primer trabajo del campo,
@@ -212,20 +211,20 @@ aún cuando todavía no existía el término.
 
 * En 1950, Alan Turing crea la Prueba de Turing, que consiste en que si una persona, en una conversación con una máquina, no es capaz de distinguirlo de un humano, esta es aprobada como inteligente.
 
-<img src="../_src/assets/test_Turing.jpg"  height="200">
+<img alt="Regresion" src="/assets/test_Turing.jpg"  height="200">
 
 * En 1952,  Arthur Samuel escribe el primer programa de ordenador capaz de aprender: un programa que jugaba a las Damas y mejoraba en cada partida.
 
 * En 1956, John McCarthy, Marvin Minsky y Claude Shannon acuñaron el término Inteligencia Artificial durante una conferencia en Dartmouth.<br>
-<img src="../_src/assets/ia1.jpg"  height="100">
+<img alt="Regresion" src="/assets/ia1.jpg"  height="100">
 
 * A mediados de los años 50, con el invento de los transistores, apareció un gran avance con computadoras más poderosas y confiables, y menos costosas. Abriendo paso a la segunda generación de computadoras.
 
-<img src="../_src/assets/transistor.jpg"  height="100">
+<img alt="Regresion" src="/assets/transistor.jpg"  height="100">
 
 * En 1958 Frank Rosenblatt diseña el Perceptrón, la primera red neuronal artificial basado el modelo de neuronas de McCulloch y Pitts de 1943.
 
-<img src="../_src/assets/perceptron.jpg"  height="100">
+<img alt="Regresion" src="/assets/perceptron.jpg"  height="100">
 
 * A mediados de los años 60, aparecen los sistemas expertos, que predicen la probabilidad de una solución bajo un conjunto de condiciones.
 
@@ -237,7 +236,7 @@ aún cuando todavía no existía el término.
 
 * En 1982, con la quinta generación de computadoras, el objetivo era el desarrollo de computadoras que utilizarían inteligencia artificial, mejorando hardware como software, sin obtener los resultados esperados: casos en los que es imposible llevar a cabo una paralelización, no se aprecia mejora alguna, o se pierde rendimiento.
 
-<img src="../_src/assets/evolucion_computacion.jpg"  height="100">
+<img alt="Regresion" src="/assets/evolucion_computacion.jpg"  height="100">
 
 * En 1985, Terry Sejnowski inventa NetTalk, un programa que aprende a pronunciar palabras de la misma manera que lo haría un niño.
 
@@ -253,7 +252,7 @@ Esto generó un gran cambió al campo del aprendizaje automático de las computa
 * La llegada del nuevo milenio trajo consigo una explosión en el uso del Machine Learning. Geoffrey Hinton en 2006 acuña el término “Deep Learning”, con el que se explican nuevas arquitecturas de Redes Neuronales profundas que permiten a las computadoras “ver” y distinguir objetos y texto en imágenes y videos.
 
 * También en 2006 se consigue facilitar los cálculos independientes necesarios para renderizar cada píxel en GPUs. Hasta entonces era impensable que los científicos usarán GPUs para su trabajo, pero a partir de ese momento lenguajes de alto nivel como C++ o Python se pueden utilizar para programar complejos cálculos y algoritmos permitiendo programar trabajos en paralelo y con gran cantidad de datos.
-<img src="../_src/assets/cpu-gpu.jpg"  height="250">
+<img alt="Regresion" src="/assets/cpu-gpu.jpg"  height="250">
 
 * En 2011 IBM desarrolló Watson, la computadora ganó una ronda de tres juegos seguidos de Jeopardy!.
 
@@ -272,28 +271,28 @@ la escalabilidad vertical, haciendo las computadoras más potentes siguiendo la 
 
 * Los datos: Superado por medio de la escalabilidad horizontal, haciendo que varios ordenadores computen como uno solo, por medio de tecnologías como Big Data.
 
-<img src="../_src/assets/ley_moore.jpg"  height="250">
+<img alt="Regresion" src="/assets/ley_moore.jpg"  height="250">
 
 ### Primeros algoritmos de Machine Learning
 
 * Sistemas Expertos:
 El experto humano ingresa cada experiencia con su regla de resolución. Esto se traduce en una base de conocimientos con reglas de inferencia que permite luego, a un usuario no experto, ante la misma problemática (misma experiencia) encontrar una regla de resolución adecuada.
-<img src="../_src/assets/sistema_experto.jpg"  height="250">
+<img alt="Regresion" src="/assets/sistema_experto.jpg"  height="250">
 
 * Árbol de Decisión:
 Cada nodo puede ser una pregunta a los datos, o una resolución.
 
-<img src="../_src/assets/arbol_decision.jpg"  height="250">
+<img alt="Regresion" src="/assets/arbol_decision.jpg"  height="250">
 
 * Vecinos más cercanos ó K-Vecinos:
 Una nueva instancia de categoriza según sea la categoría de los k vecinos más cercanos
 
-<img src="../_src/assets/k-vecinos.jpg"  height="250">
+<img alt="Regresion" src="/assets/k-vecinos.jpg"  height="250">
 
 * Perceptrón simple:
 Basado en el modelo de redes neuronales artificiales, consta de n entradas X, que se ponderan con su respectivo valor W, se sumarizan y, por último, esta salida pasa por una función de activación para dar un resultado final.
 
-<img src="../_src/assets/perceptron_simple.jpg"  height="250">
+<img alt="Regresion" src="/assets/perceptron_simple.jpg"  height="250">
 
 ## Flujo de Trabajo
 
@@ -347,7 +346,7 @@ L→2<br>
 Este es uno de los tipos de encoding más comunes que vamos a tener que hacer.
 En el ejemplo, queremos llevar al género, los valores male y female, a 0 y 1. Lo importante es no perder cuál es cuál. Esto, en Pandas, lo podemos hacer con la función map(). Este tipo de encoding se denomina Label_enconding.
 
-<img src="../_src/assets/label_encoding.jpg"  height="200">
+<img alt="Regresion" src="/assets/label_encoding.jpg"  height="200">
 
 ### Tratamiento sobre Variables Cualitativas Nominales
 
@@ -362,12 +361,12 @@ Ejemplos:
 Se llevan a variables dummies con One-Hot Encoding. La variable dummie será entonces aquella que tome valores 0 o 1, en función de la presencia o no de un atributo.
 Puede hacer que nuestro dataset crezca mucho.
 
-<img src="../_src/assets/one-hot-enconding.jpg"  height="200">
+<img alt="Regresion" src="/assets/one-hot-enconding.jpg"  height="200">
 
 Una variable dummy toma como valor 0 o 1 para indicar la presencia o ausencia de algún atributo categórico.
 La función  get_dummies() hace automáticamente esto en un dataframe sobre las columnas indicadas.
 
-<img src="../_src/assets/one-hot-encoding.jpg"  height="200">
+<img alt="Regresion" src="/assets/one-hot-encoding.jpg"  height="200">
 
 ### Tratamiento sobre Variables Cuantitativas
 
@@ -388,7 +387,7 @@ En general, las variables numéricas podrían ser usadas sin demasiado preproces
 Discretización y binning:
 La función cut() transforma la columna Age en rangos (bins) convirtiendo así el dato de edad en una variable discreta.
 
-<img src="../_src/assets/discretizacion_binning.jpg"  height="200">
+<img alt="Regresion" src="/assets/discretizacion_binning.jpg"  height="200">
 
 Reescalar es útil sobre todo cuando queremos llevar los datos a una distribución de probabilidad con la que podamos trabajar mejor, como en el caso que vimos de llevar el dato a su logaritmo base 10.
 
@@ -405,7 +404,7 @@ Adecuado para seguir un Pipeline: Es un objeto en el que es posible encapsular t
 
 - [Documentación] (https://scikit-learn.org/stable/index.html)
 
-<img src="../_src/assets/scikit-learn.jpg" height="400">
+<img alt="Regresion" src="/assets/scikit-learn.jpg" height="400">
 
 Vamos a encontrar que Scikit-Learn trabaja con Clases e implementa de manera uniforme los atributos y métodos de sus objetos:
 
@@ -428,14 +427,14 @@ objeto.transform(Datos)
 Las siguientes clases son las herramientas disponibles para procesar datos:
 
 * SimpleImputer: Rellena valores faltantes.<br>
-<img src="../_src/assets/simpleImputer.jpg" height="200">
+<img alt="Regresion" src="/assets/simpleImputer.jpg" height="200">
 * OneHotEncoder: Pasa de variables categóricas a dummies. Notar que con N instancias, son necesarias solo N-1 nuevas columnas.<br>
-<img src="../_src/assets/one_hot_1.jpg" height="200">
-<img src="../_src/assets/one_hot_2.jpg" height="200">
+<img alt="Regresion" src="/assets/one_hot_1.jpg" height="200">
+<img alt="Regresion" src="/assets/one_hot_2.jpg" height="200">
 * LabelEncoder: Pasa variables categóricas a valores numéricos.<br>
 * KBinsDiscretizer: Para discretización y binning, la principal diferencia con Pandas es que Scikit-Learn decide los límites de los bines de acuerdo a una estrategia que le pasemos de parámetro.<br>
 * SelectKBest: Selecciona atributos del dataset en base a diferentes criterios de evaluación. Puede servir como respaldo o referencia del análisis que se está realizando sobre los datos.<br>
-<img src="../_src/assets/label_encoder2.jpg" height="200">
+<img alt="Regresion" src="/assets/label_encoder2.jpg" height="200">
 
 ### Reescalar los datos
 
@@ -444,22 +443,22 @@ Muchos algoritmos funcionan mejor normalizando sus variables de entrada. Lo que 
 * MinMax Scaler: 
 
 Las entradas se normalizan entre dos límites definidos:<br>
-<img src="../_src/assets/min_max_formula.jpg" height="50">
+<img alt="Regresion" src="/assets/min_max_formula.jpg" height="50">
 
 Tener en cuenta que si se reescala un atributo, quizás sea conveniente reescalar otro, debido a que estamos rompiendo la proporcionalidad de los datos:
 
-<img src="../_src/assets/min_max.jpg" height="300">
+<img alt="Regresion" src="/assets/min_max.jpg" height="300">
 
 En 1 originalmente, A estaba más cerca de B, al multiplicar por 100, quedó más cerca de C. En 2 el ruido de la señal se hizo más notorio.
 
 * Standard Scaler: 
 
 A cada dato se le resta la media de la variable y se le divide por la desviación típica:<br>
-<img src="../_src/assets/standard_scaler_formula.jpg" height="50">
+<img alt="Regresion" src="/assets/standard_scaler_formula.jpg" height="50">
 
 Si bien puede resultar conveniente en datos que no tienen distribución de probabilidad Gaussiana o Normal debido a que se puede trabajar mejor bajo ese esquema, tanto la media como la desviación típica son muy sensibles a outliers.<br>
 
-<img src="../_src/assets/standard_scaler.jpg" height="300">
+<img alt="Regresion" src="/assets/standard_scaler.jpg" height="300">
 <!-- 
 ## `Práctica`
  -->
