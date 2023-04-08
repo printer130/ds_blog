@@ -2,6 +2,8 @@
 import BaseHead from '@components/BaseHead.astro'
 import Header from '@components/Header.astro'
 import Footer from '@components/Footer.astro'
+import { SearchC } from '@components/SearchC.jsx'
+
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 import ListOfBlogs from '@components/ListOfBlogs.astro'
 ---
@@ -17,6 +19,7 @@ import ListOfBlogs from '@components/ListOfBlogs.astro'
 	<body>
 		<Header title={SITE_TITLE} />
 		<main class='pt-12 max-w-4xl w-full mx-auto'>
+			<SearchC client:only />
 			<!-- <SearchC client:only /> -->
 			<!-- <h1
 				class='pb-10 text-6xl text-neutral-200 font-semibold'

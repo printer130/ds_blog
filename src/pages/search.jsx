@@ -23,7 +23,7 @@ function Hit ({ hit }) {
 	)
 }
 
-export function SearchC () {
+export default function SearchC () {
 	return (
 		<InstantSearch searchClient={searchClient} indexName={index}>
 			<SearchBox />

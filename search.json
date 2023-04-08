@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Procesamiento del Lenguaje Natural",
+    "sub_title": "Flujo de Trabajo en PLN",
+    "url": "https://ds-blog-sigma.vercel.app/blog/natural_language_processing#flujo-de-trabajo-en-pln",
+    "description": ""
+  },
+  {
+    "title": "Procesamiento del Lenguaje Natural",
+    "sub_title": "Normalizar",
+    "url": "https://ds-blog-sigma.vercel.app/blog/natural_language_processing#normalizar",
+    "description": "Consiste en llevar todo el texto a un formato común donde palabras escrita de manera distinta o con significados similares se representen de la misma manera."
+  },
+  {
+    "title": "Procesamiento del Lenguaje Natural",
+    "sub_title": "Llevar a raíz",
+    "url": "https://ds-blog-sigma.vercel.app/blog/natural_language_processing#llevar-a-ra%C3%ADz",
+    "description": "Stemmizer: Recorta las palabras mediante un proceso heurístico. Es rápido y fácil de usar, pero a veces no es certero:\nLemmatizer: Utiliza un vocabulario y realiza un análisis morfológico de las palabras. Precisa que se le informe cual es la función de la palabra en el texto:\nEn lingüística, el lema es una unidad semántica que constituye el léxico de un idioma. Si se trata de verbos, es la conjugación verbal en infinitivo; si se trata de sustantivos, es el singular…."
+  },
+  {
+    "title": "Procesamiento del Lenguaje Natural",
+    "sub_title": "Vectorizar",
+    "url": "https://ds-blog-sigma.vercel.app/blog/natural_language_processing#vectorizar",
+    "description": "Se representa cada texto (instancia de la base de datos) como un vector que podamos usar como vector de features para entrenar un modelo:"
+  },
+  {
+    "title": "Procesamiento del Lenguaje Natural",
+    "sub_title": "Term Frecuency e Inverse Document Frecuency",
+    "url": "https://ds-blog-sigma.vercel.app/blog/natural_language_processing#term-frecuency-e-inverse-document-frecuency",
+    "description": "Se busca diferenciar cada documento (frase) por las palabras que lo componen, asumiendo que las palabras que están en TODOS ellos no aportan información.\nHay que medir no sólo cuanto aparece una palabra en una instancia (documento), sino también qué tan frecuente es esa palabra en todo el corpus del texto.\nTerm Frecuency: Frecuencia de una palabra."
+  }
+]
