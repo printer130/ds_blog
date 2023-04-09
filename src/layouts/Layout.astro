@@ -24,7 +24,7 @@ const { title, description, pubDate } = Astro.props
 				<h1
 					class='text-3xl pb-4 sm:text-4xl text-slate-800 font-semibold'
 				>
-					{title?.at(0).toUpperCase() + title.slice(1).replaceAll('_', ' ')}
+					{title?.at(0).toUpperCase() + title?.slice(1).replaceAll('_', ' ')}
 				</h1>
 				{
 					pubDate &&	<FormattedDate date={pubDate} />
