@@ -3,31 +3,22 @@ import { getCollection } from 'astro:content'
 import CardOfBlogs from './CardOfBlogs.astro'
 
 const posts = (await getCollection('blog')).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 )
 
 ---
 
-<section>
-	<main>
-		<h2 class='text-4xl pt-8 my-0 text-slate-800 font-bold px-4'>
-			Ciencia de datos
-		</h2>
-		<section>
-			<ul class='px-4'>
-				{
-					posts.map((post) => {
-						const { slug, data } = post
-						return <CardOfBlogs
-							slug={slug}
-							title={data.title}
-							description={data.description}
-							pubDate={data.pubDate}
-						/>
-					})
-				}
-			</ul>
-		</section>
-	</main>
-</section>
+<ul class='px-0'>
+	{
+		posts.map((post) => {
+			const { slug, data } = post
+			return <CardOfBlogs
+				slug={slug}
+				title={data.title}
+				description={data.description}
+				pubDate={data.pubDate}
+			/>
+		})
+	}
+</ul>
 

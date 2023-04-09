@@ -1,5 +1,5 @@
 ---
-import LabPost from '@layouts/LabPost.astro'
+import Layout from '@layouts/Layout.astro'
 import { getCollection, getEntryBySlug } from 'astro:content'
 
 export async function getStaticPaths () {
@@ -18,15 +18,9 @@ const { slug } = Astro.params
 const entry = await getEntryBySlug('lab', slug)
 const data = entry?.data
 const { Content } = await entry?.render()
-
 ---
-<LabPost>
-	<h1
-		class='title text-3xl pb-4 sm:text-5xl text-slate-800 font-black'
-	>
-		{data?.title}
-	</h1>
+<Layout title={data?.title} pubDate={data?.pubDate} description={data?.description}>
 	{
 		Content !== undefined &&	<Content />
 	}
-</LabPost>
+</Layout>

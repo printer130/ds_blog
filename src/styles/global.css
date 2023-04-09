@@ -26,17 +26,22 @@ hr {
 	padding-bottom: 1rem;
 }
 
+p {
+	margin-top: 1rem;
+}
+
 h2 {
 	font-weight: bold;
 	font-size: 2rem;
 	padding-top: 50px;
+	padding-bottom: 1rem;
 }
 
 h3 {
 	font-size: 1.4rem;
 	font-weight: bold;
 	padding-top: 50px;
-	padding-bottom: 1rem;
+	padding-bottom: 7px;
 }
 
 h4 {
@@ -66,6 +71,7 @@ nav a {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+	margin-top: 1rem;
 }
 
 th, td {
@@ -96,6 +102,7 @@ code {
 
 pre {
 	padding: 1rem;
+	margin: 1rem 0;
 }
 
 pre > code {

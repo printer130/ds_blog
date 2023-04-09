@@ -4,41 +4,54 @@ import { useEffect, useState } from 'preact/hooks'
 const searchClient = algoliasearch('VPJ1ILH2V9', '9d930af6938e5cba8fabe551fba44a2b')
 const index = searchClient.initIndex('ds_blog')
 
-function Hit ({ hit }) {
+
+function Hit ({ hit } = { hit: [] }) {
 	return (
-		<article>
-			<img src={hit.image} alt={hit.name} />
-			<p>{hit.categories[0]}</p>
-			<h1>
-				{/* 	<Highlight attribute='name' hit={hit} /> */}
-			</h1>
-			<p>${hit.price}</p>
-		</article>
+		<li class='list-none pb-4'>
+			<article class=''>
+				<a href={hit.url} class='w-full m-0 cursor-pointer hover:underline '>
+					{/* <img src={hit?.image} alt={hit?.name} /> */}
+					<h1 class='p-0 m-0 text-xl font-semibold'>
+						{/* 	<Highlight attribute='name' hit={hit} /> */}
+						{hit?.title}.
+					</h1>
+					<h2 class='p-0 m-0 text-base font-semibold'>
+						- {hit?.sub_title}
+					</h2>
+				</a>
+				<p class='p-0 m-0 text-medium'>{hit?.description}</p>
+			</article>
+		</li>
 	)
 }
 
 export function SearchC () {
 	const [find, setFind] = useState('')
-	const [hit, setHit] = useState('')
-	/*
+	const [hits, setHits] = useState([])
 	useEffect(() => {
 		console.log('EFFECT')
 		find.length >= 3 && index.search(find)
-			.then(setHit)
-	}, [find]) */
+			.then(query => {
+				setHits(query.hits)
+			})
+	}, [find])
 
 	const handleChange = e => {
+		console.log(e.target.value)
 		const v = e.target.value
 		setFind(v)
-		console.log({ find })
 	}
-	console.log({ hit, find })
 
 	return (
-		<div class='ais-SearchBox'>
+		<div class='ais-SearchBox relative border border-red-400'>
+			<ul class='bg-[#f6f4f4]  px-1 h-fit z-10 absolute pt-0  top-12 left-0 right-0 bottom-0 border border-blue-400'>
+				{hits.map(hit => {
+					return <Hit hit={hit} />
+				})}
+			</ul>
 			<form class='ais-SearchBox-form' novalidate >
 				<input class='ais-SearchBox-input' autocomplete='off' autocorrect='off' autocapitalize='off' placeholder='Buscar...' spellcheck='false' maxlength='512' type='search' value={find} onChange={handleChange} name='search' />
-				<button class='ais-SearchBox-submit' type='submit' title='Submit the search query.'>
+				<button class='ais-SearchBox-submit' title='Submit the search query.'>
 					<svg class='ais-SearchBox-submitIcon' width='10' height='10' viewBox='0 0 40 40' aria-hidden='true'>
 						<path d='M26.804 29.01c-2.832 2.34-6.465 3.746-10.426 3.746C7.333 32.756 0 25.424 0 16.378 0 7.333 7.333 0 16.378 0c9.046 0 16.378 7.333 16.378 16.378 0 3.96-1.406 7.594-3.746 10.426l10.534 10.534c.607.607.61 1.59-.004 2.202-.61.61-1.597.61-2.202.004L26.804 29.01zm-10.426.627c7.323 0 13.26-5.936 13.26-13.26 0-7.32-5.937-13.257-13.26-13.257C9.056 3.12 3.12 9.056 3.12 16.378c0 7.323 5.936 13.26 13.258 13.26z'></path>
 					</svg>
