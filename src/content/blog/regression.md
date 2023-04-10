@@ -1,5 +1,5 @@
 ---
-title: "Machine Learning (Introdución)"
+title: "Machine Learning (Introducción)"
 description: "Veremos cuál es su alcance, características, metodología, aplicabilidad y casos de uso."
 pubDate: "Apr 11 2023"
 heroImage: "/placeholder-hero.jpg"

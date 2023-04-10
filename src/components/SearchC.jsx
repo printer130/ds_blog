@@ -35,15 +35,13 @@ export function SearchC () {
 	}, [find])
 
 	const handleChange = e => {
-		console.log(e.target.value)
 		const v = e.target.value
 		setFind(v)
 	}
-	console.log(hits)
 
 	return (
 		<div class='ais-SearchBox relative'>
-			<ul class='bg-[#f6f4f4] px-1 h-fit z-10 absolute pt-0 top-10 left-0 right-0 bottom-0-blue-400 overflow-auto overflow-y-auto max-h-[80vh]'>
+			<ul class={`bg-[#f6f4f4] px-1 h-fit z-10 absolute pt-0 top-10 sm:-left-40 right-0 bottom-0-blue-400 overflow-auto overflow-y-auto max-h-[80vh] ${hits.length > 0 && 'border border-[#120]/20'}`}>
 				{hits?.map(list => {
 					return <Hit hit={list} />
 				})}
