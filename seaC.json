@@ -1,0 +1,133 @@
+[
+  {
+    "title": "Procesamiento del Lenguaje Natural",
+    "sub_title": "Flujo de Trabajo en PLN",
+    "url": "https://ds-blog-sigma.vercel.app/blog/natural_language_processing#flujo-de-trabajo-en-pln",
+    "description": "",
+    "childs":[]
+  },
+  {
+    "title": "Procesamiento del Lenguaje Natural",
+    "sub_title": "Normalizar",
+    "url": "https://ds-blog-sigma.vercel.app/blog/natural_language_processing#normalizar",
+    "description": "Consiste en llevar todo el texto a un formato común donde palabras escrita de manera distinta o con significados similares se representen de la misma manera.",
+    "childs":[]
+  },
+  {
+    "title": "Procesamiento del Lenguaje Natural",
+    "sub_title": "Llevar a raíz",
+    "url": "https://ds-blog-sigma.vercel.app/blog/natural_language_processing#llevar-a-ra%C3%ADz",
+    "description": "Stemmizer: Recorta las palabras mediante un proceso heurístico. Es rápido y fácil de usar, pero a veces no es certero:\nLemmatizer: Utiliza un vocabulario y realiza un análisis morfológico de las palabras. Precisa que se le informe cual es la función de la palabra en el texto:\nEn lingüística, el lema es una unidad semántica que constituye el léxico de un idioma. Si se trata de verbos, es la conjugación verbal en infinitivo; si se trata de sustantivos, es el singular….",
+    "childs":[]
+  },
+  {
+    "title": "Procesamiento del Lenguaje Natural",
+    "sub_title": "Vectorizar",
+    "url": "https://ds-blog-sigma.vercel.app/blog/natural_language_processing#vectorizar",
+    "description": "Se representa cada texto (instancia de la base de datos) como un vector que podamos usar como vector de features para entrenar un modelo:",
+    "childs":[]
+  },
+  {    
+    "title": "Procesamiento del Lenguaje Natural",
+    "sub_title": "Term Frecuency e Inverse Document Frecuency",
+    "url": "https://ds-blog-sigma.vercel.app/blog/natural_language_processing#term-frecuency-e-inverse-document-frecuency",
+    "description": "Se busca diferenciar cada documento (frase) por las palabras que lo componen, asumiendo que las palabras que están en TODOS ellos no aportan información.\nHay que medir no sólo cuanto aparece una palabra en una instancia (documento), sino también qué tan frecuente es esa palabra en todo el corpus del texto.\nTerm Frecuency: Frecuencia de una palabra.",
+    "childs":[]
+  },
+  {
+    "title": "Procesamiento del Lenguaje Natural",
+    "sub_title": "Balanceo de dataset",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/basics#balanceo-de-dataset",
+    "description": "En determinadas ocasiones, nos enfrentaremos a datasets que están desbalanceados. Esto significa que habrá una prevalencia de una clase por sobre otra. Pensemos en un dataset que contenga transacciones fraudulentas con tarjetas de crédito. Como la gran mayoría de las operaciones no corresponden a esa categoría, tendremos -en términos relativos- una subrepresentación de esta clase.\n Cuando entrenemos el modelo, casi la totalidad de datos que verá corresponderán a una de las clases. Lo mismo sucederá en la etapa de testeo.",
+    "childs":[]
+  },
+  {
+    "title": "Datasets desbalanceados",
+    "sub_title": "Balanceo de dataset",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/basics#oversampling",
+    "description": "Habrá una prevalencia de una clase por sobre otra. Pensemos en un dataset que contenga transacciones fraudulentas con tarjetas de crédito. Como la gran mayoría de las operaciones no corresponden a esa categoría, tendremos -en términos relativos- una subrepresentación de esta clase.",
+    "childs":[
+      {
+        "title": "Oversampling",
+        "url": "",
+        "description": "Acá realizaremos un sobremuestreo, es decir, incorporaremos más datos de la clase minoritaria. En caso que no podamos obtenerlos de alguna fuente externa, se soluciona simplemente copiando registros que corresponden a esa categoría en nuestro propio dataset."
+      },
+      {
+        "title": "Upsampling",
+        "url" : "https://ds-blog-sigma.vercel.app/blog/blog/basics#upsampling",
+        "description": "Acá realizamos un submestreo de la clase mayoritaria. Es decir, eliminamos registros de nuestro dataset que contengan como etiqueta o variable de salida aquella clase hegemónica o predominante."
+      }
+    ]
+  },
+  {
+    "title": "Datasets desbalanceados",
+    "sub_title": "Evaluación de modelos",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/basics#evaluación-de-modelos",
+    "description": "Una correcta evaluación debe suplir las siguientes aristas:\n1. Elección de la métrica\n2. Tomar en consideración el tipo de problema. La performance será buena o mala dependiendo de ello y del modelo benchmark (un modelo base o punto de referencia) que tengamos\n3. Corroborar su poder de generalización. Es decir, que logre un nivel de abstracción suficiente como para generalizar por fuera de los datos que el modelo ya ha visto",
+    "childs":[]
+  },
+  {
+    "title": "Datasets desbalanceados",
+    "sub_title": "Evaluación de modelos de clasificación",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/basics#evaluación-de-modelos-de-clasificacion",
+    "description": "Entre ellas, tenemos:\n+ Matriz de confusión\n+ Precisión/Exactitud (accuracy)\n+Exhaustividad (recall)\n+ F-score\n+ Curva ROC",
+    "childs":[]
+  },
+  {
+    "title": "Datasets desbalanceados",
+    "sub_title": "Teorema de Bayes",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/basics#teorema-de-bayes",
+    "description": "El Teorema de Bayes tiene en cuenta automáticamente la prevalencia de las clases.",
+    "childs":[]
+  },
+  {
+    "title": "Datasets desbalanceados",
+    "sub_title": "Naive Bayes",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/basics#naive-bayes",
+    "description": "te modelo está basado en el Teorema de Bayes con un supuesto de independencia entre los predictores. Naive Bayes supone que la presencia de una característica particular en una clase no está relacionada con la presencia de ninguna otra característica.",
+    "childs":[]
+  },
+  {
+    "title": "Datasets desbalanceados",
+    "sub_title": "Naive Bayes Multidimensional",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/basics#naive-bayes-multidimensional",
+    "description": "El Teorema de Bayes tiene en cuenta automáticamente la prevalencia de las clases.",
+    "childs":[]
+  },
+  {
+    "title": "Datasets desbalanceados",
+    "sub_title": "Overfitting y underfitting",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/basics#overfitting-y-underfitting",
+    "description": "Antes de entrenar nuestro modelo, debemos separar una fracción del dataset para poder testear el modelo. Este modelo será entrenado con los datos de train y evaluado con los datos de test.",
+    "childs":[
+      {
+        "title": "overfitting",
+        "description": "El modelo se aprendió los datos de memoria, pero no aprendió a generalizar.",
+        "url": "https://ds-blog-sigma.vercel.app/blog/blog/basics#overfitting"
+      },
+      {
+        "title": "underfitting",
+        "description": "Escenario que se presenta cuando el modelo establece una línea divisoria demasiadio generalista. Tendrá un bajo desempeño para hacer una predicción tanto con los datos de muestreo como los poblacionales.",
+        "url": "https://ds-blog-sigma.vercel.app/blog/blog/basics#underfitting"
+      }
+    ]
+  },
+  {
+    "title": "Datasets desbalanceados",
+    "sub_title": "Entrenamiento, validación y test",
+    "description": "Una extensión del clásico _train-test split_ es lo que se llama entrenamiento, validación y testeo.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/basics#entrenamiento-validación-y-test"
+  },
+  {
+    "title": "Datasets desbalanceados",
+    "sub_title": "Sesgo y varianza",
+    "description": "Cuando hablamos de estimadores a partir de un cierto conjunto de datos, nos estamos refiriendo generalmente a la media, mediana, percentiles, varianza, etc. Estos estimadores tienen sesgo y varianza.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/basics#sesgo-y-varianza"
+  },
+  {
+    "title": "Datasets desbalanceados",
+    "sub_title": "Parámetros e hiperparámetros",
+    "description": "En este segmento introduciremos una diferenciación fundamental entre estos dos conceptos. Veamos un poco a qué se refieren cada uno de ellos.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/basics#parámetros-e-hiperparámetros"
+  }
+]

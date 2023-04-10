@@ -12,8 +12,7 @@ Usaremos el siguiente dataset:
 
 <https://www.kaggle.com/rmisra/news-headlines-dataset-for-sarcasm-detection/>
 
-La biblioteca fundamental que vamos a usar es NLTK. Probablemente tengan
-que instalarla. - - -
+La biblioteca fundamental que vamos a usar es NLTK.
 
 ## 1. Carga de datos
 

@@ -170,14 +170,3 @@ Conclusiones:
 Grid Search: Plantea opciones y explora todas las combinaciones
 Random Search: explora opciones y combinaciones al azar.
 5) Crear un modelo lo antes posible, en cualquier caso, un modelo fallido muchas veces da tanta información sobre el proceso real como uno válido
-
-<!-- Los contenidos de la clase se agruparán en los siguientes tres notebooks:
- -->
-<!-- ## `Práctica`
-
-+ Práctica_01: validación cruzada. Dev/hold-out. Optimización de hiperparámetros
-
-+ Práctica_02: regularización Ridge y Lasso
-
-+ Práctica_03: descenso de gradiente
- -->

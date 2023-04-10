@@ -5,7 +5,7 @@ algoritmo que predice la preferencia de los usuarios ante un cierto
 ítem."
 pubDate: "Apr 10 2023"
 heroImage: "/placeholder-hero.jpg"
-slug: 'natural_language_processing/1'
+slug: 'natural_language_processing/2'
 ---
 
 ---

@@ -14,6 +14,14 @@ url: "/basics"
 	<li>
 		<a href='#balanceo-de-dataset' target='_self'>Balanceo de dataset</a>
 	</li>
+	<ul>
+		<li>
+			<a href='#oversampling' target='_self'>Oversampling</a>
+		</li>
+		<li>
+			<a href='#upsampling' target='_self'>Upsampling</a>
+		</li>
+	</ul>
 	<li>
 		<a href='#evaluación-de-modelos' target='_self'>Evaluación de modelos</a>
 	</li>
@@ -24,7 +32,13 @@ url: "/basics"
 		<a href='#naive-bayes' target='_self'>Naive Bayes</a>
 	</li>
 	<li>
+		<a href='#naive-bayes-multidimensional' target='_self'>Naive Bayes Multidimensional</a>
+	</li>
+	<li>
 		<a href='#overfitting-y-underfitting' target='_self'>Overfitting y underfitting</a>
+	</li>
+	<li>
+		<a href='#entrenamiento-validación-y-test' target='_self'>Entrenamiento, validación y test</a>
 	</li>
 	<li>
 		<a href='#sesgo-y-varianza' target='_self'>Sesgo y varianza</a>
@@ -38,7 +52,7 @@ url: "/basics"
 
 ## **Balanceo de dataset**
 
- Como siempre, tenemos un [video](https://www.youtube.com/watch?v=TJJOz6thSfk&ab_channel=AprendeIAconLigdiGonzalez) para recomendarles antes de abordar de lleno la temática y que les puede ser de utilidad. 
+Como siempre, tenemos un [video](https://www.youtube.com/watch?v=TJJOz6thSfk&ab_channel=AprendeIAconLigdiGonzalez) para recomendarles antes de abordar de lleno la temática y que les puede ser de utilidad. 
 
 En determinadas ocasiones, nos enfrentaremos a datasets que están desbalanceados. Esto significa que habrá una prevalencia de una clase por sobre otra. Pensemos en un dataset que contenga transacciones fraudulentas con tarjetas de crédito. Como la gran mayoría de las operaciones no corresponden a esa categoría, tendremos -en términos relativos- una subrepresentación de esta clase.
 Cuando entrenemos el modelo, casi la totalidad de datos que verá corresponderán a una de las clases. Lo mismo sucederá en la etapa de testeo.
@@ -181,9 +195,9 @@ La curva ROC es una representación gráfica de la relación entre las tasas de 
 
 Se utiliza con frecuencia para mostrar, precisamente de forma gráfica, la conexión / compensación entre la sensibilidad y la especificidad.
 
-$TPR = TP / (TP + FN)$
+TPR = TP / (TP + FN)
 
-$FPR = FP / (FP + TN)$
+FPR = FP / (FP + TN)
 
 **TPR** : describe qué tan bueno es el modelo para predecir la clase positiva cuando el resultado real es positivo.
 
@@ -322,13 +336,13 @@ Vale aclarar que estos dos términos no son absolutos. Cada uno se encuentra en 
 
 En el gráfico de la izquierda, podemos apreciar cómo el modelo estableció una recta que no logra captar el patrón o la tendencia de los datos. Por el contrario, la tercera gráfica muestra cómo el modelo se adaptó extremadamente a los datos. Finalmente, el gráfico del medio representa la curva que tiene mayor poder de generalización ¿Qué modelo elegirías de los tres?
 
-### ***Entrenamiento, validación y test***
+## Entrenamiento, validación y test
 
-Una extensión del clásico _train-test split_ es lo que se llama entrenamiento, validación y testeo. Primero se divide el dataframe entre entrenamiento y validación, y se deja un conjunto de datos llamados de testeo. Una vez entrenado nuestro modelo, validaremos su performance en el set de validación una $x$ cantidad de veces, donde $x$ no debe ser un número entero muy grande (si bien depende, 5 ya sería mucho). Ahora bien, con nuestro modelo entrenado y validado, vamos al test set y lo testeamos. El test set debe utilizarse **SOLAMENTE** una vez, no dos, una vez. Es una buena práctica tener varios set de testeos, ya que una vez usados pueden convertirse en validación, pero no volverse a usar como set de testeo.
+Una extensión del clásico _train-test split_ es lo que se llama entrenamiento, validación y testeo. Primero se divide el dataframe entre entrenamiento y validación, y se deja un conjunto de datos llamados de testeo. Una vez entrenado nuestro modelo, validaremos su performance en el set de validación una x cantidad de veces, donde x no debe ser un número entero muy grande (si bien depende, 5 ya sería mucho). Ahora bien, con nuestro modelo entrenado y validado, vamos al test set y lo testeamos. El test set debe utilizarse **SOLAMENTE** una vez, no dos, una vez. Es una buena práctica tener varios set de testeos, ya que una vez usados pueden convertirse en validación, pero no volverse a usar como set de testeo.
 
 - - -
 
-## **Sesgo y varianza**
+## Sesgo y varianza
 
 En este apartado veremos dos conceptos fundamentales que vienen de la Estadística tradicional.
 
@@ -359,11 +373,8 @@ Tenemos cuatro combinaciones posibles con estos estimadores:
 + Bajo sesgo y baja varianza: escenario ideal
 
 - - -
-## **Parámetros e hiperparámetros**
+## Parámetros e hiperparámetros
 
-Finalmente, ¡llegamos al último tema del día!
-
-<img src="https://i.imgflip.com/5bfuhm.png" height = 200px>
 
 En este segmento introduciremos una diferenciación fundamental entre estos dos conceptos. Veamos un poco a qué se refieren cada uno de ellos.
 
@@ -373,7 +384,4 @@ En este segmento introduciremos una diferenciación fundamental entre estos dos 
 
 Ya veremos que existen diversas técnicas para encontrar las mejores combinaciones de hiperparámetros, dentro de lo que se conoce como *optimización de hiperparámetros*.
 - - - 
-- - -
- Suficiente por hoy ¡Llegó el momento de pasar a la práctica!
 
-<img src="https://c.tenor.com/jjibcYg2mXEAAAAC/yes-done.gif" height="250">
