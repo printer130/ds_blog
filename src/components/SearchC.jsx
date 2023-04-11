@@ -99,7 +99,7 @@ export function SearchC () {
 			$isSearchOpen && <>
 				<div class='ais-SearchBox bg-[#f6f4f4] mx-auto items-center max-w-4xl top-0 left-0 right-0 flex flex-col w-full fixed bottom-0 h-screen z-20'>
 					<div class='border w-[inherit] border-none sm:border-slate-400 rounded-lg mt-[20%] overflow-auto'>
-						<form class='ais-SearchBox-form bg-transparent flex-col max-w-[640px] before:-mt-1 h-[54px]' novalidate >
+						<form class='ais-SearchBox-form bg-transparent flex-col max-w-[640px] before:-mt-1 h-[54px] mx-auto' novalidate >
 							<input class='ais-SearchBox-input bg-transparent py-4 font-medium border-none text-lg shadow-none ' autocomplete='off' autocorrect='off' autocapitalize='off' placeholder='Buscar...' spellcheck='false' maxlength='512' type='search' value={find} onChange={handleChange} name='search' />
 
 							<button class='ais-SearchBox-submit' title='Submit the search query.'>
@@ -137,10 +137,14 @@ export function SearchC () {
 									</g>
 								</svg>
 							</span>
+							<hr class='m-0 p-0 pb-1'/>
+							<small class=' text-[#120] pl-10 text-sm'>
+								Recomendado para ti
+							</small>
 						</form>
-						<hr class='relative bg-slate-400 my-0 max-w-[640px] h-[1px] mx-1'/>
-						<small class='inline-block text-[#120] max-w-[640px] pl-10 pb-1 text-sm bg-transparent border-slate-400'>Recomendado para ti</small>
-						<ul class={'bg-transparent px-1 mb-1 h-fit max-w-[640px] overflow-auto overflow-y-auto border-none'}>
+						{/* <hr class='relative bg-slate-400 my-0 max-w-[640px] h-[1px] px-1 mx-auto'/> */}
+						{/* <small class='inline-block text-[#120] max-w-[640px] pl-10 pb-1 text-sm bg-transparent mx-auto border-slate-400'>Recomendado para ti</small> */}
+						<ul class={'bg-transparent px-1 mb-1 h-fit max-w-[640px] overflow-auto overflow-y-auto mt-8 border-none mx-auto'}>
 							{hits?.map(list => {
 								return <Hit hit={list} />
 							})}
