@@ -2,6 +2,11 @@
 const today = new Date()
 ---
 
-<footer class='text-lg text-center p-10 text-[#120]'>
-	&copy; {today.getFullYear()} printer130
+<footer class='text-lg gap-8 flex flex-row justify-center text-center p-10 text-[#120]'>
+	<a href='/rss.xml' class='text-[#120] font-normal cursor-pointer hover:text-[#120] hover:font-semibold' title='Ir al RSS' target='_blank'>
+		RSS
+	</a>
+	<span>
+		&copy; {today.getFullYear()} printer130
+	</span>
 </footer>
