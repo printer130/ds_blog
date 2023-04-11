@@ -15,9 +15,6 @@ url: "/regression"
 		<a href='#ejemplo-clásico' target='_self'>Ejemplo clásico</a>
 	</li>
 	<li>
-		<a href='#esquema-de-ml' target='_self'>Esquema de ML</a>
-	</li>
-	<li>
 		<a href='#aprendizaje-supervisado' target='_self'>Aprendizaje supervisado</a>
 	</li>
 	<li>
@@ -152,8 +149,6 @@ Ejemplo de clustering:
 - - -
 
 ## Correlación
-
-Por último, para finalizar la parte teórica de esta clase, abordaremos la temática referente a correlación.
 
 En primer lugar, debemos definir la correlación como `concepto teórico` para, en segundo lugar, definirla como `estadístico` (recordemos que un estadístico es cualquier función de la muestra).
 

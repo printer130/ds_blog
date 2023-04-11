@@ -1,0 +1,38 @@
+[
+  {
+    "title": "¿Cómo podemos evaluar si el modelo está aprendiendo o no de nuestros datos?",
+    "sub_title": "Validación Cruzada",
+    "description": "Una forma práctica de evaluar si nuestro modelo aprendió o no de nuestro datos es observar su desempeño frente a nuevas instancias.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/cross_validation#validación-cruzada"
+  },
+  {
+    "title": "¿Cómo podemos evaluar si el modelo está aprendiendo o no de nuestros datos?",
+    "sub_title": "K-fold Cross Validation",
+    "description": "Es importante notar, que cada dato aparece una sola vez en los datos de prueba y k-1 en los datos de entrenamiento.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/cross_validation#k-fold-cross-validation"
+  },
+  {
+    "title": "¿Cómo podemos evaluar si el modelo está aprendiendo o no de nuestros datos?",
+    "sub_title": "Validación Cruzada Aleatoria",
+    "description": "En este caso, cada dato puede aparecer más de una vez en el conjunto de prueba.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/cross_validation#validación-cruzada-aleatoria"
+  },
+  {
+    "title": "¿Cómo podemos evaluar si el modelo está aprendiendo o no de nuestros datos?",
+    "sub_title": "Curvas de Validación",
+    "description": "En general, el desempeño de un modelo depende de muchos hiperparámetros. Pero a veces hay uno que es el más importante, el que predomina sobre el resto.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/cross_validation#curvas-de-validación"
+  },
+  {
+    "title": "¿Cómo podemos evaluar si el modelo está aprendiendo o no de nuestros datos?",
+    "sub_title": "Optimización de Hiperparámetros",
+    "description": "* ¿Cómo elegimos los mejores hiperparámetros para nuestro problema?\n* ¿Qué es mejor, exactitud, precisión o exhaustividad? ¿Área bajo la curva ROC?\n* Primero, se debe definir una métrica a optimizar. Una vez que se sabe cuál métrica optimizar, hay que probar los distintos valores de hiperparámetros.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/cross_validation#optimización-de-hiperparámetros"
+  },
+  {
+    "title": "¿Cómo podemos evaluar si el modelo está aprendiendo o no de nuestros datos?",
+    "sub_title": "Random Search",
+    "description": "Si por ejemplo, se tienen cinco hiperparámetros y cinco valores para probar por hiperparámetro, el tamaño de la grilla comienza a crecer.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/cross_validation#random-search"
+  }
+]

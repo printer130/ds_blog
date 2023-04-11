@@ -1,0 +1,57 @@
+[
+  {
+    "title": "Ensambles",
+    "sub_title": "Estimación de grandes números",
+    "description": "Con frecuencia nos encontramos con la necesidad de hacer una estimación, aún contando con poca información concreta del problema.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/ensamblers#estimación-de-grandes-números"
+  },
+  {
+    "title": "Ensambles",
+    "sub_title": "Ensambles",
+    "description": "Consiste en entrenar muchos modelos y quedarse con el de mejor rendimiento, es decir, el que mejor clasifique.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/ensamblers#ensambles"
+  },
+  {
+    "title": "Ensambles",
+    "sub_title": "Bagging",
+    "description": "El Bagging es una de las técnicas de construcción de conjuntos que también se conoce como Agregación Bootstrap (Muestreo con reemplazo de las instancias).",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/ensamblers#bagging"
+  },
+  {
+    "title": "Ensambles",
+    "sub_title": "Random Forest",
+    "description": "Uno de los problemas que hay con el árbol de decisión es que si se le da la profundidad suficiente, el árbol tiende a “memorizar” las soluciones en vez de generalizar el aprendizaje, es decir, hace overfitting.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/ensamblers#random-forest"
+  },
+  {
+    "title": "Ensambles",
+    "sub_title": "Boosting",
+    "description": "Se entrena una secuencia de modelos donde se da más peso a los ejemplos que fueron clasificados erróneamente por iteraciones anteriores.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/ensamblers#boosting"
+  },
+  {
+    "title": "Ensambles",
+    "sub_title": "XG Boost, Extreme Gradient Boosting",
+    "description": "XGBoost es un algoritmo que recientemente ha dominado el aprendizaje automático y sobre todo las competiciones de Kaggle (para datos estructurados).",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/ensamblers#xg-boost-extreme-gradient-boosting"
+  },
+  {
+    "title": "Ensambles",
+    "sub_title": "Bagging vs. Boosting",
+    "description": "",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/ensamblers#bagging-vs-boosting"
+  },
+  {
+    "title": "Ensambles",
+    "sub_title": "Stacking",
+    "description": "Se crea una función de ensamble que combina los resultados de varios modelos base, en uno sólo.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/ensamblers#stacking"
+  },
+  {
+    "title": "Ensambles",
+    "sub_title": "Voiting Classifier",
+    "description": "Utilizando las predicciones de múltiples clasificadores, se hace predicciones basadas en el más frecuente.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/ensamblers#voiting-classifier"
+  }
+
+]
