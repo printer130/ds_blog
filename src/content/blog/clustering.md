@@ -47,6 +47,14 @@ url: "/clustering"
 	<li>
 		<a href='#sistemas-de-recomendación' target='_self'>Sistemas de Recomendación</a>
 	</li>
+  <ol>
+    <li>
+		<a href='#filtro-basado-en contenido' target='_self'>Filtro basado en contenido</a>
+	</li>
+  <li>
+		<a href='#filtro-colaborativo' target='_self'>Filtro colaborativo</a>
+	</li>
+  </ol>
 </ul>
 
 - - -
@@ -263,8 +271,9 @@ Dejamos un breve [video](https://www.youtube.com/watch?v=HMOI_lkzW08&ab_channel=
 
 ## Sistemas de Recomendación
 
-Es muy común encontrar en diversas plataformas, recomendaciones de productos para consumo, en base al producto seleccionado:<br>
-<img src="/assets/sistemas_recomendacion1.jpg" height="300" alt="recomendacion"><br>
+Es muy común encontrar en diversas plataformas, recomendaciones de productos para consumo, en base al producto seleccionado:
+
+<img src="/assets/sistemas_recomendacion1.jpg" height="300" alt="recomendacion">
 
 * Existen usuarios e ítems. Los usuarios prefieren algunos ítems por sobre otros.
 * Ejemplo: Usuarios de Netflix y Películas. De 1 a 5 estrellas.

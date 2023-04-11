@@ -1,0 +1,68 @@
+[
+  {
+    "title": "Aprendizaje no supervisado (Clustering)",
+    "sub_title": "Clustering",
+    "description": "Técnica para agrupar datos de acuerdo a cuánto se parecen entre sí. Dado un set de datos, nuestra meta será encontrar grupos -clusters- en los cuales las instancias pertenecientes sean parecidas -estén cerca-.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/clustering#clustering"
+  },
+  {
+    "title": "Aprendizaje no supervisado (Clustering)",
+    "sub_title": "k-means",
+    "description": "El fundamento de este algoritmo radica en separar los datos en K clusters, ubicando a las instancias que estén dentro de una región cercana de un mismo cluster.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/clustering#k-means"
+  },
+  {
+    "title": "Aprendizaje no supervisado (Clustering)",
+    "sub_title": "DBSCAN",
+    "description": "Quizás es un poco menos utilizado que el anterior, pero no por ello menos importante. No es necesario aquí seleccionar la cantidad de clusters, ya que el modelo los definirá automáticamente a partir de la densidad de puntos y no de centroides. También incorpora la dimensión de outliers ruido, los cuales deja sin clasificar.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/clustering#dbscan"
+  },
+  {
+    "title": "Aprendizaje no supervisado (Clustering)",
+    "sub_title": "Métricas de evaluación",
+    "description": "Veremos, ahora, las métricas existentes para evaluar los modelos de aprendizaje no supervisado. A diferencia del paradigma del aprendizaje supervisado, que estuvimos viendo hasta hoy, aquí no tenemos etiquetas para comparar cuán alejado de ellas estuvo nuestro valor predicho. ",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/clustering#métricas-de-evaluación"
+  },
+  {
+    "title": "Aprendizaje no supervisado (Clustering)",
+    "sub_title": "Silhouette",
+    "description": "Con esta métrica medimos qué tan parecidos son los datos con su propio cluster -cohesión- en comparación con qué tan parecidos son a otros clusters -separación-.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/clustering#silhouette"
+  },
+  {
+    "title": "Aprendizaje no supervisado (Clustering)",
+    "sub_title": "Reducción de dimensionalidad",
+    "description": "La reducción de dimensionalidad busca disminuir la cantidad de features de un dataset, pero reteniendo la mayor cantidad de información posible.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/clustering#reducción-de-dimensionalidad"
+  },
+  {
+    "title": "Aprendizaje no supervisado (Clustering)",
+    "sub_title": "Singular Value Decomposition",
+    "description": "Es un método de álgebra lineal que nos permite representar cualquier matriz en términos de la multiplicación de otras tres matrices.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/clustering#svd"
+  },
+  {
+    "title": "Aprendizaje no supervisado (Clustering)",
+    "sub_title": "Principal Component Analysis",
+    "description": "El método de PCA nos permite reducir la dimensionalidad de un conjunto de datos, sin perder información esencial.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/clustering#PCA"
+  },
+  {
+    "title": "Aprendizaje no supervisado (Clustering)",
+    "sub_title": "Sistemas de Recomendación",
+    "description": "Es muy común encontrar en diversas plataformas, recomendaciones de productos para consumo, en base al producto seleccionado:",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/clustering#sistemas-de-recomendación"
+  },
+  {
+    "title": "Aprendizaje no supervisado (Clustering)",
+    "sub_title": "Filtro basado en contenido",
+    "description": "Para cada ítem, debemos construir un perfil.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/clustering#filtro-basado-en-contenido"
+  },
+  {
+    "title": "Aprendizaje no supervisado (Clustering)",
+    "sub_title": "Filtro colaborativo",
+    "description": "Se debe llenar la matriz de utilidad, por ejemplo con técnicas de clusterización para encontrar grupos de usuarios similares. De esos usuarios similares, los que tengan algún faltante en un ítem, se lo completa con, por ejemplo, el promedio del cluster.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/clustering#filtro-colaborativo"
+  }
+]

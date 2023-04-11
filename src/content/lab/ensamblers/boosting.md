@@ -163,6 +163,6 @@ plt.title('Fronteras de decisión', fontsize = 15)
 plt.show()
 ```
 
-<img src="/boost.png" title="a title" alt="Alt text">
+<img src="/assets/boost.png" title="a title" alt="Alt text">
 
 ------------------------------------------------------------------------

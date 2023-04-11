@@ -129,5 +129,71 @@
     "sub_title": "Parámetros e hiperparámetros",
     "description": "En este segmento introduciremos una diferenciación fundamental entre estos dos conceptos. Veamos un poco a qué se refieren cada uno de ellos.",
     "url": "https://ds-blog-sigma.vercel.app/blog/blog/basics#parámetros-e-hiperparámetros"
+  },
+  {
+    "title": "Modelos de clasificación",
+    "sub_title": "Árboles de decisión",
+    "description": "Un árbol de decisión es una estructura compuesta de nodos, ramas y hojas. Dada una nueva instancia, esta es clasificada recorriendo el árbol de decisión: en cada nodo, el árbol hace una pregunta a la instancia sobre alguno de sus atributos.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/classification_models#árboles-de-decisión"
+  },
+  {
+    "title": "Modelos de clasificación",
+    "sub_title": "Impureza Gini",
+    "description": "La impureza gini se calcula con la proporción de instancias que corresponden a cada clase en cada pregunta que realiza el árbol. Cuanto más alto es su valor, más impura es la muestra. En síntesis, la impureza gini cuantifica cuán puro (instancias con la misma etiqueta) es un conjunto. A más homogeneidad en las etiquetas, más puro es.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/classification_models#impureza-gini"
+  },
+  {
+    "title": "Modelos de clasificación",
+    "sub_title": "Entropía",
+    "description": "También conocido como *ganancia de información*, este criterio se utiliza para medir el grado de impureza de una muestra y elegir el atributo que más la reduce. Como vemos, su esencia es bastante parecida al criterio anterior.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/classification_models#entropía"
+  },
+  {
+    "title": "Modelos de clasificación",
+    "sub_title": "Prune tree",
+    "description": "Después de realizar iteraciones suficientes, puede que nuestro árbol haya quedado demasiado grande. Uno de los criterios más utilizados para la selección de modelos es la parsimonia: el modelo debe ser lo más simple posible (recordemos que son representaciones de la realidad).",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/classification_models#prune-tree"
+  },
+  {
+    "title": "Modelos de clasificación",
+    "sub_title": "Vecinos más cercanos",
+    "description": "Considerado un aprendiz perezoso, ya que no hay aprendizaje propiamente dicho en el modelo, K-vecinos cercanos predice la clasificación para un nuevo dato buscando, entre todos los pertenecientes al set de entrenamiento, a los K vecinos más parecidos.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/classification_models#vecinos-más-cercanos"
+  },
+  {
+    "title": "Modelos de clasificación",
+    "sub_title": "Support Vector Machine",
+    "description": "* Buscar rectas que clasifiquen correctamente los datos de entrenamiento.\n* Entre todas estas rectas, elegir la que tenga la mayor distancia d, a los puntos más cercanos a ella.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/classification_models#support-vector-machine"
+  },
+  {
+    "title": "Series de tiempo",
+    "sub_title": "Series de tiempo",
+    "description": "Una serie de tiempo es una secuencia de valores ordenados en el tiempo, siguiendo a una unidad de observación. En otras palabras, un conjunto de valores tomados en un intervalo temporal determinado, considerando el mismo objeto de estudio.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/time_series#series-de-tiempo"
+  },
+  {
+    "title": "Series de tiempo",
+    "sub_title": "Frecuencia de muestreo y ventanta temporal",
+    "description": "Nuestro dataset de time series tendrá una frecuencia de muestreo. Esta indica cada momento en que se realizó una medición, cada cuánto se guardó un registro. La frecuencia de muestreo de nuestros datos dependerá de la naturaleza del problema. Para algunos casos, necesitaremos mediciones prácticamente constantes -por ejemplo, milisegundos- y en otros tendremos mediciones por día, semana, mes, año, lustro, década, etc.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/time_series#frecuencia-de-muestreo-y-ventanta-temporal"
+  },
+  {
+    "title": "Series de tiempo",
+    "sub_title": "Tipos de series de tiempo",
+    "description": "Hablaremos aquí de una característica muy importante de las series, que tiene que ver con su tipología.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/time_series#tipos-de-series-de-tiempo"
+  },
+  {
+    "title": "Series de tiempo",
+    "sub_title": "Componentes de las series de tiempo",
+    "description": "+ Estacionalidad: hace referencia a los procesos que tienen comportamientos repetitivos a lo largo del tiempo. Nos referimos a un patrón, una periodicidad que se da en determinado día, año, mes o cualquier período de tiempo.\n+ Ciclo: fluctuaciones a largo plazo de la serie. Similar a la estacionalidad, en el sentido que se presenta para cierto período de tiempo, pero en este caso es de largo plazo.\n+ Ruido blanco: shocks aleatorios con media cero y varianza finita. Proceso que no puede explicarse con los otros componentes.\n+ Anomalías: valores que se alejan mucho de la media. Identificarlas ayuda a la hora de encontrar los componentes de tendencia y estacionalidad. Pasar las anomalías por alto puede distorsionar los componentes y resultados de los modelos predictivos.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/time_series#componentes-de-las-series-de-tiempo"
+  },
+  {
+    "title": "Series de tiempo",
+    "sub_title": "Forecasting",
+    "description": "Uno de los casos de aplicación de las series de tiempo está directamente ligado a la creación de modelos predictivos. Contamos con varias técnicas de forecasting, aquí enunciaremos las más relevantes y profundizaremos en las que más se utilizan hoy en día.",
+    "url": "https://ds-blog-sigma.vercel.app/blog/blog/time_series#forecasting"
   }
 ]
