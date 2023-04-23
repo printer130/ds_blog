@@ -3,114 +3,114 @@
     "title": "Machine Learning (Introducción)",
     "sub_title": "Ejemplo clásico",
     "description": "Para avanzar con los contenidos de ML, nos detendremos ahora en un ejemplo que demuestre su funcionalidad.\nPara este claso, empleamos un ejemplo de Correo Spam.",
-    "url": "https://ds-blog-sigma.vercel.app/blog/blog/regression#ejemplo-clásico"
+    "url": "https://ds-blog-sigma.vercel.app/blog/regression#ejemplo-clásico"
   },
   {
     "title": "Machine Learning (Introducción)",
     "sub_title": "Aprendizaje supervisado",
     "description": "Buscamos un modelo f que permita determinar la salida y a partir de la entrada X.",
-    "url": "https://ds-blog-sigma.vercel.app/blog/blog/regression#aprendizaje-supervisado"
+    "url": "https://ds-blog-sigma.vercel.app/blog/regression#aprendizaje-supervisado"
   },
   {
     "title": "Machine Learning (Introducción)",
     "sub_title": "Aprendizaje no supervisado",
     "description": "En este caso, se deja que el conjunto de datos hable por sí mismo. Este modelo tiene datos de entrada, pero no se busca una salida en particular. Implicar modelar las características de un conjunto de datos sin referencia a ninguna etiqueta.",
-    "url": "https://ds-blog-sigma.vercel.app/blog/blog/regression#aprendizaje-no-supervisado"
+    "url": "https://ds-blog-sigma.vercel.app/blog/regression#aprendizaje-no-supervisado"
   },
   {
     "title": "Machine Learning (Introducción)",
     "sub_title": "Correlación",
     "description": "En primer lugar, debemos definir la correlación como concepto teórico para, en segundo lugar, definirla como estadístico (recordemos que un estadístico es cualquier función de la muestra).",
-    "url": "https://ds-blog-sigma.vercel.app/blog/blog/regression#correlación"
+    "url": "https://ds-blog-sigma.vercel.app/blog/regression#correlación"
   },
   {
     "title": "Machine Learning (Introducción)",
     "sub_title": "Historia y evolución de la Inteligencia Artificial",
     "description": "En la Grecia antigua, Aristóteles (384-322 a.C.) fue el primero en describir una parte del funcionamiento de la mente humana en un conjunto de reglas para obtener conclusiones racionales. Ctesibio de Alejandría (250 a.C.) construyó la primera máquina autocontrolada, un regulador del flujo de agua, racional pero sin razonamiento.",
-    "url": "https://ds-blog-sigma.vercel.app/blog/blog/regression#historia-y-evolución-de-la-inteligencia-artificial"
+    "url": "https://ds-blog-sigma.vercel.app/blog/regression#historia-y-evolución-de-la-inteligencia-artificial"
   },
   {
     "title": "Machine Learning (Introducción)",
     "sub_title": "Presente y Futuro de la IA",
     "description": "* La capacidad de cómputo: Superado por medio de la escalabilidad vertical, haciendo las computadoras más potentes siguiendo la Ley de Moore.\n* Los datos: Superado por medio de la escalabilidad horizontal, haciendo que varios ordenadores computen como uno solo, por medio de tecnologías como Big Data.",
-    "url": "https://ds-blog-sigma.vercel.app/blog/blog/regression#presente-y-futuro-de-la-ia"
+    "url": "https://ds-blog-sigma.vercel.app/blog/regression#presente-y-futuro-de-la-ia"
   },
   {
     "title": "Machine Learning (Introducción)",
     "sub_title": "Primeros algoritmos de Machine Learning",
     "description": "El experto humano ingresa cada experiencia con su regla de resolución. Esto se traduce en una base de conocimientos con reglas de inferencia que permite luego, a un usuario no experto, ante la misma problemática (misma experiencia) encontrar una regla de resolución adecuada.",
-    "url": "https://ds-blog-sigma.vercel.app/blog/blog/regression#primeros-algoritmos-de-machine-learning"
+    "url": "https://ds-blog-sigma.vercel.app/blog/regression#primeros-algoritmos-de-machine-learning"
   },
   {
     "title": "Machine Learning (Introducción)",
     "sub_title": "Flujo de Trabajo",
     "description": "Definición: Se definen las preguntas que queremos responder. ¿Qué datos necesitamos para responder esas preguntas?",
-    "url": "https://ds-blog-sigma.vercel.app/blog/blog/regression#flujo-de-trabajo"
+    "url": "https://ds-blog-sigma.vercel.app/blog/regression#flujo-de-trabajo"
   },
   {
     "title": "Machine Learning (Introducción)",
     "sub_title": "Exploración de los datos",
     "description": "Los datos con los que vamos a estar trabajando, son en definitiva la fuente del conocimiento necesario que debemos adquirir para poder resolver las preguntas que nos hacemos, entonces, es preciso conocer todas sus características, algunas de ellas son:",
-    "url": "https://ds-blog-sigma.vercel.app/blog/blog/regression#exploración-de-los-datos"
+    "url": "https://ds-blog-sigma.vercel.app/blog/regression#exploración-de-los-datos"
   },
   {
     "title": "Machine Learning (Introducción)",
     "sub_title": "",
     "description": "",
-    "url": "https://ds-blog-sigma.vercel.app/blog/blog/regression#"
+    "url": "https://ds-blog-sigma.vercel.app/blog/regression#"
   },
   {
     "title": "Machine Learning (Introducción)",
     "sub_title": "Falencias en los datos",
     "description": "Como primera medida, antes de comenzar a realizar las tareas de análisis, vamos a encontrarnos con ciertas cuestiones que hacen a la calidad y fiabilidad del dato, y debemos resolverlas, entre ellas:",
-    "url": "https://ds-blog-sigma.vercel.app/blog/blog/regression#falencias-en-los-datos"
+    "url": "https://ds-blog-sigma.vercel.app/blog/regression#falencias-en-los-datos"
   },
   {
     "title": "Machine Learning (Introducción)",
     "sub_title": "Transformacion de Datos",
     "description": "Es el proceso que más tiempo lleva en un flujo de Data Science y resulta muy importante no perder el objetivo de por qué lo hacemos.",
-    "url": "https://ds-blog-sigma.vercel.app/blog/blog/regression#transformacion-de-datos"
+    "url": "https://ds-blog-sigma.vercel.app/blog/regression#transformacion-de-datos"
   },
   {
     "title": "Machine Learning (Introducción)",
     "sub_title": "Tratamiento sobre Variables Cualitativas Ordinales",
     "description": "Sus posibles valores son categorías pero sí hay una relación de orden. A pesar de que pueden ser números, ¡no se deben sumar!",
-    "url": "https://ds-blog-sigma.vercel.app/blog/blog/regression#tratamiento-sobre-variables-cualitativas-ordinales"
+    "url": "https://ds-blog-sigma.vercel.app/blog/regression#tratamiento-sobre-variables-cualitativas-ordinales"
   },
   {
     "title": "Machine Learning (Introducción)",
     "sub_title": "Tratamiento sobre Variables Cualitativas Nominales",
     "description": "Sus posibles valores pertenecen a una o varias categorías. Las categorías no siguen una relación de orden. Ninguna es mayor o menor que otra.",
-    "url": "https://ds-blog-sigma.vercel.app/blog/blog/regression#tratamiento-sobre-variables-cualitativas-nominales"
+    "url": "https://ds-blog-sigma.vercel.app/blog/regression#tratamiento-sobre-variables-cualitativas-nominales"
   },
   {
     "title": "Machine Learning (Introducción)",
     "sub_title": "Tratamiento sobre Variables Cuantitativas",
     "description": "Son aquellas variables que se miden o se cuentan. Pueden ser discretas o continuas. Hay una relación de orden entre ellas. Se puede aplicar funciones de agregación.",
-    "url": "https://ds-blog-sigma.vercel.app/blog/blog/regression#tratamiento-sobre-variables-cuantitativas"
+    "url": "https://ds-blog-sigma.vercel.app/blog/regression#tratamiento-sobre-variables-cuantitativas"
   },
   {
     "title": "Machine Learning (Introducción)",
     "sub_title": "Variables Numéricas",
     "description": "En general, las variables numéricas podrían ser usadas sin demasiado preprocesamiento, ya que ya están en un formato que los modelos entienden. Sin embargo, muchas veces no es ese el caso.",
-    "url": "https://ds-blog-sigma.vercel.app/blog/blog/regression#variables-numéricas"
+    "url": "https://ds-blog-sigma.vercel.app/blog/regression#variables-numéricas"
   },
   {
     "title": "Machine Learning (Introducción)",
     "sub_title": "",
     "description": "",
-    "url": "https://ds-blog-sigma.vercel.app/blog/blog/regression#"
+    "url": "https://ds-blog-sigma.vercel.app/blog/regression#"
   },
   {
     "title": "Machine Learning (Introducción)",
     "sub_title": "Scikit-Learn",
     "description": "Adecuado para seguir un Pipeline: Es un objeto en el que es posible encapsular todo el proceso de los datos.",
-    "url": "https://ds-blog-sigma.vercel.app/blog/blog/regression#scikit-learn"
+    "url": "https://ds-blog-sigma.vercel.app/blog/regression#scikit-learn"
   },
   {
     "title": "Machine Learning (Introducción)",
     "sub_title": "Reescalar los datos",
     "description": "Muchos algoritmos funcionan mejor normalizando sus variables de entrada. Lo que en este caso significa comprimir o extender los valores de la variable para que estén en un rango definido. Sin embargo, una mala aplicación de la normalización o una elección descuidada del método de normalización puede arruinar los datos y, con ello, el análisis.",
-    "url": "https://ds-blog-sigma.vercel.app/blog/blog/regression#reescalar-los-datos"
+    "url": "https://ds-blog-sigma.vercel.app/blog/regression#reescalar-los-datos"
   }
 ]
