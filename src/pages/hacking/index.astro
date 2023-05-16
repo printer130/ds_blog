@@ -1,7 +1,7 @@
 ---
-import LabPractices from '@components/LabPractices.astro'
+import CardOfHacking from '@components/CardOfHacking.astro'
 import Layout from '@layouts/Layout.astro'
-import { getCollection } from 'astro:content'
+import { getCollection, getEntryBySlug } from 'astro:content'
 
 export async function getStaticPaths () {
 	const collection = await getCollection('hacking')
@@ -17,23 +17,22 @@ export async function getStaticPaths () {
 }
 
 const { target } = Astro.params
-/* const entry = await getCollection('hacking', (item) => {
-	return item.slug.includes(target!)
-})
- */
+/* const entry = await getEntryBySlug('hacking', 'late') */
+const entry = await getCollection('hacking')
+console.log({entry})
 ---
 
 <Layout title={target}>
 	<ul class='px-0 mx-0'>
-    <h1>Hola</h1>
-		<!-- {
+		{
 			entry.map(({ slug, data }) => {
-				return <LabPractices
-          target={target}
+				return <CardOfHacking
 					slug={slug}
+					pubDate={new Date()}
 					title={data.title}
+					description={data.description}
 				/>
 			})
-		} -->
+		}
 	</ul>
 </Layout>
