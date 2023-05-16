@@ -1,0 +1,39 @@
+---
+import LabPractices from '@components/LabPractices.astro'
+import Layout from '@layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+
+export async function getStaticPaths () {
+	const collection = await getCollection('hacking')
+
+	return collection.map(item => {
+		const [res] = item.slug.split('/')
+		return {
+			params: {
+				resource: res
+			}
+		}
+	})
+}
+
+const { target } = Astro.params
+/* const entry = await getCollection('hacking', (item) => {
+	return item.slug.includes(target!)
+})
+ */
+---
+
+<Layout title={target}>
+	<ul class='px-0 mx-0'>
+    <h1>Hola</h1>
+		<!-- {
+			entry.map(({ slug, data }) => {
+				return <LabPractices
+          target={target}
+					slug={slug}
+					title={data.title}
+				/>
+			})
+		} -->
+	</ul>
+</Layout>

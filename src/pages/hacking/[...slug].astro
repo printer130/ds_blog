@@ -1,0 +1,26 @@
+---
+import Layout from '@layouts/Layout.astro'
+import { getCollection, getEntryBySlug } from 'astro:content'
+
+export async function getStaticPaths () {
+	const postsLabs = await getCollection('lab')
+	return postsLabs.map((post) => {
+		return {
+			params: {
+				slug: post.slug
+			},
+			props: post
+		}
+	})
+}
+
+const { slug } = Astro.params
+const entry = await getEntryBySlug('lab', slug)
+const data = entry?.data
+const { Content } = await entry?.render()
+---
+<Layout title={data?.title} pubDate={data?.pubDate} description={data?.description}>
+	{
+		Content !== undefined &&	<Content />
+	}
+</Layout>
