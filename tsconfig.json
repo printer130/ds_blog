@@ -1,6 +1,7 @@
 {
-  "extends": "astro/tsconfigs/strict",
+  "extends": "astro/tsconfigs/base",
   "compilerOptions": {
+    "ignoreDeprecations": "5.0",
     "jsx": "react-jsx",
     "allowJs": true,
     "strictNullChecks": true,
@@ -13,27 +14,15 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@icons/*": [
-        "src/icons/*"
-      ],
-      "@hooks/*": [
-        "src/hooks/*"
-      ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
-      "@services/*": [
-        "src/services/*"
-      ],
-      "@utils/*": [
-        "src/utils/*"
-      ],
-      "@assets/*": [
-        "assets/*"
-      ]
+      "@components/*": [ "src/components/*" ],
+      "@icons/*": [ "src/icons/*" ],
+      "@hooks/*": [ "src/hooks/*" ],
+      "@layouts/*": [ "src/layouts/*" ],
+      "@services/*": [ "src/services/*" ],
+      "@utils/*": [ "src/utils/*" ],
+      "@assets/*": [ "assets/*" ],
+      "@styles/*": [ "styles/*" ],
+      "@/*":["src/*"]
     },
   },
 }

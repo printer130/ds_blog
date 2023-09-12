@@ -48,7 +48,27 @@ const ensamblersCollection = defineCollection({
 	})
 })
 
+const hacked_blog = defineCollection({
+  // Type-check frontmatter using a schema
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    // Transform string to Date object
+    pubDate: z
+      .string()
+      .or(z.date())
+      .transform((val) => new Date(val)),
+    updatedDate: z
+      .string()
+      .optional()
+      .transform((str) => (str ? new Date(str) : undefined)),
+    heroImage: z.string().optional(),
+    banner: z.string().optional()
+  })
+})
+
 export const collections = {
+	'hacked_blog': hacked_blog,
 	blog: blogCollection,
 	lab: labCollection,
 	ensamblers: ensamblersCollection,

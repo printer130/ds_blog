@@ -1,6 +1,19 @@
+
+export const TOP_VULNERALIBILITIES = 'vulnerabilities'
+export const BUFFER_OVERFLOW = 'buffer-overflow'
+export const POST_EXPLOITATION = 'post-exploitation'
+export const ESCALATION = 'escalation'
+export const TRIP = 'trip'
+export const NETWORK = 'network'
+export const CPPT = 'cppt'
+export const BOXES = 'boxes'
+export const POWERSHELL = 'powershell'
+export const ANDROID = 'android'
+
 export const SITE_TITLE = 'printer130'
 
 export const SITE_DESCRIPTION = 'Web Development | Data Science'
+export const SITE_DESCRIPTION_OWASP = 'Top vulnerabilities from owasp!'
 
 export const KEYS_PRESSED = {}
 
@@ -20,3 +33,16 @@ export const DEFAULT_HITS = [
 		childs: []
 	}
 ]
+
+export const ENTRIES = {
+	TOP_VULNERALIBILITIES,
+	BUFFER_OVERFLOW,
+	POST_EXPLOITATION,
+	ESCALATION,
+	TRIP,
+	NETWORK,
+	CPPT,
+	POWERSHELL,
+	BOXES,
+	ANDROID
+}

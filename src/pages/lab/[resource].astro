@@ -3,9 +3,9 @@ import LabPractices from '@components/LabPractices.astro'
 import Layout from '@layouts/Layout.astro'
 import { getCollection } from 'astro:content'
 
-export async function getStaticPaths () {
+export async function getStaticPaths() {
 	const collection = await getCollection('lab')
-	return collection.map(item => {
+	return collection.map((item) => {
 		const [res] = item.slug.split('/')
 		return {
 			params: {
@@ -25,11 +25,9 @@ const entry = await getCollection('lab', (item) => {
 	<ul class='px-0 mx-0'>
 		{
 			entry.map(({ slug, data }) => {
-				return <LabPractices
-					resource={resource}
-					slug={slug}
-					title={data.title}
-				/>
+				return (
+					<LabPractices resource={resource} slug={slug} title={data.title} />
+				)
 			})
 		}
 	</ul>

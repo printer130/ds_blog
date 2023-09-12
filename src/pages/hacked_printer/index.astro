@@ -1,0 +1,42 @@
+---
+import BaseHead from '@components/hacked_printer/BaseHead.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts'
+
+import NotesBufferOverflow from '@components/hacked_printer/NotesBufferOverflow.astro'
+import NotesTripJourny from '@components/hacked_printer/NotesTripJourny.astro'
+import NotesVulnerabilities from '@components/hacked_printer/NotesVulnerabilities.astro'
+import NotesEscalation from '@components/hacked_printer/NotesEscalation.astro'
+import NotesPostExploitation from '@components/hacked_printer/NotesPostExploitation.astro'
+import NotesNetwork from '@components/hacked_printer/NotesNetwork.astro'
+import NotesCPPT from '@components/hacked_printer/NotesCPPT.astro'
+import Layout from '@layouts/Layout.astro'
+
+/* export async function getStaticPaths () {
+	const collection = await getCollection('hacked_printer')
+	return collection.map(item => {
+		const [res] = item.slug.split('/')
+		return {
+			params: {
+				resource: res
+			}
+		}
+	})
+}
+ */
+---
+
+<!DOCTYPE html>
+<html lang='es'>
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<Layout>
+		<NotesVulnerabilities />
+		<NotesBufferOverflow />
+		<NotesNetwork />
+		<NotesTripJourny />
+		<NotesCPPT />
+		<NotesEscalation />
+		<NotesPostExploitation />
+	</Layout>
+</html>

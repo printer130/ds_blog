@@ -1,0 +1,41 @@
+---
+import { CollectionEntry, getCollection } from 'astro:content'
+import BlogPost from '@layouts/BlogPost.astro'
+import { BUFFER_OVERFLOW, ENTRIES } from '../../consts'
+import Layout from '@layouts/Layout.astro'
+
+export async function getStaticPaths() {
+	const promisesArray: Promise<any>[] = []
+
+	for (const [index] of Object.entries(ENTRIES)) {
+		const res = getCollection('hacked_printer', ({ id }) => {
+			return id.startsWith(ENTRIES[index])
+		})
+		promisesArray.push(res)
+	}
+
+	const results = await Promise.all(promisesArray)
+	return results.map((postList) => {
+		return postList.map((post) => {
+			return {
+				params: {
+					slug: post.slug
+				},
+				props: post
+			}
+		})
+	})
+}
+
+type Props = CollectionEntry<typeof BUFFER_OVERFLOW>
+
+const post = Astro.props
+const { Content } = await post.render()
+---
+
+<!-- {heroImage && <img width={720} height={360} src={heroImage} alt='' />} -->
+<Layout>
+	<BlogPost {...post?.data}>
+		<Content />
+	</BlogPost>
+</Layout>
