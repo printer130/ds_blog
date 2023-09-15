@@ -2,24 +2,24 @@
 import { getCollection } from 'astro:content'
 import { BOXES } from 'src/consts'
 import Title from '@components/hacked_printer/Title.astro'
-import Layout from '@layouts/Layout.astro'
+import One from '@layouts/One.astro'
 
 const topVulnerabilities = await getCollection('hacked_printer', ({ id }) => {
 	return id.startsWith(BOXES)
 })
 ---
 
-<Layout>
+<One>
 	<Title>Boxes</Title>
 	<ul>
 		{
 			topVulnerabilities.map((post) => (
 				<li>
-					<a target='_self' href={`hacked_printer/${post.slug}`}>
+					<a target='_self' href={`${post.slug}`}>
 						{post.data.title}
 					</a>
 				</li>
 			))
 		}
 	</ul>
-</Layout>
+</One>

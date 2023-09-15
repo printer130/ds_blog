@@ -5,7 +5,7 @@ pubDate: 'May 12 2023'
 slug: 'network/port_forwarding'
 ---
 
-```bash
+```powershell
 # target_1
 # si queremos que nos traiga todos lo puertos
 chisel client server_ip:server_port R:127.0.0.1:socks
@@ -60,7 +60,7 @@ tcpdump -i eth0 port ftp or ftp-data
 
 Listamos lo que esta en nuestra maquina pasando por otras
 
-```bash
+```powershell
 # transferir archivo de kali a makina3
 # kali -> itermediario -> makina3
 # Makina 3
@@ -75,9 +75,10 @@ socat TCP-LISTEN:445,fork TCP:kali:445
 smbserver.py smbFolder $(pwd) -smb2support
 
 ```
-***CHISEL***
 
-```bash
+**_CHISEL_**
+
+```powershell
 # target_1
 #chisel client kali_ip:1234 R:80:target_2:80
 chisel client kali_ip:port R:socks
@@ -102,7 +103,7 @@ chisel server --reverse -p 1234
 ./chisel.exe client ip_2:6543 R:9999:socks
 
 # proxychains
-# 
+#
 #
 # socks5 127.0.0.1 9999
 # socks5 ...
@@ -111,5 +112,5 @@ chisel server --reverse -p 1234
 # SI quieres ver un servidor http: foxyproxy[type->socks5;port->9999]
 iptables -t nat -A PREROUTING -p tcp --dport 55555 -j DNAT --to-destination 10.185.10.34:80
 
-iptables -t nat -A POSTROUTING -j MASQUERADE 
+iptables -t nat -A POSTROUTING -j MASQUERADE
 ```

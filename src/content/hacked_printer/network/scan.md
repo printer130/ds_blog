@@ -5,7 +5,7 @@ pubDate: 'May 12 2023'
 slug: 'network/scan'
 ---
 
-```bash
+```powershell
 # Ver su es candidato zombie
 nmap --script ipidseq target -p135
 nmap -O -v target -p135
@@ -34,7 +34,7 @@ sudo nmap -S target target -p23 -Pn -n -e eth0 --disble-arp-ping
 
 En vez de usar -f podemos usar --mtu para especificar un desplazamiento personalizado, el desplazamiento debe ser multiplo de 8.
 
-```bash
+```powershell
 nmap -sS -f target
 
 # añade 100 bytes de longituda a la cabezera
@@ -49,7 +49,7 @@ nmap -sS -f -f target
 
 Cannot use with -sT -sV scans (these use full connect scan).
 
-```bash
+```powershell
 nmaps -sS -D decoy1,decoy2,decoy3,me target
 ```
 
@@ -57,7 +57,7 @@ nmaps -sS -D decoy1,decoy2,decoy3,me target
 
 No modifica la manera que el paquete esta falsificado, el único propósito es ralentizar la exploración con el fin de mezclar con otro trafico en los logs del firewall
 
-```bash
+```powershell
 
 nmap -sS -T[0-5] target_ip
 # T0 -> 5min -> paranoid
@@ -74,7 +74,7 @@ nmap -sS target -T2 -p22,35,34,42 --max-retries 1
 
 ### Source ports
 
-```bash
+```powershell
 nmap -sS --source-port 53 target
 
 # Todo el trafico corre desde el puerto 80
@@ -85,7 +85,7 @@ nmap -g 80 -sS target/24
 
 Replaza la direccion mac con una random
 
-```bash
+```powershell
 
 nmap --spoof-mac 0 target -p80 -Pn --disable-arp-ping -n
 

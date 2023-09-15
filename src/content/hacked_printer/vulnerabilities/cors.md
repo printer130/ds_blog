@@ -14,7 +14,7 @@ Cross-origin resource sharing (CORS) is a browser mechanism which enables contro
 
 Real attacks require Access-Control-Allow-Credentials to be set to true because this will allow the browser to send the credentials and read the response.
 
-```bash
+```powershell
 Access-Control-Allow-Origin: http://attacker-site.com
 Access-Control-Allow-Credentials: true
 ```

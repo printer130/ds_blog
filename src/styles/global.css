@@ -93,6 +93,7 @@ content {
 
 img {
 	max-width: 100%;
+	object-fit: contain;
 	height: auto;
 	aspect-ratio: 16/9;
 }

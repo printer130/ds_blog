@@ -9,7 +9,7 @@ import NotesEscalation from '@components/hacked_printer/NotesEscalation.astro'
 import NotesPostExploitation from '@components/hacked_printer/NotesPostExploitation.astro'
 import NotesNetwork from '@components/hacked_printer/NotesNetwork.astro'
 import NotesCPPT from '@components/hacked_printer/NotesCPPT.astro'
-import Layout from '@layouts/Layout.astro'
+import One from '@layouts/One.astro'
 
 /* export async function getStaticPaths () {
 	const collection = await getCollection('hacked_printer')
@@ -27,10 +27,10 @@ import Layout from '@layouts/Layout.astro'
 
 <!DOCTYPE html>
 <html lang='es'>
-	<head>
+	<!-- <head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<Layout>
+	</head> -->
+	<One>
 		<NotesVulnerabilities />
 		<NotesBufferOverflow />
 		<NotesNetwork />
@@ -38,5 +38,5 @@ import Layout from '@layouts/Layout.astro'
 		<NotesCPPT />
 		<NotesEscalation />
 		<NotesPostExploitation />
-	</Layout>
+	</One>
 </html>

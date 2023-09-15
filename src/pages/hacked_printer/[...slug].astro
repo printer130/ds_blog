@@ -2,7 +2,7 @@
 import { CollectionEntry, getCollection } from 'astro:content'
 import BlogPost from '@layouts/BlogPost.astro'
 import { BUFFER_OVERFLOW, ENTRIES } from '../../consts'
-import Layout from '@layouts/Layout.astro'
+import One from '@layouts/One.astro'
 
 export async function getStaticPaths() {
 	const promisesArray: Promise<any>[] = []
@@ -34,8 +34,8 @@ const { Content } = await post.render()
 ---
 
 <!-- {heroImage && <img width={720} height={360} src={heroImage} alt='' />} -->
-<Layout>
+<One>
 	<BlogPost {...post?.data}>
 		<Content />
 	</BlogPost>
-</Layout>
+</One>

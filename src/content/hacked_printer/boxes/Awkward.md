@@ -8,7 +8,7 @@ slug: 'box/awkward'
 
 Empezamos con nuestro escaneo...
 
-```bash
+```powershell
 text={`
 $ rustscan -a 10.10.11.185 -g -- -A -sS -n
 10.10.11.185 -> [22,80]

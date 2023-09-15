@@ -8,7 +8,7 @@ slug: 'axfr'
 
 ## Usefull comands
 
-```bash
+```powershell
 # Simple y poderosa herramienta
 nslookup
 server target
@@ -50,7 +50,7 @@ Set up newly added Secondary DNS servers. They need to get the DNS records from 
 
 ### How to Attack
 
-```bash
+```powershell
 
 #HOST
 host -t axfr wit_rap.com 192.214.31.3

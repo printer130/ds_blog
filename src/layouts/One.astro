@@ -1,0 +1,32 @@
+---
+import BaseHead from '@components/hacked_printer/BaseHead.astro'
+import Footer from '@components/hacked_printer/Footer.astro'
+import Header from '@components/hacked_printer/Header.astro'
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props
+
+const { pathname } = Astro.url
+---
+
+<html lang='es'>
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body
+		class=`text-xl min-h-screen relative pb-12 ${pathname.includes('hacked_printer') && 'bg-[#050014]'}`
+	>
+		<Header />
+		<main
+			class="max-w-4xl m-auto w-full font-['Open_Sans'] px-4 whitespace-wrap isolate"
+		>
+			<div
+				class="opacity-10 inset-0 bg-[url('/noise.webp')] mix-blend-overlay absolute -z-20"
+			>
+			</div>
+
+			{heroImage && <img width={720} height={360} src={heroImage} alt='' />}
+			<h1 class='title'>{title}</h1>
+			<slot />
+		</main>
+		<!-- <Footer /> -->
+	</body>
+</html>
