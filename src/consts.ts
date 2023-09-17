@@ -42,7 +42,7 @@ export const ENTRIES = {
 	TRIP,
 	NETWORK,
 	CPPT,
-	POWERSHELL,
 	BOXES,
+	POWERSHELL,
 	ANDROID
 }
