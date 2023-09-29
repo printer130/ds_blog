@@ -45,7 +45,7 @@ We could use nmap snmp-brute script to find the community string. The script use
 
 ```bash
 
-nmap -sU -p 161 --script=snmp-brute target_ip_local
+nmap -sU -p161 --script=snmp-brute target_ip_local
 
 # As we can see, we found three community names:
 #public,
@@ -56,7 +56,7 @@ nmap -sU -p 161 --script=snmp-brute target_ip_local
 # snmpwalk tool to find all the information via SNMP.
 ```
 
-***snmpwalk*** is an SNMP application that uses SNMP GETNEXT requests to query a network entity for a tree of information.
+**_snmpwalk_** is an SNMP application that uses SNMP GETNEXT requests to query a network entity for a tree of information.
 
 An object identifier (OID) may be given on the command line. This OID specifies which portion of the object identifier space will be searched using GETNEXT requests.
 
@@ -166,9 +166,9 @@ There are multiple versions of the SMB protocol.
 
 ### SMBv1:
 
-Server Message Block (SMB) is an application layer network protocol commonly used in Microsoft Windows to provide shared access to files and printers. SMBv1 is the original protocol developed in the 1980s, making it more than 30 years old. More secure and efficient versions of SMB are available today. 
+Server Message Block (SMB) is an application layer network protocol commonly used in Microsoft Windows to provide shared access to files and printers. SMBv1 is the original protocol developed in the 1980s, making it more than 30 years old. More secure and efficient versions of SMB are available today.
 
-The SMBv1 protocol is not safe to use. By using this old protocol, you lose protections such as pre-authentication integrity, secure dialect negotiation, encryption, disabling insecure guest logins, and improved message signing. 
+The SMBv1 protocol is not safe to use. By using this old protocol, you lose protections such as pre-authentication integrity, secure dialect negotiation, encryption, disabling insecure guest logins, and improved message signing.
 
 Microsoft has advised customers to stop using SMBv1 because it is extremely vulnerable and full of known exploits. WannaCry, a well-known ransomware attack, exploited vulnerabilities in the SMBv1 protocol to infect other systems. Because of the security risks, support for SMBv1 has been disabled. Source: **https://kb.iu.edu/d/aumn**
 
@@ -206,6 +206,7 @@ nmap -p445 --script smb-protocols target_ip_local
 --script smb-protocols
 #: Script Scan
 ```
+
 There is one more interesting nmap script for the smb protocol to find the security level of the protocol.
 
 ### Let's run the nmap script to find the smb protocol security level.
@@ -226,7 +227,7 @@ If an attacker has valid credentials on the target machine. Then, command execut
 
 Now, let's find that we have the Null Session, i.e Anonymous access on the target machine using the smbclient tool.
 
-smbclient is a client that can 'talk' to an SMB/CIFS server. It offers an interface similar to that of the ftp program. Operations include things like getting files from the server to the local machine, putting files from the local machine to the server, retrieving directory information from the server and so on. 
+smbclient is a client that can 'talk' to an SMB/CIFS server. It offers an interface similar to that of the ftp program. Operations include things like getting files from the server to the local machine, putting files from the local machine to the server, retrieving directory information from the server and so on.
 
 ### Let's run the smbclient tool to find that we have anonymous access on the target machine.
 
@@ -245,9 +246,9 @@ Let's find all the present users using nmap smb-enum-users script.
 nmap -p445 --script smb-enum-users.nse target_ip_local
 ```
 
-There are a total of four users present. *admin, administrator, root, and guest*.
+There are a total of four users present. _admin, administrator, root, and guest_.
 
-The *guest* and *administrator* users are built-in accounts.
+The _guest_ and _administrator_ users are built-in accounts.
 
 Now, let's find the valid password for admin,administrator, and root user.
 
@@ -311,7 +312,7 @@ ping 10.0.22.69
 #We can access the target_ip machine, i.e., 10.0.22.69.
 ```
 
-However, we cannot access that machine *(10.0.22.69)* from the Kali machine. So, here we need to perform pivoting by adding route from the Metasploit framework.
+However, we cannot access that machine _(10.0.22.69)_ from the Kali machine. So, here we need to perform pivoting by adding route from the Metasploit framework.
 
 ### Let's add the route using the meterpreter session and identify the second machine service.
 
@@ -331,7 +332,7 @@ Socks4a Proxy Server
 
 This module provides a socks4a proxy server with built-in Metasploit routing to relay connections. Source:: **https://www.rapid7.com/db/modules/auxiliary/server/socks4a/**
 
-Note: The proxychains should have configured with the following parameters at: *( the end of /etc/proxychains4.conf)*
+Note: The proxychains should have configured with the following parameters at: _( the end of /etc/proxychains4.conf)_
 
 ```powershell
 cat /etc/proxychains4.conf
@@ -384,6 +385,7 @@ target_ip
 -p 445
 #: Define port to scan
 ```
+
 This scan is the safest way to identify the open ports. We could use an auxiliary TCP port scanning module. But those are very aggressive and can kill your session.
 
 We notice that port 445 is open on the target machine.
@@ -421,7 +423,7 @@ net use D: \\10.185.11.127\ADMIN$
 net use K: \\10.0.22.69\K$
 
 Share name   Resource                        Remark
-<# 
+<#
 -------------------------------------------------------------------------------
 C$           C:\                             Default share
 IPC$                                         Remote IPC

@@ -83,7 +83,7 @@ nmap -g 80 -sS target/24
 
 ### Otros
 
-Replaza la direccion mac con una random
+Reemplaza la direccion mac con uno random
 
 ```powershell
 

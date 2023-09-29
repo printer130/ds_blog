@@ -94,3 +94,50 @@ Necesitas configurar AndroidManifest.xml para confirmar la accion, categoria y d
 // intent-filter debe incluir una categoria con el siguiente valor
 android.intent.category.BROWSABLE
 ```
+
+### AIDL
+
+Describe las ofertas de una API para servicios externos.
+
+Revisamos el metodo onBind y seguimos la lógica de la app para determinar las acciones necesarias del request del cliente y donde la data es pasada.
+
+### Messenger
+
+Es otro tipo de mecanismo IPC disponible en Android para compartir servicios con otras apps, el cliente invoka un messenger receptor una Ibinder que es usado para enviar data al servicio.
+
+### Binder
+
+Es un driver a nivel de kernel que mueve data de un proceso de memoria a otro.
+
+### Components
+
+- **Activities:** Evaluar que data es pasada en el metodo setResult Intent parametro, si la data es sensible podemos tener una fuga de infomación.
+
+- **Services:** Dependiendo como empieze el servicio o sea creado podemos revisar vulnerabilidades, que sean del Intent, pasadas al método onStartCommand para servicios "started", para servicios "bound " revisamos el método onBind.
+
+- **Broadcast receivers:** Revisamos fugas en el intent pasado al método onReceive en la clase qué implementa el BroadcastReceiver.
+
+Revisar que la data esta correctamente validada y funciones sensibles no puedan ser invokacas por apps maliciosas.
+
+Por lo tanto garantizar que apps confiables puedan: Recivir el broadcast via permisos y garantizar que cualquier intento en leer el resultado via el método getResultX getter válide la data recivida.
+
+- **Content Providers:**
+
+Tiene una segunda capa de permisos tomar precedencia sobre los permisos de los atributos.
+
+Lost atributos readPermission y writePermission especifican que permisos debe tener una app, para consultar a la DB o hacer cambios en la data.
+
+- **Permissions:**
+
+**Requested Permissions**
+
+Los prompts son un resultado directo de la configuración del elemento uses-permission en el AndroidManifest.xml y tiene dos elementos:
+
+**NAME:** Sera los permisos estandar del sistema, que empieza por android.permission, o uno personalizado en otra app.
+
+**maxSdkVersion:** Detiene a tu app de preguntar por permisos en versiones superiores que la que esta especificada.
+
+**Custom Permissions**
+
+Cuando la app necesita exponer información de un componente la app define un permiso custom.
+La app requiere el permiso que definiría el nombre del atributo uses-permission, que haria match con el nombre del elemento en el elemento de permiso de la app de hosting.

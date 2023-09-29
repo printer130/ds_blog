@@ -30,6 +30,7 @@ proxychains nmap -sT -Pn --top-ports 500 -open -T5 -v -n target_2
 
 #xargs añadir hilos
 seq 1 65535 | xargs -P 500 -I {} proxychains nmap -sT -Pn -p{} -open -T5 -v -n target_2 2>&1 | grep "open"
+
 ## Ver en que puerto andamos
 ps -faux | grep nmap | tails -n2 | head -n 1
 
