@@ -8,8 +8,14 @@ slug: 'android/fundamentals'
 
 1. [Intents](#intents)
 2. [Implicit Intents](#implicit-intents)
-3. [Explicit Intents](#Explicit-intents)
-4. [Deep Links](#Deep-Links)
+3. [Explicit Intents](#explicit-intents)
+4. [Deep Links](#deep-links)
+5. [AIDL](#aidl)
+6. [Messenger](#messenger)
+7. [Binder](#binder)
+8. [Components](#components)
+9. [Permissions](#permissions)
+10. [Web View](#web-view)
 
 ### Intents
 
@@ -127,7 +133,7 @@ Tiene una segunda capa de permisos tomar precedencia sobre los permisos de los a
 
 Lost atributos readPermission y writePermission especifican que permisos debe tener una app, para consultar a la DB o hacer cambios en la data.
 
-- **Permissions:**
+### Permissions
 
 **Requested Permissions**
 
@@ -141,3 +147,44 @@ Los prompts son un resultado directo de la configuración del elemento uses-perm
 
 Cuando la app necesita exponer información de un componente la app define un permiso custom.
 La app requiere el permiso que definiría el nombre del atributo uses-permission, que haria match con el nombre del elemento en el elemento de permiso de la app de hosting.
+
+- **Name:** Es el atributo string que identifica el permiso
+- **protection-level:** Dicta como se conceden los permios
+- **permission-group:** Permite agrupar permisos relacionados
+
+**Niveles de proteccion**
+
+Son especificos dentro del elemento de permiso de un componente y son los que dictan como el permiso sera cencedido
+
+- **Normal:** No son una amenaza para la app, usuario o OS, estos permisos no requieren la aprovacion del usuario.
+
+- **Dangerous:** La app pedira permisos al usuario con un prompt como acceso elevado a los datos o funcionalidades del sistema
+
+- **Signature:** Solo las apps firmadas con el mismo certificado, del componente exportado pueden conceder este permiso. Este tipo de proteccion es usado por la organizaciónes para permitir a las app comunicarse con otras, mientras preveen otras, es la proteccion mas segura ofrecida por android y no necesita la aprovacion del usuario
+
+- **SignatureOrSystem:** Solo las apps firmadas tanto de los componentes exportados o apps corriendo con el nivel de sistema accedido, es usado en las apps en la imagen del sistema y no son instaladas por el usuario normalmente, son comunes de OEMs o proveedores de celulares
+
+### Web View
+
+Son web browsers(aka clients) que son embebidas en las apps android, pueden renderizar HTML, ejecutar JS, y correr contenido activo, tienen su propio almacenaje de cookies separado del resto de la app
+
+Son potenciamente vulnerables a todas las vulnerabilidades de cualquier otro web browser como el _OWASP Top 10_
+
+Sin embargo hay algunas limitaciones dependiendo de los requisitos de la app.
+
+Hay dos tipos de vistas usadas en android:
+
+- **WebViewClient:** Es mas adecuado para renderizar HTML.
+- **WebChrome client:** Es efectivo al navegador Chrome
+
+Ver metodos: loadUrl, loadData, loadDataWithBaseURL que no sean derivados de sin sanitizar, user-controlled data
+
+Las funcionalidades que pueden ser un problema para la seguridad estan en el (WebSettings)[https://developer.android.com/reference/android/webkit/WebSettings], estas configuraciónes son configuradas por el objeto WebSettings y obtenidas por el método **getSettings** de la vista.
+
+**JavaScript:** Deshabilitar el metodo _setJavaScriptEnabled_ y pasarle true o false puede prevenir XSS y otras amenazas relacionadas con JS.
+
+**JavaScript Bridge:** Es una manera de injectar objetos Java en las vistas haciendolas accesibles a JS, versiones anteriores a 4.1 estas vulnerables despues de 4.1 los métodos son anotados como **@JavascriptInterface**
+
+**Content Provider Access:** Si la funcionalidad **setAllowContentAccess** esta habilidata el atacante puede cargar contenido malicioso a lavista por la URL **content://** causando data maliciosa en la vista del usuario.
+
+**File System Access:** Archivos locales pueden ser accedidos via **file://** permite la carga maliciosa de datos, si un atacante puede influenciar el la URL de algúna manera, pasando setAllowFileAccess previene el acceso al fs con la exepcion de **file:///android_asset** y **file:///android_res**, un atacante necesitaria controlar que archivo esta cargado en la vista y su contenido.
