@@ -104,7 +104,7 @@ ACCEPT
 
 ```bash
 # Limpiar
-iptablesables -F
+iptable -F
 iptables -X
 
 # Politicas drop
@@ -203,15 +203,15 @@ echo " OK . Verifique que lo que se aplica con: iptables −L −n"
 
 **Citrix Netscaler**
 
-Usa algunas respuestas de cookie diferente en el HTTP como: *ns_af* o *citrix_ns_id* o *NSC*
+Usa algunas respuestas de cookie diferente en el HTTP como: _ns_af_ o _citrix_ns_id_ o _NSC_
 
 **F5 BIG-IP ASM**
 
-Application Security Manager usa cookies que empiezan por *TS* y sigue de un string que respeta el siguiente regex: *^TS[a-zA-Z0-9]{3,6}*
+Application Security Manager usa cookies que empiezan por _TS_ y sigue de un string que respeta el siguiente regex: _^TS[a-zA-Z0-9]{3,6}_
 
 **Barracuda**
 
-Usa dos cookies *barra_counter_session* y *BNI__BARRACUDA_LB_COOKIE*
+Usa dos cookies _barra_counter_session_ y _BNI\_\_BARRACUDA_LB_COOKIE_
 
 **Header Rewrite:** Algunos waf reescriben la cabezera HTTP. Por lo general estos modifican el encabezado del servidor para engañar a los atacantes.
 
@@ -251,4 +251,3 @@ La mayoria de herramietnas de ataque bruta tienen la capacidad de detectar el ti
 - Response Codes
 - Drop Action
 - Pre-Built-In Rules
-
