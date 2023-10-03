@@ -14,6 +14,7 @@ slug: 'android/rev'
 6. [Additional APK Contents](#additional-apk-contents)
 7. [Hardware Optimization](#hardware-optimization)
 8. [OEM Apps](#oem-apps)
+9. [Cert](#cert)
 
 ### APKTool
 
@@ -96,3 +97,21 @@ Hay 3 fuentes para aplicaciones pre-instaladas.
 - Añadido por el proveedor de télefono, si el dispositivo fue comprado de ellos
 
 Estas son las apps mas vulnerables porque en la mayoria de los casos corren como root
+
+### CERT
+
+```bash
+# Cojemos el certificado de burpsuite
+curl localhost:8080/cert -o cert.der
+
+# generamos el archivo .pem
+openssl x509 -inform der -in cert.der -out /tmp/burp.pem
+
+openssl x509 -inform PEM -subject_hash_old -in burp.pem
+
+mv burp.pem 9a5ba575.0
+
+# este file lo ponemos en system/etc/security/cacerts
+openssl x509 -inform PEM -subject -in 9a5ba575.0
+
+```
