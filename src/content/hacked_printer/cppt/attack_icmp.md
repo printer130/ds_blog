@@ -46,3 +46,30 @@ while True:
     send(ip/icmpRedirect/redirPayloadIP/fakeOriginalTCPSYN)
 
 ```
+
+<!--
+Introduction
+    - Explanation of ICMP
+    - Importance of ICMP in computer networks
+ICMP Attack
+    - Definition of ICMP Attack
+    - Types of ICMP Attack
+        - ICMP Flood Attack
+        - ICMP Redirect Attack
+        - ICMP Smurf Attack
+        - ICMP Echo Request Flood Attack
+Prevention and Mitigation
+    - Best practices to prevent ICMP attacks
+    - Firewall configurations
+    - Intrusion Detection Systems (IDS)
+Consequences of ICMP Attacks
+    - Impact on network performance
+    - Network downtime and disruption
+    - Data loss and security breaches
+    - Reputational damage
+Case Studies
+    - Real-world examples of ICMP attacks
+    - Consequences faced by affected organizations
+Conclusion
+    - Recap of the importance of protecting against ICMP attacks
+    - Recommendations for securing network infrastructure against ICMP attacks -->
