@@ -18,8 +18,9 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
-
-# macOS-specific files
+sc/
+# macOS-spsc/*
+ecific files
 .DS_Store
 .vercel
 practica_04/**
