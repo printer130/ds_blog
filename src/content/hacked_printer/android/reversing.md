@@ -3,7 +3,7 @@ title: 'Reversing APKs'
 description: 'Me escuese el culo'
 pubDate: 'Sep 14 2023'
 heroImage: ''
-slug: 'android/rev'
+slug: 'android/reversing'
 ---
 
 1. [APKTool](#apktool)
