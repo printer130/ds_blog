@@ -1,9 +1,10 @@
 ---
-title: 'EternalBlue'
+title: 'Eternal Blue'
 description: ''
 pubDate: 'Jul 03 2022'
 heroImage: '/ldapi.jpg'
 tag: ['windows', 'eternal blue']
+slug: vuln/eternal-blue
 ---
 
 CVE-2017-0144

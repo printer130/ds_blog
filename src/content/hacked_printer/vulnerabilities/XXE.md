@@ -3,6 +3,7 @@ title: 'XML External Entity Injection (XXE)'
 description: "Allows an attacker to interfere with an application's processing of XML data."
 pubDate: 'Jul 08 2022'
 heroImage: '/xxe.jpeg'
+slug: vuln/xxe
 ---
 
 ### Information

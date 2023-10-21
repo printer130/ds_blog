@@ -3,6 +3,7 @@ title: 'Shell-Shock Attack'
 description: 'Vulnerability in the bash shell.'
 pubDate: 'Jul 08 2022'
 heroImage: '/placeholder-hero.jpg'
+slug: vuln/shell-shock
 ---
 
 ## Information

@@ -17,7 +17,7 @@ algoritmo que predice la preferencia de los usuarios ante un cierto
 En este punto, es importante introducir los dos elementos fundamentales
 en todo el proceso de RS: `usuarios` e `ítems`.
 
-------------------------------------------------------------------------
+---
 
 Los usuarios tienen preferencias para ciertos artículos, y estas
 preferencias deben extraerse de los datos. Los datos en sí se
@@ -27,7 +27,7 @@ preferencia de ese usuario por ese artículo.
 
 <img src="/assets/matriz_utilidad.jpg" height = 150 alt="matriz utilidad">
 
-*Ejemplo de matriz de utilidad*.
+_Ejemplo de matriz de utilidad_.
 
 En esta matriz, tenemos representadas las preferencias de cada usuario
 (A, B, C y D) para cada uno de los ítems (HP1, HP2, HP3, TW, SW1, SW2 y
@@ -52,8 +52,7 @@ y el usuario B no la vio, las probabilidades de que le guste son altas.
 Por supuesto, el objetivo es hacer todas estas predicciones pero de
 manera sistemática, no manual.
 
-
-------------------------------------------------------------------------
+---
 
 ### TIPOLOGÍA
 
@@ -89,7 +88,7 @@ estrategias:
 
 <img src = "https://miro.medium.com/max/1064/1*mz9tzP1LjPBhmiWXeHyQkQ.png" height = 400>
 
-------------------------------------------------------------------------
+---
 
 ### SIMILITUD
 
@@ -105,11 +104,13 @@ Una de las formas de obtener esta característica, entre ítems o
 usuarios, es con la `similitud coseno`. Esta estrategia determina la
 similaridad según el ángulo del vector.
 
-  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  <img src = "https://www.tyrrell4innovation.ca/wp-content/uploads/2021/06/rsz_jenny_du_miword.png" height = 450>   <img src = "/assets/RS.jpg" height = 300>
-  -------------------------------------------------------------------------------------------------------------------------- -----------------------------------------------------------
+---
 
-  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<img src = "https://www.tyrrell4innovation.ca/wp-content/uploads/2021/06/rsz_jenny_du_miword.png" height = 450> <img src = "/assets/RS.jpg" height = 300>
+
+---
+
+---
 
 #### Índice Jaccard
 
@@ -121,7 +122,7 @@ tienen los cojuntos -por ejemplo, los usuarios-.
 
 <img src = "https://storage.googleapis.com/lds-media/images/jaccard_similarity.width-1200.jpg" height = 400>
 
-------------------------------------------------------------------------
+---
 
 ### Práctica
 
@@ -143,7 +144,7 @@ Teniendo en cuenta el espacio en memoria que ocuparán nuestros datos,
 iremos aplicando diversas estrategias que, además, pueden ser de mucha
 utilidad a futuro para casos similares.
 
-``` python
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -155,7 +156,7 @@ import gc #garbage collector
 
 def load_data(name):
     df = pd.read_csv(name, header = None, names = ['User','Rating'], usecols = [0,1])
-    
+
     # En algunas ocasiones forzar un tipo de dato hace que se ahorre mucho lugar en memoria.
     df['Rating'] = df['Rating'].astype(float)
     return df
@@ -169,23 +170,24 @@ dataset total, que está subdividido en 4 txt.**
 
 <img src = "https://c.tenor.com/Je27rnxSMbMAAAAM/suspicious-the-simpsons.gif">
 
-``` python
+```python
 df1.info()
 ```
 
     <class 'pandas.core.frame.DataFrame'>
     RangeIndex: 24058263 entries, 0 to 24058262
     Data columns (total 2 columns):
-     #   Column  Dtype  
-    ---  ------  -----  
-     0   User    object 
+     #   Column  Dtype
+    ---  ------  -----
+     0   User    object
      1   Rating  float64
     dtypes: float64(1), object(1)
     memory usage: 367.1+ MB
 
-``` python
+```python
 df1.head()
 ```
+
 <div id='tables'>
 <table border="1" class="dataframe">
   <thead>
@@ -228,10 +230,11 @@ df1.head()
 **Para saber a qué película corresponde cada calificación, debemos
 importar el dataset que aporta dicha información.**
 
-``` python
+```python
 df_title = pd.read_csv('../Datasets/movie_titles.csv', encoding = "ISO-8859-1",index_col = 0, header = None, usecols = [0,2], names = ['Movie_Id', 'Name'])
 df_title.head()
 ```
+
 <div id='tables'>
 <table border="1" class="dataframe">
   <thead>
@@ -269,14 +272,14 @@ df_title.head()
 </table>
 </div>
 
-``` python
+```python
 movie_id = 5
 print(df_title.loc[movie_id].Name)
 ```
 
     The Rise and Fall of ECW
 
-``` python
+```python
 # Si queremos contar cuántos identificadores hay, vamos a usar la siguiente información: al lado del identificador de la película, la columna `Rating` de `df1` tiene un `NaN`.
 
 movies_ids_df1 = df1.User[df1.Rating.isna()].values
@@ -287,7 +290,7 @@ print(len(movies_ids_df1))
     ['1:' '2:' '3:' ... '4497:' '4498:' '4499:']
     4499
 
-``` python
+```python
 # Proceso para poder pasar los identificados a nombres
 
 movies_ids_df1 = np.arange(1,len(movies_ids_df1) + 1)
@@ -301,7 +304,7 @@ print(movies_ids_df1)
 Aquí, buscaremos agregar una columna con el ID de la película a la que
 corresponde cada calificación.
 
-``` python
+```python
 df1_nan = pd.DataFrame(pd.isnull(df1.Rating))
 df1_nan = df1_nan[df1_nan['Rating'] == True]
 idx_movies_ids = df1_nan.index.values
@@ -315,7 +318,7 @@ lugar esté el movie_id a cual corresponde la calificación. Como tenemos
 los índices donde está cada movie_id, podemos obtener cuántas
 calificaciones hay de cada película.
 
-``` python
+```python
 # Agregamos el índice de la última instancia del DataFrame
 
 idx_movies_ids = np.append(idx_movies_ids,df1.shape[0])
@@ -325,7 +328,7 @@ cantidad_criticas
 
     array([ 548,  146, 2013, ...,  715,  270,  429], dtype=int64)
 
-``` python
+```python
 # Celda no apta para ansiosos
 
 import time
@@ -336,7 +339,7 @@ columna_movie_id = np.array([])
 for i in range(cantidad_criticas.size):
     aux = np.full(cantidad_criticas[i], movies_ids_df1[i])
     columna_movie_id = np.concatenate((columna_movie_id, aux))
-    
+
 tiempo = time.time() - comienzo
 
 print(f'Tardó {round(tiempo)} segundos')
@@ -344,7 +347,7 @@ print(f'Tardó {round(tiempo)} segundos')
 
     Tardó 474 segundos
 
-``` python
+```python
 # Incorporamos la columna al DataFrame
 
 df1['movie_id'] = columna_movie_id
@@ -356,17 +359,18 @@ df1['movie_id'] = df1['movie_id'].astype(np.int16)
 df1['Rating'] = df1['Rating'].astype(np.int8)
 ```
 
-``` python
+```python
 gc.collect()
 ```
 
     10
 
-``` python
+```python
 # Observamos cómo quedó nuestra tabla
 
 df1
 ```
+
 <div id='tables'>
 <table border="1" class="dataframe">
   <thead>
@@ -449,7 +453,7 @@ df1
 <p>24053</div>
 764 rows × 3 columns</p>
 
-``` python
+```python
 # Guardamos
 switch = False #cambien acá si quieren guardarlo
 
@@ -457,16 +461,17 @@ if switch:
     df1.to_csv(r'\Datasets\combined_data_1_con_movie_id.csv', index= False)
 ```
 
-------------------------------------------------------------------------
+---
 
 ### **Análisis Exploratorio de Datos**
 
-``` python
+```python
 print(df1.shape)
 df1.head()
 ```
 
     (24053764, 3)
+
 <div id='tables'>
 <table border="1" class="dataframe">
   <thead>
@@ -512,7 +517,7 @@ df1.head()
 </table>
 </div>
 
-``` python
+```python
 df1 = pd.read_csv('\Datasets\combined_data_1_con_movie_id.csv', dtype={'Rating': np.int8, 'movie_id': np.int16})
 print(df1.shape)
 df1.head()
@@ -525,9 +530,10 @@ df1.dtypes
     movie_id    int16
     dtype: object
 
-``` python
+```python
   df_title
 ```
+
 <div id='tables'>
 <table border="1" class="dataframe">
   <thead>
@@ -590,7 +596,7 @@ df1.dtypes
 <p>17770</div>
  rows × 1 columns</p>
 
-``` python
+```python
 # Usuarios únicos
 
 print(len(df1['User'].unique()))
@@ -598,12 +604,13 @@ print(len(df1['User'].unique()))
 
     470758
 
-``` python
+```python
 # Calificaciones de películas por usuario
 
 df1_by_users = df1.groupby(['User']).count()
 df1_by_users.head()
 ```
+
 <div id='tables'>
 <table border="1" class="dataframe">
   <thead>
@@ -648,7 +655,7 @@ df1_by_users.head()
 </table>
 </div>
 
-``` python
+```python
 plt.hist(df1_by_users.Rating, log= True)
 plt.title('Calificaciones por usuario')
 plt.show()
@@ -656,7 +663,7 @@ plt.show()
 
 <img src="/m8/1/0ba60c496850a82094926f813b7a2d6f03ffc364.png" alt="Sistemas de recomendación" />
 
-``` python
+```python
 # Observamos la distribución de las calificaciones
 
 df1['Rating'].hist()
@@ -669,10 +676,11 @@ plt.show()
 **Veamos cuál es la película que más calificaciones tiene y cuál la que
 menos**.
 
-``` python
+```python
 df1_by_movies = df1.groupby(['movie_id']).count()
 df1_by_movies.head()
 ```
+
 <div id='tables'>
 <table border="1" class="dataframe">
   <thead>
@@ -717,14 +725,14 @@ df1_by_movies.head()
 </table>
 </div>
 
-``` python
+```python
 idx_max = df1_by_movies['User'].idxmax()
 print(df_title.loc[idx_max].Name)
 ```
 
     Pirates of the Caribbean: The Curse of the Black Pearl
 
-``` python
+```python
 # Pelicula con menos calificaciones
 idx_min = df1_by_movies['User'].idxmin()
 print(df_title.loc[idx_min].Name)
@@ -734,13 +742,14 @@ print(df_title.loc[idx_min].Name)
 
 ### **Películas por popularidad**
 
-``` python
+```python
 df1_by_movies = df1.groupby(['movie_id']).count()
 df1_by_movies.sort_values('User', ascending = False, inplace = True)
 df1_by_movies['Vistos'] = df1_by_movies['User']
 df1_by_movies.drop(columns = ['User','Rating'], inplace = True)
 df1_by_movies.head(10)
 ```
+
 <div id='tables'>
 <table border="1" class="dataframe">
   <thead>
@@ -798,9 +807,10 @@ df1_by_movies.head(10)
 </table>
 </div>
 
-``` python
+```python
 df_title.head(3)
 ```
+
 <div id='tables'>
 <table border="1" class="dataframe">
   <thead>
@@ -830,13 +840,14 @@ df_title.head(3)
 </table>
 </div>
 
-``` python
+```python
 df1_by_movies['Titulo'] = df_title.loc[df1_by_movies.index].Name
 ```
 
-``` python
+```python
 df1_by_movies.head()
 ```
+
 <div id='tables'>
 <table border="1" class="dataframe">
   <thead>
@@ -881,7 +892,7 @@ df1_by_movies.head()
 </table>
 </div>
 
-``` python
+```python
 plt.figure(figsize = (8,4))
 
 df1_by_movies.Vistos[df1_by_movies.Vistos<1000].hist(log = True, bins = 20)
@@ -895,23 +906,23 @@ plt.show()
 En esta etapa, lo que haremos será filtrar de nuestro dataset a aquellas
 películas con pocas calificaciones. Para ello, establecemos un umbral.
 
-``` python
+```python
 umbral = 1000
 mascara_pocos_vistos = df1_by_movies.Vistos<umbral
 ```
 
-``` python
+```python
 peliculas_pocos_vistos = mascara_pocos_vistos[mascara_pocos_vistos].index.values
 print(len(peliculas_pocos_vistos), peliculas_pocos_vistos)
 ```
 
     2757 [1817  806 3486 ... 3656 4338 4362]
 
-``` python
+```python
 mascara_descartables = df1.movie_id.isin(peliculas_pocos_vistos)
 ```
 
-``` python
+```python
 # Obsevamos cómo cambia la cantidad de registros a partir del filtrado
 
 print(df1.shape)
@@ -931,16 +942,16 @@ Para trabajar con sistemas de recomendación, emplearemos la librería
 Tendremos que llevar nuestro dataset al formato con el que trabaja esta
 librería.
 
-``` python
+```python
 import sys
-#!conda activate henry-bootcamp
-#!conda install -c conda-forge scikit-surprise 
+#!conda activate my_ass-bootcamp
+#!conda install -c conda-forge scikit-surprise
 #from scikit.surprise import Dataset
 #from surprise import Reader
 #from surprise.model_selection import train_test_split
 ```
 
-``` python
+```python
 reader = Reader()
 
 N_filas = 100000 # Limitamos el dataset a N_filas
@@ -961,7 +972,7 @@ model.fit(trainset)
 
     <surprise.prediction_algorithms.matrix_factorization.SVD at 0x20286bfc8b0>
 
-``` python
+```python
 # Predecimos
 
 predictions = model.test(testset)
@@ -971,7 +982,7 @@ predictions[1]
 
     Prediction(uid=2219491, iid=28, r_ui=4.0, est=3.8249210765751536, details={'was_impossible': False})
 
-``` python
+```python
 # Hacemos una predicción al azar para usuario y película
 
 model.predict(1328945,28)
@@ -979,7 +990,7 @@ model.predict(1328945,28)
 
     Prediction(uid=1328945, iid=28, r_ui=None, est=3.8249210765751536, details={'was_impossible': False})
 
-``` python
+```python
 # Tomaremos un usuario para hacerle una recomendación
 
 usuario = 1539350
@@ -989,6 +1000,7 @@ df_user = df_user.reset_index(drop=True)
 df_user['Name'] = df_title['Name'].loc[df_user.movie_id].values
 df_user
 ```
+
 <div id='tables'>
 <table border="1" class="dataframe">
   <thead>
@@ -1390,13 +1402,14 @@ df_user
 </table>
 </div>
 
-``` python
+```python
 recomendaciones_usuario = df_title.iloc[:4499].copy()
 print(recomendaciones_usuario.shape)
 recomendaciones_usuario.head()
 ```
 
     (4499, 1)
+
 <div id='tables'>
 <table border="1" class="dataframe">
   <thead>
@@ -1434,7 +1447,7 @@ recomendaciones_usuario.head()
 </table>
 </div>
 
-``` python
+```python
 # Debemos extraer las películas que ya ha visto
 
 usuario_vistas = df1[df1['User'] == usuario]
@@ -1443,6 +1456,7 @@ usuario_vistas.head()
 ```
 
     (97, 3)
+
 <div id='tables'>
 <table border="1" class="dataframe">
   <thead>
@@ -1488,7 +1502,7 @@ usuario_vistas.head()
 </table>
 </div>
 
-``` python
+```python
 if True: # Sacamos las que filtramos
     recomendaciones_usuario.drop(peliculas_pocos_vistos, inplace = True)
 
@@ -1496,6 +1510,7 @@ recomendaciones_usuario.drop(usuario_vistas.movie_id, inplace = True)
 recomendaciones_usuario = recomendaciones_usuario.reset_index()
 recomendaciones_usuario.head()
 ```
+
 <div id='tables'>
 <table border="1" class="dataframe">
   <thead>
@@ -1535,7 +1550,7 @@ recomendaciones_usuario.head()
 </table>
 </div>
 
-``` python
+```python
 # Recomendamos
 
 recomendaciones_usuario['Estimate_Score'] = recomendaciones_usuario['Movie_Id'].apply(lambda x: model.predict(usuario, x).est)
@@ -1558,7 +1573,7 @@ print(recomendaciones_usuario.head(10))
 
 ### Evaluación
 
-``` python
+```python
 from surprise import accuracy
 
 accuracy.rmse(predictions)
@@ -1570,7 +1585,7 @@ accuracy.rmse(predictions)
 
 ### Optimización de hiperparámetros
 
-``` python
+```python
 from surprise.model_selection import cross_validate
 
 rmse_test_means = []
@@ -1586,68 +1601,68 @@ for factor in factores:
     1
     Evaluating RMSE of algorithm SVD on 3 split(s).
 
-                      Fold 1  Fold 2  Fold 3  Mean    Std     
-    RMSE (testset)    1.0425  1.0346  1.0411  1.0394  0.0034  
-    Fit time          1.45    1.45    1.42    1.44    0.01    
-    Test time         0.50    0.26    0.46    0.41    0.10    
+                      Fold 1  Fold 2  Fold 3  Mean    Std
+    RMSE (testset)    1.0425  1.0346  1.0411  1.0394  0.0034
+    Fit time          1.45    1.45    1.42    1.44    0.01
+    Test time         0.50    0.26    0.46    0.41    0.10
     2
     Evaluating RMSE of algorithm SVD on 3 split(s).
 
-                      Fold 1  Fold 2  Fold 3  Mean    Std     
-    RMSE (testset)    1.0423  1.0374  1.0376  1.0391  0.0023  
-    Fit time          1.09    0.97    1.01    1.02    0.05    
-    Test time         0.17    0.17    0.17    0.17    0.00    
+                      Fold 1  Fold 2  Fold 3  Mean    Std
+    RMSE (testset)    1.0423  1.0374  1.0376  1.0391  0.0023
+    Fit time          1.09    0.97    1.01    1.02    0.05
+    Test time         0.17    0.17    0.17    0.17    0.00
     4
     Evaluating RMSE of algorithm SVD on 3 split(s).
 
-                      Fold 1  Fold 2  Fold 3  Mean    Std     
-    RMSE (testset)    1.0379  1.0422  1.0401  1.0401  0.0018  
-    Fit time          1.05    1.01    1.02    1.02    0.02    
-    Test time         0.16    0.16    0.17    0.16    0.00    
+                      Fold 1  Fold 2  Fold 3  Mean    Std
+    RMSE (testset)    1.0379  1.0422  1.0401  1.0401  0.0018
+    Fit time          1.05    1.01    1.02    1.02    0.02
+    Test time         0.16    0.16    0.17    0.16    0.00
     8
     Evaluating RMSE of algorithm SVD on 3 split(s).
 
-                      Fold 1  Fold 2  Fold 3  Mean    Std     
-    RMSE (testset)    1.0443  1.0372  1.0452  1.0422  0.0036  
-    Fit time          1.13    1.17    1.14    1.15    0.02    
-    Test time         0.18    0.15    0.17    0.17    0.01    
+                      Fold 1  Fold 2  Fold 3  Mean    Std
+    RMSE (testset)    1.0443  1.0372  1.0452  1.0422  0.0036
+    Fit time          1.13    1.17    1.14    1.15    0.02
+    Test time         0.18    0.15    0.17    0.17    0.01
     16
     Evaluating RMSE of algorithm SVD on 3 split(s).
 
-                      Fold 1  Fold 2  Fold 3  Mean    Std     
-    RMSE (testset)    1.0457  1.0425  1.0401  1.0428  0.0023  
-    Fit time          1.38    1.34    1.36    1.36    0.02    
-    Test time         0.17    0.19    0.15    0.17    0.01    
+                      Fold 1  Fold 2  Fold 3  Mean    Std
+    RMSE (testset)    1.0457  1.0425  1.0401  1.0428  0.0023
+    Fit time          1.38    1.34    1.36    1.36    0.02
+    Test time         0.17    0.19    0.15    0.17    0.01
     32
     Evaluating RMSE of algorithm SVD on 3 split(s).
 
-                      Fold 1  Fold 2  Fold 3  Mean    Std     
-    RMSE (testset)    1.0416  1.0395  1.0508  1.0440  0.0049  
-    Fit time          1.67    1.69    1.70    1.69    0.02    
-    Test time         0.17    0.16    0.18    0.17    0.01    
+                      Fold 1  Fold 2  Fold 3  Mean    Std
+    RMSE (testset)    1.0416  1.0395  1.0508  1.0440  0.0049
+    Fit time          1.67    1.69    1.70    1.69    0.02
+    Test time         0.17    0.16    0.18    0.17    0.01
     64
     Evaluating RMSE of algorithm SVD on 3 split(s).
 
-                      Fold 1  Fold 2  Fold 3  Mean    Std     
-    RMSE (testset)    1.0407  1.0435  1.0529  1.0457  0.0052  
-    Fit time          2.45    2.53    2.57    2.52    0.05    
-    Test time         0.17    0.35    0.16    0.23    0.09    
+                      Fold 1  Fold 2  Fold 3  Mean    Std
+    RMSE (testset)    1.0407  1.0435  1.0529  1.0457  0.0052
+    Fit time          2.45    2.53    2.57    2.52    0.05
+    Test time         0.17    0.35    0.16    0.23    0.09
     128
     Evaluating RMSE of algorithm SVD on 3 split(s).
 
-                      Fold 1  Fold 2  Fold 3  Mean    Std     
-    RMSE (testset)    1.0433  1.0468  1.0491  1.0464  0.0024  
-    Fit time          3.86    3.93    3.98    3.92    0.05    
-    Test time         0.38    0.15    0.35    0.29    0.10    
+                      Fold 1  Fold 2  Fold 3  Mean    Std
+    RMSE (testset)    1.0433  1.0468  1.0491  1.0464  0.0024
+    Fit time          3.86    3.93    3.98    3.92    0.05
+    Test time         0.38    0.15    0.35    0.29    0.10
     256
     Evaluating RMSE of algorithm SVD on 3 split(s).
 
-                      Fold 1  Fold 2  Fold 3  Mean    Std     
-    RMSE (testset)    1.0540  1.0470  1.0407  1.0472  0.0054  
-    Fit time          6.91    6.91    6.93    6.92    0.01    
-    Test time         0.16    0.38    0.18    0.24    0.10    
+                      Fold 1  Fold 2  Fold 3  Mean    Std
+    RMSE (testset)    1.0540  1.0470  1.0407  1.0472  0.0054
+    Fit time          6.91    6.91    6.93    6.92    0.01
+    Test time         0.16    0.38    0.18    0.24    0.10
 
-``` python
+```python
 # Ploteamos desempeño según cantidad de factores de SVD
 
 plt.scatter(factores, rmse_test_means)
@@ -1658,7 +1673,7 @@ plt.show()
 
 <img src="/m8/1/1cc195f4d8ecc30ab05d9e411d10407ff3c6b6b5.png" alt="Sistemas de recomendación" />
 
-``` python
+```python
 # Nuevamente, no apto para ansiosos
 
 from surprise.model_selection import GridSearchCV
@@ -1668,10 +1683,12 @@ param_grid = {'n_factors': [5,50,100],'n_epochs': [5, 10,20], 'lr_all': [0.001, 
 gs = GridSearchCV(SVD, param_grid, measures=['rmse'], cv=3, n_jobs = -1)
 gs.fit(data)
 ```
+
 :::
 
 ::: {.cell .code}
-``` python
+
+```python
 # Observamos performance del mejor modelo
 
 print(gs.best_score['rmse'])
@@ -1684,20 +1701,20 @@ print(gs.best_params['rmse'])
 Para entender un poco más estas métricas podemos irnos
 [aquí](https://surprise.readthedocs.io/en/stable/matrix_factorization.html).
 
-------------------------------------------------------------------------
+---
 
 ## Incorporación de nuevos datos
 
 Vamos a ver cómo sumar las calificaciones que no hemos usado.
 
-``` python
+```python
 # 1
 
 def load_data(name):
     df = pd.read_csv(name, header = None, names = ['User','Rating'], usecols = [0,1])
-    
+
     # En ciertos casos, forzar un tipo de dato hace que se ahorre mucho lugar en memoria.
-    df['Rating'] = df['Rating']#.astype(float) 
+    df['Rating'] = df['Rating']#.astype(float)
     return df
 
 
@@ -1707,7 +1724,7 @@ print(df2.shape)
 
     (26982302, 2)
 
-``` python
+```python
 # 2
 
 movies_ids_df2 = df2.User[df2.Rating.isna()].values
@@ -1722,7 +1739,7 @@ print(movies_ids_df2)
     4711
     [4500 4501 4502 ... 9208 9209 9210]
 
-``` python
+```python
 df2_nan = pd.DataFrame(pd.isnull(df2.Rating))
 df2_nan = df2_nan[df2_nan['Rating'] == True]
 idx_movies_ids = df2_nan.index.values
@@ -1731,7 +1748,7 @@ print(idx_movies_ids)
 
     [       0      259      855 ... 26961403 26980373 26980497]
 
-``` python
+```python
 # Agregamos el índice de la última instancia del DataFrame
 
 idx_movies_ids = np.append(idx_movies_ids,df2.shape[0])
@@ -1743,7 +1760,7 @@ cantidad_criticas
 
     array([  259,   596,   105, ..., 18970,   124,  1805], dtype=int64)
 
-``` python
+```python
 columna_movie_id = np.array([])
 for i in range(cantidad_criticas.size):
     aux = np.full(cantidad_criticas[i], movies_ids_df2[i])
@@ -1762,9 +1779,10 @@ gc.collect()
 
     2493
 
-``` python
+```python
 df2
 ```
+
 <div id='tables'>
 <table border="1" class="dataframe">
   <thead>
@@ -1847,7 +1865,7 @@ df2
 <p>26977</div>
 591 rows × 3 columns</p>
 
-``` python
+```python
 ### 4.
 
 df1 = pd.read_csv('../Datasets/combined_data_1_con_movie_id.csv', dtype={'Rating': np.int8, 'movie_id': np.int16})
@@ -1856,6 +1874,7 @@ df1.head()
 ```
 
     (24053764, 3)
+
 <div id='tables'>
 <table border="1" class="dataframe">
   <thead>
@@ -1901,7 +1920,7 @@ df1.head()
 </table>
 </div>
 
-``` python
+```python
 ### 5.
 df = df1.copy()
 del df1
@@ -1911,7 +1930,7 @@ print(df.shape)
 
     (51031355, 3)
 
-``` python
+```python
 # Corroboramos que estén todas las películas
 
 peliculas_presentes = df.movie_id.unique()
@@ -1920,13 +1939,13 @@ peliculas_presentes
 
     array([   1,    2,    3, ..., 9208, 9209, 9210], dtype=int16)
 
-``` python
+```python
 print((peliculas_presentes - np.arange(1,9210 + 1)).sum())
 ```
 
     0
 
-``` python
+```python
 switch = False
 if switch:
     df.to_csv('../Datasets/combined_data_1y2_con_movie_id.csv', index= False)

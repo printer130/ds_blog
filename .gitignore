@@ -2,7 +2,7 @@
 dist/
 # generated types
 .astro/
-
+usip
 resumidos/
 # dependencies
 node_modules/

@@ -19,7 +19,7 @@ Cada campo esta anotado por la longitud de su byte
 <div id="table">
 
 | bytes 2          | 2           | 6       | 6     | 6       | 2                | 6     | 0-2312     | 4         |     |       |
-|------------------|-------------|---------|-------|---------|------------------|-------|------------|-----------|-----|-------|
+| ---------------- | ----------- | ------- | ----- | ------- | ---------------- | ----- | ---------- | --------- | --- | ----- |
 | frame control    | Duration ID | Addr1   | Addr2 | Addr3   | Sequence Control | Addr4 | Frame Body | fcs       |     |       |
 | protocol version | type        | subtype | to DS | From DS | More flag        | Retry | Pwr Mgmt   | More Data | wep | order |
 | bits 2           | 2           | 4       | 1     | 1       | 1                | 1     | 1          | 1         | 1   | 1     |
@@ -53,6 +53,7 @@ iwconfig wlan0
 aireplay-ng -9 wlan0
 
 ```
+
 <img src='https://res.cloudinary.com/djc1umong/image/upload/v1685504598/Screenshot_from_2023-05-30_23-42-53_qued87.png' />
 
 ```bash
@@ -115,6 +116,7 @@ mdk3 wlan0 b -f redes.txt -a -s 1000 -c 11
 aircrack-ng -w wordlist cap.file
 
 # create diccionario, dictionary
+# generate, generar, contraseñas
 crunch 8 8 | aircrack-ng -e RosNetwork file.cap -w -
 
 # crunch 8 8 -t passwo@% >> passwords
@@ -127,13 +129,13 @@ crunch 8 8 | aircrack-ng -e RosNetwork file.cap -w -
 **Dirección del destinatario (RA):** Destino STA
 **Dirección del transmisor (TA):** Transmisor STA
 
-Los *beacons* son fotogramas que transmite periodicamente el AP. Su proposito es anunciar la red WI-FI, contiene información sobre los parametros de la red y capacidades del AP como tasas de rendimiento admitidas
+Los _beacons_ son fotogramas que transmite periodicamente el AP. Su proposito es anunciar la red WI-FI, contiene información sobre los parametros de la red y capacidades del AP como tasas de rendimiento admitidas
 
-*Probe requests* son enviados por el cliente para determinar la disponibilidad de la red, contiene el nombre SSID y es enviado por todos los canales, un nullbyte puede ser enviado si no quiere buscar una red especifica
+_Probe requests_ son enviados por el cliente para determinar la disponibilidad de la red, contiene el nombre SSID y es enviado por todos los canales, un nullbyte puede ser enviado si no quiere buscar una red especifica
 
-*Probe responses* son enviados por el AP una vez que recibe el probe request, son parecidos al beacon pero con información adicional según lo especificado por el cliente que se comunica dentro del prove request correspondiente
+_Probe responses_ son enviados por el AP una vez que recibe el probe request, son parecidos al beacon pero con información adicional según lo especificado por el cliente que se comunica dentro del prove request correspondiente
 
-Despues de la authenticación una estacion necesita ser asociada por el AP, este es el proposito del *Association Request* frames, contiene información sobre las capacidades STA, velocidades de data transmitida y el SSID de la red a la que desea asociarse
+Despues de la authenticación una estacion necesita ser asociada por el AP, este es el proposito del _Association Request_ frames, contiene información sobre las capacidades STA, velocidades de data transmitida y el SSID de la red a la que desea asociarse
 
 ### 3 estados posibles de conexión
 

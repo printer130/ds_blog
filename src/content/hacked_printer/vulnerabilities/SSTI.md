@@ -1,7 +1,10 @@
 ---
 title: 'Server-Side Template Injection (SSTI)'
-description: 'Lorem ipsum dolor sit amet'
+description: ''
 pubDate: 'Jul 08 2022'
-heroImage: '/placeholder-hero.jpg'
+slug: vuln/ssti
 ---
 
+```bash
+${{<%[%'"}}%\.
+```

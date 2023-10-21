@@ -2,7 +2,7 @@
 title: 'LDAP Injection'
 description: 'Organizations often use LDAP to enable single sign-on and to authenticate users to on-premises and web-based applications'
 pubDate: 'Jul 08 2022'
-heroImage: '/ldapi.jpg'
+heroImage: 'vuln/ldapi.jpg'
 ---
 
 ### Information

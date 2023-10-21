@@ -3,7 +3,7 @@ title: 'Full Zone Transfer (AXFR)'
 description: 'Es el termino usado para referirce al proceso en que el contenido de un archivo de zona dns es copiado del servidor DNS primario al servidor dns segunario.'
 pubDate: 'Jul 08 2022'
 heroImage: '/AXFR.png'
-slug: 'axfr'
+slug: 'vuln/axfr'
 ---
 
 ## Usefull comands

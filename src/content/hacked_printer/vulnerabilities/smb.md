@@ -4,6 +4,7 @@ description: ''
 pubDate: 'Jul 03 2022'
 heroImage: '/ldapi.jpg'
 tag: ['windows', 'smb']
+slug: vuln/smb
 ---
 
 ## Information

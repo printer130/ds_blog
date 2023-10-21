@@ -1,9 +1,8 @@
 ---
-title: 'Linux privilege escalation'
+title: 'Linux'
 description: ''
 pubDate: 'Jul 03 2022'
-heroImage: '/ldapi.jpg'
-slug: 'linux'
+slug: 'escalation/linux'
 ---
 
 # Exploit kernel

@@ -4,6 +4,7 @@ description: 'CVE-2019-0708 RDP Vuln'
 pubDate: 'Jul 03 2022'
 heroImage: '/ldapi.jpg'
 tag: ['windows', 'bluekeep']
+slug: vuln/bluekeep
 ---
 
 ## Information

@@ -1,8 +1,7 @@
 ---
-title: 'Powershell Obfuscation'
+title: 'Obfuscation'
 description: ''
 pubDate: 'May 12 2023'
-heroImage: '/asd.png'
 slug: 'powershell/obfuscation'
 ---
 
@@ -109,7 +108,12 @@ Get-Command -Module Posh-SecMod
 
 ```
 
-[Get-HttpStatus](https://powersploit.readthedocs.io/en/latest/Recon/Get-HttpStatus/)
-[Invoke-Portscan.ps1](https://powersploit.readthedocs.io/en/latest/Recon/Invoke-Portscan/)
-[Posh-SecMod](https://github.com/darkoperator/Posh-SecMod)
-[PowerSploit](https://github.com/PowerShellMafia/PowerSploit/)
+### Links
+
+- [Get-HttpStatus](https://powersploit.readthedocs.io/en/latest/Recon/Get-HttpStatus/)
+
+- [Invoke-Portscan.ps1](https://powersploit.readthedocs.io/en/latest/Recon/Invoke-Portscan/)
+
+- [Posh-SecMod](https://github.com/darkoperator/Posh-SecMod)
+
+- [PowerSploit](https://github.com/PowerShellMafia/PowerSploit/)

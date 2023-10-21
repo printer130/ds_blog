@@ -3,6 +3,7 @@ title: 'XPath Injection'
 description: 'This is a query language used in XML to search and retrieve specific information from XML documents.'
 pubDate: 'Jul 08 2022'
 heroImage: '/xpathi.png'
+slug: vuln/xpathl
 ---
 
 ### Information
@@ -24,20 +25,20 @@ Attack occur when a web site uses user-supplied information to construct an XPat
 ```html
 <?xml version="1.0" encoding="utf-8"?>
 <Employees>
-  <Employee ID="1">
-    <FirstName>Arnold</FirstName>
-    <LastName>Baker</LastName>
-    <UserName>ABaker</UserName>
-    <Password>SoSecret</Password>
-    <Type>Admin</Type>
-  </Employee>
-  <Employee ID="2">
-    <FirstName>Peter</FirstName>
-    <LastName>Pan</LastName>
-    <UserName>PPan</UserName>
-    <Password>NotTelling</Password>
-    <Type>User</Type>
-  </Employee>
+	<Employee ID="1">
+		<FirstName>Arnold</FirstName>
+		<LastName>Baker</LastName>
+		<UserName>ABaker</UserName>
+		<Password>SoSecret</Password>
+		<Type>Admin</Type>
+	</Employee>
+	<Employee ID="2">
+		<FirstName>Peter</FirstName>
+		<LastName>Pan</LastName>
+		<UserName>PPan</UserName>
+		<Password>NotTelling</Password>
+		<Type>User</Type>
+	</Employee>
 </Employees>
 ```
 

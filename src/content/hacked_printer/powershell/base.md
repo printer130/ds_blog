@@ -1,9 +1,8 @@
 ---
-title: 'Powershell'
+title: 'Comandos básicos'
 description: ''
 pubDate: 'May 12 2023'
-heroImage: '/'
-slug: 'powershell/base'
+slug: 'powershell/basic_cmds'
 ---
 
 ### Cmdlets

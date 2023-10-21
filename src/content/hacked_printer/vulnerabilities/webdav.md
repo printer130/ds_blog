@@ -4,6 +4,7 @@ description: 'Is a set of extensions to the HTTP protocol which allow users to c
 pubDate: 'Jul 03 2022'
 heroImage: '/ldapi.jpg'
 tag: ['windows', 'webdav']
+slug: vuln/webdav
 ---
 
 ## Information

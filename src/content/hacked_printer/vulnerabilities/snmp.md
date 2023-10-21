@@ -3,6 +3,7 @@ title: 'SNMP'
 description: 'Port: 161'
 pubDate: 'Jul 03 2022'
 tag: ['windows', 'smb']
+slug: vuln/snmp
 ---
 
 ```bash

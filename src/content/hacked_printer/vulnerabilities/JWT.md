@@ -1,7 +1,6 @@
 ---
 title: 'Json Web Tokens abuse'
-description: 'Lorem ipsum dolor sit amet'
+description: ''
 pubDate: 'Jul 08 2022'
 heroImage: '/placeholder-hero.jpg'
 ---
-
