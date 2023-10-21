@@ -3,7 +3,7 @@ title: 'Wi-fi'
 description: ''
 pubDate: 'May 12 2023'
 heroImage: 'https://res.cloudinary.com/djc1umong/image/upload/v1685504739/Screenshot_from_2023-05-30_23-45-31_akzecv.png'
-slug: 'wi_fi'
+slug: 'trip/wifi'
 ---
 
 ### Basic

@@ -2,7 +2,7 @@
 title: 'Firewall'
 description: ''
 pubDate: 'May 12 2023'
-slug: 'firewall'
+slug: 'trip/firewall'
 ---
 
 ### Procedimientos, Concinentización y Políticas

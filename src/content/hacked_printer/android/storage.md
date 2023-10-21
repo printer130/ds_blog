@@ -16,11 +16,11 @@ Las apps son instaladas por defecto en el directorio _/data/app_, las apps del s
 
 Permite instalar una app android en el dispositivo ya que las companias necesitan asegurarse que estan manteniendo una medida de control para proteger potencialmente la data sensible, estos suites que permiten el manejado del mobil y sus politicas asociadas son llamados Mobile Device Management(MDM).
 
-- (Mass360)[https://www.ibm.com/products/maas360/mobile-security]
+- [Mass360](https://www.ibm.com/products/maas360/mobile-security)
 
-- (AirWatch)[https://www.vmware.com/products/workspace-one.html]
+- [AirWatch](https://www.vmware.com/products/workspace-one.html)
 
-- (MobileIron)[https://www.ivanti.com/company/history/mobileiron?miredirect]
+- [MobileIron](https://www.ivanti.com/company/history/mobileiron?miredirect)
 
 Las capacidades de estos MDM exeden lo proveido por el Device Administrator API, ya que incluye x.509 certificados controlando que software esta instalado o manejando la habilidad del cliente para recibir email o la _deteccion de root_
 

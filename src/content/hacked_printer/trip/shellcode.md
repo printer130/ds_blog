@@ -2,7 +2,7 @@
 title: 'Shellcode'
 description: 'The EIP is not the only method for execution of shellcode. Its possible for a shellcode to execute when an SEH frame activates. The SEH frames store the address to jump to when there is an exception, such as division by zero.'
 pubDate: 'May 12 2023'
-slug: 'shellcode/code'
+slug: 'trip/shellcode'
 ---
 
 Overwriting the return address, the attacker can take control of the execution.
