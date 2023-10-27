@@ -1,8 +1,7 @@
 ---
 title: 'WinRM'
-description: ''
+description: '5985'
 pubDate: 'Jul 03 2022'
-heroImage: '/ldapi.jpg'
 tag: ['windows', 'winrm']
 slug: vuln/winrm
 ---
