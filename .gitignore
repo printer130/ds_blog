@@ -31,3 +31,5 @@ ba_ging/*/*
 ba_ging/**/**
 ba_ging/**
 ba_ging
+
+package-lock.json
