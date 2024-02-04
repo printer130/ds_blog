@@ -6,8 +6,8 @@ export interface Props {
 	description: string
 	image?: string
 }
-const canonicalURL = new URL(Astro.url.pathname, Astro.site)
-
+// const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const canonicalURL = 'https://asurbanipal.xyz/'
 const { title, description, image = '/placeholder-social.jpg' } = Astro.props
 ---
 

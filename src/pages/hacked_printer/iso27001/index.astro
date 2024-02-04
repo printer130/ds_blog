@@ -1,0 +1,276 @@
+---
+import Title from '@components/hacked_printer/Title.astro'
+import One from '@layouts/One.astro'
+import { Image } from 'astro:assets'
+
+/* const topVulnerabilities = await getCollection('hacked_printer', ({ id }) => {
+	return id.startsWith(BOXES)
+}) */
+---
+
+<One>
+	<Title>ISO 27001 - 27002</Title>
+	<section style='color: aliceblue;'>
+		<p>
+			En la norma 27001 (regula un SGSI) nos indica cual es la estructura que ha
+			de ser implantada son los controles estructurales y los controles de
+			seguridad se encuentran en la norma 27002 son los controles que se han de
+			implantar en el cliente (a la luz de tu analisis de riegos tendras que
+			implantar cosas, aca se encuentra ese catalogo de controles de seguridad).
+		</p>
+		<section>
+			<h2>ISO 27001</h2>
+			<ul>
+				<li>
+					<p>
+						<b>Objetivo:</b> el Negocio no se puede ver afectado por problemas en
+						materia de seguridad de la información (ataques, imcumplimientos normativos,
+						etc).
+					</p>
+				</li>
+				<li>
+					<p><b>Principios</b></p>
+					<ul>
+						<li>
+							Ententer la organización, su contexto y los elementos relevantes
+							que prodrían afectar a los objetivos del SGSI.
+						</li>
+						<li>Entender las necesidades de las partes interesadas.</li>
+						<li>
+							La asignación de responsabilidades y lederazgo para la seguridad
+							de la información.
+						</li>
+						<li>
+							La formación y concienciación en seguridad de la información.
+						</li>
+						<li>El compromiso y liderazgo de la Dirección.</li>
+					</ul>
+				</li>
+				<li>
+					<p><b>Dimensiones de seguridad</b></p>
+					<ul>
+						<li>Confidencialidad</li>
+						<li>Disponibilidad</li>
+						<li>Integridad</li>
+						<li>Autenticidad</li>
+						<li>Trazabilidad</li>
+					</ul>
+				</li>
+				<li>
+					<b>Enfoque</b>
+					<ul>
+						<li>
+							Identificar los activos de información y sus requisitos de
+							seguridad asociados.
+						</li>
+						<li>Evaluar los riesgos de seguridad de la información.</li>
+						<li>
+							Seleccionar y aplicar los controles pertinentes para gestionar los
+							riesgos inaceptables.
+						</li>
+						<li>
+							Supervisar, mantener y mejorar la eficacia de los controles de
+							seguridad asociados con los activos de la información de la
+							organización .
+						</li>
+					</ul>
+				</li>
+				<li><b>Atender los requisitos de seguridad de la información</b></li>
+				<ul>
+					<li>La identificación de los activos de información y su valor.</li>
+					<li>
+						Las necesidades del negocio para el procesamiento y almacenamiento
+						de información.
+					</li>
+					<li>Los requisitos legales, reglamentarios y contractuales.</li>
+					<li>Las necesidades de las partes interesadas.</li>
+				</ul>
+				<li><b>Enfoque basado en el riesgo</b></li><ul>
+					<li>Evaluación/análisis de los riesgos</li>
+					<li>Tratamiento de los riesgos</li>
+					<li>Controles de la ISO 27002</li>
+				</ul>
+				<li><b>Contexto de la organización</b></li>
+				<ul>
+					<li>Interno</li>
+					<li>Externo</li>
+					<li>Expectativas de las partes interesadas</li>
+				</ul>
+				<li><b>Determinación del alcance del SGSI</b></li>
+				<li><b>Política de Seguridad de la información</b></li>
+				<li><b>Comité de Seguridad de la información</b></li>
+				<li>
+					<p>
+						<b>Planificación:</b> Objetivos de seguridad de la información y planificación
+						para alcanzarlos
+					</p>
+					<Image
+						width={1028}
+						height={320}
+						src='https://res.cloudinary.com/djc1umong/image/upload/v1706997659/planificacion_27001.png'
+						alt='Planificación de la gestion de la seguridad de la información'
+					/>
+				</li>
+				<li>
+					<b>Soporte</b>
+					<ul>
+						<li>
+							Especificación de recursos (personas, programas, concienciación,
+							etc)
+						</li>
+						<li>Competencias y concienciación</li>
+						<li>Canales de comunicación</li>
+						<li>identificación de los propietarios del riesgo</li>
+					</ul>
+					<table style='width:100%'>
+						<caption><b>APRECIACIÓN DEL RIESGO</b></caption>
+						<tr>
+							<td>IDENTIFICACIÓN DEL RIESGO</td>
+							<td>
+								<ol>
+									<li>Necesidades y requisitos de interesados</li>
+									<li>identificación de amenazas</li>
+								</ol>
+							</td>
+						</tr>
+						<tr>
+							<td>ANÁLISIS DEL RIESGO</td>
+							<td>
+								<ol>
+									<li>Metodol. anál. de riesgos</li>
+									<li>Valorac. de activos/partes interesadas</li>
+									<li>Valoración de impacto</li>
+									<li>Establecer frecuencias</li>
+								</ol>
+							</td>
+						</tr>
+						<tr>
+							<td>EVALUACIÓN DEL RIESGO</td>
+							<td>
+								<ol>
+									<li>Obtención del mapa de riesgos</li>
+									<li>Obtención del nivel de riesgo potencial</li>
+								</ol>
+							</td>
+						</tr>
+					</table>
+				</li>
+				<li>
+					<b>Evaluación del desempeño</b>
+					<ul>
+						<li>Seguimiento, medición, análisis y evaluación</li>
+						<li>Auditoría interna a intervalos planificados</li>
+						<li>Revisión por la dirección</li>
+					</ul>
+				</li>
+				<li>
+					<b>Mejora</b>
+					<ul>
+						<li>Mejora continua</li>
+						<li>No conformidad y acciones correctivas</li>
+					</ul>
+				</li>
+			</ul>
+		</section>
+		<section>
+			<h2>ISO 27002</h2>
+			<ul>
+				<li>
+					<b>
+						Ya no sigue la estructura de Dominios - Objetivos de Control -
+						Controles
+					</b>
+				</li>
+				<li>
+					<b>Tipología de controles</b>
+					<ul>
+						<li>Organizativos (37 controles)</li>
+						<li>De personas (8 controles)</li>
+						<li>Físicos (14 controles)</li>
+						<li>Tecnológicos (34 controles)</li>
+					</ul>
+				</li>
+				<li>
+					<b
+						>Un total de 93 controles restructurados de 114 de la anterior
+						versión</b
+					>
+				</li>
+				<li>
+					<b>Nuevos controles</b>
+					<ul>
+						<li>Inteligencia sobre amenazas</li>
+						<li>
+							Seguridad de la información para el uso de servicios en la nube
+						</li>
+						<li>Preparación de las TIC para la continuidad de la actividad</li>
+						<li>Vigilancia de la seguridad física</li>
+						<li>Gestión de la configuración</li>
+						<li>Eliminación de la información</li>
+						<li>Enmascaramiento de los datos</li>
+						<li>Prevención de la fuga de datos</li>
+						<li>Actividades de seguimiento</li>
+						<li>Filtrado web</li>
+						<li>Codificación segura</li>
+					</ul>
+				</li>
+				<Image
+					width={1488}
+					height={730}
+					alt='Actualizar controles de la versión de 2013 a la 2022'
+					src='https://res.cloudinary.com/djc1umong/image/upload/v1707000619/Screenshot_from_2024-02-03_18-53-34_fcs7gq.webp'
+				/>
+				<li>
+					<b>Controles Organizativos</b>
+					<ul>
+						<li>Control de acceso</li>
+						<li>Transferencia de información</li>
+						<li>
+							Seguridad de la información en las relaciones con los proveedores
+						</li>
+						<li>Protección de los registros</li>
+						<li>Recogida de pruebas</li>
+					</ul>
+				</li>
+				<li>
+					<b>Controles de personas</b>
+					<ul>
+						<li>Trabajo a distancia</li>
+						<li>Notificación de eventos de seguridad de la información</li>
+					</ul>
+				</li>
+				<li>
+					<b>Controles de físicos</b>
+					<ul>
+						<li>Mantenimiento de equipos</li>
+					</ul>
+				</li>
+				<li>
+					<b>Controles tecnológicos</b>
+					<ul>
+						<li>Restricciones de acceso a la información</li>
+						<li>Derechos de acceso privilegiados</li>
+						<li>Eliminación de información</li>
+						<li>Acceso al código fuente</li>
+						<li>Gestión del cambio</li>
+					</ul>
+				</li>
+				<li>
+					<b>En las organizaciones donde ya se cuenta con un SGSI</b>
+					<ul>
+						<li>
+							Readaptar el proceso de gestión de riegos contemplando los cambios
+							en los controles
+						</li>
+						<li>Revisar la declaración de aplicabilidad</li>
+						<li>
+							Completar la parte de documentación relativa a los cambios en los
+							controles
+						</li>
+						<li>Comunicar las nuevas medidas a las partes involucradas</li>
+					</ul>
+				</li>
+			</ul>
+		</section>
+	</section>
+</One>
