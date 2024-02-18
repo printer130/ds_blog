@@ -1,0 +1,15 @@
+La auditoría de la seguridad según el ENS:
+-a.Aplica a sistemas de categoría media y alta.---PUSE:Aplica a los sistemas independientemente de su categoría.
+
+Las PA-DSS se aplican a las aplicaciones de pago que los proveedores de software, generalmente, venden e instalan "en forma estándar", sin demasiada personalización.---PUSE:Las PA-DSS se aplican a las aplicaciones de pago que los proveedores de software, generalmente, venden e instalan "de forma estándar", sin demasiada personalización, y en las aplicaciones de pago desarrolladas por comerciantes y proveedores de servicios si sólo se utilizan internamente (no se venden, no se distribuyen ni se otorgan bajo licencia a terceros).
+
+Los requisitos de las PCI DSS se aplican:
+Dependiendo de si se almacena, procesa o transmite un número de cuenta principal (PAN), principalmente, aunque el nombre del titular de la tarjeta, el código de servicio y/o la fecha de vencimiento también influyen en la aplicabilidad.---PUSE:Dependiendo de si se almacena, procesa o transmite el número de cuenta principal (PAN), únicamente.
+
+Un O.L.A. es:
+Un acuerdo de nivel de servicio interno.
+---PUSE:Un acuerdo de nivel de servicio con el cliente.
+
+¿Qué norma permite implantar y certificar la gestión de riesgos?
+\*Ninguna de las anteriores.
+--- PUSE:ISO 30001---APARECIO(segundo intento) ISO 31000
