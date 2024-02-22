@@ -6,8 +6,8 @@ const POST_EXPLOITATION = 'post-exploitation'
 const ESCALATION = 'escalation'
 const TRIP = 'trip'
 const NETWORK = 'network'
-const BOXES = 'boxes'
 const POWERSHELL = 'powershell'
+export const BOXES = 'boxes'
 
 export const SITE_TITLE = 'printer130'
 

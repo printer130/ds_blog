@@ -1,12 +1,11 @@
 ---
 import Layout from '@layouts/Layout.astro'
-import { getCollection, getEntryBySlug } from 'astro:content'
+import { getCollection } from 'astro:content'
 import { BOXES } from 'src/consts'
 
 export async function getStaticPaths() {
-	const postHacking = await getCollection('boxes')
+	const postHacking = await getCollection(BOXES)
 	return postHacking.map((post) => {
-		console.log(post.slug)
 		return {
 			params: {
 				slug: post.slug
@@ -16,15 +15,11 @@ export async function getStaticPaths() {
 	})
 }
 
-const { slug } = Astro.params
+/* const { slug } = Astro.params */
 const posts = Astro.props
-console.log('-------')
-console.log(slug)
-const entry = await getEntryBySlug('boxes', slug)
-console.log(entry)
-/* const data = entry?.data */
+/* const entry = await getEntryBySlug('boxes', slug)
+ */ /* const data = entry?.data */
 const { Content } = await posts?.render()
-console.log(Content)
 ---
 
 <Layout {...posts.data}>

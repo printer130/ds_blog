@@ -30,7 +30,6 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<typeof BUFFER_OVERFLOW>
 
 const post = Astro.props
-console.log(post)
 const { Content } = await post.render()
 ---
 

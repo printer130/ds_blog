@@ -1,11 +1,10 @@
 ---
 import { getCollection } from 'astro:content'
-import { BOXES, BLACK_OR_WHITE } from 'src/consts'
+import { BOXES, URLs } from 'src/consts'
 import Title from '@components/redteam/Title.astro'
 import One from '@layouts/One.astro'
 
 const HACK_THE_BOXES = await getCollection(BOXES)
-console.log(HACK_THE_BOXES)
 ---
 
 <One>
@@ -14,7 +13,10 @@ console.log(HACK_THE_BOXES)
 		{
 			HACK_THE_BOXES.map((post) => (
 				<li>
-					<a target='_self' href={`/${BLACK_OR_WHITE}/${BOXES}/${post.slug}`}>
+					<a
+						target='_self'
+						href={`/${URLs.BLACK_OR_WHITE}/${BOXES}/${post.slug}`}
+					>
 						{post.data.title}
 					</a>
 				</li>
