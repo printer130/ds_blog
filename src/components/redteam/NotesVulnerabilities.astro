@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content'
+import { ENTRIES } from 'src/consts'
+import Title from '@components/redteam/Title.astro'
+import Link from './Link.astro'
+
+const topVulnerabilities = (
+	await getCollection('redteam', ({ id }) => {
+		return id.startsWith(ENTRIES.TOP_VULNERALIBILITIES)
+	})
+).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
+---
+
+<section>
+	<Title>Vulnerabilidades</Title>
+	<ul>
+		{topVulnerabilities.map((post) => <Link post={post} />)}
+	</ul>
+</section>

@@ -2,21 +2,26 @@
 import HeaderLink from './HeaderLink.astro'
 import { Search } from './Search'
 import { SearchC } from './SearchC'
+import { URLs } from '@/consts'
+const { pathname } = Astro.url
+
+/* const BLACK_OR_WHITE = !pathname.includes(URLs.BLACK_OR_WHITE)
+	? 'bg-[#f6f4f4]'
+	: 'bg-[#050014]' */
+
+const BLACK_OR_WHITE = pathname.includes(URLs.BLACK_OR_WHITE)
 ---
 
 <header
-	class='fixed sm:h-12 top-0 max-w-4xl w-full left-0 right-0 bg-[#f6f4f4] border-b mx-auto'
+	class=`fixed sm:h-12 top-0 max-w-4xl w-full left-0 right-0 ${BLACK_OR_WHITE	? 'bg-[#050014]'	: 'bg-[#f6f4f4]'} border-b mx-auto z-10`
 >
 	<nav
 		class='w-full py-1 justify-between items-center px-4 grid-cols-[36px_minmax(214px,350px)] gap-4 inline-flex'
 	>
-		<HeaderLink href='/'>Data</HeaderLink>
+		<HeaderLink href='/'>Machine Learning</HeaderLink>
 
-		<HeaderLink
-			class='bg-green decoration-none text-red-800 hover:text-red-600'
-			href='/hacked_printer'
-		>
-			Hacked printer
+		<HeaderLink class='text-[#48c78e]' href={URLs.BLACK_OR_WHITE}>
+			{URLs.BLACK_OR_WHITE[0].toUpperCase() + URLs.BLACK_OR_WHITE.slice(1)}
 		</HeaderLink>
 
 		<!-- 		<HeaderLink
@@ -25,8 +30,15 @@ import { SearchC } from './SearchC'
 		>
 			Cajas
 		</HeaderLink> -->
-
-		<Search client:only />
-		<SearchC client:only />
+		{
+			!BLACK_OR_WHITE ? (
+				<>
+					<Search client:only />
+					<SearchC client:only />
+				</>
+			) : (
+				<div class='h-[35px]' />
+			)
+		}
 	</nav>
 </header>

@@ -1,14 +1,13 @@
-
-export const TOP_VULNERALIBILITIES = 'vulnerabilities'
-export const BUFFER_OVERFLOW = 'buffer-overflow'
-export const POST_EXPLOITATION = 'post-exploitation'
-export const ESCALATION = 'escalation'
-export const TRIP = 'trip'
-export const NETWORK = 'network'
-export const CPPT = 'cppt'
-export const BOXES = 'boxes'
-export const POWERSHELL = 'powershell'
-export const ANDROID = 'android'
+const ANDROID = 'android'
+const BUFFER_OVERFLOW = 'buffer-overflow'
+const CPPT = 'cppt'
+const TOP_VULNERALIBILITIES = 'vulnerabilities'
+const POST_EXPLOITATION = 'post-exploitation'
+const ESCALATION = 'escalation'
+const TRIP = 'trip'
+const NETWORK = 'network'
+const BOXES = 'boxes'
+const POWERSHELL = 'powershell'
 
 export const SITE_TITLE = 'printer130'
 
@@ -33,6 +32,16 @@ export const DEFAULT_HITS = [
 		childs: []
 	}
 ]
+
+// MATCH URLs
+
+const BLACK_OR_WHITE = 'cibersecurity'
+const REDTEAM = 'redteam'
+
+export const URLs = {
+	BLACK_OR_WHITE,
+	REDTEAM
+}
 
 export const ENTRIES = {
 	TOP_VULNERALIBILITIES,

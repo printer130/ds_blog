@@ -29,7 +29,11 @@ const { title, description, pubDate } = Astro.props
 				class='text-xl tracking-wide leading-relaxed font-normal text-slate-800 max-w-4xl mx-auto px-4 overflow-auto'
 			>
 				<Header client:load />
-				<h1 class='text-3xl pb-4 sm:text-4xl text-slate-800 font-semibold'>
+				<h1
+					class={`text-3xl ${
+						!title?.at(0) ? 'pb-0' : 'pb-4'
+					} sm:text-4xl text-slate-800 font-semibold`}
+				>
 					{title?.at(0).toUpperCase() + title?.slice(1).replaceAll('_', ' ')}
 				</h1>
 				{pubDate && <FormattedDate date={pubDate} />}

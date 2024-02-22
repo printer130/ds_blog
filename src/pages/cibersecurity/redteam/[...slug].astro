@@ -1,0 +1,42 @@
+---
+import { CollectionEntry, getCollection } from 'astro:content'
+import BlogPost from '@layouts/BlogPost.astro'
+import { BUFFER_OVERFLOW, ENTRIES } from '../../../consts'
+import One from '@layouts/One.astro'
+
+export async function getStaticPaths() {
+	const promisesArray: Promise<any>[] = []
+
+	for (const [index] of Object.entries(ENTRIES)) {
+		const res = getCollection('redteam', ({ id }) => {
+			return id.startsWith(ENTRIES[index])
+		})
+		promisesArray.push(res)
+	}
+
+	const results = await Promise.all(promisesArray)
+	return results.map((postList) => {
+		return postList.map((post) => {
+			return {
+				params: {
+					slug: post.slug
+				},
+				props: post
+			}
+		})
+	})
+}
+
+type Props = CollectionEntry<typeof BUFFER_OVERFLOW>
+
+const post = Astro.props
+console.log(post)
+const { Content } = await post.render()
+---
+
+<!-- {heroImage && <img width={720} height={360} src={heroImage} alt='' />} -->
+<One>
+	<BlogPost {...post?.data}>
+		<Content />
+	</BlogPost>
+</One>

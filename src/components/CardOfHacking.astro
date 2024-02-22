@@ -2,17 +2,19 @@
 import FormattedDate from './FormattedDate.astro'
 
 const { title, slug, pubDate, description } = Astro.props
-
 ---
 
 <li class='w-full mb-8 py-4 rounded-lg list-none'>
-  <h2 class='mb-2 text-2xl font-semibold sm:font-bold text-slate-800 pt-0 pb-0'>
-    {title}
-  </h2>
-  <img src="https://avatars.githubusercontent.com/u/36833387?s=64&v=4" alt="late htb">
-  <FormattedDate date={pubDate} />
-  <p class='px-0 mt-0 text-base text-slate-800 sm:text-lg tracking-wide pb-0'>
-    {description}
-  </p>
-  <a href={`/hacking/${slug}`} target='_self'>Continuar</a>
+	<h2 class='mb-2 text-2xl font-semibold sm:font-bold text-slate-800 pt-0 pb-0'>
+		{title}
+	</h2>
+	<img
+		src='https://avatars.githubusercontent.com/u/36833387?s=64&v=4'
+		alt='late htb'
+	/>
+	<FormattedDate date={pubDate} />
+	<p class='px-0 mt-0 text-base text-slate-800 sm:text-lg tracking-wide pb-0'>
+		{description}
+	</p>
+	<a href={`/hacking/${slug}`} target='_self'>Continuar</a>
 </li>

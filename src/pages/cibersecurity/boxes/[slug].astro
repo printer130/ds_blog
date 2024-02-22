@@ -1,0 +1,40 @@
+---
+import Layout from '@layouts/Layout.astro'
+import { getCollection, getEntryBySlug } from 'astro:content'
+import { BOXES } from 'src/consts'
+
+export async function getStaticPaths() {
+	const postHacking = await getCollection('boxes')
+	return postHacking.map((post) => {
+		console.log(post.slug)
+		return {
+			params: {
+				slug: post.slug
+			},
+			props: post
+		}
+	})
+}
+
+const { slug } = Astro.params
+const posts = Astro.props
+console.log('-------')
+console.log(slug)
+const entry = await getEntryBySlug('boxes', slug)
+console.log(entry)
+/* const data = entry?.data */
+const { Content } = await posts?.render()
+console.log(Content)
+---
+
+<Layout {...posts.data}>
+	<Content />
+</Layout>
+<!-- <Layout
+	title={data?.title}
+	pubDate={new Date()}
+	description={data?.description}
+>
+	{Content !== undefined && <Content />}
+</Layout>
+ -->

@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content'
+import { ENTRIES } from 'src/consts'
+import Title from '@components/redteam/Title.astro'
+import Link from './Link.astro'
+
+const topTRIP = (
+	await getCollection('redteam', ({ id }) => {
+		return id.startsWith(ENTRIES.TRIP)
+	})
+).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
+---
+
+<section>
+	<Title>Trip journey</Title>
+	<ul>
+		{
+			topTRIP.map((post) => {
+				return <Link post={post} />
+			})
+		}
+	</ul>
+</section>

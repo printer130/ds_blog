@@ -1,7 +1,9 @@
 ---
-import BaseHead from '@components/hacked_printer/BaseHead.astro'
-import Footer from '@components/hacked_printer/Footer.astro'
-import Header from '@components/hacked_printer/Header.astro'
+import BaseHead from '@components/redteam/BaseHead.astro'
+import Footer from '@components/redteam/Footer.astro'
+import { URLs } from 'src/consts'
+import Header from '@components/Header.astro'
+
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 
 const { pathname } = Astro.url
@@ -12,7 +14,7 @@ const { pathname } = Astro.url
 		<BaseHead title={title} description={description} />
 	</head>
 	<body
-		class=`text-xl min-h-screen relative pb-12 ${pathname.includes('hacked_printer') && 'bg-[#050014]'}`
+		class=`text-xl min-h-screen relative pb-12 ${pathname.includes(URLs.BLACK_OR_WHITE) && 'bg-[#050014]'}`
 	>
 		<Header />
 		<main

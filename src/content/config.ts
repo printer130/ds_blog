@@ -68,7 +68,7 @@ const hacked_blog = defineCollection({
 })
 
 export const collections = {
-	'hacked_blog': hacked_blog,
+	'boxes': hacked_blog,
 	blog: blogCollection,
 	lab: labCollection,
 	ensamblers: ensamblersCollection,
