@@ -16,17 +16,17 @@
     "@astrojs/sitemap": "1.1.0",
     "@astrojs/tailwind": "3.1.0",
     "@astrojs/vercel": "3.2.0",
-    "@nanostores/preact": "^0.3.1",
-    "algoliasearch": "^4.17.0",
+    "@nanostores/preact": "0.3.1",
+    "algoliasearch": "4.17.0",
     "astro": "2.1.2",
-    "instantsearch.js": "^4.54.0",
-    "nanostores": "^0.7.4",
+    "instantsearch.js": "4.54.0",
+    "nanostores": "0.7.4",
     "preact": "10.13.0",
-    "react-instantsearch-dom": "^6.39.1",
-    "react-instantsearch-hooks-web": "^6.42.1",
+    "react-instantsearch-dom": "6.39.1",
+    "react-instantsearch-hooks-web": "6.42.1",
     "standard": "17.0.0",
     "tailwindcss": "3.2.7",
-    "vercel": "^32.5.0"
+    "vercel": "32.5.0"
   },
   "eslintConfig": {
     "extends": "standard"

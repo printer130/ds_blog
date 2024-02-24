@@ -1,0 +1,52 @@
+---
+title: 'Desarrollo de vectores de ataques'
+description: ''
+pubDate: 'May 12 2023'
+slug: 'social-eng-attack-vectors/desarrollo_de_vectores_de_ataques'
+---
+
+import { Image } from 'astro:assets'
+
+# Desarrollo de un macro personalizado
+
+[Codigo fuente](https://www.source-code.biz/)
+
+_Caso 1: Aprovecharemos las propiedades del archivo para ocultar el payload y StdIn para evitar el logging_
+
+El siguiente malware oculta su payload de PorwerShell en la propiedad Author del archivo y los argumentos de la linea de comandos con StdIn.WriteLine.
+
+- Es muy posible que cuando el malware-macro se ejecute el AMSI(Antimalware Scan Interface) de windows 10 lo intercepte.
+
+<Image src="https://res.cloudinary.com/djc1umong/image/upload/v1708720391/custom_macro_qn27yp.webp" alt='asd' width={884} height={387}/>
+
+_Caso 2: Usando controles ActiveX para ejecutar macros_
+
+Subrutina para ejecutar el macro especificamente control InkEdit.
+
+Embebiendo un control ActiveX en un documento es sencillo.
+
+Una vez el tab de desarrollo este habilitado:
+
+File - Options - Custumize Ribbon, ir al tab de developer y luego a la seccion de Controls en el ribbon. Encontraremos una lista grande de controles bajo Legacy Tools - More Options.
+
+Sin embargo la victima vera un warning, [ejemplos de controles para correr un macro](https://www.greyhathacker.net/?p=948)
+
+[Ejemplo de macro mas avanzada](https://gist.github.com/anonymous/0e1abbf9364380294b5d9004e1d68213)
+
+_Caso 3: La clasica descarga y ejecucion de un macro, con un giro_
+
+Aprovechamos Windows certuti, primero suelta un archivo HTA encodeado en base64 y luego usa certutil para decodear y ejecutarlo.
+
+Los archivos HTA son buenos para evadir defensas y pueden ser ofuscados facilmente e usados en numerosos escenarios.
+
+Usa Microsoft XML Core Services (MSXML) y ServerXMLHTTP directamente para hacer una peticion a la carga encoded [Ejemplo de descarga y ejecucion](https://gist.github.com/anonymous/3e7efa917632078693f9c8fdbb7cc756)
+
+_Caso 4: Macro malware que recupera el OS y ejecuta el payload apropiado_
+
+Es conciente del contexto en que se ejecuta (OS).
+
+Recupera el hostname y el username, lo parsea a base64 y finalmente lo envia a un servidor remoto.
+
+[Codigo fuente](https://gist.github.com/anonymous/db37338ba9c59336a0ee3d324d152bc9)
+
+_caso 5: RTF + firma binaria + hijacking DLL + MSF loader personalizado_

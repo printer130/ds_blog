@@ -1,31 +1,7 @@
 ---
-import BaseHead from '@components/redteam/BaseHead.astro'
 import { URLs } from 'src/consts'
 
-import NotesBufferOverflow from '@components/redteam/NotesBufferOverflow.astro'
-import NotesTripJourny from '@components/redteam/NotesTripJourny.astro'
-import NotesVulnerabilities from '@components/redteam/NotesVulnerabilities.astro'
-import NotesEscalation from '@components/redteam/NotesEscalation.astro'
-import NotesPostExploitation from '@components/redteam/NotesPostExploitation.astro'
-import NotesNetwork from '@components/redteam/NotesNetwork.astro'
-import NotesCPPT from '@components/redteam/NotesCPPT.astro'
-import NotesPowershell from '@components/redteam/NotesPowershell.astro'
-import NotesAndroid from '@components/redteam/NotesAndroid.astro'
-
 import One from '@layouts/One.astro'
-
-/* export async function getStaticPaths () {
-	const collection = await getCollection('redteam')
-	return collection.map(item => {
-		const [res] = item.slug.split('/')
-		return {
-			params: {
-				resource: res
-			}
-		}
-	})
-}
- */
 ---
 
 <!DOCTYPE html>
@@ -57,14 +33,5 @@ import One from '@layouts/One.astro'
 				</li>
 			</ul>
 		</section>
-		<!-- <NotesVulnerabilities />
-		<NotesBufferOverflow />
-		<NotesNetwork />
-		<NotesTripJourny />
-		<NotesCPPT />
-		<NotesEscalation />
-		<NotesPostExploitation />
-		<NotesPowershell />
-		<NotesAndroid /> -->
 	</One>
 </html>

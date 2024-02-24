@@ -7,6 +7,7 @@ const ESCALATION = 'escalation'
 const TRIP = 'trip'
 const NETWORK = 'network'
 const POWERSHELL = 'powershell'
+const SOCIAL_ENG_ATTACK_VECTORS = 'social-eng-attack-vectors'
 export const BOXES = 'boxes'
 
 export const SITE_TITLE = 'printer130'
@@ -53,5 +54,6 @@ export const ENTRIES = {
 	CPPT,
 	BOXES,
 	POWERSHELL,
-	ANDROID
+	ANDROID,
+	SOCIAL_ENG_ATTACK_VECTORS
 }
