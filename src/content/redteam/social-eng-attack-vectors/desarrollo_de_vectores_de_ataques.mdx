@@ -207,3 +207,27 @@ Aca vemos una arma HTA que contiene nuestro [backdoor JS](https://gist.github.co
 
 <h3>Archivos shortcut (LNK)</h3>
 
+Formato de archivo binario \[MS-SHLLINK]: Shell Link (.LNK), en este formato de estructura llamado shell link, o shortcut y es un objeto de dato que contiene informacion que puede ser usada para aceder a otros objetos de datos. Son parecidos a OLE pero estos pueden ser usados por aplicaciones que necesiten habilitar el almacenamieto de una referencia a un archivo.
+
+Script para LNK creado sin restricciones de argumento, [este script](https://gist.github.com/anonymous/6fdb40bc8279671f7492f8d6625e9454) creara sin restriccion un archivo LNK que contiene una reverse shell un ataque mas sigiloso enviaria un archivo LNK embebido como un objeto OLE en un documento word.
+
+
+<h3>Archivos de consulta Web (IQY)</h3>
+
+Estan asociados con Excel, y permiten consultar data de la internet y recuperar la informacion directamente al Microsoft Excel worksheet.
+
+Nos podemos [aprovechar de esto](http://www.labofapenetrationtester.com/2015/08/abusing-web-query-iqy-files.html) para recolectar hashes NTLM o credenciales o esta otra [gran alternativa](https://github.com/ryhanson/phishery)
+
+<h3>Archivos MSG</h3>
+
+Es un formato para almacenar Microsoft Outlook y archivos de mensajes de intercambio, hay ataques que se aprovechan de esto para embeber objetos OLE y traspasar defensas de correors corporativos.
+
+- [Ejemplo en Medium](https://medium.com/@networksecurity/oleoutlook-bypass-almost-every-corporate-security-control-with-a-point-n-click-gui-37f4cbc107d0)
+
+{/* - [Trustwave](https://www.trustwave.com/Resources/SpiderLabs-Blog/Down-the-Rabbit-Hole--Extracting-Maliciousness-from-MSG-Files-Without-Outlook/) */}
+
+<h3>Archivos de texto enriquecidos (RTF)</h3>
+
+Muestran un comportamiento interesante cuando se los mezcla con objetos OLE. Los objetos OLE son automaticamente dropeados en un directorio temporal cuando un archivo RTF es abierto.
+
+Sigilosamente(sin recuperarlo de una locacion remota) dropeamos y ejecutamos un archivo malicioso en un directorio temporal, [aquí analizamos este comportamiento](https://web.archive.org/web/20170227205919/https://securingtomorrow.mcafee.com/mcafee-labs/dropping-files-temp-folder-raises-security-concerns/).
