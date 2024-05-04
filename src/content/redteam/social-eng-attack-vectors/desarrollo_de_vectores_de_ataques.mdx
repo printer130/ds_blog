@@ -9,7 +9,7 @@ import { Image } from 'astro:assets'
 
 [www.source-code.biz](https://www.source-code.biz/)
 
-<h3>Desarrollo de un macro personalizado</h3>
+<h2>Desarrollo de un macro personalizado</h2>
 
 _Caso 1: Aprovecharemos las propiedades del archivo para ocultar el payload y StdIn para evitar el logging_
 
@@ -120,7 +120,7 @@ Ahora el modulo VBA correra automaticamente cuando el usuario habilite las macro
 
 [Cuando las macros estan desabilitadas globalmente](https://github.com/Pepitoh/Vbad)
 
-<h3> Abusando las capacidades de Office </h3>
+<h2> Abusando las capacidades de Office </h2>
 
 Microsoft Office Suite contiene funcionalidades para meterse a la red que aprovecharemos.
 
@@ -175,7 +175,7 @@ Microsoft manejara este enlace que puede ser usado para phishing
 
 ```
 
-<h3> Extensiones poco comunes </h3>
+<h2> Extensiones poco comunes </h2>
 
 Hay sin fin de posibilidades en weaponizing/backdooring archivos poco comunes.
 
@@ -231,3 +231,28 @@ Es un formato para almacenar Microsoft Outlook y archivos de mensajes de interca
 Muestran un comportamiento interesante cuando se los mezcla con objetos OLE. Los objetos OLE son automaticamente dropeados en un directorio temporal cuando un archivo RTF es abierto.
 
 Sigilosamente(sin recuperarlo de una locacion remota) dropeamos y ejecutamos un archivo malicioso en un directorio temporal, [aquí analizamos este comportamiento](https://web.archive.org/web/20170227205919/https://securingtomorrow.mcafee.com/mcafee-labs/dropping-files-temp-folder-raises-security-concerns/).
+
+<h2>Aplicaciones personalizadas ClickOnce</h2>
+
+ClickOnce es una tecnología de implementación para crear aplicaciones con actualización automática basadas en Windows, que se puede instalar y ejecutar con una interacción mínima por parte del usuario.
+
+Por defecto los paquetes que vienen con ClickOnce  permiten conceder temporalmente privilegios de admin al usuario para instalar el paquete. El usuario final puede elevar permisos sin necesidad de ayuda del administrador.
+
+Tambien son buenas para traspasar las listas blancas de aplicaciones ya que corre desde dfsvc.exe o pueden ser invocadas con dfshim.dll.
+
+[Este malware](https://khr0x40sh.wordpress.com/2014/08/22/powershell-ie-backdoor/) funciona el Windows 10 y es útil en apps que permiten hacer conexiónes de salida en puertos.
+
+- [beacon.ps1](https://gist.github.com/anonymous/286688913bffa163f3c761cb123e3627)
+
+- [simple c2.php](https://gist.github.com/anonymous/e547d692d956396b6d37fdb74c7a6417)
+
+Hora de [servir el malware](https://es.slideshare.net/NetSPI/all-you-need-is-one-a-click-once-love-story-secure360-2015) usando aplicaciones ClickOnce.
+
+La manera mas facil que ClickOnce ejecute un payload es crear una consola. Usando C# podemos [crear un proceso que ejecute el payload](https://gist.github.com/anonymous/41a0cc1f3f5434e12a018f2b2e71bd81).
+
+
+Cuando usamos ClickOnce como metodo de entrega ambos instaladores package/console seran descargados y ejecutados en un dir temporal, esto incluye nuestro binario malicioso. Durante el operativo queremos minimizar la huella en el disco duro así que creamos una app ClickOnce que inicie nuestro payload malicioso sin dejar caer nada en el disco duro.
+
+Para eso utilizaremos [PowerPick project](https://github.com/PowerShellEmpire/PowerTools/tree/master) y [PowerSploit project](https://github.com/PowerShellMafia/PowerSploit)
+
+El codigo completo [ConsoleApplication2](https://gist.github.com/anonymous/759516440b9beaaf3e5a9b9f91531251) y [Invoke-Shellcode.ps1](https://gist.github.com/anonymous/d120e314fa97f9d493e8dcf784014961)

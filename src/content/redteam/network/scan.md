@@ -38,7 +38,7 @@ En vez de usar -f podemos usar --mtu para especificar un desplazamiento personal
 nmap -sS -f target
 
 # añade 100 bytes de longituda a la cabezera
-nmap -sS -f target -Pn -n --date-length 100
+nmap -sS -f target -Pn -n --data-length 100
 
 # Remplaza el paquete de 8 bytes a 16 bytes
 nmap -sS -f -f target
@@ -74,7 +74,7 @@ nmap -sS target -T2 -p22,35,34,42 --max-retries 1
 
 ### Source ports
 
-```powershell
+```bash
 nmap -sS --source-port 53 target
 
 # Todo el trafico corre desde el puerto 80
@@ -85,7 +85,7 @@ nmap -g 80 -sS target/24
 
 Reemplaza la direccion mac con uno random
 
-```powershell
+```bash
 
 nmap --spoof-mac 0 target -p80 -Pn --disable-arp-ping -n
 

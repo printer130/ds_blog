@@ -98,7 +98,7 @@ bettercap -G gateway -T target_ip --proxy-https
 
 ### MITM
 
-herramienta moderna para bypass HSTS
+Herramienta moderna para bypass HSTS
 
 ```bash
 python mitmf.py .i wlan0 --spoof --arp --dns --hsts --gateway gateway_ip --targets target_ip
@@ -129,7 +129,7 @@ El puerto DNS es TCP/53 para transferencia de zona y UDP/53 para consultas DNS. 
 El siguiente comando le dice a nmap que utilice un TCP Connect Scan al puerto 53 para los hosts 172.16.5.1, 172.16.5.5, 172.16.5.6, y 172.16.5.10
 
 ```bash
-nmap -sT -p 53 172.16.5.1,5,6,10
+nmap -sT -p53 172.16.5.1,5,6,10
 
 ```
 

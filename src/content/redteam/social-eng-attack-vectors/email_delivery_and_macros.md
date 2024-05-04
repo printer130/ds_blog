@@ -15,7 +15,7 @@ Sin embargo existen numerosos estandares de seguridad de fortificar la entrega y
 
 ### Marco normativo del remitente (SPF)
 
-Cuando enviamos un MAIL FROM la línea de comandos, reclamamos que el mensaje es de la direccion que hemos proporcionado. El protocolo SMTP no tiene una manera de verificar este reclamo.
+Cuando enviamos un MAIL FROM en la línea de comandos, reclamamos que el mensaje es de la direccion que hemos proporcionado. El protocolo SMTP no tiene una manera de verificar este reclamo.
 
 Cuando SPF es utilizado e intentamos transmitir un mensaje a travez del servidor de correo, el servidor de correo va a estar en la posicion de verificar el SPF registro del dominio que estamos afirmando del mensaje.
 

@@ -34,7 +34,7 @@ El objetivo es recolectar:
 **Infracstructure of the organization?** Name servers
 
 ```bash
-# Only domains with a PTR record set will respond to the above reverse lookup.
+# Only domains with a PTR record set will respond.
 # Recibimos la direccion ip asociada al nombre de dominio.
 nslookup -type=PTR IP-TARGET
 dig target.com PTR
@@ -69,6 +69,7 @@ DNSlytics
 Networkappers
 Robtex
 ```
+
 ## Netblocks y AS
 
 Es un rango de direcciones IPs, asignadas a alguien y tienen una IP inicial y una final.
@@ -99,6 +100,7 @@ Herramientas que automatizan.
 # subbrute.py cbs.com
 
 ```
+
 - DNSmap
 - Metagoofil
 - Recon-ng
