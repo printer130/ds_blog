@@ -81,25 +81,22 @@ recursos gerenciales
 ```bash
 
 #Politicas drop
-iptables -P INPUT DROP
-iptables -P FORWARD DROP
-iptables -P OUTPUT DROP
+sudo iptables -P INPUT DROP
+sudo iptables -P FORWARD DROP
+sudo iptables -P OUTPUT DROP
 #Autorizar el servicio ssh desde su "maquina-local" hacia el "firewall" al equipo 172.16.10.1
-iptables -A INPUT -i enp0s8 -s 172.16.10.1 -p tcp --dport 22 -j
-ACCEPT
-iptables -A OUTPUT -o enp0s8 -d 172.16.10.1 -p tcp --sport 22 -j
-ACCEPT
+sudo iptables -A INPUT -i enp0s8 -s 172.16.10.1 -p tcp --dport 22 -j ACCEPT
+sudo iptables -A OUTPUT -o enp0s8 -d 172.16.10.1 -p tcp --sport 22 -j ACCEPT
 
 #Autorizar unicamente "ping" desde el "server-172.16.10.102" hacia el
 #firewall pero bloquear todo "ping" procediente de la red 192.168.100.0
 #hacia el firewall
-iptables -A INPUT -i enp0s8 -s 172.16.10.102 -p icmp -j ACCEPT
-iptables -A OUTPUT -o enp0s8 -d 172.16.10.102 -p icmp -j ACCEPT
+sudo iptables -A INPUT -i enp0s8 -s 172.16.10.102 -p icmp -j ACCEPT
+sudo iptables -A OUTPUT -o enp0s8 -d 172.16.10.102 -p icmp -j ACCEPT
 
 #Autorizar el servicio ssh desde el equipo "172.16.10.102" hacia el "firewall"
-iptables -A INPUT -i enp0s8 -s 172.16.10.102 -p tcp --dport 22 -j ACCEPT
-iptables -A OUTPUT -o enp0s8 -d 172.16.10.102 -p tcp --sport 22 -j
-ACCEPT
+sudo iptables -A INPUT -i enp0s8 -s 172.16.10.102 -p tcp --dport 22 -j ACCEPT
+sudo iptables -A OUTPUT -o enp0s8 -d 172.16.10.102 -p tcp --sport 22 -j ACCEPT
 ```
 
 ```bash
@@ -146,7 +143,7 @@ systemctl restart firewalld.service
 echo −n Aplicando Reglas de Firewall...
 ## FLUSH de reglas
 # Flush All Iptables Chains/Firewall rules #
-iptables -F
+sudoiptables -F
 # Delete all Iptables Chains #
 iptables -X
 # Flush all counters too #

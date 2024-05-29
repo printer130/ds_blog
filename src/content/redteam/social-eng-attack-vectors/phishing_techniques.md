@@ -58,3 +58,23 @@ Aqui hay una lista de tecnicas de ofuscacion para buscarlas en google:
 - Phishing with Unicode Domains
 
 <h2>Casos de uso BeEF</h2>
+
+xss + sameorigin + autocomplete = admin credentials
+
+xss -> CSRF bypass -> Admin level access
+
+https://gist.github.com/anonymous/1b369a11090f1991d88356578fc58b61
+
+https://gist.github.com/anonymous/ba135bd318b49224707f1fcad5826714
+
+<h2>Mimicking DYRE banking trojan’s spread method</h2>
+
+https://www.xorrior.com/phishing-on-the-inside/
+
+---
+
+https://www.mail-tester.com/not-received?id=test-9shjmef5h
+
+---
+
+https://github.com/outflanknl/Scripts/blob/master/shellcode_to_sylk.py

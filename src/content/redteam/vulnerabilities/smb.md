@@ -115,10 +115,6 @@ rpcclient -U "leo&micontraseña" 10.10.11.233 -c "querygroup 0x200"
 # Despues de montar podemos ver en ls -lsa /media/k_share
 sudo mount.cifs //target/c /media/k_share user=,pass=
 
-# Dictionary attack
-
-hydra -l admin -P /usr/share/wordlist/rockyou.txt target smb
-
 #if discover pass
 smbmap -H target -u admin -p password1
 
