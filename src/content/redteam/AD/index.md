@@ -180,3 +180,22 @@ klist
 dir \\prod.research.security.local\c$
 
 ```
+
+### AZURE Pentesting AD
+
+```powershell
+# evelginx
+# send phishing email
+evolution
+
+# phishing with device code
+https://o365blog.com/post/phishing
+
+# Recon
+dirkjanm/ROADtools
+
+
+# Golden SAML
+CYBERARK -> webpage
+
+```

@@ -162,16 +162,11 @@ Ejemplo: Queremos calcular los saltos o router que existe entre la localización
 
 ## OSINT
 
-• Maltego (https://www.paterva.com/web7/). Sin lugar a duda, la herramienta de
-OSINT más potente
-• Recon-ng (https://kali-linux.net/article/recon-ng/). Centrada para el reconoci-
-miento en aplicaciones web
-• Foca (https://www.elevenpaths.com/es/labstools/foca-2/index.html). Más centra-
-da en el ámbito de los metadatos
+• Maltego (https://www.paterva.com/web7/). Sin lugar a duda, la herramienta de OSINT más potente.
+• Recon-ng (https://kali-linux.net/article/recon-ng/). Centrada para el reconocimiento en aplicaciones web
+• Foca (https://www.elevenpaths.com/es/labstools/foca-2/index.html) Más centrada en el ámbito de los metadatos
 • Recon-dog (https://github.com/s0md3v/ReconDog)
-• OSRFramework (https://tools.kali.org/information-gathering/osrframework). He-
-rramienta de OSINT con la particularidad de que incluye la deep web en las bús-
-quedas
+• OSRFramework (https://tools.kali.org/information-gatheringosrframework). Herramienta de OSINT con la particularidad de que incluye la deep web en las búsquedas
 • Low Hanging Fuit (https://github.com/blindfuzzy/LHF)
 • Aquatone (https://github.com/michenriksen/aquatone)
 • Reconnoitre (https://github.com/codingo/Reconnoitre)
@@ -477,7 +472,7 @@ exit
 
 ### DHCP Starvation
 
-El ataque DHCP starvation es un ataque de DoS al servidor DHCP en el que el atacante realiza múltiples peticiones DHCP (request) e intenta gastar todas las direcciones disponibles por el servidor. Por tanto, cuando un usuario legítimo quiere conectarse a la red y solicita por DHCP la configuración de red, éste no obtiene respuesta del servidor puesto que éste no dispone direcciones libres para él.
+Es un ataque de DoS al servidor DHCP en el que el atacante realiza múltiples peticiones DHCP (request) e intenta gastar todas las direcciones disponibles por el servidor. Por tanto, cuando un usuario legítimo quiere conectarse a la red y solicita por DHCP la configuración de red, éste no obtiene respuesta del servidor puesto que éste no dispone direcciones libres para él.
 
 Para hacer este ataque:
 
