@@ -47,7 +47,8 @@ En visión artificial, las imágenes son tratadas como datos numéricos. Una ima
 - **50 píxeles en total**
 - **3 matrices de 10x5**, una para cada color (R, G, B)
 
-![T](https://cdn.educalms.com/b3VuQkltVEY0OUxiWGdCRnolMkZCSyUyQkElM0QlM0Q=-1721386045.png)
+<!-- ![T](https://cdn.educalms.com/b3VuQkltVEY0OUxiWGdCRnolMkZCSyUyQkElM0QlM0Q=-1721386045.png)
+ -->
 
 Los monitores controlan la intensidad de cada LED en un píxel para mostrar los colores deseados.
 
@@ -62,6 +63,7 @@ Los monitores controlan la intensidad de cada LED en un píxel para mostrar los 
 
 Por ello, la visión artificial está estrechamente relacionada con las matemáticas, incluyendo espacios vectoriales, transformaciones matemáticas y tensores, que son esenciales en el procesamiento de imágenes mediante deep learning.
 
-![T](https://cdn.educalms.com/NERSUW42dkRWc29jdmF3VzF4dXNmUSUzRCUzRA==-1721386046.png)
+<!-- ![T](https://cdn.educalms.com/NERSUW42dkRWc29jdmF3VzF4dXNmUSUzRCUzRA==-1721386046.png)
+ -->
 
 La capacidad de las redes neuronales para operar sobre estos datos numéricos permite desarrollar modelos avanzados de análisis y reconocimiento de imágenes, abriendo nuevas posibilidades en inteligencia artificial y automatización.

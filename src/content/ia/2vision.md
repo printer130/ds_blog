@@ -36,13 +36,15 @@ Identifica con precisión los bordes y formas de los objetos en una imagen.
 
 Asigna una etiqueta a cada píxel de la imagen, coloreándolos para representar distintas clases.
 
-![Segmentación Semántica](https://cdn.educalms.com/bTAlMkJOU2owMEJQJTJCR0lMaUs5YU8zZHclM0QlM0Q=-1721386050.png)
+<!-- ![Segmentación Semántica](https://cdn.educalms.com/bTAlMkJOU2owMEJQJTJCR0lMaUs5YU8zZHclM0QlM0Q=-1721386050.png)
+ -->
 
 #### Segmentación de Instancias
 
 Distingue objetos individuales de la misma categoría en una imagen.
 
-![Segmentación de Instancias](https://cdn.educalms.com/YzA0c1BYelBUMzNxSERXMkpjWnlPQSUzRCUzRA==-1721386051.png)
+<!-- ![Segmentación de Instancias](https://cdn.educalms.com/YzA0c1BYelBUMzNxSERXMkpjWnlPQSUzRCUzRA==-1721386051.png)
+ -->
 
 #### Reconocimiento de Relaciones entre Objetos
 
@@ -55,7 +57,8 @@ Comprende las interacciones entre los objetos detectados. Por ejemplo, en una im
 
 Genera descripciones en lenguaje natural sobre el contenido de una imagen. Es una intersección entre **Procesamiento de Lenguaje Natural (NLP)** y visión artificial, útil para accesibilidad y etiquetado automático.
 
-![Descripción de Imágenes](https://cdn.educalms.com/TGIyQjlWa1AwTVpoSFpNT2FSayUyQmZ3JTNEJTNE-1721386052.png)
+<!-- ![Descripción de Imágenes](https://cdn.educalms.com/TGIyQjlWa1AwTVpoSFpNT2FSayUyQmZ3JTNEJTNE-1721386052.png)
+ -->
 
 ### 6. Restauración de Imágenes
 
@@ -63,7 +66,8 @@ Corrige efectos negativos como ruido, desenfoque o exposición incorrecta.
 
 **Inpainting:** Rellena zonas deterioradas de forma coherente para el ojo humano.
 
-![Restauración de Imágenes](https://cdn.educalms.com/VXpGTDRjdGElMkY0YTFPTTRsaDF6cWpBJTNEJTNE-1721386053.png)
+<!-- ![Restauración de Imágenes](https://cdn.educalms.com/VXpGTDRjdGElMkY0YTFPTTRsaDF6cWpBJTNEJTNE-1721386053.png)
+ -->
 
 ### 7. Generación de Contenido
 
@@ -86,5 +90,6 @@ Técnicas comunes:
 - **Diferencia de imágenes**
 - **Sustracción de fondo**
 - **Métodos de salto**
-
+<!--
 ![Análisis del Movimiento](https://cdn.educalms.com/MHYwV21aVHlJWVozcnNqcjdrRkdLUSUzRCUzRA==-1721386054.png)
+ -->

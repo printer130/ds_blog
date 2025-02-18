@@ -7,7 +7,7 @@ import vercel from '@astrojs/vercel/static'
 
 const url =
 	import.meta.VERCEL_ENV === 'production'
-		? 'https://asurbanipal.xyz'
+		? 'https://ds-blog-gw2hai4ib-leonardo-torricos-projects.vercel.app'
 		: 'http://localhost:3001'
 
 export default defineConfig({
@@ -15,9 +15,7 @@ export default defineConfig({
 	output: 'static',
 	adapter: vercel(),
 	site: url,
-	image: {
-		remotePatterns: [{ protocol: 'https' }]
-	},
+
 	experimental: {
 		assets: true,
 		prerender: true
