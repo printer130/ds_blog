@@ -2,23 +2,31 @@
 import { getCollection } from 'astro:content'
 import CardOfBlogs from './CardOfBlogs.astro'
 
+/* const { pathname } = Astro.url
+ */
+const { isPost } = Astro.props
+/* const URL = pathname.match(/^\/(\w+)/) ?? 'aaa' */
+
+/* const match = URL ? URL[1] : null */
+
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 )
-
 ---
 
 <ul class='px-0'>
 	{
 		posts.map((post) => {
 			const { slug, data } = post
-			return <CardOfBlogs
-				slug={slug}
-				title={data.title}
-				description={data.description}
-				pubDate={data.pubDate}
-			/>
+			return (
+				<CardOfBlogs
+					slug={slug}
+					title={data.title}
+					description={data.description}
+					pubDate={data.pubDate}
+					isPost={isPost}
+				/>
+			)
 		})
 	}
 </ul>
-

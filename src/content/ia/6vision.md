@@ -52,6 +52,6 @@ El método de **Harris**, desarrollado en 1988 por Chris Harris y Mike Stephens,
 2. **Bordes:** Cambios de intensidad en un solo eje (vertical u horizontal), detectados con Sobel.
 3. **Esquinas:** Variaciones de intensidad en ambas direcciones (X e Y).
 
-![Ejemplo de detección de esquinas](https://cdn.educalms.com/MWtWcW02RTRXWEtmNkpZMmFTRnVsdyUzRCUzRA==-1721386111.png?Expires=1740117365&Signature=NZgFK2mAAVSUQeoHiS6i6g-IhoPNorMcl1aRKoeAzRuOAcTIpp1z-izLBp8jJwcjSDoNGau8aAHx9UJpYgkdOTFf-7bYWA38qTRDNW4zMyVbDm3Q1~0YyHQRElUwAt-eBgbwjmgSUCZwxBh7uLt2ztcH7hD9vGS7dKF9sXC~b61q0OjwYdHmCNd19Rzv2M70yO6pLoTyfP0C-ciD-wF86YWoNB-DDZQOHqWxA12VswH0Xi0J8MBaZGIpxtf1S7MqAJ0ucV1ZFkD92XHBJkV4JD8aY~4aZhMAbHCLDqajc7PuL3sDCI8qUxo4auOubPYYB~-c05ths0ztIg2FXbephw__&Key-Pair-Id=K2XVTQ1784SQT0)
+<!-- ![Ejemplo de detección de esquinas](https://cdn.educalms.com/MWtWcW02RTRXWEtmNkpZMmFTRnVsdyUzRCUzRA==-1721386111.png?Expires=1740117365&Signature=NZgFK2mAAVSUQeoHiS6i6g-IhoPNorMcl1aRKoeAzRuOAcTIpp1z-izLBp8jJwcjSDoNGau8aAHx9UJpYgkdOTFf-7bYWA38qTRDNW4zMyVbDm3Q1~0YyHQRElUwAt-eBgbwjmgSUCZwxBh7uLt2ztcH7hD9vGS7dKF9sXC~b61q0OjwYdHmCNd19Rzv2M70yO6pLoTyfP0C-ciD-wF86YWoNB-DDZQOHqWxA12VswH0Xi0J8MBaZGIpxtf1S7MqAJ0ucV1ZFkD92XHBJkV4JD8aY~4aZhMAbHCLDqajc7PuL3sDCI8qUxo4auOubPYYB~-c05ths0ztIg2FXbephw__&Key-Pair-Id=K2XVTQ1784SQT0) -->
 
 En 1994, el método fue mejorado con el algoritmo **Shi-Tomasi** (_Good Features To Track_), que identifica esquinas relevantes para el seguimiento en videos. A diferencia de Harris, este algoritmo selecciona características estables ante cambios de rotación y escala.

@@ -30,6 +30,8 @@ const { title, description, pubDate } = Astro.props
 				class='text-xl tracking-wide leading-relaxed font-normal text-slate-800 max-w-4xl mx-auto px-4 overflow-auto'
 			>
 				<Header />
+				<button onclick='history.back()' id='go-back'>Go back!</button>
+
 				<h1
 					class={`text-3xl ${
 						!title?.at(0) ? 'pb-0' : 'pb-4'

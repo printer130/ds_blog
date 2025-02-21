@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content'
+import Layout from '@layouts/Layout.astro'
+import CardOfIA from '@components/CardOfIA.astro'
+
+const posts = (await getCollection('ia')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+)
+---
+
+<Layout>
+	<!-- <head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head> -->
+	<!-- <ListOfBlogs isPost /> -->
+
+	<ul class='px-0'>
+		{
+			posts.map((post) => {
+				const { slug, data } = post
+				return (
+					<CardOfIA
+						slug={slug}
+						title={data.title}
+						description={data.description}
+						pubDate={data.pubDate}
+					/>
+				)
+			})
+		}
+	</ul>
+</Layout>

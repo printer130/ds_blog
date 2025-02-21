@@ -146,7 +146,7 @@ Convolucionar un kernel implica multiplicar una matriz \( M \times N \) por los 
 
 Un **kernel 3×3** se multiplica por una región de **3×3 píxeles** en la imagen original (_input_), generando un nuevo píxel en la imagen de salida (_output_). Dependiendo del kernel utilizado, el resultado será **suavizado, nitidez o filtrado**.
 
-## 1️⃣ Desenfoque (_Blurring_) y Eliminación de Ruido (_Denoising_)
+### 1️⃣ Desenfoque (_Blurring_) y Eliminación de Ruido (_Denoising_)
 
 🔹 **Averaging Blurring**  
 El kernel contiene valores iguales, promediando los píxeles para suavizar la imagen.
@@ -163,7 +163,7 @@ Sustituye cada píxel por la mediana de los valores en su vecindad.
 
 <!-- ![Ejemplo de Median Blurring](https://cdn.educalms.com/eHdmYkExczJBRVp4YzQ0QkJrYTYzUSUzRCUzRA==-1721386096.png?Expires=1740109861&Signature=uoJvnOJF5XPNuQzabVEi2qTNy1Q3WfTRXVqLcTKpHaKrGIxAe9BL7LNALjHhrc3M6fqnMo56IiMptxhWVaenkauaTRNYZ7vD37-svWlzAQqcYRRFZagDiOVozoGPx1GosYqMPRc2SzyY9PLxlxUPc5aGTCpaMItkJ5yqpDEmD5PjY05aDUdCpecLYwrUW6Lf4xTs7g6ZZoCqbKe1TkH8bSyacgL75nm1sMdNZISoTvq0EqVlAH4n4rBrvtfE38AaDhu~yyu0jtV4TSy5f0-Ua5sTwNSQ~1d4L~3ptjZE4Op2glntL6lhyK1oLnL-tdqPeZbPlMQH905f6hFGm3qfgA__&Key-Pair-Id=K2XVTQ1784SQT0)   -->
 
-## 2️⃣ Aumento de Nitidez (_Sharpening_)
+### 2️⃣ Aumento de Nitidez (_Sharpening_)
 
 🔹 Realza los bordes y el contraste en la imagen.
 
