@@ -1,5 +1,5 @@
 ---
-title: 'Procesamiento de imagénes'
+title: 'Visión 5: Procesamiento de imagénes'
 description: ''
 pubDate: 'Nov 08 2022'
 heroImage: '/placeholder-hero.jpg'

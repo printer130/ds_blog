@@ -1,5 +1,5 @@
 ---
-title: 'Historia y Evolución de la Visión Artificial'
+title: 'Visión 4: Historia y Evolución de la Visión Artificial'
 description: ''
 pubDate: 'Nov 08 2022'
 heroImage: '/placeholder-hero.jpg'

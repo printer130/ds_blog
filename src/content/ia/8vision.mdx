@@ -1,0 +1,234 @@
+---
+title: 'Visión 8: Aplicación de Objetos y Deep Learning'
+description: ''
+pubDate: 'Nov 08 2022'
+heroImage: '/placeholder-hero.jpg'
+url: '/ia'
+---
+
+import { Image } from 'astro:assets';
+
+## Redes Neuronales Convolucionales (CNN)
+
+Las redes neuronales convolucionales (CNN) son un tipo de arquitectura de deep learning diseñada para procesar datos con una estructura de cuadrícula, como las imágenes. Su principal tarea es extraer automáticamente las características más relevantes de las imágenes de entrenamiento y clasificarlas dentro de la red.
+
+### Capa de Convolución
+
+La capa de convolución actúa como un filtro que extrae características clave de la imagen, similar a un kernel en el procesamiento de imágenes. La diferencia es que en una CNN, la red aprende estos filtros automáticamente mediante entrenamiento con backpropagation.
+
+<Image width={605} height={248} src="https://cdn.educalms.com/JTJGaExrQ2xkN0lTWm1ZTG1HWGRGNzhBJTNEJTNE-1721386137.png" alt="Ejemplo de convolución" />
+
+A diferencia de los filtros tradicionales, en una CNN no hay un resultado por cada píxel, sino por cada ventana de convolución. Esto permite buscar patrones y características en lugar de simplemente filtrar la imagen.
+
+Podemos ver la convolución como un extractor de características y como una técnica para reducir dimensiones, resumiendo la información visual.
+
+<img src="https://cdn.educalms.com/QWFyZU1NeUFvdnZSaW9kUHNuZEZIUSUzRCUzRA==-1721386138.png" alt="Kernel de convolución" />
+
+### Convolución en Imágenes RGB
+
+Para una imagen en color, se usan tres kernels (uno por cada canal de color: rojo, verde y azul). La capa convolucional debe tener la misma profundidad que la imagen, y al final se suman los resultados de cada canal, generando una matriz bidimensional por cada convolución aplicada.
+
+Ejemplo: Una imagen RGB de 5x5x3 requiere un kernel 3x3x3.
+
+<img src="https://cdn.educalms.com/cDZLdyUyQmczUVZMbiUyQlBzSFU3MEZCY2clM0QlM0Q=-1721386138.png" alt="Convolución en imágenes" />
+
+El proceso es el siguiente:
+
+1. Se toma una ventana 3x3 en cada canal de la imagen (R, G, B) y se multiplica por su kernel correspondiente, generando un único valor por canal.
+2. Se desplaza la ventana sobre la imagen, aplicando la misma operación y generando más valores.
+3. Al finalizar, se obtienen tres matrices 3x3 (una por cada canal), cuyos valores se suman para obtener la salida final.
+
+<img src="https://cdn.educalms.com/WWNQWkhsZGRTVkUzTkFjNjJXTlYlMkJ3JTNEJTNE-1721386138.png" alt="Proceso de convolución" />
+
+### Capas Convolucionales y Aprendizaje Automático
+
+Cada neurona en la capa convolucional aplica una convolución con un kernel diferente. Esto permite detectar distintas características en la imagen, como bordes, esquinas, sombras y brillos.
+
+<img src="https://res.cloudinary.com/djc1umong/image/upload/v1740319110/CNN_ywdryt.png" alt="Descripción de la imagen" />
+
+En el ejemplo anterior, una imagen de entrada de 32x32 pasa por una capa convolucional con 6 filtros de 5x5, generando 6 mapas de características (feature maps) de 28x28.
+
+Estos mapas representan la información extraída automáticamente de la imagen y pueden utilizarse en una etapa posterior para la clasificación de objetos.
+
+### Aprendizaje de los Filtros con Backpropagation
+
+Los valores de los kernels no están predefinidos, sino que la red los aprende durante el entrenamiento mediante el algoritmo de backpropagation. Gracias a este proceso, la CNN ajusta sus filtros para detectar características con mayor precisión, sin intervención manual.
+
+En resumen, las redes neuronales convolucionales permiten convertir una imagen de entrada en múltiples mapas de características de forma automática, facilitando tareas como el reconocimiento de imágenes y la clasificación de objetos.
+
+Aquí tienes el texto corregido y mejor estructurado para tu blog:
+
+---
+
+### Capa de Downsampling, Subsampling o Pooling
+
+En esta etapa, reducimos el tamaño de las matrices generadas en la capa anterior. Aplicamos una operación matemática o función estadística a una ventana de píxeles, obteniendo un solo valor representativo.
+
+Los dos principales métodos de pooling son:
+
+1. **Max Pooling:** Se selecciona el valor máximo dentro de cada ventana.
+
+<img src="https://res.cloudinary.com/djc1umong/image/upload/v1740320067/Screenshot_20250223_101325_vaf80c.png" alt="Max Pooling" />
+
+2. **Average Pooling:** Se calcula el promedio de los valores en la ventana.
+
+   \[
+   (128 + 220 + 221 + 12 + 45 + 16 + 154 + 42 + 8) / 9 = 95
+   \]
+
+<img src="https://res.cloudinary.com/djc1umong/image/upload/v1740320298/Screenshot_20250223_101808_mtz87m.png" alt="Average Pooling" />
+
+Ambos métodos convierten un _feature map_ de \(5 \times 5\) en otro de \(3 \times 3\), reduciendo la información sin perder características clave.
+
+### Combinando Capas Convolucionales y Pooling
+
+La estrategia de una CNN consiste en alternar capas convolucionales y capas de pooling. Al aplicar convoluciones sobre los mapas reducidos, extraemos características más complejas.
+
+En las primeras capas, la CNN detecta bordes, esquinas o colores. En capas más profundas, aprende a identificar composiciones más avanzadas, como ruedas, puertas o ventanas, logrando un conocimiento más abstracto que los métodos tradicionales.
+
+<img src="https://res.cloudinary.com/djc1umong/image/upload/v1740321070/Screenshot_20250223_103058_ao32z3.png" alt="Estrategia de Capas en CNN" />
+
+Tras aplicar pooling con una ventana de \(2 \times 2\), reducimos la dimensión de los _feature maps_ a \(14 \times 14\) (_S1_).
+
+Luego, una capa convolucional con 16 filtros de \(5 \times 5\) genera 16 _feature maps_ de \(10 \times 10\) (_C2_). Finalmente, aplicamos otro pooling con ventana de \(2 \times 2\), reduciendo a \(5 \times 5\) (_S2_).
+
+### ¿Cómo pasamos de aquí a clasificar un dígito del 0 al 9?
+
+Aquí es donde entran las capas totalmente conectadas (_fully connected layers_). La salida de los últimos _feature maps_ se aplana y se conecta a una red neuronal densa. Esta red interpreta los patrones extraídos por la CNN y los asocia con un dígito específico.
+
+💡 **En la siguiente sección exploraremos cómo funciona esta fase final en una CNN.**
+
+---
+
+### Capas totalmente conectadas (FC)
+
+En este punto, tenemos una serie de _feature maps_ de tamaño reducido, que representan una extracción compleja y abstracta de características de nuestra imagen con una gran reducción dimensional. Nuestro objetivo es que la red devuelva una clase concreta entre un conjunto de clases previamente definidas y etiquetadas. Para ello, debemos convertir estos _feature maps_ en una salida clasificable.
+
+Aquí entran en juego las _fully connected layers_ (FC), que conforman una red neuronal básica conocida como _feed-forward neural network_. En estas capas no hay ventanas, _kernels_ ni convoluciones, sino neuronas que reciben entradas, las multiplican por sus pesos y se activan en función del resultado de su función de activación.
+
+Para alimentar esta capa, convertimos nuestras matrices (_feature maps_ finales) en un vector unidimensional (_flattened_) para que pueda ser procesado por las neuronas artificiales.
+
+A diferencia de una capa convolucional, donde el procesamiento se realiza a nivel de ventana, en una capa totalmente conectada cada valor del vector de entrada está vinculado con todas las neuronas de la siguiente capa. En teoría, podríamos emplear cualquier clasificador lineal (_SVM, KNN, Árboles de Decisión_), pero al utilizar una capa de neuronas artificiales básicas, logramos entrenar el modelo de principio a fin mediante _backpropagation_, permitiendo que la extracción de características y la clasificación se integren en un mismo proceso de entrenamiento basado en _deep learning_.
+
+### Ejemplo práctico
+
+Supongamos que la salida de la fase de extracción de características de una CNN son 2 _feature maps_ de tamaño reducido (2x2). El proceso de clasificación sigue estos pasos:
+
+1. **Aplanamiento**: Convertimos los _feature maps_ en un único vector unidimensional.
+2. **Conexión total**: Cada valor del vector está conectado con todas las neuronas artificiales de la siguiente capa (_fully connected_).
+3. **Reducción progresiva**: La primera capa transforma el vector de 8 posiciones en otro de 4, donde cada posición representa la salida de una neurona, que a su vez será la entrada de la siguiente capa totalmente conectada.
+
+<img src="https://res.cloudinary.com/djc1umong/image/upload/v1740324018/Screenshot_20250223_112009_aairuw.png" alt="Ejemplo de Fully Connected" />
+
+La última capa es la encargada de realizar la clasificación. En este caso, tenemos dos neuronas, lo que significa que la CNN está entrenada para distinguir entre dos clases. Cada neurona está asociada a una clase y, tras procesar las entradas con sus correspondientes pesos y función de activación, generará un valor entre 0 y 1. En este ejemplo:
+
+- La neurona de la clase _gato_ tiene una activación del 98%, lo que indica una alta probabilidad de que la imagen sea un gato.
+- La neurona de la clase _perro_ tiene una activación del 2%, indicando una baja probabilidad de que la imagen sea un perro.
+
+### Resumen de la arquitectura de una CNN
+
+1. **Capas convolucionales**: Formadas por neuronas que deslizan un _kernel_ sobre la imagen de entrada. Extraen _features_, comenzando con características básicas (_líneas, bordes, sombras_) y avanzando a conceptos más abstractos (_formas, objetos, posiciones relativas_).
+
+2. **Capas de _pooling_**: Reducen dimensionalmente los mapas de características extraídos por las capas convolucionales, permitiendo aplicar una capa totalmente conectada de manera eficiente. No están compuestas por neuronas, sino por funciones estadísticas, quedando fuera del proceso de entrenamiento.
+
+3. **Capas _fully connected_**: Procesan los _feature maps_ finales para clasificar el objeto. Convierten matrices en vectores unidimensionales y asignan una probabilidad a cada clase en función de la activación de la última capa.
+
+### Aplicación en clasificación de dígitos manuscritos (MNIST)
+
+En el caso de la clasificación de dígitos manuscritos con MNIST, la arquitectura de la red sigue la misma lógica. En la fase de "classification", contamos con dos capas de neuronas conectadas que trabajan con el vector aplanado obtenido de la salida _S2_. En la última capa totalmente conectada (_n2_), hay 10 neuronas, cada una representando un dígito del 0 al 9. La neurona con la activación más alta determinará la clase predicha por la red.
+
+<img src="https://res.cloudinary.com/djc1umong/image/upload/v1740325040/Screenshot_20250223_113710_bj0gns.png" alt="Clasificación en MNIST" />
+
+### Proceso de Entrenamiento: Backpropagation y Stochastic Gradient Descent
+
+Las redes neuronales convolucionales (CNN) combinan capas convolucionales y fully-connected. La diferencia radica en su aplicación: las capas convolucionales deslizan una ventana sobre la imagen (convolution), mientras que las fully-connected conectan directamente un vector de entrada con las neuronas.
+
+Cada neurona en la red tiene los siguientes parámetros:
+
+1. **Número de entradas (inputs):** Cantidad de valores procesados en una única ejecución.
+2. **Pesos de cada entrada (weights):** Coeficientes que ponderan cada entrada.
+3. **Función de suma (net input function):** Suma ponderada de las entradas multiplicadas por sus pesos.
+4. **Función de activación:** Aplica una transformación no lineal (como la sigmoide) a la suma ponderada para determinar la salida.
+5. **Salida (output):** Resultado final de la neurona.
+
+<img src="https://res.cloudinary.com/djc1umong/image/upload/v1740325779/Screenshot_20250223_114932_sqymeg.png" alt="Ejemplo de Red Neuronal" />
+
+### De la Selección Manual de Pesos al Aprendizaje Automático
+
+Inicialmente, los pesos de las neuronas debían ajustarse manualmente, lo que hacía que las CNN se asemejaran a técnicas clásicas de visión artificial, donde cada neurona debía programarse para extraer características específicas. Sin embargo, esto cambió con la introducción de **Backpropagation** por Geoffrey Hinton en 1986. Este algoritmo permitió que las redes neuronales aprendieran automáticamente.
+
+El proceso de entrenamiento de una CNN con backpropagation sigue estos pasos:
+
+1. **Inicialización aleatoria** de los pesos de la red neuronal.
+2. **Clasificación inicial:** La red intenta clasificar imágenes sin conocimiento previo, generando resultados aleatorios.
+3. **Comparación con el ground-truth:** Se mide la diferencia entre la salida de la red y la clasificación correcta.
+4. **Ajuste de los pesos:** La CNN ajusta sus parámetros para reducir el error.
+5. **Repetición del proceso** hasta minimizar el error.
+
+Backpropagation propaga el error desde las capas fully-connected hacia atrás hasta las capas convolucionales, ajustando los pesos de manera eficiente.
+
+### Optimización con Stochastic Gradient Descent (SGD)
+
+Una vez determinado cómo trasladar el error, es necesario un mecanismo de optimización. **Stochastic Gradient Descent (SGD)** es el algoritmo más utilizado para entrenar CNNs. Su objetivo es encontrar el punto en el que los pesos minimicen el error y maximicen la precisión.
+
+Uno de los desafíos de SGD es evitar quedarse atrapado en **mínimos locales**, que pueden impedir alcanzar un óptimo global. Gracias a backpropagation, es posible calcular el gradiente de cada peso y ajustarlo dinámicamente para encontrar el mínimo absoluto del error.
+
+<img src="https://res.cloudinary.com/djc1umong/image/upload/v1740326818/Screenshot_20250223_120652_os1vaq.png" alt="Optimización con SGD" />
+
+El error de pérdida (_loss_) varía en función de los pesos, y el SGD busca el mínimo global de esta curva para maximizar la precisión del modelo.
+
+---
+
+### Proceso de Entrenamiento: Backpropagation y Stochastic Gradient Descent
+
+Las redes neuronales convolucionales (CNN) combinan capas convolucionales y fully-connected. La diferencia radica en su aplicación: las capas convolucionales deslizan una ventana sobre la imagen (convolution), mientras que las fully-connected conectan directamente un vector de entrada con las neuronas.
+
+Cada neurona en la red tiene los siguientes parámetros:
+
+1. **Número de entradas (inputs):** Cantidad de valores procesados en una única ejecución.
+2. **Pesos de cada entrada (weights):** Coeficientes que ponderan cada entrada.
+3. **Función de suma (net input function):** Suma ponderada de las entradas multiplicadas por sus pesos.
+4. **Función de activación:** Aplica una transformación no lineal (como la sigmoide) a la suma ponderada para determinar la salida.
+5. **Salida (output):** Resultado final de la neurona.
+
+<img src="https://res.cloudinary.com/djc1umong/image/upload/v1740325779/Screenshot_20250223_114932_sqymeg.png" alt="Ejemplo de Red Neuronal" />
+
+### De la Selección Manual de Pesos al Aprendizaje Automático
+
+Inicialmente, los pesos de las neuronas debían ajustarse manualmente, lo que hacía que las CNN se asemejaran a técnicas clásicas de visión artificial, donde cada neurona debía programarse para extraer características específicas. Sin embargo, esto cambió con la introducción de **Backpropagation** por Geoffrey Hinton en 1986. Este algoritmo permitió que las redes neuronales aprendieran automáticamente.
+
+El proceso de entrenamiento de una CNN con backpropagation sigue estos pasos:
+
+1. **Inicialización aleatoria** de los pesos de la red neuronal.
+2. **Clasificación inicial:** La red intenta clasificar imágenes sin conocimiento previo, generando resultados aleatorios.
+3. **Comparación con el ground-truth:** Se mide la diferencia entre la salida de la red y la clasificación correcta.
+4. **Ajuste de los pesos:** La CNN ajusta sus parámetros para reducir el error.
+5. **Repetición del proceso** hasta minimizar el error.
+
+Backpropagation propaga el error desde las capas fully-connected hacia atrás hasta las capas convolucionales, ajustando los pesos de manera eficiente.
+
+### Optimización con Stochastic Gradient Descent (SGD)
+
+Una vez determinado cómo trasladar el error, es necesario un mecanismo de optimización. **Stochastic Gradient Descent (SGD)** es el algoritmo más utilizado para entrenar CNNs. Su objetivo es encontrar el punto en el que los pesos minimicen el error y maximicen la precisión.
+
+Uno de los desafíos de SGD es evitar quedarse atrapado en **mínimos locales**, que pueden impedir alcanzar un óptimo global. Gracias a backpropagation, es posible calcular el gradiente de cada peso y ajustarlo dinámicamente para encontrar el mínimo absoluto del error.
+
+<img src="https://res.cloudinary.com/djc1umong/image/upload/v1740326818/Screenshot_20250223_120652_os1vaq.png" alt="Optimización con SGD" />
+
+El error de pérdida (_loss_) varía en función de los pesos, y el SGD busca el mínimo global de esta curva para maximizar la precisión del modelo.
+
+---
+
+### Modelos de CNN para Clasificación de Objetos
+
+Las arquitecturas de redes neuronales convolucionales (CNN) pueden variar enormemente en función de varias decisiones clave:
+
+1. **Número de capas**: convolucionales, de pooling y fully-connected.
+2. **Cantidad de neuronas** en cada capa y su distribución.
+3. **Tamaño de los kernels** en las capas convolucionales y estrategia de desplazamiento (stride).
+4. **Estrategia de downsampling**: tamaño, método y política de aplicación.
+5. **Algoritmo de entrenamiento** y configuración de hiperparámetros.
+
+Algunas arquitecturas están optimizadas para dispositivos móviles (eficiencia), mientras que otras priorizan la precisión y requieren múltiples GPUs.
+
+<img src="https://res.cloudinary.com/djc1umong/image/upload/v1740409619/Screenshot_20250224_110650_oxmp0s.png" alt="Ejemplo de arquitectura CNN" />

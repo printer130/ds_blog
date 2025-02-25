@@ -15,9 +15,15 @@ export default defineConfig({
 	output: 'static',
 	adapter: vercel(),
 	site: url,
-
 	experimental: {
 		assets: true,
 		prerender: true
-	}
+	},
+	remotePatterns: [
+		{
+			protocol: 'https',
+			hostname: 'res.cloudinary.com',
+			pathname: '**'
+		}
+	]
 })

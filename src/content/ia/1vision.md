@@ -1,5 +1,5 @@
 ---
-title: 'Introduccion a la visión artificial'
+title: 'Visión 1: Introduccion a la visión artificial'
 description: ''
 pubDate: 'Nov 08 2022'
 heroImage: '/placeholder-hero.jpg'

@@ -1,5 +1,5 @@
 ---
-title: 'Detección de Contornos, Bordes, Rectas y Esquinas'
+title: 'Visión 6: Detección de Contornos, Bordes, Rectas y Esquinas'
 description: ''
 pubDate: 'Nov 08 2022'
 heroImage: '/placeholder-hero.jpg'
@@ -54,6 +54,8 @@ El método de **Harris**, desarrollado en 1988 por Chris Harris y Mike Stephens,
 
 <!-- ![Ejemplo de detección de esquinas](https://cdn.educalms.com/MWtWcW02RTRXWEtmNkpZMmFTRnVsdyUzRCUzRA==-1721386111.png?Expires=1740117365&Signature=NZgFK2mAAVSUQeoHiS6i6g-IhoPNorMcl1aRKoeAzRuOAcTIpp1z-izLBp8jJwcjSDoNGau8aAHx9UJpYgkdOTFf-7bYWA38qTRDNW4zMyVbDm3Q1~0YyHQRElUwAt-eBgbwjmgSUCZwxBh7uLt2ztcH7hD9vGS7dKF9sXC~b61q0OjwYdHmCNd19Rzv2M70yO6pLoTyfP0C-ciD-wF86YWoNB-DDZQOHqWxA12VswH0Xi0J8MBaZGIpxtf1S7MqAJ0ucV1ZFkD92XHBJkV4JD8aY~4aZhMAbHCLDqajc7PuL3sDCI8qUxo4auOubPYYB~-c05ths0ztIg2FXbephw__&Key-Pair-Id=K2XVTQ1784SQT0) -->
 
+<img src="https://cdn.educalms.com/MWtWcW02RTRXWEtmNkpZMmFTRnVsdyUzRCUzRA==-1721386111.png?Expires=1740117365&Signature=NZgFK2mAAVSUQeoHiS6i6g-IhoPNorMcl1aRKoeAzRuOAcTIpp1z-izLBp8jJwcjSDoNGau8aAHx9UJpYgkdOTFf-7bYWA38qTRDNW4zMyVbDm3Q1~0YyHQRElUwAt-eBgbwjmgSUCZwxBh7uLt2ztcH7hD9vGS7dKF9sXC~b61q0OjwYdHmCNd19Rzv2M70yO6pLoTyfP0C-ciD-wF86YWoNB-DDZQOHqWxA12VswH0Xi0J8MBaZGIpxtf1S7MqAJ0ucV1ZFkD92XHBJkV4JD8aY~4aZhMAbHCLDqajc7PuL3sDCI8qUxo4auOubPYYB~-c05ths0ztIg2FXbephw__&Key-Pair-Id=K2XVTQ1784SQT0" alt="Ejemplo de detección de esquinas" />
+
 En 1994, el método fue mejorado con el algoritmo **Shi-Tomasi** (_Good Features To Track_), que identifica esquinas relevantes para el seguimiento en videos. A diferencia de Harris, este algoritmo selecciona características estables ante cambios de rotación y escala.
 
 # Algoritmos de Selección y Descripción Automática de Características
@@ -70,6 +72,8 @@ Para ello, se utiliza el **Histograma de Gradientes Orientados (HOG)**, un descr
 
 <!-- ![SIFT](https://cdn.educalms.com/VUh1QVEyeGJQMnFTeXV2VmdJRE4lMkZRJTNEJTNE-1721386114.png?Expires=1740192437&Signature=NmfLuQBRIKmMbQAss4Gwxz2epVQuqskvVLFBlIeeZjWu6yo0SE7gDL~QmgFApg5i90ANjj9mZcndMgXrOaZw1LN6Ry5Be4qJ3vJafXiSvKNgOS3d~JrBt3WQ-caputkVduTcYUiX1Z0LyeUISLFV9ZNizyj0WDX0tDIOIA~FDyvfSNuKbdnN-rN1mvIkHzCiW8UGHqBiR9Vv0pff8ceVhPlRegrdOOIZ8D3kSaMfbHF11wk6m3AK9RAVRBIu8u9W9t5xnVHqgtCnsxCTb7IkkLVpZQPLGw0dt9WZMANnv2DsQ2XxDxqrXxpxNVwt~jtEKRKTEjdQBCDDSZIiRSIqQQ__&Key-Pair-Id=K2XVTQ1784SQT0) -->
 
+<img src="https://cdn.educalms.com/VUh1QVEyeGJQMnFTeXV2VmdJRE4lMkZRJTNEJTNE-1721386114.png?Expires=1740192437&Signature=NmfLuQBRIKmMbQAss4Gwxz2epVQuqskvVLFBlIeeZjWu6yo0SE7gDL~QmgFApg5i90ANjj9mZcndMgXrOaZw1LN6Ry5Be4qJ3vJafXiSvKNgOS3d~JrBt3WQ-caputkVduTcYUiX1Z0LyeUISLFV9ZNizyj0WDX0tDIOIA~FDyvfSNuKbdnN-rN1mvIkHzCiW8UGHqBiR9Vv0pff8ceVhPlRegrdOOIZ8D3kSaMfbHF11wk6m3AK9RAVRBIu8u9W9t5xnVHqgtCnsxCTb7IkkLVpZQPLGw0dt9WZMANnv2DsQ2XxDxqrXxpxNVwt~jtEKRKTEjdQBCDDSZIiRSIqQQ__&Key-Pair-Id=K2XVTQ1784SQT0" alt="SIFT" />
+
 ## SURF (Speeded Up Robust Features)
 
 SURF, desarrollado en 2006, surge como una mejora de SIFT con un enfoque en la velocidad y eficiencia.
@@ -82,6 +86,8 @@ SURF, desarrollado en 2006, surge como una mejora de SIFT con un enfoque en la v
 
 <!-- ![SURF](https://cdn.educalms.com/NHBYUmN4ZXpWeVg2ZFdJaWNTSGZoZyUzRCUzRA==-1721386115.png?Expires=1740193227&Signature=KBSeaSUCdGVIB5FB0umzLoIxWKoFyW7Qgcy6rsli-NHd0MzvZjQSTlielF9cauL5QraVh2Y3YSvrByru9XhhgB2PynRyMBANGP~8Jj5K5MdmHJ~Wk3d0G8i13on1Shg22UJ3zaCqQyCv56mky4dyZWJ12Jm4k4UcdRdXNRIiBbbWGVRBqEqrPp9jUuZxib7hrkHProrM~Gch90--M~G9K5oJJE3EJRDO4pNawdoD8hab4z7eKwxmCQ6UQPjFuXNzvCBbqS5GuRu~8fdxCPZrjh4w4sg30-My4xWLmM4P3qO0Kge025ORLH5eK6TrV7o1TWNlujlywOkD2wDlvDVmwQ__&Key-Pair-Id=K2XVTQ1784SQT0) -->
 
+<img src="https://cdn.educalms.com/NHBYUmN4ZXpWeVg2ZFdJaWNTSGZoZyUzRCUzRA==-1721386115.png?Expires=1740193227&Signature=KBSeaSUCdGVIB5FB0umzLoIxWKoFyW7Qgcy6rsli-NHd0MzvZjQSTlielF9cauL5QraVh2Y3YSvrByru9XhhgB2PynRyMBANGP~8Jj5K5MdmHJ~Wk3d0G8i13on1Shg22UJ3zaCqQyCv56mky4dyZWJ12Jm4k4UcdRdXNRIiBbbWGVRBqEqrPp9jUuZxib7hrkHProrM~Gch90--M~G9K5oJJE3EJRDO4pNawdoD8hab4z7eKwxmCQ6UQPjFuXNzvCBbqS5GuRu~8fdxCPZrjh4w4sg30-My4xWLmM4P3qO0Kge025ORLH5eK6TrV7o1TWNlujlywOkD2wDlvDVmwQ__&Key-Pair-Id=K2XVTQ1784SQT0" alt="SURF" />
+
 ## ORB (Oriented FAST and Rotated BRIEF)
 
 ORB, desarrollado en 2011, es un algoritmo eficiente que funciona en tiempo real y ofrece resultados comparables a SIFT y SURF. Su funcionamiento se basa en:
@@ -93,7 +99,9 @@ Estos métodos clásicos permiten completar proyectos sin necesidad de recurrir 
 
 ## Feature Matching y reconocimiento de objetos con ORB
 
-![Feature Matching](https://cdn.educalms.com/NnJZTlNGN2dKMWc5YjRqdEJ5aHZpZyUzRCUzRA==-1721386119.png?Expires=1740195494&Signature=HC6OuaU2fNOieg45IYovpwcKALpEHkzNSCcW8MBfFk~U1ZBY7RjV4KjIBK1R4ajSTs6~paH2njKBu4zWixxZ5EHyKPEaD9yCBF5oNLHV8Epw0T6YY8iwQzn-EaJvWuYzwqRYm0Enbdvcew45HWzi2057ZRcT-K6OkyBnmseBXzzxZezgcAhGC1w5HjC2nxvAqIs0bbDv6EuNAt8kacX8Z~1C5qm9ty9oBjni~G-okMh7YzpA8fmZKN9uZhPADoYZdDeRLeKZ4Yvfg-VzgXmcUcpK16YEeSRfcV2qNn~cPjtxyDKaqSocGCAcMYi14Gs75fEHniJ2SnfWoKpAJmyQqQ__&Key-Pair-Id=K2XVTQ1784SQT0)
+<!-- ![Feature Matching](https://cdn.educalms.com/NnJZTlNGN2dKMWc5YjRqdEJ5aHZpZyUzRCUzRA==-1721386119.png?Expires=1740195494&Signature=HC6OuaU2fNOieg45IYovpwcKALpEHkzNSCcW8MBfFk~U1ZBY7RjV4KjIBK1R4ajSTs6~paH2njKBu4zWixxZ5EHyKPEaD9yCBF5oNLHV8Epw0T6YY8iwQzn-EaJvWuYzwqRYm0Enbdvcew45HWzi2057ZRcT-K6OkyBnmseBXzzxZezgcAhGC1w5HjC2nxvAqIs0bbDv6EuNAt8kacX8Z~1C5qm9ty9oBjni~G-okMh7YzpA8fmZKN9uZhPADoYZdDeRLeKZ4Yvfg-VzgXmcUcpK16YEeSRfcV2qNn~cPjtxyDKaqSocGCAcMYi14Gs75fEHniJ2SnfWoKpAJmyQqQ__&Key-Pair-Id=K2XVTQ1784SQT0) -->
+
+<img src="https://cdn.educalms.com/NnJZTlNGN2dKMWc5YjRqdEJ5aHZpZyUzRCUzRA==-1721386119.png?Expires=1740195494&Signature=HC6OuaU2fNOieg45IYovpwcKALpEHkzNSCcW8MBfFk~U1ZBY7RjV4KjIBK1R4ajSTs6~paH2njKBu4zWixxZ5EHyKPEaD9yCBF5oNLHV8Epw0T6YY8iwQzn-EaJvWuYzwqRYm0Enbdvcew45HWzi2057ZRcT-K6OkyBnmseBXzzxZezgcAhGC1w5HjC2nxvAqIs0bbDv6EuNAt8kacX8Z~1C5qm9ty9oBjni~G-okMh7YzpA8fmZKN9uZhPADoYZdDeRLeKZ4Yvfg-VzgXmcUcpK16YEeSRfcV2qNn~cPjtxyDKaqSocGCAcMYi14Gs75fEHniJ2SnfWoKpAJmyQqQ__&Key-Pair-Id=K2XVTQ1784SQT0" alt="Feature Matching" />
 
 En la primera imagen se ejecutó un detector de características y en la segunda se intentó encontrar estas mismas características. Debido al movimiento de la cámara, las características se han desplazado. Este proceso se conoce como **Feature Matching**.
 

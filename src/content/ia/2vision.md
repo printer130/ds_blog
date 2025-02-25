@@ -1,5 +1,5 @@
 ---
-title: 'Técnicas de Procesamiento de Imágenes y Reconocimiento Visual'
+title: 'Visión 2: Técnicas de Procesamiento de Imágenes y Reconocimiento Visual'
 description: ''
 pubDate: 'Nov 08 2022'
 heroImage: '/placeholder-hero.jpg'

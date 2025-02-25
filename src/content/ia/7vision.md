@@ -1,5 +1,5 @@
 ---
-title: 'Aplicación de Objetos y Deep Learning'
+title: 'Visión 7: Clasificación de objetos mediante técnicas clásicas'
 description: ''
 pubDate: 'Nov 08 2022'
 heroImage: '/placeholder-hero.jpg'

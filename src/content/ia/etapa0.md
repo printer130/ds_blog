@@ -1,5 +1,5 @@
 ---
-title: 'Cronología de los Algoritmos y las Computadoras'
+title: 'ETAPA 0: Cronología de los Algoritmos y las Computadoras'
 description: 'Desde los algoritmos de Al-Juarismi hasta la computación moderna, la evolución ha sido constante. El avance en lógica formal, probabilidad y neurociencia ha sentado las bases de la IA actual. Hoy, los algoritmos permiten procesos autónomos, acercándonos a la inteligencia artificial avanzada.'
 pubDate: 'Nov 08 2022'
 heroImage: '/placeholder-hero.jpg'

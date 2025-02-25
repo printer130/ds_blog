@@ -1,5 +1,5 @@
 ---
-title: 'Métodos y Procesos en Visión Artificial'
+title: 'Visión 3: Métodos y Procesos en Visión Artificial'
 description: ''
 pubDate: 'Nov 08 2022'
 heroImage: '/placeholder-hero.jpg'
