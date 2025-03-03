@@ -39,12 +39,16 @@ Asigna una etiqueta a cada píxel de la imagen, coloreándolos para representar 
 <!-- ![Segmentación Semántica](https://cdn.educalms.com/bTAlMkJOU2owMEJQJTJCR0lMaUs5YU8zZHclM0QlM0Q=-1721386050.png)
  -->
 
+Clasifica cada píxel de la imagen en una categoría, pero no distingue objetos individuales (por ejemplo, todos los autos en la imagen se etiquetan como "auto" sin diferenciarlos).
+
 #### Segmentación de Instancias
 
 Distingue objetos individuales de la misma categoría en una imagen.
 
 <!-- ![Segmentación de Instancias](https://cdn.educalms.com/YzA0c1BYelBUMzNxSERXMkpjWnlPQSUzRCUzRA==-1721386051.png)
  -->
+
+No solo clasifica los píxeles, sino que distingue cada objeto individualmente, asignando una etiqueta única a cada instancia de una categoría.
 
 #### Reconocimiento de Relaciones entre Objetos
 

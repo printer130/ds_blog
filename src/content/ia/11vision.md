@@ -26,12 +26,6 @@ Paralas imágenes de muestra el generador se basará en la salida del discrimina
 
 ### Conditional GAN: PIX2PIX
 
-Aquí tienes una versión optimizada y concisa para tu blog profesional de IA:
-
----
-
-### Conditional GAN y la Traducción de Imágenes
-
 Las Conditional GAN (cGAN) generan imágenes bajo una condición específica, a diferencia de las primeras GAN (2014), que partían de valores aleatorios. En este caso, la entrada es una imagen o un mapa de segmentación que guía al generador, permitiendo mantener características espaciales y obtener resultados más precisos.
 
 Para lograrlo, el generador adopta una arquitectura encoder-decoder, como en **pix2pix**, que utiliza U-Net. Primero, la imagen se procesa hasta un mapa de características que luego se decodifica mediante convoluciones traspuestas para generar una nueva imagen. Esto posibilita aplicaciones como el _style transfer_ o la conversión de bocetos en imágenes realistas.
@@ -39,3 +33,21 @@ Para lograrlo, el generador adopta una arquitectura encoder-decoder, como en **p
 La principal limitación de pix2pix es su dependencia de pares de imágenes etiquetadas para el entrenamiento(una con la imagen real y otra segmentada ), lo que aumenta significativamente el esfuerzo necesario para crear datasets adecuados.
 
 <img src="https://res.cloudinary.com/djc1umong/image/upload/v1740512516/Screenshot_20250225_154122_joojil.webp">
+
+### CycleGAN
+
+Este modelo de deep learning emplea dos CycleGAN y dos discriminadores, con esto se consigue que las imágenes no estén pareadas, ya que los generadores solo son evaluados por su resultado, y no por la relación de su resultado con la entrada que reciben. Pero entonces, ¿cómo conseguir que relacionen el otput con el input?. Mediante la función de objetivo de estos elementos. Y esta función objetivo esta en ciclo.
+
+La arquitectura de los generadores es similar a pix2pix y está basada en la filosofía de encoder-decoder empleando convoluciones en la primera parte - para extraer características del input - y convoluciones transpuestas en la segunda parte - para generar el output - apoyadas por funciones de downsampling y upsampling respectivamente.
+
+<img src="https://res.cloudinary.com/djc1umong/image/upload/v1740692102/Screenshot_20250227_173418_wr8jih.webp">
+
+### StyleGAN
+
+El principal problema de los modelos de arriba es que el dev no puede controlar el OUTPUT de las GAN, tenemos un concepto nuevo llamado "Mapping Network" genera un vector codificado para diferenciar distintas características visuales a distintas escalas. Refiriéndonos a features de caras humanas por ejemplo tenemos:
+
+1. Grandes: Afectan a la pose, el estilo de pelo, la forma de la cara, etc.
+2. Medianas: Afectan a features faciales, estilo de ojos, nariz y boca, forma del pelo.
+3. Pequeñas: Están relacionadas con el mapa de colores(ojos, boca, piel, pelo) y con pequeñas features(pecas, granos, cicatrices).
+
+Para hacer esto se introdujeros 8 capas de fully-conected para determinar todas estas features en un vector de salida que condensara toda la información relevante a los tres tipos de features. ESta red se ejecuta en primer lugar, antes que ningún otro módulo de la GAN. El resultado se denomina style mapping array "W" ya que es el que determina las distintas features de la imagen de salida.

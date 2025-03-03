@@ -100,7 +100,7 @@ Se puede configurar de forma automática:
 
 1. **Umbralizado basado en histograma**: Se usa la forma del histograma para decidir puntos críticos como picos o valles.
 2. **Umbralizado global automático**: Selecciona el valor medio entre la intensidad máxima y la mínima para seleccionar el umbral de división.
-3. **Umbralizado de Otsu**: Maximiza la varianza entre la clase 0 y la clase 1.
+3. **Umbralizado de Otsu**: Encuentra un umbral óptimo que minimiza la varianza intra-clase (dentro de cada región) y maximiza la varianza inter-clase (entre regiones). Es un método automático basado en histograma y es útil cuando la imagen tiene una distribución bimodal de intensidades.
 4. **Umbralizado local adaptativo**: Cada imagen se divide en pequeñas subregiones para umbralizar cada una por separado.
 
 ## Transformaciones geométricas
@@ -133,6 +133,11 @@ Las operaciones morfológicas emplean un _structuring element_ para definir la z
 3. **Apertura (open)**: Erosión seguida de dilatación. Elimina las zonas pequeñas, pero luego agranda las que se han mantenido.
 
 4. **Cierre (close)**: Contrario a la apertura. Aplica dilatación seguida de erosión, cerrando agujeros en los objetos y reduciendo los pequeños puntos negros que pueden entorpecer los algoritmos.
+
+La **erosión** en morfología matemática reduce los objetos en una imagen binaria al **eliminar píxeles en los bordes**, lo que hace que los objetos se contraigan.
+
+- **2. Dilatación** → Expande los objetos agregando píxeles en los bordes.
+- **3. Apertura** → Es una combinación de erosión seguida de dilatación, usada para eliminar ruido sin cambiar demasiado el tamaño de los objetos.
 
 ---
 
