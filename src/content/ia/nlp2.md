@@ -102,4 +102,26 @@ El stemming es más rápido pero menos preciso, la lematización ofrece una mayo
 
 La elección entre ambos métodos dependerá de las necesidades del proyecto y de los recursos disponibles. 🚀
 
-### Segmentación de frases y oraciones
+---
+
+### Segmentación de Frases y Oraciones en NLP
+
+Hasta ahora, la **tokenización** nos ha permitido extraer las palabras individuales de un texto y construir un vocabulario. Además, con técnicas como el **stemming** y la **lematización**, hemos logrado unificar palabras derivadas de una misma raíz para mejorar la comprensión del sistema, siempre que esto sea adecuado según el caso de uso.
+
+Si las palabras son la unidad mínima del lenguaje, las **oraciones** representan estructuras completas con significado. Segmentarlas correctamente es fundamental para el análisis de textos en NLP.
+
+_De Reglas a Aprendizaje Automático_
+
+Los primeros enfoques para separar oraciones se basaban en reglas predefinidas, pero enfrentaban problemas con ambigüedades lingüísticas. A principios del siglo XXI, comenzaron a desarrollarse modelos basados en **aprendizaje automático (ML)** que automatizan este proceso.
+
+Uno de los más destacados fue **Punkt**, publicado en 2006, que utilizaba un enfoque de **aprendizaje no supervisado**. Su gran ventaja es que puede reentrenarse con cualquier corpus, adaptándose a distintos dominios y estilos de escritura.
+
+_Construyendo un Texto Comprensible para NLP_
+
+Pasamos de un conjunto de caracteres a un vocabulario representado por **tokens**, que luego normalizamos para evitar variaciones innecesarias. Finalmente, agrupamos estos tokens en **oraciones bien segmentadas**, listas para su procesamiento.
+
+_Importancia de una Buena Tokenización y Segmentación_
+
+Muchos algoritmos avanzados, como los de **análisis de sentimientos**, dependen de una tokenización y normalización precisas. Si estos procesos no son óptimos, los resultados serán inexactos, haciendo que el modelo falle o sea descartado. A menudo, el problema no es el modelo en sí, sino una segmentación deficiente, una mala elección de tokenizador o la falta de una adecuada lematización.
+
+Conocer estos fundamentos es clave para mejorar el rendimiento de cualquier sistema de NLP. 🚀
