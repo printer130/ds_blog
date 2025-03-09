@@ -97,26 +97,6 @@ La mejora en POS tagging es clave para aplicaciones de NLP como la traducción a
 
 ---
 
-### Hidden Markov chains y el algoritmo Viterbi
-
-Trata de modelar situaciones en las que es necesario predecir la probabilidad de pasar de un estado a otro en un sistema dado (clima), con esto estamos tratando de implementar un algoritmo para clasificar parted del discurso, o un POS tagger, que nuestro algoritmo trabajara con palabras a las que tendra que asociar clases lexicas.
-
-Los estados se representan como circulo:
-
-<img src="https://res.cloudinary.com/djc1umong/image/upload/v1741379424/markov_vbmvak.jpg" alt="markov">
-
-De nublado a lluvioso hay 50%, de nublado a nublado hay 30%, de nublado a soleado hay 20% que se cumpla el clima para mañana.
-
-En una cadena de Markov para POS tagging definiremos la probabilidad de transicion desde una categoria de palabra hasta otra, por ejemplo vemos si estamos en nombre la siguiente palabra sea un adjetivo con 60%:
-
-<img src="https://res.cloudinary.com/djc1umong/image/upload/v1741379866/markov0_f1caue.jpg" alt="Markov">
-
-Con esto aparecen lo Hidden Markov Models(HMM) donde el sistema desconoce las etiquetas de las palabras, entonces no puede saber el estado, por otro lado estan los estados observables los que conoce el sistema y son las palabras de nuestro corpus, y los no observables que son las categorias del part of speech (verbos,nombres,adjetivos,adverbios) dado que no se pueden conocer sencillamente observando la palabra.
-
-Entonces tenemos dado un corpus de entrenamiento con el que deseemos generar nuestro algoritmo de POS tagging, tendremos que calcular la matriz de emision y la matriz de transicion de dicho corpus para generar entonces un Hidden Markov Model que represente nuestro corpus y sus categorias lexicas y palabras.
-
--
-
 ## Cadenas de Markov Ocultas y el Algoritmo Viterbi
 
 Los **Hidden Markov Models (HMM)** son modelos probabilísticos utilizados para predecir la transición entre diferentes estados en un sistema. Un ejemplo común es la predicción del clima:
@@ -147,39 +127,57 @@ Para entrenar un **POS tagger basado en HMM**, es necesario calcular:
 - **Matriz de transición:** Probabilidad de pasar de una categoría a otra.
 - **Matriz de emisión:** Probabilidad de que una palabra pertenezca a una categoría específica.
 
-Con estos datos, el **algoritmo de Viterbi** permite encontrar la secuencia de etiquetas más probable para una oración, mejorando la precisión del etiquetado gramatical. 🚀
+Permitiendo encontrar la secuencia de etiquetas más probable para una oración, mejorando la precisión del etiquetado gramatical.
 
--
+Para el método de generación de matrices, tenemos el siguiente ejemplo:
 
-Para el metodo de generacion de matrices tenemos este ejemplo:
+> Hoy[ADV] ha[VER] muerto[VER] mamá[NOM] o[CONJ] quizá[ADV] ayer[ADV]. No[ADV] lo[PRON] sé[VER]. Recibí[VER] un[DET] telegrama[NOM] del[PREP|ART] asilo[NOM].
 
-Hoy[ADV] ha[VER] muerto[VER] mama[NOM] o[CONJ] quiza[ADV] ayer[ADV]. No[ADV] lo[PRON] se[VER]. Recibi[VER] un[DET] telegrama[NOM] del[PREP|ART] asilo[NOM]
+#### Matriz de Transición
 
-Para la _matriz de transicion_ calculamos ADVERBIO á VERBO, sera sumar la cantidad de veces que sucede la transicion de ADV á VER y dividirla entre el total de transiciones partiendo de ADV hacia otro en nuestro corpus:
+Para calcular la **matriz de transición**, analizamos la transición de **ADVERBIO** a **VERBO**. Esto se hace sumando la cantidad de veces que ocurre la transición de ADV a VER y dividiéndola entre el total de transiciones que parten de ADV hacia otro estado en el corpus.
 
-Encontramos 1 transicion ADV á VER de entre 4 transiciones: P(ADV,VER) = 1/4 = .25
+En nuestro ejemplo, encontramos 1 transición de ADV a VER de entre 4 transiciones posibles:
 
-De ADV á ADV tenemos 2 transiciones: P(ADV, ADV)= 2/4 = .5
+```math
+P(ADV, VER) = 1/4 = 0.25
+```
 
-De P(ADV, PRON) = 1/4 = .25
+De **ADV** a **ADV**, tenemos 2 transiciones:
 
-Haciendo esto para todas las posibles transiciones desde cuaquier categoria a cualquier categoria tendremos la tabla de probabilidades de transicion que indica la probabilidad de pasar de un estado no observable hasta otro estado no observable.
+```math
+P(ADV, ADV) = 2/4 = 0.50
+```
+
+De **ADV** a **PRON**, tenemos 1 transición:
+
+```math
+ P(ADV, PRON) = 1/4 = 0.25
+```
+
+Al calcular estas probabilidades para todas las posibles transiciones entre categorías gramaticales, obtendremos la **tabla de probabilidades de transición**, que indica la probabilidad de pasar de un estado no observable a otro estado no observable.
 
 <img src="https://res.cloudinary.com/djc1umong/image/upload/v1741381945/matriztransicion_mtynmd.jpg" alt="Matriz de transición">
 
-Para la _matriz de emisión_ que es la que representa las probabilidades de pasar desde un estado oculto(categoria de palabra) hacia un estado visible (una palabra concreta), para las columnas tendremos las palabras de nuestro corpus y en las filas volveran a estar las categorias, entonces para calcular la probabilidad de emision desde el estado oculto NOM hasta la palabra contreta mama, vemos cuantas veces una etiqueta 'nombre' tiene como palabra asociada 'mama' y dividirlo entre el total de las palabras etiquetadas como nombre:
+#### Matriz de Emisión
+
+La **matriz de emisión** representa las probabilidades de pasar desde un estado oculto (una categoría gramatical) hacia un estado visible (una palabra concreta). En las columnas, tendremos las palabras de nuestro corpus y, en las filas, las categorías gramaticales.
+
+Para calcular la probabilidad de emisión desde el estado oculto **NOM** (nombre) hasta la palabra concreta **mamá**, contamos cuántas veces una etiqueta **nombre** tiene como palabra asociada **mamá** y la dividimos entre el total de las palabras etiquetadas como **nombre**.
+
+Por ejemplo:
 
 ```math
-C(NOM, 'mama') = 1/3 = .33
-C(NOM, 'asilo') = 1/3 = .33
-C(NOM, 'telegrama') = 1/3 = .33
+C(NOM, 'mamá') = 1/3 = 0.33
+C(NOM, 'asilo') = 1/3 = 0.33
+C(NOM, 'telegrama') = 1/3 = 0.33
 ```
 
-Con este corpus pequeño no se obtienen resultados con sentido, pero nos ayuda a entender como pasar de un corpus etiquetado a una matriz de transicion y a una matriz de emision, que son importantes para un sistema de Parts of Speech Taggin mediante Hidden Markov Model.
+Con este corpus pequeño no se obtienen resultados con sentido, pero nos ayuda a entender cómo pasar de un corpus etiquetado a una matriz de transición y una matriz de emisión, que son fundamentales para un sistema de **Parts of Speech Tagging** mediante **Hidden Markov Model**.
 
-Para clasificar palabras basandonos en esto tenemos el _algoritmo de viterbi_ que trabaja con HMM y trata de encontrar la secuencia mas probable de estados ocultos, lo que llamamos camino de Viterbi. En nuestro ejemplo trata de estimar la secuencia mas probable de categorias de palabras dada una frase.
+Para clasificar palabras basándonos en esto, utilizamos el **algoritmo de Viterbi**, que trabaja con HMM y trata de encontrar la secuencia más probable de estados ocultos, lo que conocemos como el **camino de Viterbi**. En nuestro ejemplo, el algoritmo estima la secuencia más probable de categorías de palabras dada una frase.
 
-Funciona así en cada estado multiplica la probabilidad de pasar del estado actual a cualquiera de los estados ocultos que pueden llegar a emitir el estado visible. Luego seleccionará el estado oculto futuro que más probabilidad alcance.
+El funcionamiento es el siguiente: en cada estado, el algoritmo multiplica la probabilidad de pasar del estado actual a cualquiera de los estados ocultos que puedan generar el estado visible. Luego, seleccionará el estado oculto futuro que tenga la mayor probabilidad.
 
 ```math
 P(estado_actual, estado_futuro) x C(estado_futuro, estado_visible)
@@ -191,12 +189,11 @@ Partiendo de nuestras 2 matrices podemos estimar las categorías de las palabras
 
 <img src="https://res.cloudinary.com/djc1umong/image/upload/v1741388363/markov1_kowl2f.webp" alt="Markov">
 
-Empezamos por la primera palabra de "coto privado de caza"
+- La matriz de arriba es la **matriz de transición**, la probabilidad de moverse de un estado a otro.
 
-La matriz de arriba es la **matriz de transición**, la probabilidad de moverse de un estado a otro.  
-La matriz inferior es la **matriz de emisión**, indica la probabilidad de que un estado o etiqueta (como NOM, VERB, etc.) genere una palabra en la oración.
+- La matriz inferior es la **matriz de emisión**, indica la probabilidad de que un estado o etiqueta (como NOM, VERB, etc.) genere una palabra en la oración.
 
-**Entonces para cálcular "coto"**:
+Empezamos por la primera palabra de "coto privado de caza", entonces para cálcular "coto" tenemos:
 
 1. **Transición desde el estado inicial (Estado 0) a NOM (Sustantivo)**:
 
@@ -211,11 +208,11 @@ La matriz inferior es la **matriz de emisión**, indica la probabilidad de que u
    P(Estado_0, NOM) \times C(NOM, "coto") = 0.5 \times 1 = 0.5
    ```
 
-Entonces hemos calculado la probabilidad de que el primer tag sea [NOM] y de que este [NOM] emita nuestra palabra, "coto". La probabilidad ha sido asignada a [NOM], ya que no hay más opciones, definiendo nuestro **camino de Viterbi**
+Entonces, hemos calculado la probabilidad de que el primer tag sea **[NOM]** y de que este **[NOM]** emita nuestra palabra, "coto". La probabilidad se ha asignado a **[NOM]**, ya que no hay más opciones, definiendo así nuestro **camino de Viterbi**.
 
-<img src="https://res.cloudinary.com/djc1umong/image/upload/v1741477795/viterbipath_ujjxod.jpg" alt="Definiendo el camino de viterbi">
+<img src="https://res.cloudinary.com/djc1umong/image/upload/v1741477795/viterbipath_ujjxod.jpg" alt="Definiendo el camino de Viterbi">
 
-Nuestro estado pasa a [NOM] y conocemos el siguiente estado visible, "privado". Para ver el siguiente movimiento el estado oculto vemos las probabiliadades de psar desde un estado [NOM] hasta cualquiera de los estados ocultos asociados a la palabra "privado". El algoritmo de Viterbi multiplicara la probabilidad de pasar desde [NOM] hasta cada una de las categorías seleccionadas por la probabilidad de que "privado" sea emitido por alguna de estas categorías.
+Nuestro estado pasa a **[NOM]** y conocemos el siguiente estado visible, "privado". Para determinar el siguiente movimiento, analizamos las probabilidades de pasar desde el estado **[NOM]** hacia cualquiera de los estados ocultos asociados a la palabra "privado". El algoritmo de Viterbi multiplicará la probabilidad de pasar de **[NOM]** a cada una de las categorías seleccionadas por la probabilidad de que "privado" sea emitido por esas categorías.
 
 ```math
 P(NOM, NOM) x C(NOM, "privado") = 0.1 x .3 = .03
@@ -224,7 +221,7 @@ P(NOM, ADJ) x C(ADJ, "privado") = 0.4 x .7 = .28
 P(NOM, ADV) x C(ADV, "privado") = 0.1 x .1 = .01
 ```
 
-Dado el contexto de la frase el resultado sera [ADJ] entonces el algoritmo de VIterbi avanzará un estado a: "de", en el estado [ADJ], importante también que multiplicara la probabilidad del tag anterior por la de cada uno de estos caminos, donde nuestro primer tag era [NOM] con .5
+Dado el contexto de la frase, el resultado será **[ADJ]**. Entonces, el algoritmo de Viterbi avanzará un estado a: "de", en el estado **[ADJ]**. Es importante también que multiplicará la probabilidad del tag anterior por la de cada uno de estos caminos, donde nuestro primer tag era **[NOM]** con 0.5.
 
 ```math
 P(estado_0, NOM, NOM) = 0.03 x .5 = .015
@@ -233,11 +230,11 @@ P(estado_0, NOM, ADJ) = 0.28 x .5 = .14
 P(estado_0, NOM, ADV) = 0.01 x .5 = .0015
 ```
 
-ENtonces tenemos en cada tag la probabilidad de que un determinado camino llegue hasta ellos, pero sin abandonar los otros
+Entonces tenemos en cada tag la probabilidad de que un determinado camino llegue hasta ellos, pero sin abandonar los otros
 
 <img src="https://res.cloudinary.com/djc1umong/image/upload/v1741481046/viterbipath1_mcvdyo.jpg">
 
-Ahora toca la palabra "de" sin embargo puede ser la cuarta letra del abecedario también, por lo que computará 8 nuevas ramas.
+Ahora toca la palabra "de", sin embargo, puede ser la cuarta letra del abecedario también, por lo que computará 8 nuevas ramas.
 
 <img src="https://res.cloudinary.com/djc1umong/image/upload/v1741482306/viterbi_zyhuf4.webp">
 
@@ -245,7 +242,7 @@ Y el diagrama será:
 
 <img src="https://res.cloudinary.com/djc1umong/image/upload/v1741482358/viterbi1_n3wz7e.webp">
 
-Aquí el algoritmo Viterbi ve que tenemos dos estados posibles con 4 ramas cada una, entonces podara las menos probables:
+Aquí, el algoritmo de Viterbi ve que tenemos dos estados posibles con 4 ramas cada una, por lo que podará las menos probables:
 
 <img src="https://res.cloudinary.com/djc1umong/image/upload/v1741482548/viterbi2_roiixa.png">
 
@@ -253,11 +250,11 @@ Ahora es el turno de "caza":
 
 <img src="https://res.cloudinary.com/djc1umong/image/upload/v1741482608/viterbi3_nvvcjx.webp">
 
-Nos quedamos con la rama más probable [PREP] -> [NOM], así decidimos cúal es nusetro **camino de Viterbi** permitiendonos tomar decisiones precisas y óptimas en tareas donde la información real está oculta, como en el lenguaje, el sonido y la genética.
+Nos quedamos con la rama más probable **[PREP] -> [NOM]**, así decidimos cuál es nuestro **camino de Viterbi**, permitiéndonos tomar decisiones precisas y óptimas en tareas donde la información real está oculta, como en el lenguaje, el sonido y la genética.
 
 - El camino de Viterbi nos permite tomar decisiones precisas y óptimas en tareas donde la información real está oculta, como en el lenguaje, el sonido y la genética.
-- Porque en reconocimiento de voz hay muchas interpretaciones posibles, y Viterbi ayuda a elegir la más coherente.
-- Porque nos permite asignar etiquetas correctas a palabras ambiguas, mejorando tareas como la traducción automática o la generación de texto.
+- En reconocimiento de voz, hay muchas interpretaciones posibles, y Viterbi ayuda a elegir la más coherente.
+- Nos permite asignar etiquetas correctas a palabras ambiguas, mejorando tareas como la traducción automática o la generación de texto.
 
 <img src="https://res.cloudinary.com/djc1umong/image/upload/v1741483011/viterbi4_ka6kvo.webp">
 
@@ -265,18 +262,75 @@ Nos quedamos con la rama más probable [PREP] -> [NOM], así decidimos cúal es 
 
 Estos modelos ayudan a asignar distintas probabilidades a cada una de las posibles secuencias que puede generar cada uno de ellos (n). Aunque existen modelos más avanzados como las RNN y los Transformers.
 
-Dado una frase "s" el siguiente token sea la palabra "w", esto es: P(w|s)
+Dada una frase "s", el siguiente token será la palabra "w", es decir: P(w|s).
 
-Si tenemos "la mesa esta" = "s" podemos ver en nuestro corpus y sacar una probabilidad para que el resultado sea "rota" pero esto es imposible para encontrar todas las frases posibles y ademas sea estadisticamente significativo.
+Si tenemos "la mesa está" = "s", podemos ver en nuestro corpus y calcular una probabilidad para que el resultado sea "rota", pero esto es imposible de hacer para encontrar todas las frases posibles y además que sea estadísticamente significativo.
 
-UN modelo de 2-gram empleara la última palabra de la frase para predecir la siguiente palabra, P(rota | La mesa del salón está), un modelo 2-gram calculara P(rota|está) buscando en nuestro corpus que se genere siendo la palabra "esta" la primera.
+Un modelo de 2-gram empleará la última palabra de la frase para predecir la siguiente palabra, es decir, P(rota | La mesa del salón está). Un modelo 2-gram calculará P(rota | está) buscando en nuestro corpus donde "está" sea la primera palabra.
 
-**Regla de la cadena:** Para saber la probabilidad de que mañana haga calor y esté soleado P(calor, soleado), podemos calcular la probabilidad de que haciendo calor esté soleado P(soleado | calor) y multiplicar la probabilidad de que haga calor P(calor), seria como: P(calor, soleado) = P(soleado|calor) x P(calor)
+**Regla de la cadena:** Para saber la probabilidad de que mañana haga calor y esté soleado P(calor, soleado), podemos calcular la probabilidad de que, al hacer calor, esté soleado P(soleado | calor) y multiplicar la probabilidad de que haga calor P(calor), quedando así: P(calor, soleado) = P(soleado | calor) × P(calor).
 
-Para hacer la prediccion en frases enteras como "hoy compré 2 pantalones"
+Para hacer la predicción en frases completas como "hoy compré 2 pantalones":
 
-P(hoy,compré, pantalores) = P(hoy) x P(compré|hoy) x P(dos|hoy compré) x P(pantalones| hoy compré dos); Buscara cuantas veces la palabra "compre" aparece despues de la palabra "hoy", lo dividira entre todas las ocurrencias de la palabra hoy y esto sera P(compre|hoy), igual pasara con las probabilidades del siguiente trigrama y del siguiente tetragrama para obtener la probabilidad completa de la frase.
+P(hoy, compré, pantalones) = P(hoy) × P(compré | hoy) × P(dos | hoy compré) × P(pantalones | hoy compré dos). Se buscará cuántas veces la palabra "compré" aparece después de la palabra "hoy", lo dividirá entre todas las ocurrencias de la palabra "hoy", y eso será P(compré | hoy). Lo mismo sucederá con las probabilidades del siguiente trigrama y tetragrama para obtener la probabilidad completa de la frase.
 
-Sin embargo nuestras frases no apareceran en nuestro corpus, es aquí que los 2-gram tienen sentido y añadiendo un simbolo al principio de la frase y al final tal que: **P(hoy|<\\s>)** y **P(<\/s>|hoy)** con estos simbolos los modelos pueden estimar la probabilidad de frases completas teniendo en cuenta la probabilidad de que la frase **comience** con una palabra determinada y tambien **termine** con una palabra determinada.
+Sin embargo, nuestras frases no siempre aparecerán en nuestro corpus, es aquí donde los 2-grams tienen sentido. Añadiendo un símbolo al principio y al final de la frase, como: **P(hoy | <\s>)** y **P(</s> | hoy)**. Con estos símbolos, los modelos pueden estimar la probabilidad de frases completas teniendo en cuenta la probabilidad de que la frase **comience** con una palabra determinada y también **termine** con una palabra determinada.
 
 ### Matriz de recuento (count matrix)
+
+Relaciona todas las palabras de nuestro vocabulario con todas las palabras de nuestro vocabulario para permitir a nuestros modelos generar frases y predecir palabras de forma automática.
+
+**Paso 1. Matriz de recuento.**
+
+El primer paso que ejecuta un modelo de lenguaje (LM) dado un corpus es generar la matriz de recuento, que consiste en generar una matriz de frecuencias acumuladas. En esta matriz, las filas y columnas representarán las palabras del corpus y su relación en términos de ocurrencias en bigramas (pares de palabras consecutivas).
+
+Por ejemplo, para la frase "tengo mucho frío y mucho miedo, pero no tengo hambre", se construye una matriz en la que las filas representan el símbolo de principio de frase y las columnas representan el símbolo de cierre de frase. La matriz tendrá la siguiente forma, donde cada celda muestra la cantidad de veces que aparece un par de palabras consecutivas (un bigrama):
+
+- El símbolo de inicio de frase (S) solo puede aparecer en la primera posición del bigrama (como la palabra inicial), por lo que estará en las filas.
+- El símbolo de cierre de frase (</s>) solo puede aparecer en la segunda posición del bigrama, por lo que estará en las columnas.
+
+Por ejemplo, en la frase:
+
+> "tengo mucho frío y mucho miedo, pero no tengo hambre"
+
+El bigrama para la primera parte podría ser:
+
+> ```math
+> - "S -> tengo"
+> - "tengo -> mucho"
+> - "mucho -> frío"
+> - "frío -> y"
+> - "y -> mucho"
+> - "mucho -> miedo"
+> - "miedo -> ,"
+> - "pero -> no"
+> - "no -> tengo"
+> - "tengo -> hambre"
+> - "hambre -> </s>"
+> ```
+>
+> La matriz de recuento se llenará con la frecuencia de aparición de cada uno de estos bigramas. Esta matriz servirá para calcular las probabilidades de ocurrencia de los siguientes tokens en función de los anteriores.
+
+Para cada par de palabras (bigramas) en el corpus, contamos cuántas veces aparece esa secuencia de palabras. Por ejemplo, si el bigrama "tengo -> mucho" aparece 2 veces en el corpus, la entrada correspondiente en la matriz de recuento será 2. Una vez que tengamos la matriz de recuento, podemos usarla para calcular las probabilidades de transición entre las palabras.
+
+<img src="https://res.cloudinary.com/djc1umong/image/upload/v1741531397/recuento_fwcpt0.webp" >
+
+**Paso 2. Matriz de probabilidad.**
+
+La matriz de probabilidad sencillamente calcula las probabilidades de cada uno de los bigramas en base a las frecuencias acumuladas, como se hace para normalizar, dividiendo el valor de cada celda entre la suma de todos los valores de su fila o dividiendo cada frecuencia entre el total de apariciones de una palabra en nuestro corpus, que es lo mismo.
+
+```math
+En nuestro bigrama:
+P(frio|mucho) = .5
+P(miedo|hambre) = .5
+```
+
+### Aplicar un modelo de lenguaje basado en N-GRAM
+
+Nuestro modelo de lenguaje (LM) usará la matriz de probabilidades para predecir la siguiente palabra en una frase, seleccionando la palabra con mayor probabilidad en cada momento. Esto permite generar una frase comenzando con una palabra inicial y finalizando con el token "<//s>". Para mayor variabilidad, se puede introducir aleatoriedad en el proceso.
+
+### Evaluación de modelos de lenguaje: Perplexity
+
+La **perplexity** es una medida de la complejidad del modelo, similar a la entropía, y se utiliza para evaluar los modelos de lenguaje. Mide la variabilidad de los datos usando un porcentaje del corpus (70% a 98%) como conjunto de entrenamiento para calcular la matriz de probabilidades. En los modelos N-gram, la **perplexity** es la inversa de la probabilidad del conjunto de evaluación. Si el modelo asigna una probabilidad alta a las frases del conjunto de evaluación, significa que ha aprendido correctamente las probabilidades del lenguaje, lo que indica un buen modelo.
+
+Un aspecto clave de los modelos basados en N-gram es la medición de la **perplexity**, que evalúa tanto la complejidad del lenguaje como la del modelo.
