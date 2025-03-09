@@ -24,13 +24,13 @@ const { title, description, pubDate } = Astro.props
 			crossorigin='anonymous'
 		/>
 	</head>
-	<body class={'pt-20'}>
+	<body>
 		<main>
 			<article
-				class='text-xl tracking-wide leading-relaxed font-normal text-slate-800 max-w-4xl mx-auto px-4 overflow-auto'
+				class='text-xl tracking-wide leading-relaxed font-normal text-slate-800 max-w-4xl mx-auto px-4 overflow-auto bg-[#fefefe]'
 			>
 				<Header />
-				<button onclick='history.back()' id='go-back'>Go back!</button>
+				<!-- <button onclick='history.back()' id='go-back'>ir atrás</button> -->
 
 				<h1
 					class={`text-3xl ${

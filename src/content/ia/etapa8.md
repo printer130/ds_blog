@@ -1,5 +1,5 @@
 ---
-title: 'Aplicaciónes e impacto en el mundo real'
+title: 'ETAPA 8: Aplicaciónes e impacto en el mundo real'
 description: ''
 pubDate: 'Nov 08 2022'
 heroImage: '/placeholder-hero.jpg'

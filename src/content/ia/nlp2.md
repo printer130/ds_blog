@@ -1,10 +1,12 @@
 ---
-title: 'Las expresiones regulares y la segmentación de palabras y frases'
+title: 'NLP 2: Preprocesamiento de textos: el primer paso de NLP'
 description: ''
 pubDate: 'Nov 08 2022'
 heroImage: '/placeholder-hero.jpg'
 url: '/ia'
 ---
+
+## Las expresiones regulares y la segmentación de palabras y frases
 
 Los primeros agentes conversacionales estaban basados en regex, ejecutados a lo largo de un corpus y observando los resultados
 
@@ -20,8 +22,6 @@ A la hora de analizar palabras tenemos:
 - _Tokens:_ El número total de palabras que encontramos en un texto.
 
 La tokenización consiste en encontrar todas las palabras (que cumplan con nuetra definición de palabra como dev del sistema) y el análisis de tipos de encontrar el conjunto de palabras únicas que se emplean en un texto.
-
-### Normalización del texto
 
 Facilita el proceso posterior de nuestros algoritmos encontrando componentes de nuestro texto y aplicandoles una serie de procesos que nos permitan obtener una salida homogénea.
 
@@ -123,5 +123,3 @@ Pasamos de un conjunto de caracteres a un vocabulario representado por **tokens*
 _Importancia de una Buena Tokenización y Segmentación_
 
 Muchos algoritmos avanzados, como los de **análisis de sentimientos**, dependen de una tokenización y normalización precisas. Si estos procesos no son óptimos, los resultados serán inexactos, haciendo que el modelo falle o sea descartado. A menudo, el problema no es el modelo en sí, sino una segmentación deficiente, una mala elección de tokenizador o la falta de una adecuada lematización.
-
-Conocer estos fundamentos es clave para mejorar el rendimiento de cualquier sistema de NLP. 🚀

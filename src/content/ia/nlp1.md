@@ -1,5 +1,5 @@
 ---
-title: 'Introducción al NLP'
+title: 'NLP 1: Introducción al NLP'
 description: ''
 pubDate: 'Nov 08 2022'
 heroImage: '/placeholder-hero.jpg'

@@ -1,5 +1,5 @@
 ---
-title: 'Metodos y tecnologías fundacionales'
+title: 'ETAPA 7: Metodos y tecnologías fundacionales'
 description: ''
 pubDate: 'Nov 08 2022'
 heroImage: '/placeholder-hero.jpg'
