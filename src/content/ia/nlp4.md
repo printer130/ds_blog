@@ -162,9 +162,7 @@ En 2013 presenta Google este algoritmo relevante en NLP, que emplea una red neur
 
 Existen 2 arquitecturas para word2vec:
 
-**1. CBOW(continuous bag-of-words):** Asume que el orden de las palabras no influye en el conteo,
-
-**2. Skip-grams with negative sampling(SGNS):**
+### **1. Skip-grams with negative sampling(SGNS):**
 
 Es una de las dos posibles arquitecturas con las que podemos hacer funcionar el algoritmo Word2Vec para generar vectores que representen palabras en un corpus. Es un modelo basado en regresión logística que aprende gracias al _Stochastic Gradient Descent_ y maximiza el producto escalar entre los vectores de una palabra que comparten contextos y minimiza entre los vectores que no lo hacen.
 
@@ -197,3 +195,31 @@ Dado 4 ejemplos positivos y 8 negativos porque k=2, el algoritmo cumplirá estos
 2. Minimizar la similitud entre los embeddings de la palabra w y los ejemplos negativos.
 
 Con el uso de los SGD los embeddings aleatorios W y C van siendo modificados hasta el punto mínimo en el que se optimiza el problema y obtenemos 2 matrices para cada w objetivo y contexto c.
+
+### **2. CBOW(continuous bag-of-words):**
+
+SU objetivo es predecir una palabra central dada una serie de palabras de contexto, a diferencia de skip-gram, no conoceremos la palabra w y el objetivo del modelo será dadas las palabras de contexto c1,c2,c3,c4 predecir w.
+
+> Dada la frase: "son las vías más seguras ya que entre otras rezones no hay riesgos de colosión frontal"
+
+Definimos el C en este caso vale 2 y por tanto una window=5
+| Palabras de contexto | Palabra central |
+|-----------------------------|----------------|
+| son, las, más, seguras | vías |
+| las, vías, seguras, ya | más |
+| vías, más, que | seguras |
+| más, seguras, que, entre | ya |
+| seguras, ya, entre, otras | que |
+| ya, que, otras, razones | entre |
+
+En inputs son las palabras de contexto; En proyección tramo formado por neuronas artificiales que aplicaremos en CBOW; OUTPUT consiste en la palabra central.
+
+<img src="https://res.cloudinary.com/djc1umong/image/upload/v1741816488/cbow_rtqzqt.webp">
+
+La tokenización será el que identifique las palabras de nuestro corpus y nos permita generar el training set de forma automática, ya que afecta el resultado y al potencial que puede llegar a alcanzar nuestro modelo, y tomando en cuenta:
+
+- mayúsculas/minúsculas
+- puntuación(eliminarlos no cambia la relacioón de una palabra)
+- números(son o no son relevantes)
+- caracteres especiales (normalmente se eliminan)
+- palabras especiales (hashtahs,emojis,urls...)
