@@ -223,3 +223,154 @@ La tokenización será el que identifique las palabras de nuestro corpus y nos p
 - números(son o no son relevantes)
 - caracteres especiales (normalmente se eliminan)
 - palabras especiales (hashtahs,emojis,urls...)
+
+```python
+tokens = ["son", "las", "vías", "más" , "seguras", "ya", "que", "entre", "otras", "razones", "no", "hay", "riesgos", "de", "colosión", "frontal"]
+C = 2
+extract_words(tokens, C)
+```
+
+Toca definir un método para transformar nuestros tokens a vectores numéricos para entrenar nuestra red neuronal. **CBOW** entrena una red neuronal para predecir una palabra central a partir de su contexto, entonces:
+
+**Tokenización y Representación One-Hot**
+
+- Se genera un vocabulario con todas las palabras del corpus.
+- Cada palabra se convierte en un **vector one-hot**, es decir, un vector con la misma cantidad de posiciones que el tamaño del vocabulario, donde solo una posición es `1` (indicando la palabra en cuestión) y el resto son `0`.
+- Ejemplo:
+
+  ```
+  vaca    → [1,0,0,0]
+  pato    → [0,1,0,0]
+  caballo → [0,0,1,0]
+  gato    → [0,0,0,1]
+  ```
+
+**Contexto y Promedio de Vectores**
+
+- Se define un **contexto** como las palabras cercanas a la palabra central en una ventana deslizante.
+- Para representar este contexto, se toman los vectores one-hot de las palabras vecinas y se hace un **promedio**.
+- Ejemplo: si tenemos la frase **"El pato nada en el agua"** con una ventana de contexto de tamaño 2, para la palabra central "nada", el contexto sería `["El", "pato", "en", "el"]`.
+- Se toman los vectores one-hot de estas palabras y se calcula su **promedio**.
+
+**Uso en la Red Neuronal**
+
+- El vector promedio del contexto se introduce en la red neuronal como entrada.
+- La red aprende a predecir la palabra central a partir de este vector.
+- Una vez entrenada, los pesos de la capa oculta pueden usarse como representaciones densas (embeddings) de las palabras.
+
+CBOW usa el **promedio de los vectores one-hot del contexto** para predecir la palabra central mediante una red neuronal poco profunda.
+
+Una vez el corpus lo tenemos tokenizado, extraídas las palabras centrales y de contexto y convertidos ambos conjuntos de palabras a vectores procesables por una red neuronal toca ir a las redes neuronales poco profundas para definir nuestro modelo, donde:
+
+- Input Layer: Recibira los vectores de las palabras de contexto llamado X.
+- Output Layer: Devolverá la palabra central predicha(un one-hot vector).
+- La Hidden Layer: tendrá entre cientos y miles de neuronas pudiendo decir en número que queramos y aquí cobra sentido CBOW que es un método de embedding
+
+CBOW es un método para convertir palabras en vectores numéricos (**embeddings**) que capturan su significado y es una red neuronal FAST Forward Feed Neural Network(fully-connected network).
+
+🔹 **Objetivo**: Crear representaciones vectoriales donde palabras con significados similares tengan vectores similares(predecir la palabra central de una frase es tan solo un excusa para poder enseñar a nuestro modelo a representar las palabras en un unico embedding).  
+🔹 **Cómo lo hace**: Entrena una red neuronal para predecir una palabra a partir de su contexto. Sin embargo, esta tarea es solo un medio para aprender los embeddings.  
+🔹 **Dónde se guardan los embeddings**: En los **pesos de la red neuronal** después del entrenamiento.  
+🔹 **Tamaño del embedding**: Depende del número de neuronas en la capa intermedia.
+
+Para la **Input Layer** usaremos ReLU(Rectified Linear Unit Function), para **Hidden layer** softmax:
+
+<img src="https://res.cloudinary.com/djc1umong/image/upload/v1741893440/deepcbow_gek0qa.webp">
+
+#### ReLU
+
+Es una función de activación se aplica sobre el cómputo de la suma de todas las entradas de la neurona por todos sus pesos, como sucede en todas las neronas artificiales. Los inputs serán cada una de las dimensiones de los vectores de entrada (C) con la misma longitud que palabras tiene nuestro vocabulario, por lo que las neuronas en la Hidden Layer tendrán tantas entradas como palabras tiene nustro vocabulario y por tanto el mismo número de pesos.
+
+Llamaemos C a todas las dimensiones de nuestros vectores, y W a todos los pesos de nuestras neuronas. Siendo así, el primer paso que realizará cada una de las neuronas será multiplicar cada dimensión del vector(c1,c2,c3...,cN) por cada uno de los pesos correspondientes a sus entradas (w1,w2,w3...,wn) y sumar todos estos valores.
+
+Adémas se añade un sesgo que añade cierta cantidad a la suma total, es dado por b.
+
+```
+Z = W * C + b
+// Salida
+output = ReLU(Z)
+```
+
+La salida de la neurona, un número, dependera de la función de activiación sobre Z, en un modelo de CBOW de las neuronas de la capa oculta será ReLU.
+
+**ReLU** activa la neurona cuando Z es positivo así hace llegar a la siguiente neurona.
+
+`ReLU = max(0, Z)`
+
+<img src="https://res.cloudinary.com/djc1umong/image/upload/v1741894404/ReLU_gso6ju.webp">
+
+Para las neuronas de la capa de salida emplea **softwax** un vector de números entre 0 y 1 que suman en total 1, donde normalmente se los toma como probabilidades de diversos eventos como en CBOW que es la palabra que estamos buscando 😁.
+
+<img src="https://res.cloudinary.com/djc1umong/image/upload/v1741896051/softmax_yl40dn.webp">
+
+La función exponencial se notara por cada incremento frente a ReLU que es lineal.
+
+<img src="https://res.cloudinary.com/djc1umong/image/upload/v1741896175/softmaxe_lvaqth.webp">
+
+La neurona primero multiplica cada señal de entrada(c1,c2,c3,c4) por cada uno de sus pesos correspondientes (w1,w2,w3,w4) que son los que se modifican durante el aprendizaje y más importante todavía, los quie serán el embedding de nuestro modelo fina, luego se suman (c1\*w1,...) luego se añade `b` y se aplica la función ReLU empleada en la capa intermedia de la red neuronal poco profunda de un modelo CBOW para embedding dentro del contexto del modelo **word2vec** que fue publicado en 2013 por Google.
+
+<img src="https://res.cloudinary.com/djc1umong/image/upload/v1741896522/neurona_u8q5vd.webp">
+
+**Ejemplo de ReLU:**
+
+```python
+c1=2; c2=-1; c3=4; c4=-6; w1=.1; w2=.8; w3=.4; w4=.9
+b=2
+# Calculamos Z
+Z = 2*.1 + -1*.8 + 4*.4 + 6*.2 = .2 - .8 + 1.6 - 5.4 = -4.4
+# aplicamos ReLU
+ReLU(z) = max(0, -4.4) = 0
+# cambiamos los pesos
+c1=2; c2=-1; c3=4; c4=-6; w1=.8; w2=.1; w3=.6; w4=.2
+Z = ... = 2.7
+ReLU(z) = max(0, 2.7) = 2.7
+```
+
+Comprobamos ReLU la función de activación en la capa intermedia que generan los embeddings de nuestras palabras al final del proceso.
+
+**Ejemplo Softmax:**
+
+La neurona no suma las señales, sino que las usa como entrada de la función de softmax para calcular un vector de salida.
+
+```python
+#Input
+Z = [3, 6, 5, 9, 7]
+# 1er paso de softmax
+exp(Z) = [exp(3), exp(6), exp(5), exp(9), exp(7)] = [20, 403, 148, 8103, 1097]
+# Suma
+sum_exp = 20 + 403 + 148 + 8103 + 1097 = 9771
+# luego la división
+softmax(Z) = [20/9771, 403/9771, 8103/9771, 1097/9771] = [.002, .041 .829 .112]
+```
+
+La tercera posición o dimensión de nuestro vector será la salida y todos suman ~1.
+
+Hasta ahora entendemos como funciona nuestra red neuronal hacia delante y que es un modelo de ML capaz de aprender por sí mismo. Su objetivo es generar los embeddings de las palabras de nuestro vocabulario a través de los pesos aprendidos en cada neurona de la capa oculta, entonces necesita un entrenamiento.
+
+Dado el **training set** con un conjunto de palabras de contexto asociadas a una etiqueta, que será su palabra central asociada, podemos comenzar el entrenamiento.
+
+1. En el training los pesos son inician de forma aleatora de la capa intermedia y de la salida.
+2. Pasamos un primer lote de conjuntos de palabras de contexto y almacenamos los resultados predichos por la red neuronal, que es un algoritmo aleatorio y no produce resultados de valor.
+3. Calculamos el **error** de nuetra red neuronal mediante **cross-entropy loss**, una función empleada en modelos de clasificación de redes neuronales donde la última capa aplica **softmax**.
+
+El algoritmo de entrenamiento calculará el error de la distancia entre la palabra inferida y la palabra. El algoritmo de **backpropagation** calcula las derivadas parciales de cada uno de los pesos y sesgos de cada neurona, donde el error se minimiza para cada de estos parámetros.
+
+**Entrenamiento óptimo** tendremos una serie de neuronas(en función del tamaño N que hayamos decidido para nuestros embeddings) en la capa intermedia. Estos pesos aprendidos por **backpropagation** son los que nos dan nuestro espacio vectorial y la transformación de palabras a embeddings. **Word2vec** y **CBOW** convierten cualquier palabra del vocabulario de un corpus a un vector de tal forma que a vectores similares(producto escalar) las palabras también tengan significados similares.
+
+Con la **red entrenada** extraemos los embeddings de nuestra red neuronal para las palabras de nuestro vocabulario y podremos extraer tres representaciones vectoriales o embeddings distintas para nuestras palabras.
+
+> **Opciones:**
+>
+> 1. Considera los pesos de cada entrada a las neuronas de la capa intermedia como embeddings de nuestro vocabulario si construimos una matriz seria tal que `VxN` donde **V** es el número de palabras de nuestro vocabulario y **N** el tamaño de nuestros embeddings, pudiendo emplearlos como vectores que representan nuestras palabras.
+
+La relación entre la matriz de pesos y las palabras del vocabulario se determina por el orden en el que la red neuronal vio las palabras.
+
+_"estoy triste por tu pérdida" la primera col de pesos de la matriz W correspondera a "estoy" y será su embedding, segunda "triste" y será su embedding..._
+
+> 2. Emplea los pesos de la capa _output_. La matriz de pesos es `N x V` (tamaño de su entrada x tamaño de su salida), recibe N señares desde la capa intermedia y produce un vector one-hot de V posiciones. Con las filas de la matriz de pesos extraemos los embeddings de las palabras, respetando de nuevo el orden en el que la red neuronal porcesó las palabras durante el entrenamiento.
+
+> 3. Calcular la media entre los dos vectores extraídos por los dos vectores anteriores, lo más habitual.
+
+La capacidad de almacenar el significado de una palabra en un vector es una gran capacidad para un modelo de NLP, ya que significa pasar de un conjunto de letras a un conocimiento real sobre el significado de la palabra, el sistema no comprende las palabras, si es capaz de dotarles de un significado abstracto que se relacionará de forma cercana con otras palabras con significados similares.
+
+Así sugerimos palabras similares, analizamos la similitud entre dos documentos, extraemos temas acerca de los que trata un texto.
